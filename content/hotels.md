@@ -1,7 +1,9 @@
-# Hotels.com Codes
+# Hotels.com Tips
 
 Check exclusions on prepaid vs pay-at-hotel rates.
 
-- CARDHT8: General discount code.
-- chz: 10% off London hotels.
-- CFHCOMAUG8: August promo.
+- General discount available.
+- 10% off London hotels.
+- August promo for additional savings.
+
+Grab the exact codes in the promo section below.

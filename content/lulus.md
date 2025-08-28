@@ -1,3 +1,5 @@
-# Lulus Bundle Code
+# Lulus Bundle Offer
 
-- BUY2GET20 — 20% off when buying two+.
+- 20% off when buying two or more items.
+
+See promo section below for the active code.

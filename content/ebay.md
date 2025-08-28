@@ -1,4 +1,6 @@
-# eBay Sneaker & Trading Cards Codes
+# eBay Sneaker & Trading Cards Deals
 
-- LACEUP — Sneakers tiered discount.
-- ALLDECKEDOUT — Trading cards.
+- Sneakers tiered discount available.
+- Trading card promo available.
+
+See promo section below for the latest codes.
