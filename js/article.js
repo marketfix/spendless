@@ -40,13 +40,14 @@ function renderArticle(article){
   const list = qs('.promo-list');
   for(const p of (article.promoCodes || [])){
     const li = document.createElement('div');
-    const visible = p.code.slice(0, -4);
-    const masked = p.code.slice(-4);
+    const split = Math.floor(p.code.length / 2);
+    const visible = p.code.slice(0, split);
+    const hidden = p.code.slice(split);
     li.className = 'promo-code';
     li.innerHTML = `
       <div>
         <div><strong>${p.label || 'Code'}</strong> – <span class="store">${p.store || ''}</span></div>
-        <div><span class="visible">${visible}</span><span class="code-mask">${masked}</span></div>
+        <div><span class="visible">${visible}</span><span class="code-mask" data-hidden="${hidden}">${'•'.repeat(hidden.length)}</span></div>
       </div>
       <button class="reveal-btn" data-url="${p.affiliateUrl}" aria-label="Reveal code and open deal">Reveal</button>
     `;
@@ -54,8 +55,11 @@ function renderArticle(article){
   }
   qsa('.reveal-btn').forEach(btn => {
     btn.addEventListener('click', (e)=>{
-      const codeEl = e.target.closest('.promo-code').querySelector('.code-mask');
-      codeEl.classList.remove('code-mask');
+      const promo = e.target.closest('.promo-code');
+      const codeWrap = promo.querySelector('.visible').parentElement;
+      const mask = promo.querySelector('.code-mask');
+      const full = promo.querySelector('.visible').textContent + mask.dataset.hidden;
+      codeWrap.textContent = full;
       const url = e.target.getAttribute('data-url');
       const w = window.open(url, '_blank', 'noopener');
       if(!w){ setTimeout(()=>{ location.href = url; }, 500); }
