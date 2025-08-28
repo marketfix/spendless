@@ -51,7 +51,7 @@ button.burger {
 .burger-open .burger-lines::before { transform: rotate(90deg) translateX(-6px); top:0; }
 .burger-open .burger-lines::after { opacity:0; }
 
-.mobile-nav { position: fixed; inset:0; background: rgba(0,0,0,.35); display:block; opacity:0; pointer-events:none; transition: opacity .25s ease; }
+.mobile-nav { position: fixed; inset:0; background: rgba(0,0,0,.35); display:block; opacity:0; pointer-events:none; transition: opacity .25s ease; z-index: 100; }
 .mobile-nav .sheet {
   background:#fff; position:absolute; left:0; top:0; bottom:0; width: 85%; max-width: 420px; padding: 1rem; overflow:auto;
   border-top-right-radius: 20px; border-bottom-right-radius:20px; transform: translateX(-100%); transition: transform .3s ease;
