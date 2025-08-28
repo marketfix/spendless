@@ -59,7 +59,21 @@ button.burger {
 .mobile-nav.is-open { opacity:1; pointer-events:auto; }
 .mobile-nav.is-open .sheet { transform: translateX(0); }
 .mobile-nav a { display:block; padding: .9rem 1rem; border-radius: 12px; margin:.25rem 0; background: #f3f4f6; }
-.mobile-nav .close { position:absolute; right:1rem; top:1rem; background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:.5rem .6rem; }
+.mobile-nav .close {
+  position:absolute; right:1rem; top:1rem;
+  background:#fff; border:1px solid #e5e7eb; border-radius:12px;
+  width:44px; height:44px; padding:0;
+  display:grid; place-items:center;
+}
+.close-lines, .close-lines::before {
+  display:block; width:20px; height:2px; background:#111; border-radius:2px;
+}
+.close-lines {
+  position:relative; transform: rotate(45deg);
+}
+.close-lines::before {
+  content:""; position:absolute; left:0; top:0; transform: rotate(-90deg);
+}
 
 .hero { padding: 1.5rem 0 1rem; }
 .hero h1 { font-size: clamp(1.35rem, 3vw, 2rem); margin:.5rem 0; }
