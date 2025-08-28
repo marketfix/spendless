@@ -61,8 +61,7 @@ function renderArticle(article){
       const full = promo.querySelector('.visible').textContent + mask.dataset.hidden;
       codeWrap.textContent = full;
       const url = e.target.getAttribute('data-url');
-      const w = window.open(url, '_blank', 'noopener');
-      if(!w){ setTimeout(()=>{ location.href = url; }, 500); }
+      window.open(url, '_blank', 'noopener');
     });
   });
 }
