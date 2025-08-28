@@ -15,11 +15,11 @@
   <meta property="og:title" content="SpendLess! — Fresh Deals & Promo Codes">
   <meta property="og:description" content="Mobile-first deals: coupons, promo codes, and discounts with reveal-to-copy and one-click to shop.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="site.webmanifest">
 
 </head>
 <body>
@@ -40,23 +40,23 @@
     </nav>
     <button class="burger js-open" aria-label="Open menu"><span class="burger-lines"></span></button>
   </div>
-  <div class="mobile-nav" aria-hidden="true" role="dialog" aria-label="Mobile menu">
-    <div class="sheet">
-      <button class="close js-close" aria-label="Close menu">✕</button>
-      <h3>Browse deals</h3>
-      <a href="index.html">Featured</a>
-      <a href="index.html?cat=Travel">Travel</a>
-      <a href="index.html?cat=Fashion">Fashion</a>
-      <a href="index.html?cat=Marketplace">Marketplace</a>
-      <a href="index.html?cat=Automotive">Automotive</a>
-      <a href="index.html?cat=Health">Health</a>
-      <a href="index.html?cat=Tech">Tech</a>
-      <hr>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-    </div>
-  </div>
 </header>
+<div class="mobile-nav" aria-hidden="true" role="dialog" aria-label="Mobile menu">
+  <div class="sheet">
+    <button class="close js-close" aria-label="Close menu">✕</button>
+    <h3>Browse deals</h3>
+    <a href="index.html">Featured</a>
+    <a href="index.html?cat=Travel">Travel</a>
+    <a href="index.html?cat=Fashion">Fashion</a>
+    <a href="index.html?cat=Marketplace">Marketplace</a>
+    <a href="index.html?cat=Automotive">Automotive</a>
+    <a href="index.html?cat=Health">Health</a>
+    <a href="index.html?cat=Tech">Tech</a>
+    <hr>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</div>
 
   <main class="container">
     <article>
@@ -114,6 +114,7 @@
 </footer>
 
   <script src="js/marked.min.js"></script>
+  <script src="js/nav.js" defer></script>
   <script src="js/article.js" defer></script>
 </body>
 </html>
