@@ -65,14 +65,29 @@ button.burger {
   width:44px; height:44px; padding:0;
   display:grid; place-items:center;
 }
-.close-lines, .close-lines::before {
-  display:block; width:20px; height:2px; background:#111; border-radius:2px;
-}
 .close-lines {
-  position:relative; transform: rotate(45deg);
+  position:relative;
+  width:20px;
+  height:20px;
+  display:block;
+}
+.close-lines::before,
+.close-lines::after {
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  width:20px;
+  height:2px;
+  background:#111;
+  border-radius:2px;
+  transform-origin:center;
 }
 .close-lines::before {
-  content:""; position:absolute; left:0; top:0; transform: rotate(-90deg);
+  transform:translateY(-50%) rotate(45deg);
+}
+.close-lines::after {
+  transform:translateY(-50%) rotate(-45deg);
 }
 
 .hero { padding: 1.5rem 0 1rem; }
