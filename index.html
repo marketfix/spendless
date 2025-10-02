@@ -8,7 +8,6 @@
   <meta name="description" content="Fresh promo codes, coupons, and discounts shared and curated by the community.">
   <link rel="canonical" href="https://spendlesso.com/">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="preload" href="js/marked.min.js" as="script">
   <meta property="og:site_name" content="SpendLess!">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/brand/piggy-512.png">
@@ -18,7 +17,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
@@ -27,11 +26,10 @@
 <header class="site-header">
   <div class="header-inner container">
     <a class="brand" href="index.html" aria-label="SpendLess! Home">
-      <img class="brand-logo" src="assets/brand/piggy.png" alt="SpendLess! piggy bank logo"> 
+      <img class="brand-logo" src="assets/brand/piggy.png" alt="SpendLess! logo"> 
       <span class="brand-title">SpendLess!</span>
     </a>
-    <!-- categories will render here -->
-    <nav class="primary" aria-label="Primary" data-cat-list data-include-featured="true"></nav>
+    <nav class="primary" aria-label="Primary" data-cat-list data-featured></nav>
     <button class="burger js-open" aria-label="Open menu"><span class="burger-lines"></span></button>
   </div>
 </header>
@@ -40,8 +38,7 @@
   <div class="sheet">
     <button class="close js-close" aria-label="Close menu"><span class="close-lines"></span></button>
     <h3>Browse deals</h3>
-    <!-- categories will render here -->
-    <nav data-cat-list data-include-featured="true"></nav>
+    <nav data-cat-list data-featured></nav>
     <hr>
     <a href="about.html">About</a>
     <a href="privacy.html">Privacy</a>
@@ -67,7 +64,7 @@
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
-      <ul class="footer-cats" data-cat-list></ul>
+      <ul data-cat-list></ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
@@ -85,50 +82,20 @@
       </ul>
     </div>
   </div>
-  <div class="smallprint">&copy; 2025 SpendLess!. All rights reserved. Affiliate links may earn us a commission.</div>
+  <div class="smallprint">&copy; 2025 SpendLess!. All rights reserved.</div>
 </footer>
 
-<!-- Category data: single source of truth -->
-<script id="category-data" type="application/json">["Travel","Fashion","Health","Other"]</script>
+<!-- Categories: single source -->
+<script id="cats" type="application/json">["Travel","Fashion","Health","Other"]</script>
 
-<!-- Rendering script -->
 <script>
-(function () {
-  const dataEl = document.getElementById('category-data');
-  if (!dataEl) return;
-  const CATEGORIES = JSON.parse(dataEl.textContent || '[]');
-
-  function makeAnchor(cat) {
-    const a = document.createElement('a');
-    a.href = `index.html?cat=${encodeURIComponent(cat)}`;
-    a.textContent = cat;
-    return a;
-  }
-
-  function renderInto(container) {
-    const includeFeatured = container.hasAttribute('data-include-featured');
-    const nodes = [];
-    if (includeFeatured) {
-      const featured = document.createElement('a');
-      featured.href = 'index.html';
-      featured.textContent = 'Featured';
-      nodes.push(featured);
-    }
-    for (const cat of CATEGORIES) nodes.push(makeAnchor(cat));
-
-    if (container.tagName === 'UL') {
-      nodes.forEach(a => {
-        const li = document.createElement('li');
-        li.appendChild(a);
-        container.appendChild(li);
-      });
-    } else {
-      nodes.forEach(a => container.appendChild(a));
-    }
-  }
-
-  document.querySelectorAll('[data-cat-list]').forEach(renderInto);
-})();
+const cats = JSON.parse(document.getElementById('cats').textContent);
+document.querySelectorAll('[data-cat-list]').forEach(el=>{
+  let links = el.hasAttribute('data-featured') ? `<a href="index.html">Featured</a>` : '';
+  cats.forEach(c=> links += `<a href="index.html?cat=${c}">${c}</a>`);
+  // If UL, wrap in <li>
+  el.innerHTML = el.tagName==='UL' ? links.replaceAll('<a','<li><a').replaceAll('</a>','</a></li>') : links;
+});
 </script>
 
 <script src="js/nav.js" defer></script>
