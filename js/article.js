@@ -1,11 +1,9 @@
 
 const categoryImages = {
-  "Fashion": "assets/images/fashion.jpg",
-  "Travel": "assets/images/travel.jpg",
-  "Marketplace": "assets/images/marketplace.jpg",
-  "Automotive": "assets/images/automotive.jpg",
-  "Health": "assets/images/health.jpg",
-  "Tech": "assets/images/tech.jpg"
+  "Fashion": "assets/images/fashion.jpeg",
+  "Travel": "assets/images/travel.jpeg",
+  "Health": "assets/images/health.jpeg",
+  "Other": "assets/images/other.jpeg"
 };
 function qs(sel){ return document.querySelector(sel); }
 function qsa(sel){ return [...document.querySelectorAll(sel)]; }
@@ -23,7 +21,7 @@ function renderArticle(article){
   if(!article){ qs('main').innerHTML = '<p>Article not found.</p>'; return; }
   document.title = article.title + ' – SpendLess!';
   qs('#article-title').textContent = article.title;
-  const imgSrc = categoryImages[article.category] || 'assets/images/marketplace.jpg';
+  const imgSrc = categoryImages[article.category] || 'assets/images/marketplace.jpeg';
   qs('#article-img').src = imgSrc;
   qs('#article-img').alt = article.category + ' illustration';
   qs('#article-meta').textContent = `${article.category} · ${new Date(article.date).toLocaleDateString()}`;

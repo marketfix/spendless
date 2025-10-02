@@ -1,11 +1,9 @@
 
 const categoryImages = {
-  "Fashion": "assets/images/fashion.jpg",
-  "Travel": "assets/images/travel.jpg",
-  "Marketplace": "assets/images/marketplace.jpg",
-  "Automotive": "assets/images/automotive.jpg",
-  "Health": "assets/images/health.jpg",
-  "Tech": "assets/images/tech.jpg"
+  "Fashion": "assets/images/fashion.jpeg",
+  "Travel": "assets/images/travel.jpeg",
+  "Health": "assets/images/health.jpeg",
+  "Other": "assets/images/other.jpeg"
 };
 const API = {
   async loadArticles(){
