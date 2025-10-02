@@ -17,5 +17,8 @@ function setupHeader(){
   sheetWrap.addEventListener('click', (e)=>{ if(e.target === sheetWrap) close(); });
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
 }
-
-document.addEventListener('DOMContentLoaded', setupHeader);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupHeader);
+} else {
+  setupHeader();
+}

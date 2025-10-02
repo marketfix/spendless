@@ -79,4 +79,9 @@ async function init(){
   renderGrid(filtered, page);
   window.addEventListener('resize', ()=> renderGrid(filtered, getPageFromQuery()));
 }
-document.addEventListener('DOMContentLoaded', init);
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
