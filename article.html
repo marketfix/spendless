@@ -1,81 +1,65 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Deal – SpendLess!</title>
+  <title>SpendLess! Fresh Deals & Promo Codes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#c8f5d2">
-  <meta name="description" content="SpendLess! — Fresh promo codes, coupons, and deals curated by the community.">
+  <meta name="description" content="Fresh promo codes, coupons, and discounts shared and curated by the community.">
   <link rel="canonical" href="https://spendlesso.com/">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="preload" href="js/marked.min.js" as="script">
   <meta property="og:site_name" content="SpendLess!">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/brand/piggy-512.png">
-  <meta property="og:title" content="SpendLess! — Fresh Deals & Promo Codes">
-  <meta property="og:description" content="Mobile-first deals: coupons, promo codes, and discounts with reveal-to-copy and one-click to shop.">
+  <meta property="og:title" content="SpendLess! Fresh Deals & Promo Codes">
+  <meta property="og:description" content="Fresh promo codes, coupons, and discounts shared and curated by the community.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="manifest" href="site.webmanifest">
-
 </head>
 <body>
   
 <header class="site-header">
   <div class="header-inner container">
     <a class="brand" href="index.html" aria-label="SpendLess! Home">
-      <img class="brand-logo" src="assets/brand/piggy.png" alt="SpendLess! piggy bank logo"> <span class="brand-title">SpendLess!</span>
+      <img class="brand-logo" src="assets/brand/piggy.png" alt="SpendLess! piggy bank logo">
+      <span class="brand-title">SpendLess!</span>
     </a>
-    <nav class="primary" aria-label="Primary">
-      <a href="index.html">Featured</a>
-      <a href="index.html?cat=Travel">Travel</a>
-      <a href="index.html?cat=Fashion">Fashion</a>
-      <a href="index.html?cat=Marketplace">Marketplace</a>
-      <a href="index.html?cat=Automotive">Automotive</a>
-      <a href="index.html?cat=Health">Health</a>
-      <a href="index.html?cat=Tech">Tech</a>
-    </nav>
+    <nav class="primary" aria-label="Primary" data-cat-list data-featured></nav>
     <button class="burger js-open" aria-label="Open menu"><span class="burger-lines"></span></button>
   </div>
 </header>
+
 <div class="mobile-nav" aria-hidden="true" role="dialog" aria-label="Mobile menu">
   <div class="sheet">
     <button class="close js-close" aria-label="Close menu"><span class="close-lines"></span></button>
     <h3>Browse deals</h3>
-    <a href="index.html">Featured</a>
-    <a href="index.html?cat=Travel">Travel</a>
-    <a href="index.html?cat=Fashion">Fashion</a>
-    <a href="index.html?cat=Marketplace">Marketplace</a>
-    <a href="index.html?cat=Automotive">Automotive</a>
-    <a href="index.html?cat=Health">Health</a>
-    <a href="index.html?cat=Tech">Tech</a>
+    <nav data-cat-list data-featured></nav>
     <hr>
     <a href="about.html">About</a>
     <a href="privacy.html">Privacy</a>
   </div>
 </div>
 
-  <main class="container">
-    <article>
-      <header>
-        <img id="article-img" src="assets/images/marketplace.jpg" alt="">
-      </header>
-      <div class="content">
-        <h1 id="article-title">Loading…</h1>
-        <div class="meta" id="article-meta"></div>
-        <p class="prose" id="article-excerpt"></p>
-        <div id="article-content" class="prose"></div>
-        <div class="promo-block" aria-labelledby="promo-title">
-          <h2 id="promo-title">Promo Codes</h2>
-          <p>Click to reveal the full code. We’ll open the deal in a new tab.</p>
-          <div class="promo-list"></div>
-        </div>
+<main class="container">
+  <article>
+    <header><img id="article-img" src="assets/images/marketplace.jpg" alt=""></header>
+    <div class="content">
+      <h1 id="article-title">Loading…</h1>
+      <div id="article-meta" class="meta"></div>
+      <p id="article-excerpt" class="prose"></p>
+      <div id="article-content" class="prose"></div>
+      <div class="promo-block" aria-labelledby="promo-title">
+        <h2 id="promo-title">Promo Codes</h2>
+        <p>Click to reveal the full code. We’ll open the deal in a new tab.</p>
+        <div class="promo-list"></div>
       </div>
-    </article>
-  </main>
+    </div>
+  </article>
+</main>
   
 <footer class="site-footer">
   <div class="footer-inner container">
@@ -85,14 +69,7 @@
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
-      <ul>
-        <li><a href="index.html?cat=Travel">Travel</a></li>
-        <li><a href="index.html?cat=Fashion">Fashion</a></li>
-        <li><a href="index.html?cat=Marketplace">Marketplace</a></li>
-        <li><a href="index.html?cat=Automotive">Automotive</a></li>
-        <li><a href="index.html?cat=Health">Health</a></li>
-        <li><a href="index.html?cat=Tech">Tech</a></li>
-      </ul>
+      <ul data-cat-list></ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
@@ -110,11 +87,22 @@
       </ul>
     </div>
   </div>
-  <div class="smallprint">&copy; 2025 SpendLess!. All rights reserved. Affiliate links may earn us a commission.</div>
+  <div class="smallprint">&copy; 2025 SpendLess!. All rights reserved.</div>
 </footer>
 
-  <script src="js/marked.min.js"></script>
-  <script src="js/nav.js" defer></script>
-  <script src="js/article.js" defer></script>
+<!-- One JSON source for all pages -->
+<script id="cats" type="application/json">["Travel","Fashion","Marketplace","Automotive","Health","Tech"]</script>
+<script>
+const cats=JSON.parse(document.getElementById('cats').textContent);
+document.querySelectorAll('[data-cat-list]').forEach(el=>{
+  let html=el.hasAttribute('data-featured')?`<a href="index.html">Featured</a>`:'';
+  cats.forEach(c=>html+=`<a href="index.html?cat=${c}">${c}</a>`);
+  el.innerHTML=el.tagName==='UL'?html.replaceAll('<a','<li><a').replaceAll('</a>','</a></li>'):html;
+});
+</script>
+
+<script src="js/marked.min.js"></script>
+<script src="js/nav.js" defer></script>
+<script src="js/article.js" defer></script>
 </body>
 </html>
