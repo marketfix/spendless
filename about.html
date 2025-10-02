@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="SpendLess!">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/brand/piggy-512.png">
-  <meta property="og:title" content="SpendLess! — Fresh Deals & Promo Codes">
+  <meta property="og:title" content="SpendLess! Fresh Deals & Promo Codes">
   <meta property="og:description" content="Mobile-first deals: coupons, promo codes, and discounts with reveal-to-copy and one-click to shop.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -20,49 +20,36 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="manifest" href="site.webmanifest">
-
 </head>
 <body>
   
 <header class="site-header">
   <div class="header-inner container">
     <a class="brand" href="index.html" aria-label="SpendLess! Home">
-      <img class="brand-logo" src="assets/brand/piggy.png" alt="SpendLess! piggy bank logo"> <span class="brand-title">SpendLess!</span>
+      <img class="brand-logo" src="assets/brand/piggy.png" alt="SpendLess! piggy bank logo">
+      <span class="brand-title">SpendLess!</span>
     </a>
-    <nav class="primary" aria-label="Primary">
-      <a href="index.html">Featured</a>
-      <a href="index.html?cat=Travel">Travel</a>
-      <a href="index.html?cat=Fashion">Fashion</a>
-      <a href="index.html?cat=Marketplace">Marketplace</a>
-      <a href="index.html?cat=Automotive">Automotive</a>
-      <a href="index.html?cat=Health">Health</a>
-      <a href="index.html?cat=Tech">Tech</a>
-    </nav>
+    <!-- Auto-rendered categories -->
+    <nav class="primary" aria-label="Primary" data-cat-list data-featured></nav>
     <button class="burger js-open" aria-label="Open menu"><span class="burger-lines"></span></button>
   </div>
 </header>
+
 <div class="mobile-nav" aria-hidden="true" role="dialog" aria-label="Mobile menu">
   <div class="sheet">
     <button class="close js-close" aria-label="Close menu"><span class="close-lines"></span></button>
     <h3>Browse deals</h3>
-    <a href="index.html">Featured</a>
-    <a href="index.html?cat=Travel">Travel</a>
-    <a href="index.html?cat=Fashion">Fashion</a>
-    <a href="index.html?cat=Marketplace">Marketplace</a>
-    <a href="index.html?cat=Automotive">Automotive</a>
-    <a href="index.html?cat=Health">Health</a>
-    <a href="index.html?cat=Tech">Tech</a>
+    <!-- Auto-rendered categories -->
+    <nav data-cat-list data-featured></nav>
     <hr>
     <a href="about.html">About</a>
     <a href="privacy.html">Privacy</a>
   </div>
 </div>
 
-  <main class="container">
-    <h1>About SpendLess!</h1>
-    <p>SpendLess! (spendlesso.com) is a mobile-first deal site inspired by our community at <a href="https://reddit.com/r/spendless" rel="nofollow">r/SpendLess</a>. We group deals into useful categories like Travel, Fashion, Marketplace, Automotive, Health, and Tech.</p>
-    <p>New articles are added via simple <code>data/articles.json</code> entries and Markdown files in <code>content/</code>. No code changes needed.</p>
-  </main>
+<main class="container">
+<section id="about"> <h1>About spendless</h1> <p>Welcome to <strong>spendless</strong> — your community-powered hub for the latest <em>deals, discounts, and promo codes</em>, all gathered in one place for the easiest possible savings.</p> <h2>Our mission</h2> <p>Make saving money simple, social, and fast. We bring shoppers together to surface real, working offers so you can skip the hunt and start saving.</p> <h2>What we do</h2> <ul> <li><strong>Community-curated deals:</strong> Members share finds from across the web and in-store.</li> <li><strong>Verified offers:</strong> Upvotes, comments, and reports keep expired or fake codes out.</li> <li><strong>All-in-one access:</strong> Search, filter, and bookmark the hottest promos in seconds.</li> <li><strong>Real-time freshness:</strong> New submissions and trending lists help you catch limited-time drops.</li> </ul> <h2>How it works</h2> <ol> <li><strong>Discover:</strong> Browse today’s top deals, editor picks, and community trends.</li> <li><strong>Validate:</strong> Check success notes, expiry times, and store restrictions.</li> <li><strong>Score:</strong> Apply codes at checkout and watch the total drop.</li> <li><strong>Give back:</strong> Post a deal, confirm a code, or flag what’s expired.</li> </ol> <h2>Our promise</h2> <p>We prioritize clarity and credibility. Each listing highlights price history (when available), code success rates, and relevant terms so you can make confident, quick decisions.</p> <h2>Join the community</h2> <p>spendless works best when everyone participates. Share what you find, celebrate big saves, and help others avoid dud codes. Together, we spend less—on everything.</p> <p><strong>Start saving smarter with spendless.</strong></p> </section>
+</main>
   
 <footer class="site-footer">
   <div class="footer-inner container">
@@ -72,14 +59,8 @@
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
-      <ul>
-        <li><a href="index.html?cat=Travel">Travel</a></li>
-        <li><a href="index.html?cat=Fashion">Fashion</a></li>
-        <li><a href="index.html?cat=Marketplace">Marketplace</a></li>
-        <li><a href="index.html?cat=Automotive">Automotive</a></li>
-        <li><a href="index.html?cat=Health">Health</a></li>
-        <li><a href="index.html?cat=Tech">Tech</a></li>
-      </ul>
+      <!-- Auto-rendered categories -->
+      <ul data-cat-list></ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
@@ -99,6 +80,22 @@
   </div>
   <div class="smallprint">&copy; 2025 SpendLess!. All rights reserved. Affiliate links may earn us a commission.</div>
 </footer>
+
+<!-- Categories: single source (keep this in sync with your homepage) -->
+<script id="cats" type="application/json">["Travel","Fashion","Health","Other"]</script>
+
+<!-- Short auto-render script -->
+<script>
+const cats = JSON.parse(document.getElementById('cats').textContent);
+document.querySelectorAll('[data-cat-list]').forEach(el=>{
+  let html = el.hasAttribute('data-featured') ? `<a href="index.html">Featured</a>` : '';
+  cats.forEach(c => html += `<a href="index.html?cat=${encodeURIComponent(c)}">${c}</a>`);
+  el.innerHTML = el.tagName === 'UL'
+    ? html.replaceAll('<a','<li><a').replaceAll('</a>','</a></li>')
+    : html;
+});
+</script>
+
 <script src="js/nav.js" defer></script>
 </body>
 </html>
