@@ -5,87 +5,69 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#c8f5d2">
-  <meta name="description" content="SpendLess! — Fresh promo codes, coupons, and deals curated by the community.">
+  <meta name="description" content="Fresh promo codes, coupons, and discounts shared and curated by the community.">
   <link rel="canonical" href="https://spendlesso.com/">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preload" href="js/marked.min.js" as="script">
   <meta property="og:site_name" content="SpendLess!">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/brand/piggy-512.png">
-  <meta property="og:title" content="SpendLess! — Fresh Deals & Promo Codes">
-  <meta property="og:description" content="Mobile-first deals: coupons, promo codes, and discounts with reveal-to-copy and one-click to shop.">
+  <meta property="og:title" content="SpendLess! - Fresh Deals & Promo Codes">
+  <meta property="og:description" content="Fresh promo codes, coupons, and discounts shared and curated by the community.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="manifest" href="site.webmanifest">
-
 </head>
 <body>
-  <div class="notice">🔥 New: Daily updated codes and curated deals from the community.</div>
+  <div class="notice">🔥 New: User submitted discount codes are automatically verified</div>
   
 <header class="site-header">
   <div class="header-inner container">
     <a class="brand" href="index.html" aria-label="SpendLess! Home">
-      <img class="brand-logo" src="assets/brand/piggy.png" alt="SpendLess! piggy bank logo"> <span class="brand-title">SpendLess!</span>
+      <img class="brand-logo" src="assets/brand/piggy.png" alt="SpendLess! piggy bank logo"> 
+      <span class="brand-title">SpendLess!</span>
     </a>
-    <nav class="primary" aria-label="Primary">
-      <a href="index.html">Featured</a>
-      <a href="index.html?cat=Travel">Travel</a>
-      <a href="index.html?cat=Fashion">Fashion</a>
-      <a href="index.html?cat=Marketplace">Marketplace</a>
-      <a href="index.html?cat=Automotive">Automotive</a>
-      <a href="index.html?cat=Health">Health</a>
-      <a href="index.html?cat=Tech">Tech</a>
-    </nav>
+    <!-- categories will render here -->
+    <nav class="primary" aria-label="Primary" data-cat-list data-include-featured="true"></nav>
     <button class="burger js-open" aria-label="Open menu"><span class="burger-lines"></span></button>
   </div>
 </header>
+
 <div class="mobile-nav" aria-hidden="true" role="dialog" aria-label="Mobile menu">
   <div class="sheet">
     <button class="close js-close" aria-label="Close menu"><span class="close-lines"></span></button>
     <h3>Browse deals</h3>
-    <a href="index.html">Featured</a>
-    <a href="index.html?cat=Travel">Travel</a>
-    <a href="index.html?cat=Fashion">Fashion</a>
-    <a href="index.html?cat=Marketplace">Marketplace</a>
-    <a href="index.html?cat=Automotive">Automotive</a>
-    <a href="index.html?cat=Health">Health</a>
-    <a href="index.html?cat=Tech">Tech</a>
+    <!-- categories will render here -->
+    <nav data-cat-list data-include-featured="true"></nav>
     <hr>
     <a href="about.html">About</a>
     <a href="privacy.html">Privacy</a>
   </div>
 </div>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Spend less, smile more.</h1>
-      <p>Discover time-sensitive promo codes and discounts. Tap a card to get the code and shop the deal.</p>
-    </section>
-    <section aria-label="Latest deals">
-      <div class="grid" id="cards"></div>
-      <nav class="pagination" aria-label="Pagination"></nav>
-    </section>
-  </main>
+<main class="container">
+  <section class="hero">
+    <h1>Latest Deals</h1>
+    <p>Discover the newest trending deals according to the community</p>
+  </section>
+  <section aria-label="Latest deals">
+    <div class="grid" id="cards"></div>
+    <nav class="pagination" aria-label="Pagination"></nav>
+  </section>
+</main>
   
 <footer class="site-footer">
   <div class="footer-inner container">
     <div class="footer-col">
       <h4>SpendLess!</h4>
-      <p>Spend less, save more. Curated deals, promo codes, and money-saving tips — mobile first.</p>
+      <p>Spend less, save more. Find curated deals, promo codes, and discounts shared by our community.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
-      <ul>
-        <li><a href="index.html?cat=Travel">Travel</a></li>
-        <li><a href="index.html?cat=Fashion">Fashion</a></li>
-        <li><a href="index.html?cat=Marketplace">Marketplace</a></li>
-        <li><a href="index.html?cat=Automotive">Automotive</a></li>
-        <li><a href="index.html?cat=Health">Health</a></li>
-        <li><a href="index.html?cat=Tech">Tech</a></li>
-      </ul>
+      <ul class="footer-cats" data-cat-list></ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
@@ -98,15 +80,58 @@
     <div class="footer-col">
       <h4>Follow</h4>
       <ul>
-        <li><a href="https://reddit.com/r/spendless" rel="noopener nofollow">r/SpendLess</a></li>
-        <li><a href="#" aria-disabled="true">Twitter/X</a></li>
+        <li><a href="https://reddit.com/r/spendless" rel="noopener nofollow">Reddit</a></li>
+        <li><a href="https://www.tiktok.com/@spendlesso" aria-disabled="true">TikTok</a></li>
       </ul>
     </div>
   </div>
   <div class="smallprint">&copy; 2025 SpendLess!. All rights reserved. Affiliate links may earn us a commission.</div>
 </footer>
 
-  <script src="js/nav.js" defer></script>
-  <script src="js/home.js" defer></script>
+<!-- Category data: single source of truth -->
+<script id="category-data" type="application/json">["Travel","Fashion","Health","Other"]</script>
+
+<!-- Rendering script -->
+<script>
+(function () {
+  const dataEl = document.getElementById('category-data');
+  if (!dataEl) return;
+  const CATEGORIES = JSON.parse(dataEl.textContent || '[]');
+
+  function makeAnchor(cat) {
+    const a = document.createElement('a');
+    a.href = `index.html?cat=${encodeURIComponent(cat)}`;
+    a.textContent = cat;
+    return a;
+  }
+
+  function renderInto(container) {
+    const includeFeatured = container.hasAttribute('data-include-featured');
+    const nodes = [];
+    if (includeFeatured) {
+      const featured = document.createElement('a');
+      featured.href = 'index.html';
+      featured.textContent = 'Featured';
+      nodes.push(featured);
+    }
+    for (const cat of CATEGORIES) nodes.push(makeAnchor(cat));
+
+    if (container.tagName === 'UL') {
+      nodes.forEach(a => {
+        const li = document.createElement('li');
+        li.appendChild(a);
+        container.appendChild(li);
+      });
+    } else {
+      nodes.forEach(a => container.appendChild(a));
+    }
+  }
+
+  document.querySelectorAll('[data-cat-list]').forEach(renderInto);
+})();
+</script>
+
+<script src="js/nav.js" defer></script>
+<script src="js/home.js" defer></script>
 </body>
 </html>
