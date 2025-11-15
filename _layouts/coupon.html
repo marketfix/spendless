@@ -1,5 +1,61 @@
 ---
 layout: default
 ---
-<h1 class="text-2xl font-semibold">{{ page.title }}</h1>
-{{ content }}
+
+<article class="space-y-6 max-w-2xl">
+  <header class="space-y-2">
+    <p class="text-xs uppercase tracking-wide text-slate-500">
+      <a href="{{ '/brands/' | append: page.brand_slug | append: '/' | relative_url }}" class="hover:text-slate-900">
+        {{ page.brand_slug | capitalize }}
+      </a>
+      · Coupon
+    </p>
+    <h1 class="text-2xl font-semibold tracking-tight">{{ page.title }}</h1>
+
+    <div class="flex flex-wrap items-center gap-3">
+      {% if page.discount_value %}
+        <span class="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-800">
+          {{ page.discount_value }}
+        </span>
+      {% endif %}
+
+      {% if page.is_expired %}
+        <span class="text-xs font-medium px-2 py-1 rounded-full bg-red-50 text-red-700">
+          Expired
+        </span>
+      {% elsif page.valid_until %}
+        <span class="text-xs text-slate-500">
+          Valid until {{ page.valid_until }}
+        </span>
+      {% else %}
+        <span class="text-xs text-slate-500">
+          Valid for a limited time
+        </span>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.code %}
+    <section class="bg-slate-900 text-slate-50 rounded-xl px-4 py-3 flex items-center justify-between">
+      <div>
+        <p class="text-[11px] uppercase tracking-wide text-slate-400">Code</p>
+        <p class="font-mono text-sm">{{ page.code }}</p>
+      </div>
+      <span class="text-[11px] border border-slate-600 rounded-full px-3 py-1">
+        Copy manually at checkout
+      </span>
+    </section>
+  {% endif %}
+
+  <section class="prose prose-sm max-w-none">
+    {{ content }}
+  </section>
+
+  {% if page.url_external %}
+    <a href="{{ page.url_external }}"
+       class="inline-flex items-center text-sm font-medium text-slate-900 border border-slate-300 rounded-full px-4 py-2 hover:bg-slate-100">
+      Go to {{ page.brand_slug | capitalize }} site
+      <span class="ml-2">↗</span>
+    </a>
+  {% endif %}
+</article>
