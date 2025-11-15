@@ -1,0 +1,141 @@
+{
+  "articles": [
+    {
+      "slug": "shein-mega-thread",
+      "title": "[SHEIN] Mega Thread: All working codes in one place",
+      "category": "Fashion",
+      "excerpt": "Community-sourced SHEIN coupon codes updated frequently \u2014 save on your next haul.",
+      "date": "2025-08-22",
+      "discount": "Up to 30%",
+      "badge": "Hot",
+      "contentPath": "content/shein.md",
+      "promoCodes": [
+        {
+          "label": "SHEIN Code",
+          "store": "SHEIN",
+          "code": "NEWONLY30",
+          "affiliateUrl": "https://example.com/aff/shein"
+        }
+      ]
+    },
+    {
+      "slug": "hotels-dot-com-mega-list",
+      "title": "Hotels.com \u2014 Promo Code MEGA LIST 2025",
+      "category": "Travel",
+      "excerpt": "Keep this tab handy: use one of these codes when booking on Hotels.com.",
+      "date": "2025-08-21",
+      "discount": "10\u201315%",
+      "contentPath": "content/hotels.md",
+      "promoCodes": [
+        {
+          "label": "Hotels.com Code",
+          "store": "Hotels.com",
+          "code": "CARDHT8XX",
+          "affiliateUrl": "https://example.com/aff/hotels"
+        }
+      ]
+    },
+    {
+      "slug": "ebay-coupon-collection",
+      "title": "A collection of various eBay coupon codes",
+      "category": "Marketplace",
+      "excerpt": "From sneakers to trading cards \u2014 try these eBay codes at checkout.",
+      "date": "2025-08-24",
+      "discount": "10\u201315%",
+      "contentPath": "content/ebay.md",
+      "promoCodes": [
+        {
+          "label": "eBay Code",
+          "store": "eBay",
+          "code": "ALLDECKEDOUT",
+          "affiliateUrl": "https://example.com/aff/ebay"
+        }
+      ]
+    },
+    {
+      "slug": "expedia-city-codes",
+      "title": "Expedia promo codes sorted by location (20%+)",
+      "category": "Travel",
+      "excerpt": "Try these city-specific Expedia codes for prepaid hotel bookings in Europe.",
+      "date": "2025-08-18",
+      "discount": "20%",
+      "contentPath": "content/expedia.md",
+      "promoCodes": [
+        {
+          "label": "Expedia Code",
+          "store": "Expedia",
+          "code": "TAYLOR2025",
+          "affiliateUrl": "https://example.com/aff/expedia"
+        }
+      ]
+    },
+    {
+      "slug": "1800-contacts-40-off",
+      "title": "1800 Contacts \u2014 Back to School 40% discount",
+      "category": "Health",
+      "excerpt": "Score big savings on lenses with this limited-time back-to-school offer.",
+      "date": "2025-08-20",
+      "discount": "40%",
+      "contentPath": "content/contacts.md",
+      "promoCodes": [
+        {
+          "label": "Contacts Code",
+          "store": "1-800 Contacts",
+          "code": "SCHOOL40",
+          "affiliateUrl": "https://example.com/aff/contacts"
+        }
+      ]
+    },
+    {
+      "slug": "lulus-bundle-20-off",
+      "title": "Lulus bundle code \u2014 20% off when you grab 2+ items",
+      "category": "Fashion",
+      "excerpt": "Add two pieces to your cart and apply this code to save.",
+      "date": "2025-08-18",
+      "discount": "20%",
+      "contentPath": "content/lulus.md",
+      "promoCodes": [
+        {
+          "label": "Lulus Bundle",
+          "store": "Lulus",
+          "code": "BUY2GET20",
+          "affiliateUrl": "https://example.com/aff/lulus"
+        }
+      ]
+    },
+    {
+      "slug": "auto-nation-20-off",
+      "title": "Auto Nation Parts \u2014 20% discount with partner link",
+      "category": "Automotive",
+      "excerpt": "OEM parts and accessories for less \u2014 use our partner link to save.",
+      "date": "2025-08-20",
+      "discount": "20%",
+      "contentPath": "content/autonation.md",
+      "promoCodes": [
+        {
+          "label": "Auto Nation",
+          "store": "Auto Nation Parts",
+          "code": "AUTONATION20",
+          "affiliateUrl": "https://example.com/aff/autonation"
+        }
+      ]
+    },
+    {
+      "slug": "b2s-tech-deals",
+      "title": "Back-to-school tech deals roundup",
+      "category": "Tech",
+      "excerpt": "SSDs, monitors, and student software \u2014 highlights from this week.",
+      "date": "2025-08-15",
+      "discount": "Varies",
+      "contentPath": "content/tech.md",
+      "promoCodes": [
+        {
+          "label": "Student Deal",
+          "store": "Various",
+          "code": "STUDENTSAVE10",
+          "affiliateUrl": "https://example.com/aff/tech"
+        }
+      ]
+    }
+  ]
+}
