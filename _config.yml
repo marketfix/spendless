@@ -1,6 +1,6 @@
 title: "Your Coupons"
-baseurl: ""
-url: "https://example.github.io"
+baseurl: "/spendless"
+url: "https://marketfix.github.io"
 markdown: kramdown
 theme: null
 collections:
