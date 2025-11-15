@@ -1,0 +1,12 @@
+title: "Your Coupons"
+baseurl: ""
+url: "https://example.github.io"
+markdown: kramdown
+theme: null
+collections:
+  brands:
+    output: true
+    permalink: /brands/:name/
+  coupons:
+    output: true
+    permalink: /brands/:brand_slug/:slug/
