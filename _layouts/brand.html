@@ -20,14 +20,17 @@ layout: default
   <section class="space-y-3">
     <h2 class="text-sm font-medium text-slate-900">Current discounts</h2>
 
-    {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug | where_exp: "c", "c.code and c.code != ''" %}
-    {% assign active = brand_coupons | where_exp: "c", "c.is_expired != true" %}
+    {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug %}
+    {% assign active = brand_coupons | where: "is_expired", false %}
 
     {% if active.size == 0 %}
       <p class="text-sm text-slate-500">No active discounts right now. Check back soon.</p>
     {% else %}
       <div class="space-y-3">
         {% for coupon in active %}
+          {% unless coupon.code and coupon.code != '' %}
+            {% continue %}
+          {% endunless %}
           <a href="{{ coupon.url | relative_url }}"
              class="block bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition">
             <div class="flex items-start justify-between gap-4">
@@ -61,7 +64,7 @@ layout: default
 
   <section class="space-y-2">
     <h2 class="text-xs font-medium text-slate-500 uppercase tracking-wide">Expired discounts</h2>
-    {% assign expired = brand_coupons | where_exp: "c", "c.is_expired == true" %}
+    {% assign expired = brand_coupons | where: "is_expired", true %}
     {% if expired.size > 0 %}
       <ul class="space-y-1 text-xs text-slate-500">
         {% for coupon in expired %}
