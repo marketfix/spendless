@@ -4,4 +4,4 @@ title: "Nike discount codes"
 brand_slug: "nike"
 ---
 
-Nike discounts overview.
+Nike brand description.

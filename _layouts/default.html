@@ -1,20 +1,9 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>{{ page.title }} | {{ site.title }}</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<html><head><meta charset="utf-8"><script src="https://cdn.tailwindcss.com"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+<title>{{ page.title }} | {{ site.title }}</title></head>
 <body class="bg-slate-50 text-slate-900">
-<header class="border-b border-slate-200 bg-white">
-<div class="max-w-4xl mx-auto px-4 py-4 flex justify-between">
-<a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-<a href="{{ '/brands/' | relative_url }}">Brands</a>
-</div>
-</header>
-<main class="max-w-4xl mx-auto px-4 py-8">
-{{ content }}
-</main>
-</body>
-</html>
+<header class="border-b bg-white"><div class="max-w-4xl mx-auto px-4 py-4 flex justify-between">
+<a href="{{ '/' | relative_url }}" class="font-semibold">{{ site.title }}</a>
+<a href="{{ '/brands/' | relative_url }}">Brands</a></div></header>
+<main class="max-w-4xl mx-auto px-4 py-8">{{ content }}</main></body></html>
