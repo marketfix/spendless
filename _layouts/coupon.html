@@ -39,8 +39,9 @@ layout: default
               class="hidden-ink w-full text-left border border-slate-700 rounded-lg px-3 py-3"
               data-code="{{ page.code }}"
               aria-label="Reveal and copy coupon code">
+        <span class="hidden-ink-overlay" aria-hidden="true"></span>
         <span class="relative inline-block font-mono text-lg hidden-ink-code">{{ page.code }}</span>
-        <span class="block mt-1 text-xs text-slate-300">Tap to reveal & copy</span>
+        <span class="relative block mt-1 text-xs text-slate-300">Tap to reveal & copy</span>
       </button>
 
       <p id="copy-status" class="text-xs text-emerald-200 hidden">Copied to clipboard. Opening offer…</p>
@@ -49,46 +50,63 @@ layout: default
     <style>
       .hidden-ink {
         position: relative;
-        background: #0b1224;
+        background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), rgba(15, 23, 42, 0.4) 55%),
+                    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.18), rgba(15, 23, 42, 0.35) 60%),
+                    #0b1224;
         overflow: hidden;
+        isolation: isolate;
       }
 
-      .hidden-ink::before,
-      .hidden-ink::after {
+      .hidden-ink-overlay {
+        position: absolute;
+        inset: -8px;
+        border-radius: inherit;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.32), transparent 35%),
+          radial-gradient(circle at 72% 18%, rgba(168, 196, 255, 0.26), transparent 30%),
+          radial-gradient(120px at 50% 60%, rgba(56, 189, 248, 0.35), transparent 65%),
+          linear-gradient(120deg, rgba(255, 255, 255, 0.15), rgba(56, 189, 248, 0.25), rgba(148, 163, 184, 0.2));
+        background-size: 180% 180%, 140% 140%, 200% 200%, 160% 160%;
+        mix-blend-mode: screen;
+        filter: blur(2px);
+        opacity: 0.95;
+        animation: shimmer 6s ease-in-out infinite alternate, float 14s linear infinite;
+        mask-image: var(--ink-mask, none);
+        -webkit-mask-image: var(--ink-mask, none);
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-mode: luminance;
+        -webkit-mask-mode: luminance;
+        transition: opacity 320ms ease, transform 320ms ease;
+      }
+
+      .hidden-ink-overlay::after {
         content: "";
         position: absolute;
-        inset: -12px;
-        pointer-events: none;
-        transition: opacity 250ms ease;
-      }
-
-      .hidden-ink::before {
-        background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35), transparent 30%),
-                    radial-gradient(circle at 80% 40%, rgba(146, 164, 255, 0.35), transparent 28%),
-                    radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.3), transparent 32%);
-        filter: blur(6px);
-        opacity: 0.85;
+        inset: 0;
+        background:
+          radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.7), transparent 60%),
+          radial-gradient(1px 1px at 35% 70%, rgba(94, 234, 212, 0.6), transparent 55%),
+          radial-gradient(1px 1px at 80% 40%, rgba(255, 255, 255, 0.6), transparent 60%),
+          radial-gradient(2px 2px at 50% 50%, rgba(59, 130, 246, 0.4), transparent 65%);
         mix-blend-mode: screen;
-        animation: shimmer 2.5s linear infinite;
-      }
-
-      .hidden-ink::after {
-        background: repeating-linear-gradient(45deg, rgba(148, 163, 184, 0.2) 0, rgba(148, 163, 184, 0.2) 6px, transparent 8px, transparent 14px);
-        opacity: 0.55;
-        animation: grain 1s steps(2) infinite;
+        opacity: 0.4;
+        animation: twinkle 2s steps(2, end) infinite;
       }
 
       .hidden-ink-code {
+        position: relative;
         color: transparent;
-        text-shadow: 0 0 14px rgba(255, 255, 255, 0.95);
-        filter: blur(8px);
-        letter-spacing: 0.04em;
-        transition: filter 300ms ease, text-shadow 300ms ease, color 300ms ease;
+        text-shadow: 0 0 20px rgba(226, 232, 240, 0.95), 0 0 34px rgba(79, 70, 229, 0.55);
+        filter: blur(10px);
+        letter-spacing: 0.12em;
+        transition: filter 320ms ease, text-shadow 320ms ease, color 320ms ease;
       }
 
-      .hidden-ink.revealed::before,
-      .hidden-ink.revealed::after {
+      .hidden-ink.revealed .hidden-ink-overlay {
         opacity: 0;
+        transform: scale(1.02);
         animation: none;
       }
 
@@ -99,21 +117,18 @@ layout: default
       }
 
       @keyframes shimmer {
-        0% { transform: translateX(-20px); }
-        100% { transform: translateX(20px); }
+        0% { transform: translateX(-8%); }
+        100% { transform: translateX(8%); }
       }
 
-      @keyframes grain {
-        0%, 100% { transform: translate(0, 0); }
-        10% { transform: translate(-3%, -2%); }
-        20% { transform: translate(3%, 2%); }
-        30% { transform: translate(-2%, 2%); }
-        40% { transform: translate(2%, -2%); }
-        50% { transform: translate(-1%, 1%); }
-        60% { transform: translate(1%, -1%); }
-        70% { transform: translate(-2%, -2%); }
-        80% { transform: translate(2%, 2%); }
-        90% { transform: translate(1%, -1%); }
+      @keyframes float {
+        0% { background-position: 0% 0%, 20% 10%, 50% 40%, 30% 30%; }
+        100% { background-position: 14% 12%, 0% 20%, 40% 60%, 70% 50%; }
+      }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.45; }
+        50% { opacity: 0.65; }
       }
     </style>
 
@@ -121,6 +136,7 @@ layout: default
       document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('coupon-code-card');
         const button = container?.querySelector('.hidden-ink');
+        const overlay = button?.querySelector('.hidden-ink-overlay');
         const status = document.getElementById('copy-status');
 
         if (!button) return;
@@ -128,13 +144,84 @@ layout: default
         const code = button.getAttribute('data-code');
         if (!code) return;
 
+        const spots = [];
+        const MAX_SPOTS = 18;
+        const SPOT_LIFETIME = 1400;
+        let rafId = null;
+
+        const updateMask = () => {
+          if (!overlay) return;
+          const now = performance.now();
+          for (let i = spots.length - 1; i >= 0; i -= 1) {
+            if (now - spots[i].timestamp > SPOT_LIFETIME) {
+              spots.splice(i, 1);
+            }
+          }
+
+          const gradients = spots.map((spot) => `radial-gradient(110px at ${spot.x}% ${spot.y}%, transparent 0%, transparent 45%, rgba(0, 0, 0, 0.85) 72%, rgba(0, 0, 0, 1) 100%)`);
+          const maskValue = gradients.join(', ');
+
+          overlay.style.maskImage = gradients.length ? maskValue : 'none';
+          overlay.style.webkitMaskImage = gradients.length ? maskValue : 'none';
+
+          if (gradients.length === 0) {
+            rafId = null;
+            return;
+          }
+
+          rafId = requestAnimationFrame(updateMask);
+        };
+
+        const addSpot = (event) => {
+          if (!overlay) return;
+          const rect = button.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width) * 100;
+          const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+          spots.push({ x, y, timestamp: performance.now() });
+          if (spots.length > MAX_SPOTS) {
+            spots.shift();
+          }
+
+          if (!rafId) {
+            rafId = requestAnimationFrame(updateMask);
+          }
+        };
+
+        const resetInk = () => {
+          spots.splice(0, spots.length);
+          if (overlay) {
+            overlay.style.maskImage = 'none';
+            overlay.style.webkitMaskImage = 'none';
+          }
+          if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+          }
+        };
+
         const openOffer = () => {
           const targetUrl = `https://spendlessnike.wiki/${encodeURIComponent(code)}`;
           window.open(targetUrl, '_blank', 'noopener');
         };
 
+        button.addEventListener('pointerdown', (event) => {
+          addSpot(event);
+          if (button.setPointerCapture) {
+            button.setPointerCapture(event.pointerId);
+          }
+        });
+
+        button.addEventListener('pointermove', (event) => {
+          if (event.pointerType === 'mouse' && event.buttons === 0) return;
+          addSpot(event);
+        });
+
+        button.addEventListener('pointerleave', resetInk);
+
         button.addEventListener('click', async () => {
           button.classList.add('revealed');
+          resetInk();
           if (status) {
             status.classList.remove('hidden');
             status.textContent = 'Copied to clipboard. Opening offer…';
