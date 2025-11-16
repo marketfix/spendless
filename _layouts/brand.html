@@ -20,53 +20,53 @@ layout: default
   <section class="space-y-3">
     <h2 class="text-sm font-medium text-slate-900">Current discounts</h2>
 
-    {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug %}
-    {% assign active = brand_coupons | where: "is_expired", false %}
-    {% assign eligible = active | where_exp: "c", "c.code and c.code != ''" %}
+    {%- assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug -%}
+    {%- assign active = brand_coupons | where: "is_expired", false | sort: "discount_value" | reverse -%}
 
-    {%- assign percent_discounts = eligible | where_exp: "c", "c.discount_value contains '%'" -%}
-    {%- assign dollar_discounts  = eligible | where_exp: "c", "c.discount_value contains '$'" -%}
+    {%- assign has_eligible = false -%}
 
-    {%- assign eligible = percent_discounts | concat: dollar_discounts | uniq
-        | sort: "discount_value"
-        | reverse -%}
+    <div class="space-y-3">
+      {% for coupon in active %}
+        {% if coupon.code and coupon.code != '' and coupon.discount_value %}
+          {% if coupon.discount_value contains '%' or coupon.discount_value contains '$' %}
+            {% assign has_eligible = true %}
 
-    {% if eligible.size == 0 %}
-      <p class="text-sm text-slate-500">No active discounts right now. Check back soon.</p>
-    {% else %}
-      <div class="space-y-3">
-        {% for coupon in eligible %}
-          <a href="{{ coupon.url | relative_url }}"
-             class="block bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                {% assign display_title = coupon.title %}
+            <a href="{{ coupon.url | relative_url }}"
+               class="block bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  {% assign display_title = coupon.title %}
+                  {% if coupon.discount_value %}
+                    {% assign display_title = display_title | remove: coupon.discount_value | strip %}
+                    {% assign display_title = display_title | replace: "  ", " " %}
+                  {% endif %}
+                  {% if display_title == '' and coupon.description_short %}
+                    {% assign display_title = coupon.description_short %}
+                  {% endif %}
+                  <h3 class="text-sm font-medium text-slate-900">
+                    <strong>Save on: </strong>{{ display_title }}
+                  </h3>
+                  {% if coupon.valid_until %}
+                    <p class="mt-1 text-[11px] text-slate-500">
+                      Valid until {{ coupon.valid_until }}
+                    </p>
+                  {% endif %}
+                </div>
                 {% if coupon.discount_value %}
-                  {% assign display_title = display_title | remove: coupon.discount_value | strip %}
-                  {% assign display_title = display_title | replace: "  ", " " %}
-                {% endif %}
-                {% if display_title == '' and coupon.description_short %}
-                  {% assign display_title = coupon.description_short %}
-                {% endif %}
-                <h3 class="text-sm font-medium text-slate-900">
-                  <strong>Save on: </strong>{{ display_title }}
-                </h3>
-                {% if coupon.valid_until %}
-                  <p class="mt-1 text-[11px] text-slate-500">
-                    Valid until {{ coupon.valid_until }}
-                  </p>
+                  <span class="text-xs font-semibold px-2 py-1 rounded-full bg-emerald-50 text-emerald-800">
+                    {{ coupon.discount_value }}
+                  </span>
                 {% endif %}
               </div>
-              {% if coupon.discount_value %}
-                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-emerald-50 text-emerald-800">
-                  {{ coupon.discount_value }}
-                </span>
-              {% endif %}
-            </div>
-          </a>
-        {% endfor %}
-      </div>
-    {% endif %}
+            </a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% unless has_eligible %}
+      <p class="text-sm text-slate-500">No active discounts right now. Check back soon.</p>
+    {% endunless %}
   </section>
 
   <section class="space-y-2">
