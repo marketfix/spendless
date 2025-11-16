@@ -79,8 +79,10 @@ layout: default
       <div class="space-y-1">
         <p class="text-[11px] uppercase tracking-wide text-slate-400">Code</p>
         <div
-          class="inline-flex items-center gap-3 rounded-lg border border-slate-700 px-3 py-2 bg-slate-800/70"
+          class="inline-flex items-center gap-3 rounded-lg border border-slate-700 px-3 py-2 bg-slate-800/70 cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-500"
           data-code-display
+          role="button"
+          tabindex="0"
         >
           <span class="font-mono text-lg invisible-ink" data-code="{{ page.code }}">{{ page.code }}</span>
         </div>
@@ -162,12 +164,26 @@ layout: default
           }
         };
 
-        button.addEventListener('click', () => {
+        const handleInteraction = () => {
           revealInk();
           navigator.clipboard?.writeText(code).catch(() => {});
           openOffer();
           showCopied();
-        });
+        };
+
+        const registerInteractive = (element) => {
+          if (!element) return;
+          element.addEventListener('click', handleInteraction);
+          element.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              handleInteraction();
+            }
+          });
+        };
+
+        registerInteractive(button);
+        registerInteractive(codeDisplay);
       });
     </script>
   {% endif %}
