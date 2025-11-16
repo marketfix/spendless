@@ -1,0 +1,13 @@
+---
+layout: coupon
+title: "30% off Black Friday sale"
+brand_slug: "booking"
+discount_value: "30% off"
+code: "BLACKFRIDAY30"
+is_expired: false
+description_short: "Black Friday sale"
+---
+
+Use code **BLACKFRIDAY30** at checkout to get 30% off on black friday sale.
+
+These offers come directly from the latest list we maintain for Booking.com. Availability can change, so try the code soon if it fits your order.

@@ -2,11 +2,9 @@
 layout: brand
 title: "Nike discount codes"
 brand_slug: "nike"
-description_short: "Latest Nike discount codes, promo codes, and simple ways to save on sportswear."
+description_short: "Latest Nike discount codes, promo codes, and simple ways to save."
 ---
 
-Nike offers regular discounts on shoes, clothing, and accessories. On this page you’ll
-find current codes and promotions that we’ve checked and grouped in one place.
+Nike regularly promotes limited-time deals and coupon codes. This page keeps the newest options in one place so you can quickly check what still works.
 
-We try to keep this list as straightforward as possible: active offers first, then
-expired ones that might still be useful as a reference.
+We list the current offers first, then expired ones as a reference for what has been available recently.
