@@ -1,6 +1,7 @@
-title: "Spendless"
+title: "Spendlesso"
+description: "Latest discount codes and simple ways to save from selected brands."
 baseurl: ""
-url: "https://marketfix.github.io"
+url: "https://spendlesso.com"
 
 markdown: kramdown
 theme: null
