@@ -62,12 +62,6 @@ layout: default
     <h1 class="text-2xl font-semibold tracking-tight">{{ page.title }}</h1>
 
     <div class="flex flex-wrap items-center gap-3">
-      {% if page.discount_value %}
-        <span class="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-800">
-          {{ page.discount_value }}
-        </span>
-      {% endif %}
-
       {% if page.is_expired %}
         <span class="text-xs font-medium px-2 py-1 rounded-full bg-red-50 text-red-700">
           Expired
@@ -92,7 +86,7 @@ layout: default
         >
           <span class="font-mono text-lg invisible-ink" data-code="{{ page.code }}">{{ page.code }}</span>
           <span class="text-xs text-slate-400 group-[.revealed]:text-slate-200 transition">
-            Tap to reveal & copy
+            Copy code
           </span>
         </button>
         <p id="copy-message" class="text-xs text-emerald-300 opacity-0 transition-opacity duration-300">
@@ -106,7 +100,11 @@ layout: default
   {% endif %}
 
   <section class="prose prose-sm max-w-none">
-    {{ content }}
+    {% if page.code %}
+      {{ content | strip_coupon_code: page.code }}
+    {% else %}
+      {{ content }}
+    {% endif %}
   </section>
 
   {% if page.url_external %}
