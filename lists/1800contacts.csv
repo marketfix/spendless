@@ -1,0 +1,46 @@
+code,discount_amount,description
+DEAL10,$10 off,Storewide min $100 returning customers
+deal30,30% off,Select orders
+SUNNY40,40% off,All orders
+EBD3,35% off,Orders over $80
+EDM4,40% off,All orders
+SAVI,30% off,Orders over $150
+AAAL,15% off,All orders
+1800CKATELYNB,35% off,Select orders
+FIRST30,30% off,First order
+NEW20,20% off,New customers
+STUDENT20,20% off,Student first order
+WELCOME30,30% off,First time buyers
+EMAIL20,20% off,Email signup
+LOYALTY10,10% off,Loyalty members
+APP15,15% off,App orders
+INSURANCE5,5% off,With insurance
+AUTO5,5% off,Autoship orders
+BIRTHDAY25,25% off,Birthday discount
+BF30,30% off,Black Friday
+CYBER25,25% off,Cyber Monday
+SUMMER20,20% off,Summer sale
+WINTER30,30% off,Winter orders
+CLEARANCE15,15% off,Clearance items
+DAILIES25,25% off,Dailies lenses
+ACUVUE20,20% off,Acuvue products
+AIROPTIX15,15% off,Air Optix
+BIOFINITY10,10% off,Biofinity
+FAMILY25,25% off,Family packs
+BULK30,30% off,Bulk purchases
+REFERRAL15,15% off,Referral orders
+PARTNER20,20% off,Partner brands
+EXCLUSIVE10,10% off,Exclusive deals
+FLASH25,25% off,Flash sale
+WEEKEND20,20% off,Weekend specials
+MONTHLY15,15% off,Monthly subscription
+ANNUAL40,40% off,Annual supply
+GIFT10,$10 off,Gift cards
+SIGNUP20,20% off,Newsletter signup
+SOCIAL15,15% off,Social promo
+MILITARY20,20% off,Military discount
+SENIOR10,10% off,Senior discount
+PRICEMATCH,Price match,Competitor prices
+CHAT25,25% off,Chat offer
+VISIT10,$10 off,In-store pickup
+RETURN5,5% off,Returns

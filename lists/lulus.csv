@@ -1,0 +1,39 @@
+code,discount_amount,description
+WELCOME15,15% off,First order
+EXTRA20,20% off,Select sale items
+APP10,10% off,App-only orders
+EMAIL20,20% off,Email signup
+BIRTHDAY25,25% off,Birthday month
+LOYALTY10,10% off,Loyalty members
+STUDENT15,15% off,Student discount
+MILITARY20,20% off,Military discount
+SENIOR10,10% off,Senior discount
+FRIENDS20,20% off,Referral orders
+CLEARANCE30,30% off,Clearance items
+FLASH25,25% off,Flash sale
+BLACKFRIDAY40,40% off,Black Friday deals
+CYBER30,30% off,Cyber Monday
+WEDDING20,20% off,Wedding guest dresses
+DRESSES15,15% off,Dresses
+TOPS10,10% off,Tops
+BOTTOMS20,20% off,Bottoms
+SHOES25,25% off,Shoes
+ACCESSORIES15,15% off,Accessories
+SWIM10,10% off,Swimwear
+OUTERWEAR20,20% off,Outerwear
+JUMPSUITS15,15% off,Jumpsuits & rompers
+BRIDAL25,25% off,Bridal collection
+PARTY30,30% off,Party dresses
+VACATION20,20% off,Vacation styles
+NEWARRIVALS10,10% off,New arrivals
+BESTSELLERS15,15% off,Bestsellers
+SIGNUP15,15% off,Newsletter signup
+SOCIAL10,10% off,Social media promo
+GIFT20,$20 off,Gift cards
+BUNDLE25,25% off,Bundles
+FREE SHIP,Free shipping,Orders $50+
+RETURN10,10% off,Returns with promo
+EXCLUSIVE30,30% off,Exclusive online deals
+WEEKEND20,20% off,Weekend specials
+MONTHLY15,15% off,Monthly favorites
+SEASONAL25,25% off,Seasonal collections

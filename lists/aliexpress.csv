@@ -1,0 +1,70 @@
+code,discount_amount,description
+WELCOME10,$10 off,New users min $50
+WELCOME20,$20 off,New users min $100
+WELCOME30,$30 off,New users min $150
+AE11,$2 off,Min $3
+AE22,$4 off,Min $20
+AE33,$6 off,Min $30
+AE44,$8 off,Min $40
+AE55,$10 off,Min $50
+AE66,$12 off,Min $60
+AE77,$14 off,Min $70
+AE88,$16 off,Min $80
+AE99,$18 off,Min $90
+AE1010,$20 off,Min $100
+AE1111,$22 off,Min $110
+AE1212,$24 off,Min $120
+AE1313,$26 off,Min $130
+AE1414,$28 off,Min $140
+AE1515,$30 off,Min $150
+AE1616,$32 off,Min $160
+AE1717,$34 off,Min $170
+AE1818,$36 off,Min $180
+AE1919,$38 off,Min $190
+AE2020,$40 off,Min $200
+FLASH10,$10 off,Flash sale
+SUPERDEAL,$5 off,Select items
+CHOICE10,$10 off,Choice Day
+ANNIVERSARY,$15 off,Anniversary sale
+BLACKFRIDAY,$30 off,Black Friday
+CYBERMONDAY,$25 off,Cyber Monday
+SUMMER10,10% off,Summer sale
+WINTER15,15% off,Winter sale
+APP10,10% off,App-only
+NEWUSER5,$5 off,New user first order
+COUPON20,$20 off,Min $199
+COUPON50,$50 off,Min $499
+COUPON100,$100 off,Min $999
+BUNDLE15,15% off,Bundles
+FAMILY20,20% off,Family orders
+STUDENT10,10% off,Student discount
+SENIOR8,8% off,Senior discount
+MILITARY15,15% off,Military
+LOYALTY5,5% off,Loyalty members
+EMAIL10,$10 off,Email signup
+SIGNUP8,$8 off,Newsletter signup
+SOCIAL5,5% off,Social promo
+BIRTHDAY20,20% off,Birthday month
+REFERRAL15,$15 off,Referral
+PARTNER10,10% off,Partner stores
+EXCLUSIVE25,25% off,Exclusive deals
+FLASH20,20% off,Flash sale
+WEEKEND15,15% off,Weekend specials
+MONTHLY10,10% off,Monthly deals
+ANNUAL30,30% off,Annual sale
+GIFT10,$10 off,Gift cards
+CLEARANCE40,40% off,Clearance items
+ELECTRONICS15,15% off,Electronics
+FASHION20,20% off,Fashion
+HOME25,25% off,Home & garden
+BEAUTY10,10% off,Beauty
+SPORTS12,12% off,Sports
+TOYS18,18% off,Toys
+AUTOMOTIVE10,10% off,Automotive
+JEWELRY15,15% off,Jewelry
+SHOES20,20% off,Shoes
+BAGS12,12% off,Bags
+WATCHES10,10% off,Watches
+PHONES25,25% off,Phones
+LAPTOPS30,30% off,Laptops
+GAMING15,15% off,Gaming

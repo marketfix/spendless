@@ -1,0 +1,43 @@
+code,discount_amount,description
+WELCOME10,10% off,First booking
+GENIUS15,15% off,Genius members
+APP10,10% off,App bookings
+EMAIL15,15% off,Email signup
+BIRTHDAY20,20% off,Birthday month
+LOYALTY10,10% off,Loyalty members
+STUDENT15,15% off,Student discount
+MILITARY20,20% off,Military discount
+SENIOR10,10% off,Senior discount
+FAMILY25,25% off,Family bookings
+CLEARANCE30,30% off,Clearance hotels
+FLASH25,25% off,Flash sale
+BLACKFRIDAY40,40% off,Black Friday deals
+CYBER30,30% off,Cyber Monday
+LUXURY20,20% off,Luxury hotels
+BOUTIQUE15,15% off,Boutique stays
+RESORT25,25% off,Resort properties
+CITY10,10% off,City center hotels
+BEACH20,20% off,Beachfront
+MOUNTAIN15,15% off,Mountain retreats
+SPA30,30% off,Spa hotels
+BUSINESS10,10% off,Business travel
+LASTMINUTE25,25% off,Last minute deals
+EXTENDED15,15% off,Extended stays
+PACKAGE20,20% off,Hotel + flight packages
+NEWARRIVALS10,10% off,Newly listed hotels
+BESTSELLERS20,20% off,Top rated properties
+SIGNUP15,15% off,Newsletter signup
+SOCIAL10,10% off,Social media promo
+GIFT25,$25 off,Gift cards
+BUNDLE30,30% off,Bundles with activities
+FREESHIP,Free cancellation,Select bookings
+VIP20,20% off,VIP access hotels
+EXCLUSIVE25,25% off,Exclusive member deals
+WEEKEND15,15% off,Weekend getaways
+MONTHLY10,10% off,Monthly specials
+SEASONAL30,30% off,Seasonal promotions
+SUMMER25,25% off,Summer travel
+WINTER20,20% off,Winter escapes
+HOLIDAY35,35% off,Holiday bookings
+ONEKEY30,30% off,One Key rewards
+MEMBERONLY15,15% off,Member only rates

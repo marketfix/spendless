@@ -1,0 +1,41 @@
+code,discount_amount,description
+WELCOME15,15% off,First order
+EXTRA20,20% off,Select sale items
+APP10,10% off,App-only orders
+EMAIL20,20% off,Email signup
+BIRTHDAY25,25% off,Birthday month
+LOYALTY10,10% off,Loyalty members
+STUDENT15,15% off,Student discount
+MILITARY20,20% off,Military discount
+SENIOR10,10% off,Senior discount
+TRADE25,25% off,Trade professionals
+CLEARANCE30,30% off,Clearance items
+FLASH25,25% off,Flash sale
+BLACKFRIDAY40,40% off,Black Friday deals
+CYBER30,30% off,Cyber Monday
+LIGHTING15,15% off,Lighting fixtures
+FANS20,20% off,Ceiling fans
+FURNITURE10,10% off,Furniture
+DECOR25,25% off,Home decor
+OUTDOOR20,20% off,Outdoor lighting
+MODERN15,15% off,Modern designs
+CONTEMPORARY10,10% off,Contemporary styles
+PENDANT25,25% off,Pendant lights
+CHANDELIER30,30% off,Chandeliers
+WALL15,15% off,Wall sconces
+TABLE20,20% off,Table lamps
+FLOOR10,10% off,Floor lamps
+BATH25,25% off,Bathroom lighting
+KITCHEN20,20% off,Kitchen lighting
+NEWARRIVALS15,15% off,New arrivals
+BESTSELLERS20,20% off,Bestsellers
+SIGNUP15,15% off,Newsletter signup
+SOCIAL10,10% off,Social media promo
+GIFT20,$20 off,Gift cards
+BUNDLE25,25% off,Bundles
+FREESHIP,Free shipping,Orders $75+
+DESIGNER30,30% off,Designer brands
+EXCLUSIVE20,20% off,Exclusive online deals
+WEEKEND15,15% off,Weekend specials
+MONTHLY10,10% off,Monthly deals
+SEASONAL25,25% off,Seasonal collections

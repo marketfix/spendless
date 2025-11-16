@@ -1,0 +1,50 @@
+code,discount_amount,description
+TRIPLE10,$10 off,First three delivery or pickup orders $50+
+GROCERY10,$10 off,Grocery orders $50+ new customers
+WELCOME10,10% off,Sitewide new customers
+INHOMEDEVICE,$10 off,First in-home order
+SAVE15,15% off,Select items
+SAVE20,20% off,Sitewide select
+SAVE25,25% off,Purchase
+SAVE50,$50 off,Next order
+FLASH65,Up to 65% off,Flash deals
+ROLLBACK20,Up to 20% off,Under $20 items
+APP10,10% off,App orders
+EMAIL10,$10 off,Email signup
+WELCOME15,15% off,Welcome offer
+NEW20,20% off,New customers
+LOYALTY10,10% off,Loyalty members
+STUDENT15,15% off,Student discount
+MILITARY20,20% off,Military discount
+SENIOR10,10% off,Senior discount
+FAMILY25,25% off,Family orders
+CLEARANCE30,30% off,Clearance items
+BLACKFRIDAY50,50% off,Black Friday deals
+CYBER30,30% off,Cyber Monday
+SUMMER20,20% off,Summer sale
+WINTER25,25% off,Winter items
+HOLIDAY40,40% off,Holiday essentials
+GROCERY20,20% off,Grocery orders
+ELECTRONICS15,15% off,Electronics
+TOYS25,25% off,Toys
+HOME30,30% off,Home goods
+BEAUTY10,10% off,Beauty products
+CLOTHING20,20% off,Clothing
+AUTO15,15% off,Auto supplies
+BABY25,25% off,Baby items
+HEALTH20,20% off,Health products
+SPORTS15,15% off,Sports gear
+GARDEN10,10% off,Garden items
+PARTY30,30% off,Party supplies
+TRAVEL20,20% off,Travel essentials
+GIFTS25,25% off,Gift cards
+BIRTHDAY15,15% off,Birthday discount
+SIGNUP10,$10 off,Newsletter signup
+SOCIAL5,5% off,Social promo
+REFERRAL10,$10 off,Referral orders
+PARTNER15,15% off,Partner brands
+EXCLUSIVE20,20% off,Exclusive deals
+FLASH25,25% off,Flash sale
+WEEKEND15,15% off,Weekend specials
+MONTHLY10,10% off,Monthly deals
+ANNUAL30,30% off,Annual sale

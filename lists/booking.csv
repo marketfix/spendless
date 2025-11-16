@@ -1,0 +1,46 @@
+code,discount_amount,description
+SPRINGBREAK25,25% off,Seasonal bookings
+GENIUS10,10% off,Genius loyalty members
+WELCOME15,15% off,First booking
+GENIUS20,20% off,Genius Level 3 members
+GENIUS15,15% off,Genius Level 2 members
+E15,$15 off,Bookings
+VALUED20,20% off,Referral bookings
+OFERTA_ACTIVADA,Variable discount,Special offer
+BREAK15,15% off,Select bookings
+GATEWAY,Variable discount,User-shared
+APP10,10% off,App bookings
+MEMBER20,20% off,Members only
+TRAVEL15,15% off,Hotels and flights
+HOTEL25,25% off,Hotel stays
+FLIGHT10,10% off,Select flights
+PACKAGE30,30% off,Vacation packages
+CAR5,5% off,Car rentals
+VIP15,15% off,VIP hotels
+EXCLUSIVE20,20% off,Exclusive deals
+NOV2025,10% off,November bookings
+BLACKFRIDAY30,30% off,Black Friday sale
+CYBER20,20% off,Cyber Monday
+STUDENT15,15% off,Student discounts
+SENIOR10,10% off,Senior bookings
+MILITARY20,20% off,Military
+FAMILY25,25% off,Family packages
+LASTMINUTE15,15% off,Last minute deals
+BUNDLE20,20% off,Bundles
+REWARD5,5% off,Rewards members
+SUMMER25,25% off,Summer travel
+WINTER30,30% off,Winter stays
+HOLIDAY20,20% off,Holiday bookings
+EMAIL10,10% off,Email signup
+SIGNUP15,15% off,Newsletter signup
+APPONLY10,10% off,App-only deals
+LOYALTY15,15% off,Loyalty program
+PARTNER10,10% off,Partner brands
+NEW20,20% off,New customers
+SAVE25,25% off,Sitewide select
+CLEARANCE30,30% off,Clearance items
+FLASH20,20% off,Flash sale
+WEEKEND15,15% off,Weekend specials
+BIRTHDAY25,25% off,Birthday discount
+ACTIVITIES30,30% off,Activities around the world
+RESORT40,40% off,Resort escapes
