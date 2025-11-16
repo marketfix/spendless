@@ -24,7 +24,7 @@ layout: default
     {% assign active = brand_coupons | where: "is_expired", false %}
     {% assign eligible = active | where_exp: "c", "c.code and c.code != ''" %}
     {% assign eligible = eligible
-        | where_exp: "c", "c.discount_value contains '%' or c.discount_value contains '$'"
+        | where_exp: 'c', 'c.discount_value contains "%" or c.discount_value contains "$"'
         | sort: "discount_value"
         | reverse %}
 
