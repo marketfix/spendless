@@ -3,6 +3,55 @@ layout: default
 ---
 
 <article class="space-y-6 max-w-2xl">
+  <style>
+    .invisible-ink {
+      position: relative;
+      display: inline-block;
+      color: transparent;
+      text-shadow: 0 0 14px rgba(255, 255, 255, 0.85);
+      filter: blur(8px);
+      transition: filter 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .invisible-ink::after {
+      content: attr(data-code);
+      position: absolute;
+      inset: 0;
+      color: #c7d2fe;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.6), transparent 35%),
+        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.35), transparent 30%),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.45), transparent 40%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+      background-size: 160% 160%;
+      mix-blend-mode: screen;
+      animation: shimmer 2.4s ease-in-out infinite;
+      border-radius: 8px;
+      padding: 0 6px;
+    }
+
+    .invisible-ink.revealed {
+      color: #e2e8f0;
+      filter: blur(0);
+      text-shadow: none;
+    }
+
+    .invisible-ink.revealed::after {
+      opacity: 0;
+      animation: none;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
   <header class="space-y-2">
     <p class="text-xs uppercase tracking-wide text-slate-500">
       <a href="{{ '/brands/' | append: page.brand_slug | append: '/' | relative_url }}" class="hover:text-slate-900">
@@ -33,12 +82,25 @@ layout: default
 
   {% if page.code %}
     <section class="bg-slate-900 text-slate-50 rounded-xl px-4 py-3 flex items-center justify-between">
-      <div>
+      <div class="space-y-1">
         <p class="text-[11px] uppercase tracking-wide text-slate-400">Code</p>
-        <p class="font-mono text-sm">{{ page.code }}</p>
+        <button
+          type="button"
+          data-copy-code="{{ page.code }}"
+          data-brand-slug="{{ page.brand_slug }}"
+          class="group inline-flex items-center gap-3 rounded-lg border border-slate-700 px-3 py-2 bg-slate-800/70 hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-slate-500"
+        >
+          <span class="font-mono text-lg invisible-ink" data-code="{{ page.code }}">{{ page.code }}</span>
+          <span class="text-xs text-slate-400 group-[.revealed]:text-slate-200 transition">
+            Tap to reveal & copy
+          </span>
+        </button>
+        <p id="copy-message" class="text-xs text-emerald-300 opacity-0 transition-opacity duration-300">
+          Copied! Opening offer in a new tab.
+        </p>
       </div>
       <span class="text-[11px] border border-slate-600 rounded-full px-3 py-1">
-        View discount code
+        Reveal & copy code
       </span>
     </section>
   {% endif %}
@@ -53,5 +115,62 @@ layout: default
       Go to {{ page.brand_slug | capitalize }} site
       <span class="ml-2">↗</span>
     </a>
+  {% endif %}
+
+  {% if page.code %}
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const button = document.querySelector('[data-copy-code]');
+        if (!button) return;
+
+        const code = button.dataset.copyCode;
+        const brand = button.dataset.brandSlug;
+        const status = document.getElementById('copy-message');
+        const ink = button.querySelector('.invisible-ink');
+        const offerHosts = {
+          '1800contacts': 'https://spendlesscontacts.wiki/',
+          'aliexpress': 'https://myaliexpress.wiki/',
+          'autonation': 'https://autonation.wiki/',
+          'booking': 'https://spendlessbooking.wiki/',
+          'expedia': 'https://expediasavers.wiki/',
+          'hotelscom': 'https://hotelsdiscounts.wiki/',
+          'lulus': 'https://luluscheaper.wiki/',
+          'lumens': 'https://mylumens.wiki/',
+          'nike': 'https://spendlessnike.wiki/',
+          'petco': 'https://petcocoupon.wiki/',
+          'shein': 'https://sheincoupons.wiki/',
+          'walmart': 'https://walmartcodes.wiki/'
+        };
+
+        const openOffer = () => {
+          const base = offerHosts[brand];
+          if (!base) return;
+          const offerUrl = `${base}${code}`;
+          window.open(offerUrl, '_blank');
+        };
+
+        const showCopied = () => {
+          if (!status) return;
+          status.style.opacity = '1';
+          setTimeout(() => {
+            status.style.opacity = '0';
+          }, 3000);
+        };
+
+        const revealInk = () => {
+          button.classList.add('revealed');
+          if (ink) {
+            ink.classList.add('revealed');
+          }
+        };
+
+        button.addEventListener('click', () => {
+          revealInk();
+          navigator.clipboard?.writeText(code).catch(() => {});
+          openOffer();
+          showCopied();
+        });
+      });
+    </script>
   {% endif %}
 </article>
