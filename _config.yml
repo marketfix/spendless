@@ -1,0 +1,14 @@
+title: "Spendless"
+baseurl: "/spendless"
+url: "https://marketfix.github.io"
+
+markdown: kramdown
+theme: null
+
+collections:
+  brands:
+    output: true
+    permalink: /brands/:name/
+  coupons:
+    output: true
+    permalink: /brands/:path/
