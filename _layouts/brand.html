@@ -23,10 +23,13 @@ layout: default
     {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug %}
     {% assign active = brand_coupons | where: "is_expired", false %}
     {% assign eligible = active | where_exp: "c", "c.code and c.code != ''" %}
-    {% assign eligible = eligible
-        | where_exp: 'c', 'c.discount_value contains "%" or c.discount_value contains "$"'
+
+    {%- assign percent_discounts = eligible | where_exp: "c", "c.discount_value contains '%'" -%}
+    {%- assign dollar_discounts  = eligible | where_exp: "c", "c.discount_value contains '$'" -%}
+
+    {%- assign eligible = percent_discounts | concat: dollar_discounts | uniq
         | sort: "discount_value"
-        | reverse %}
+        | reverse -%}
 
     {% if eligible.size == 0 %}
       <p class="text-sm text-slate-500">No active discounts right now. Check back soon.</p>
@@ -76,7 +79,7 @@ layout: default
             <a href="{{ coupon.url | relative_url }}" class="hover:text-slate-900">
               {{ coupon.title }}
             </a>
-            <span class="ml-1 text[11px] text-slate-400">(expired)</span>
+            <span class="ml-1 text-[11px] text-slate-400">(expired)</span>
           </li>
         {% endfor %}
       </ul>
