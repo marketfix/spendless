@@ -3,6 +3,9 @@ description: "Latest discount codes and simple ways to save from selected brands
 baseurl: ""
 url: "https://spendlesso.com"
 
+# GitHub Pages runs in safe mode, so keep custom plugins disabled.
+plugins: []
+
 markdown: kramdown
 theme: null
 
