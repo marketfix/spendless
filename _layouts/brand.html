@@ -23,9 +23,9 @@ layout: default
     {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug %}
     {% assign active = brand_coupons | where: "is_expired", false %}
     {% assign eligible = active
-      | where_exp: "c", "c.code and c.code != ''"
-      | discounts_with_amount
-      | sort_by_savings %}
+        | where_exp: "c", "c.code and c.code != '' and (c.discount_value contains '%' or c.discount_value contains '$')"
+        | sort: "discount_value"
+        | reverse %}
 
     {% if eligible.size == 0 %}
       <p class="text-sm text-slate-500">No active discounts right now. Check back soon.</p>

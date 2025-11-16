@@ -100,11 +100,7 @@ layout: default
   {% endif %}
 
   <section class="prose prose-sm max-w-none">
-    {% if page.code %}
-      {{ content | strip_coupon_code: page.code }}
-    {% else %}
-      {{ content }}
-    {% endif %}
+    {{ content }}
   </section>
 
   {% if page.url_external %}
