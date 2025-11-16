@@ -1,77 +1,14 @@
 ---
 layout: default
 ---
+<h1 class="text-2xl font-semibold">{{ page.title }}</h1>
+{{ content }}
 
-<article class="space-y-6">
-  <header class="space-y-2">
-    <p class="text-xs uppercase tracking-wide text-slate-500">Brand</p>
-    <h1 class="text-2xl font-semibold tracking-tight">{{ page.title }}</h1>
-    {% if page.description_short %}
-      <p class="text-sm text-slate-600 max-w-2xl">{{ page.description_short }}</p>
-    {% endif %}
-  </header>
-
-  {% if content %}
-    <section class="prose prose-sm max-w-none">
-      {{ content }}
-    </section>
-  {% endif %}
-
-  <section class="space-y-3">
-    <h2 class="text-sm font-medium text-slate-900">Current discounts</h2>
-
-    {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug %}
-    {% assign active = brand_coupons | where_exp: "c", "c.is_expired != true" %}
-
-    {% if active.size == 0 %}
-      <p class="text-sm text-slate-500">No active discounts right now. Check back soon.</p>
-    {% else %}
-      <div class="space-y-3">
-        {% for coupon in active %}
-          <a href="{{ coupon.url | relative_url }}"
-             class="block bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="text-sm font-medium text-slate-900">{{ coupon.title }}</h3>
-                {% if coupon.description_short %}
-                  <p class="mt-1 text-xs text-slate-600">{{ coupon.description_short }}</p>
-                {% endif %}
-                <p class="mt-1 text-[11px] text-slate-500">
-                  {% if coupon.valid_until %}
-                    Valid until {{ coupon.valid_until }}
-                  {% else %}
-                    Valid for a limited time
-                  {% endif %}
-                </p>
-              </div>
-              {% if coupon.discount_value %}
-                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-800">
-                  {{ coupon.discount_value }}
-                </span>
-              {% endif %}
-            </div>
-          </a>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </section>
-
-  <section class="space-y-2">
-    <h2 class="text-xs font-medium text-slate-500 uppercase tracking-wide">Expired discounts</h2>
-    {% assign expired = brand_coupons | where_exp: "c", "c.is_expired == true" %}
-    {% if expired.size > 0 %}
-      <ul class="space-y-1 text-xs text-slate-500">
-        {% for coupon in expired %}
-          <li>
-            <a href="{{ coupon.url | relative_url }}" class="hover:text-slate-900">
-              {{ coupon.title }}
-            </a>
-            <span class="ml-1 text[11px] text-slate-400">(expired)</span>
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p class="text-xs text-slate-400">No expired discounts yet.</p>
-    {% endif %}
-  </section>
-</article>
+<h2 class="mt-6 font-semibold">Current discounts</h2>
+{% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug %}
+{% assign active = brand_coupons | where_exp: "c","c.is_expired!=true" %}
+<ul>
+{% for c in active %}
+<li><a href="{{ c.url | relative_url }}">{{ c.title }}</a></li>
+{% endfor %}
+</ul>
