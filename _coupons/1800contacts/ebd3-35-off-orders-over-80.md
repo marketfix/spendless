@@ -8,6 +8,4 @@ is_expired: false
 description_short: "Orders over $80"
 ---
 
-Use code **EBD3** at checkout to get 35% off on orders over $80.
-
-These offers come directly from the latest list we maintain for 1-800 Contacts. Availability can change, so try the code soon if it fits your order.
+This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.

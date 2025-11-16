@@ -8,6 +8,4 @@ is_expired: false
 description_short: "First three delivery or pickup orders $50+"
 ---
 
-Use code **TRIPLE10** at checkout to get $10 off on first three delivery or pickup orders $50+.
-
-These offers come directly from the latest list we maintain for Walmart. Availability can change, so try the code soon if it fits your order.
+This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.

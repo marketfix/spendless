@@ -8,6 +8,4 @@ is_expired: false
 description_short: "Under $20 items"
 ---
 
-Use code **ROLLBACK20** at checkout to get up to 20% off on under $20 items.
-
-These offers come directly from the latest list we maintain for Walmart. Availability can change, so try the code soon if it fits your order.
+This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.

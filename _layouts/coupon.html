@@ -75,24 +75,28 @@ layout: default
   </header>
 
   {% if page.code %}
-    <section class="bg-slate-900 text-slate-50 rounded-xl px-4 py-3 flex items-center justify-between">
+    <section class="bg-slate-900 text-slate-50 rounded-xl px-4 py-3 flex items-center justify-between gap-4 flex-wrap">
       <div class="space-y-1">
         <p class="text-[11px] uppercase tracking-wide text-slate-400">Code</p>
-        <button
-          type="button"
-          data-copy-code="{{ page.code }}"
-          data-brand-slug="{{ page.brand_slug }}"
-          class="group inline-flex items-center gap-3 rounded-lg border border-slate-700 px-3 py-2 bg-slate-800/70 hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-slate-500"
+        <div
+          class="inline-flex items-center gap-3 rounded-lg border border-slate-700 px-3 py-2 bg-slate-800/70"
+          data-code-display
         >
           <span class="font-mono text-lg invisible-ink" data-code="{{ page.code }}">{{ page.code }}</span>
-        </button>
+        </div>
         <p id="copy-message" class="text-xs text-emerald-300 opacity-0 transition-opacity duration-300">
           Copied! Opening offer in a new tab.
         </p>
       </div>
-      <span class="text-[11px] border border-slate-600 rounded-full px-3 py-1">
+      <button
+        type="button"
+        data-copy-code-button
+        data-copy-code="{{ page.code }}"
+        data-brand-slug="{{ page.brand_slug }}"
+        class="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 px-4 py-2 bg-slate-800/70 text-sm font-medium text-slate-50 hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-slate-500"
+      >
         Reveal & copy code
-      </span>
+      </button>
     </section>
   {% endif %}
 
@@ -111,13 +115,14 @@ layout: default
   {% if page.code %}
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const button = document.querySelector('[data-copy-code]');
+        const button = document.querySelector('[data-copy-code-button]');
         if (!button) return;
 
         const code = button.dataset.copyCode;
         const brand = button.dataset.brandSlug;
         const status = document.getElementById('copy-message');
-        const ink = button.querySelector('.invisible-ink');
+        const codeDisplay = document.querySelector('[data-code-display]');
+        const ink = codeDisplay ? codeDisplay.querySelector('.invisible-ink') : null;
         const offerHosts = {
           '1800contacts': 'https://spendlesscontacts.wiki/',
           'aliexpress': 'https://myaliexpress.wiki/',
@@ -149,7 +154,9 @@ layout: default
         };
 
         const revealInk = () => {
-          button.classList.add('revealed');
+          if (codeDisplay) {
+            codeDisplay.classList.add('revealed');
+          }
           if (ink) {
             ink.classList.add('revealed');
           }

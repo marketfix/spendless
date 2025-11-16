@@ -8,6 +8,4 @@ is_expired: false
 description_short: "In-store pickup $50+"
 ---
 
-Use code **PICKUP10** at checkout to get 10% off on in-store pickup $50+.
-
-These offers come directly from the latest list we maintain for Petco. Availability can change, so try the code soon if it fits your order.
+This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.

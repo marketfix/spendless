@@ -8,6 +8,4 @@ is_expired: false
 description_short: "Black Friday"
 ---
 
-Use code **BLACKFRIDAY** at checkout to get $30 off on black friday.
-
-These offers come directly from the latest list we maintain for AliExpress. Availability can change, so try the code soon if it fits your order.
+This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.

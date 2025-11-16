@@ -8,6 +8,4 @@ is_expired: false
 description_short: "Women's clothing"
 ---
 
-Use code **M258F** at checkout to get 80% off on women's clothing.
-
-These offers come directly from the latest list we maintain for SHEIN. Availability can change, so try the code soon if it fits your order.
+This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.

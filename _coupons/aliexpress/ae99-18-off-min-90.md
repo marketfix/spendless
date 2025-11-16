@@ -8,6 +8,4 @@ is_expired: false
 description_short: "Min $90"
 ---
 
-Use code **AE99** at checkout to get $18 off on min $90.
-
-These offers come directly from the latest list we maintain for AliExpress. Availability can change, so try the code soon if it fits your order.
+This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
