@@ -6,10 +6,17 @@ layout: default
 {% assign brand_name = page.title | replace: ' discount codes', '' | strip %}
 <article class="space-y-6">
   <header class="space-y-3">
-    <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:text-left">
-      <div class="brand-logo-frame w-20 h-20 flex items-center justify-center rounded-2xl border border-slate-200 overflow-hidden">
+    <style>
+    .space-y-3 {
+      background-color: transparent;
+    }
+    </style>
+    <div class="flex items-center gap-4">
+      <div class="w-20 h-20 flex items-center justify-center rounded-2xl border border-slate-200 overflow-hidden">
         <img src="{{ logo_path | relative_url }}"
              alt="{{ brand_name }} logo"
+             class="w-full h-full object-cover"
+             style="transform: scale(1.2);"
              loading="lazy">
       </div>
       <div class="space-y-1">
@@ -17,6 +24,7 @@ layout: default
         <h1 class="text-2xl font-semibold tracking-tight">{{ page.title }}</h1>
       </div>
     </div>
+    <p class="text-sm text-slate-600 max-w-2xl">Latest feed of {{ brand_name }} discount codes and promotions.</p>
   </header>
 
   <section class="space-y-3 text-sm text-slate-600 max-w-2xl">
@@ -35,7 +43,7 @@ layout: default
 
     {%- assign has_eligible = false -%}
 
-    <div class="space-y-4">
+    <div class="space-y-3">
       {% for coupon in active %}
         {% if coupon.code and coupon.code != '' and coupon.discount_value %}
           {% if coupon.discount_value contains '%' or coupon.discount_value contains '$' %}
@@ -46,7 +54,7 @@ layout: default
                class="block bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition">
               <div class="flex flex-col gap-2">
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                  <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+                  <div class="flex items-start gap-3">
                     {% if coupon.discount_value %}
                       <span class="text-sm font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800">
                         {{ coupon.discount_value }}
