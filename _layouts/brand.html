@@ -6,6 +6,11 @@ layout: default
 {% assign brand_name = page.title | replace: ' discount codes', '' | strip %}
 <article class="space-y-6">
   <header class="space-y-3">
+    <style>
+    .space-y-3 {
+      background-color: transparent;
+    }
+    </style>
     <div class="flex items-center gap-4">
       <div class="w-20 h-20 flex items-center justify-center rounded-2xl border border-slate-200 overflow-hidden">
         <img src="{{ logo_path | relative_url }}"
