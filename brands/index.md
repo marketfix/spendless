@@ -39,10 +39,11 @@ title: "Brands"
       <a href="{{ brand.url | relative_url }}"
          class="block bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition">
         <div class="flex items-start gap-3">
-          <div class="w-14 h-14 flex items-center justify-center rounded-xl border border-slate-200 bg-white p-1">
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl border border-slate-200 bg-white overflow-hidden">
             <img src="{{ logo_path | relative_url }}"
                  alt="{{ brand.title }} logo"
-                 class="w-full h-full object-contain"
+                 class="w-full h-full object-cover"
+                 style="transform: scale(1.2);"
                  loading="lazy">
           </div>
           <div class="flex-1 space-y-1">
