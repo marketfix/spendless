@@ -1,0 +1,17 @@
+code,discount_amount,description
+ANPARTS10,10% off,Sitewide on OEM parts
+WELCOME15,15% off,New customers only
+OEM15,15% off,Genuine OEM parts
+SAVE20,20% off,Orders $150+
+PARTS25,25% off,Orders $250+
+MILITARY20,20% off,Military / veterans discount
+FIRSTRESPONDER15,15% off,Police / Fire / EMT discount
+STUDENT10,10% off,Verified students
+SENIOR10,10% off,Seniors 55+
+LOYALTY10,10% off,Returning/loyalty customers
+FREESHIP,Free shipping,Orders $99+
+FLASH25,25% off,Flash sale items
+BF2025,Up to 50% off,Black Friday 2025
+CYBER25,25-35% off,Cyber Monday 2025
+EMAIL10,10% off,Newsletter signup
+APP10,10% off,First app order
