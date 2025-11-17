@@ -11,7 +11,7 @@ COUPONS_DIR = ROOT / "_coupons"
 BRAND_NAMES = {
     "1800contacts": "1-800 Contacts",
     "aliexpress": "AliExpress",
-    "autonation": "AutoNation",
+    "autonationparts": "AutoNationParts",
     "booking": "Booking.com",
     "expedia": "Expedia",
     "hotelscom": "Hotels.com",
