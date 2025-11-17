@@ -83,6 +83,47 @@
       body.dark #theme-toggle {
         border-color: var(--accent);
       }
+
+      [data-surface-card] {
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      }
+
+      body.dark [data-surface-card] {
+        background-color: #0b1220;
+        border-color: #1f2a3e;
+        color: #f8fafc;
+      }
+
+      body.dark [data-surface-card] .bg-white {
+        background-color: #0f172a;
+      }
+
+      body.dark [data-surface-card] .border-slate-200 {
+        border-color: #1e293b;
+      }
+
+      body.dark [data-surface-card] .text-slate-900,
+      body.dark [data-surface-card] .text-slate-800,
+      body.dark [data-surface-card] .text-slate-700 {
+        color: #f8fafc;
+      }
+
+      body.dark [data-surface-card] .text-slate-600,
+      body.dark [data-surface-card] .text-slate-500 {
+        color: #cbd5f5;
+      }
+
+      body.dark [data-surface-card] .text-slate-400 {
+        color: #94a3b8;
+      }
+
+      body.dark [data-surface-card] .bg-emerald-50 {
+        background-color: rgba(16, 185, 129, 0.16);
+      }
+
+      body.dark [data-surface-card] .text-emerald-800 {
+        color: #86efac;
+      }
     </style>
   </head>
   <body class="min-h-screen transition-colors duration-300">

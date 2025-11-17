@@ -37,6 +37,7 @@ title: "Brands"
     {% assign logo_path = '/media/brand_logos/' | append: brand.brand_slug | append: '.jpg' %}
     <li data-brand-card data-brand-name="{{ brand.title | downcase }}">
       <a href="{{ brand.url | relative_url }}"
+         data-surface-card
          class="block bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition">
         <div class="flex items-start gap-3">
           <div class="w-14 h-14 flex items-center justify-center rounded-xl border border-slate-200 bg-white overflow-hidden">
