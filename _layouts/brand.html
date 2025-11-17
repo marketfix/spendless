@@ -3,12 +3,13 @@ layout: default
 ---
 
 {% assign logo_path = '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
+{% assign brand_name = page.title | replace: ' discount codes', '' | strip %}
 <article class="space-y-6">
   <header class="space-y-3">
     <div class="flex items-center gap-4">
-      <div class="w-20 h-20 flex items-center justify-center rounded-2xl border border-slate-200 bg-white overflow-hidden">
+      <div class="w-20 h-20 flex items-center justify-center rounded-2xl border border-slate-200 overflow-hidden">
         <img src="{{ logo_path | relative_url }}"
-             alt="{{ page.title }} logo"
+             alt="{{ brand_name }} logo"
              class="w-full h-full object-cover"
              style="transform: scale(1.2);"
              loading="lazy">
@@ -18,16 +19,16 @@ layout: default
         <h1 class="text-2xl font-semibold tracking-tight">{{ page.title }}</h1>
       </div>
     </div>
-    {% if page.description_short %}
-      <p class="text-sm text-slate-600 max-w-2xl">{{ page.description_short }}</p>
-    {% endif %}
+    <p class="text-sm text-slate-600 max-w-2xl">Latest feed of {{ brand_name }} discount codes and promotions.</p>
   </header>
 
-  {% if content %}
-    <section class="prose prose-sm max-w-none">
-      {{ content }}
-    </section>
-  {% endif %}
+  <section class="space-y-3 text-sm text-slate-600 max-w-2xl">
+    <p>
+      A collection of all the current promo codes you can apply at {{ brand_name }} checkout. Each code has been shared and
+      tested by our community at <a href="https://reddit.com/r/SpendLess" class="text-slate-900 underline decoration-dotted hover:text-slate-700" target="_blank" rel="noopener">/r/SpendLess</a>.
+      This page gets automatically updated on a frequent basis to keep the discount list fresh. Please note that all promotions can still change or end without prior notice.
+    </p>
+  </section>
 
   <section class="space-y-3">
     <h2 class="text-sm font-medium text-slate-900">Current discounts</h2>
