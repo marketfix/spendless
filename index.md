@@ -1,18 +1,19 @@
 ---
 layout: default
-title: "Latest Discount Codes"
+title: "Spendlesso"
 ---
 
-<div class="space-y-4">
-  <h1 class="text-2xl font-semibold tracking-tight">Latest discount codes</h1>
-  <p class="text-sm text-slate-600 max-w-xl">
-    Spendlesso brings together hand-picked discount codes and deals from a small set of brands.
-    We keep the list tidy, honest, and clearly mark expired offers.
+<div class="py-12 text-center">
+  <p class="text-sm text-slate-500">We moved!</p>
+  <h1 class="text-2xl font-semibold tracking-tight text-slate-900 mt-2">You're being redirected…</h1>
+  <p class="text-sm text-slate-500 mt-4 max-w-lg mx-auto">
+    The Spendlesso home is now our brands directory. If you are not redirected automatically,
+    <a href="{{ '/brands/' | relative_url }}" class="text-slate-900 font-medium underline">click here to browse brands</a>.
   </p>
-
-  <a href="{{ '/brands/' | relative_url }}"
-     class="inline-flex items-center text-sm font-medium text-slate-900 border border-slate-300 rounded-full px-4 py-2 hover:bg-slate-100">
-    Browse brands
-    <span class="ml-2">→</span>
-  </a>
 </div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    window.location.href = '{{ '/brands/' | relative_url }}';
+  });
+</script>
