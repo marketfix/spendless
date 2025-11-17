@@ -13,10 +13,10 @@ title: "Brands"
       <a href="{{ brand.url | relative_url }}"
          class="block bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition">
         <div class="flex items-start gap-3">
-          <div class="w-12 h-12 flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2">
+          <div class="w-14 h-14 flex items-center justify-center rounded-xl border border-slate-200 bg-white p-1">
             <img src="{{ logo_path | relative_url }}"
                  alt="{{ brand.title }} logo"
-                 class="max-w-full max-h-full object-contain"
+                 class="w-full h-full object-contain"
                  loading="lazy">
           </div>
           <div class="flex-1 space-y-1">
@@ -26,9 +26,7 @@ title: "Brands"
                 {{ site.coupons | where: "brand_slug", brand.brand_slug | size }} offers
               </span>
             </div>
-            {% if brand.description_short %}
-              <p class="text-xs text-slate-500">{{ brand.description_short }}</p>
-            {% endif %}
+            <p class="text-xs text-slate-500">Latest {{ brand.title }} discount codes and promotions</p>
           </div>
         </div>
       </a>
