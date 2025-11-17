@@ -124,7 +124,7 @@ layout: default
         <div class="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-4">
           <div class="flex-1 min-w-0">
             <div
-              class="inline-flex w-full items-center gap-3 rounded-lg border border-slate-700 px-3 py-2 bg-slate-800/70 cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-500"
+              class="inline-flex w-full items-center gap-3 rounded-lg border border-slate-700 px-3 py-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-500"
               data-code-display
               role="button"
               tabindex="0"
@@ -155,6 +155,15 @@ layout: default
       All discounts are regularly tested and updated, but can still change or end without notice.
     </p>
   </section>
+
+  <p
+    class="text-[11px] text-rose-400 hover:text-rose-500 transition inline-flex items-center gap-1"
+    role="button"
+    tabindex="0"
+    data-report-invalid
+    data-coupon-id="{{ page.url | relative_url }}">
+    Report invalid code
+  </p>
 
   {% if page.url_external %}
     <a href="{{ page.url_external }}"

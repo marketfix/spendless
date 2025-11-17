@@ -126,7 +126,7 @@
       }
     </style>
   </head>
-  <body class="min-h-screen transition-colors duration-300">
+  <body class="min-h-screen transition-colors duration-300 flex flex-col">
     <header class="border-b">
       <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
         <a href="{{ '/' | relative_url }}" class="text-lg font-semibold tracking-tight flex items-center gap-2">
@@ -144,7 +144,7 @@
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-8">
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-1 w-full">
       {{ content }}
     </main>
 
@@ -182,6 +182,79 @@
           toggleLabel.textContent = isDark ? "Lights off" : "Lights on";
           toggleButton.setAttribute('aria-pressed', isDark);
         }
+      })();
+    </script>
+    <script>
+      (function () {
+        const storageKey = 'spendless-reported-coupons';
+        const reportedLabel = 'Reported, thank you!';
+        const defaultLabel = 'Report invalid code';
+
+        const loadReported = () => {
+          try {
+            const stored = JSON.parse(localStorage.getItem(storageKey) || '[]');
+            if (Array.isArray(stored)) {
+              return new Set(stored);
+            }
+          } catch (error) {
+            console.warn('Unable to read reported coupons from storage', error);
+          }
+          return new Set();
+        };
+
+        const persistReported = (set) => {
+          try {
+            localStorage.setItem(storageKey, JSON.stringify(Array.from(set)));
+          } catch (error) {
+            console.warn('Unable to save reported coupons', error);
+          }
+        };
+
+        const updateLabel = (element, isReported) => {
+          element.textContent = isReported ? reportedLabel : defaultLabel;
+          element.setAttribute('aria-pressed', isReported);
+          element.classList.toggle('opacity-70', isReported);
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const reportButtons = document.querySelectorAll('[data-report-invalid]');
+          if (!reportButtons.length) return;
+
+          const reported = loadReported();
+
+          reportButtons.forEach((button) => {
+            const couponId = button.getAttribute('data-coupon-id');
+            if (!couponId) return;
+
+            const applyState = () => {
+              const isReported = reported.has(couponId);
+              updateLabel(button, isReported);
+            };
+
+            applyState();
+
+            const markReported = () => {
+              if (reported.has(couponId)) return;
+              reported.add(couponId);
+              persistReported(reported);
+              updateLabel(button, true);
+            };
+
+            button.addEventListener('click', (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              markReported();
+            });
+
+            button.addEventListener('keydown', (event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                event.stopPropagation();
+                markReported();
+              }
+            });
+          });
+        });
       })();
     </script>
   </body>
