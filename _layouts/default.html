@@ -125,12 +125,21 @@
         color: #86efac;
       }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDFQXS74CQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VDFQXS74CQ');
+    </script>
   </head>
   <body class="min-h-screen transition-colors duration-300 flex flex-col">
     <header class="border-b">
       <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
         <a href="{{ '/' | relative_url }}" class="text-lg font-semibold tracking-tight flex items-center gap-2">
-          <img src="{{ '/media/piggy.png' | relative_url }}" alt="SpendLess'o! logo" class="h-8 w-8">
+          <img src="{{ '/media/piggy.png' | relative_url }}" alt="SpendLess'o logo" class="h-8 w-8">
           <span>{{ site.title }}</span>
         </a>
         <nav class="text-sm flex items-center">
