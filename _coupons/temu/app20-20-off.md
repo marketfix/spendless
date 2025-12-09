@@ -1,11 +1,11 @@
 ---
 layout: coupon
-title: "20% Off"
+title: "20% Off App Purchase"
 brand_slug: "temu"
-discount_value: "20% off"
-code: "APP20"
+discount_value: "20% Off"
+code: "app20"
 is_expired: false
-description_short: "App-Only First Order Discount"
+description_short: "Discount for purchases made in the app"
 ---
 
 This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.

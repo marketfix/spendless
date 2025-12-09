@@ -56,15 +56,20 @@ layout: default
                   <div class="flex items-start gap-3">
                     {% if coupon.discount_value %}
                       <span class="text-sm font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800">
-                        {{ coupon.discount_value }}
+                        {{ coupon.discount_value | downcase }}
                       </span>
                     {% endif %}
 
                     <div class="space-y-1">
                       {% assign display_title = coupon.title %}
                       {% if coupon.discount_value %}
-                        {% assign display_title = display_title | remove: coupon.discount_value | strip %}
-                        {% assign display_title = display_title | replace: "  ", " " %}
+                        {% assign to_remove = coupon.discount_value %}
+                        {% assign to_remove_down = to_remove | downcase %}
+                        {% assign to_remove_cap = to_remove | capitalize %}
+                        {% assign display_title = display_title | replace_first: to_remove, '' %}
+                        {% assign display_title = display_title | replace_first: to_remove_down, '' %}
+                        {% assign display_title = display_title | replace_first: to_remove_cap, '' %}
+                        {% assign display_title = display_title | strip | replace: "  ", " " %}
                       {% endif %}
                       {% if display_title == '' and coupon.description_short %}
                         {% assign display_title = coupon.description_short %}
