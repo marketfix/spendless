@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% Off All Orders"
+title: "All Orders"
 brand_slug: "temu"
 discount_value: "30% off"
 code: "TEM30"

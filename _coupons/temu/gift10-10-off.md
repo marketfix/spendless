@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% Off Gift Items"
+title: "Gift Items"
 brand_slug: "temu"
 discount_value: "10% off"
 code: "GIFT10"

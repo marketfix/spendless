@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% Off App Orders"
+title: "App Orders"
 brand_slug: "temu"
 discount_value: "20% off"
 code: "APP20"
