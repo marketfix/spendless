@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <!-- Fallback if JavaScript is disabled -->
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://www.trip.com/sale/deals/">
+  </noscript>
+
+  <script>
+    (function () {
+      const MAP = {
+        CA: "https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=25048&c=918277&a=377858&k=E1C51095B701C3FB26945DDA2DF8FFCD&l=26179",
+        GB: "https://afflat3a2.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=22736&c=918277&a=377858&k=5ED545C02866BD0BD94BCF0190A84EE5&l=23775",
+        ES: "https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=22734&c=918277&a=377858&k=A550467AECFC6A5C20EB13FF6244E283&l=23773",
+        FR: "https://afflat3a2.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=22733&c=918277&a=377858&k=5BEBC75BCF4299227AA52D3E94E693F9&l=23690",
+        DE: "https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=22737&c=918277&a=377858&k=922E3D65A9929E7CDBF2337307C5EF0E&l=23776",
+        RU: "https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=22735&c=918277&a=377858&k=949832C9C9D3C4D9BB90702EA2201F3B&l=23774",
+        US: "https://afflat3a2.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=19783&c=918277&a=377858&k=74DA7647602DBD5CDC7682DF884F32FE&l=22337",
+        DEFAULT: "https://www.trip.com/sale/deals/"
+      };
+
+      fetch("https://ipapi.co/json/", { cache: "no-store" })
+        .then(r => r.json())
+        .then(d => {
+          const cc = (d.country || "").toUpperCase();
+          location.replace(MAP[cc] || MAP.DEFAULT);
+        })
+        .catch(() => {
+          location.replace(MAP.DEFAULT);
+        });
+    })();
+  </script>
+</head>
+<body></body>
+</html>
