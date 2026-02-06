@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vevor</title>
+
+  <!-- Fallback if JavaScript is disabled -->
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://www.trip.com/sale/deals/">
+  </noscript>
+
+  <script>
+    (function () {
+      const MAP = {
+        AU: "https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=27951&c=918277&a=377858&k=1BD3545BA4C237B989BFC43AA2AB87E3&l=30450",
+        CA: "https://afflat3a2.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=27741&c=918277&a=377858&k=1EA04F4313DDDEFD5476A7D9BC702C37&l=30012",
+        MX: "https://afflat3a2.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=27953&c=918277&a=377858&k=97AAA97719618090F08140B7A91D1021&l=30394",
+        US: "https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=27740&c=918277&a=377858&k=106DC08C031AAE93D233AAAD4DE40E72&l=34157",
+        DEFAULT: "https://www.vevor.com"
+      };
+
+      fetch("https://ipapi.co/json/", { cache: "no-store" })
+        .then(r => r.json())
+        .then(d => {
+          const cc = (d.country || "").toUpperCase();
+          location.replace(MAP[cc] || MAP.DEFAULT);
+        })
+        .catch(() => {
+          location.replace(MAP.DEFAULT);
+        });
+    })();
+  </script>
+</head>
+<body></body>
+</html>
