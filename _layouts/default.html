@@ -266,5 +266,56 @@
         });
       })();
     </script>
-  </body>
+  <
+    <style>
+/* glassmorphism tweaks */
+header, footer {
+  background-color: rgba(255,255,255,0.3);
+  backdrop-filter: blur(16px);
+  border-color: rgba(255,255,255,0.4);
+}
+body.dark header, body.dark footer {
+  background-color: rgba(2,6,23,0.5);
+  border-color: rgba(30,41,59,0.6);
+}
+[data-surface-card] {
+  background-color: rgba(255,255,255,0.35);
+  backdrop-filter: blur(12px);
+  border-color: rgba(255,255,255,0.5);
+}
+body.dark [data-surface-card] {
+  background-color: rgba(2,6,23,0.45);
+  border-color: rgba(30,41,59,0.6);
+}
+#scoreboard {
+  margin-left: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const headerNav = document.querySelector('header nav');
+  if (headerNav) {
+    const scoreEl = document.createElement('span');
+    scoreEl.id = 'scoreboard';
+    scoreEl.textContent = 'Points: 0';
+    headerNav.appendChild(scoreEl);
+  }
+  function renderScore() {
+    const score = parseInt(localStorage.getItem('sl_score') || '0', 10);
+    const el = document.getElementById('scoreboard');
+    if (el) el.textContent = `Points: ${score}`;
+  }
+  window.updateScore = function(amount) {
+    amount = amount || 1;
+    const current = parseInt(localStorage.getItem('sl_score') || '0', 10);
+    const next = current + amount;
+    localStorage.setItem('sl_score', next);
+    renderScore();
+  };
+  renderScore();
+});
+</script>
+/body>
 </html>
