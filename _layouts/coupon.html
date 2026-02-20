@@ -31,7 +31,7 @@ layout: default
       <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400">Promo code</p>
       <div class="mt-2 flex flex-col sm:flex-row gap-3">
         <div class="flex-1 rounded-xl border border-slate-700 px-3 py-2">
-          <span class="font-mono text-lg code-fluid-blur select-none" data-code-display>{{ page.code }}</span>
+          <span class="font-mono text-lg code-fluid-blur select-none" data-code-display aria-label="Hidden promo code">••••••••</span>
         </div>
         <button type="button" data-copy-code-button data-copy-code="{{ page.code }}" data-brand-slug="{{ page.brand_slug }}" data-url-external="{{ page.url_external }}" class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-semibold">View Code</button>
       </div>
@@ -61,6 +61,8 @@ layout: default
           'lumens': 'https://mylumens.wiki/', 'nike': 'https://spendlessnike.wiki/', 'petco': 'https://petcocoupon.wiki/',
           'shein': 'https://sheincoupons.wiki/', 'temu': 'https://temucoupon.pro/', 'walmart': 'https://walmartcodes.wiki/'
         };
+
+        display.textContent = '•'.repeat(Math.max(code.length, 8));
 
         const openOffer = () => {
           const fallback = offerHosts[brand] ? `${offerHosts[brand]}${code}` : '';
