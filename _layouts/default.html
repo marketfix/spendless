@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="{{ page.description | default: site.description }}">
+    {% assign meta_description = page.description | default: page.description_short | default: site.description %}
+    <meta name="description" content="{{ meta_description }}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/media/apple-touch-icon.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/media/favicon-32x32.png' | relative_url }}">
@@ -13,14 +14,14 @@
     <meta name="theme-color" content="#dbeafe">
 
     <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
-    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:description" content="{{ meta_description }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | relative_url | absolute_url }}">
     <meta property="og:image" content="{{ '/media/og-card-1200x630.png' | absolute_url }}">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ page.title }} | {{ site.title }}">
-    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:description" content="{{ meta_description }}">
     <meta name="twitter:image" content="{{ '/media/twitter-card-1200x675.png' | absolute_url }}">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -86,7 +87,15 @@
             <span>{{ site.title }}</span>
           </a>
           <nav class="text-xs flex items-center gap-2">
-            <span id="scoreboard" class="rounded-full px-3 py-1 liquid-glass text-[11px] font-semibold">XP 0</span>
+            <div class="rounded-xl px-2 py-1 liquid-glass min-w-[140px]">
+              <div class="flex items-center justify-between gap-2 text-[11px] font-semibold">
+                <span id="scoreboard">XP 0</span>
+                <span id="levelboard" class="text-slate-500">Lv. 1</span>
+              </div>
+              <div class="mt-1 h-1.5 rounded-full bg-slate-300/50 overflow-hidden">
+                <div id="xp-progress" class="h-full bg-blue-500/80" style="width:0%"></div>
+              </div>
+            </div>
             <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="rounded-full border px-3 py-1.5 font-semibold liquid-glass">
               <span id="theme-toggle-label">Dark</span>
             </button>
@@ -113,6 +122,8 @@
         const toggleLabel = document.getElementById('theme-toggle-label');
         const storageKey = 'spendless-theme';
         const scoreEl = document.getElementById('scoreboard');
+        const levelEl = document.getElementById('levelboard');
+        const progressEl = document.getElementById('xp-progress');
 
         const storedTheme = localStorage.getItem(storageKey);
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -131,7 +142,11 @@
 
         function renderScore() {
           const score = parseInt(localStorage.getItem('sl_score') || '0', 10);
+          const level = Math.floor(score / 100) + 1;
+          const progress = score % 100;
           if (scoreEl) scoreEl.textContent = `XP ${score}`;
+          if (levelEl) levelEl.textContent = `Lv. ${level}`;
+          if (progressEl) progressEl.style.width = `${progress}%`;
         }
 
         window.updateScore = function (amount) {

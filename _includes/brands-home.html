@@ -1,7 +1,7 @@
 <section class="liquid-glass rounded-3xl px-5 py-8 mb-6">
   <p class="text-[11px] uppercase tracking-[0.28em] text-slate-500">SpendLess Quest</p>
-  <h1 class="text-3xl font-semibold tracking-tight mt-2">Coupon hunting, but fun.</h1>
-  <p class="text-sm mt-3 text-slate-600 max-w-2xl">Tap a brand, unlock codes, collect XP, and chase today's best savings in a fluid iOS-style browsing experience.</p>
+  <h1 class="text-3xl font-semibold tracking-tight mt-2">Verified coupons. Faster savings.</h1>
+  <p class="text-sm mt-3 text-slate-600 max-w-2xl">Find community-tested promo codes and travel deals in one place. Pick a brand, unlock an offer, and level up your XP as you save.</p>
   <div class="mt-4 flex flex-wrap gap-2 text-xs">
     <span class="px-3 py-1 rounded-full liquid-glass">1 tap reveal</span>
     <span class="px-3 py-1 rounded-full liquid-glass">opens offer in new tab</span>
@@ -30,7 +30,7 @@
               <span class="font-medium text-sm">{{ brand.title }}</span>
               <span class="text-[11px] text-slate-600">{{ site.coupons | where: "brand_slug", brand.brand_slug | size }} offers</span>
             </div>
-            <p class="text-xs text-slate-500 mt-1">Open brand vault ↗</p>
+            <p class="text-xs text-slate-500 mt-1">{{ site.coupons | where: "brand_slug", brand.brand_slug | size }} deals available • updated daily · Browse coupons ↗</p>
           </div>
         </div>
       </a>
