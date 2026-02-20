@@ -10,4 +10,4 @@ description_short: "Black Friday 2025"
 
 Use code **BF2025** at checkout to get up to 50% off on black friday 2025.
 
-These offers come directly from the latest list we maintain for AutoNationParts. Availability can change, so try the code soon if it fits your order.
+This code is included from the latest /r/SpendLess list for AutoNationParts. Availability can change quickly.

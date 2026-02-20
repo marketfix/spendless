@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Charity donation"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **DONATE5** at checkout to get 5% off on charity donation.
+
+This code is included from the latest /r/SpendLess list for Petco. Availability can change quickly.

@@ -2,9 +2,10 @@
 layout: brand
 title: "Lulus discount codes"
 brand_slug: "lulus"
-description_short: "Latest Lulus discount codes, promo codes, and simple ways to save."
+logo_path: "/media/brand_logos/lulus.jpg"
+description_short: "Latest Lulus discount codes and promo codes from /r/SpendLess."
 ---
 
-Lulus regularly promotes limited-time deals and coupon codes. This page keeps the newest options in one place so you can quickly check what still works.
+This is the official Lulus brand page for SpendLess.
 
-We list the current offers first, then expired ones as a reference for what has been available recently.
+We publish every currently available Lulus discount code shared in /r/SpendLess, then keep expired ones listed for reference.

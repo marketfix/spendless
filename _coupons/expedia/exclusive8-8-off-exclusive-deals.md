@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Exclusive deals"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **EXCLUSIVE8** at checkout to get 8% off on exclusive deals.
+
+This code is included from the latest /r/SpendLess list for Expedia. Availability can change quickly.

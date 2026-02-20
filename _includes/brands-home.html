@@ -18,7 +18,7 @@
 <ul id="brand-grid" class="grid gap-3 sm:grid-cols-2">
   {% assign sorted_brands = site.brands | sort: "title" %}
   {% for brand in sorted_brands %}
-    {% assign logo_path = '/media/brand_logos/' | append: brand.brand_slug | append: '.jpg' %}
+    {% assign logo_path = brand.logo_path | default: '/media/brand_logos/' | append: brand.brand_slug | append: '.jpg' %}
     <li data-brand-card data-brand-name="{{ brand.title | downcase }}">
       <a href="{{ brand.url | relative_url }}" data-surface-card class="block liquid-glass rounded-2xl px-3 py-3">
         <div class="flex items-start gap-3">

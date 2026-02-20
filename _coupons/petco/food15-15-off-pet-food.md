@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Pet food"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **FOOD15** at checkout to get 15% off on pet food.
+
+This code is included from the latest /r/SpendLess list for Petco. Availability can change quickly.

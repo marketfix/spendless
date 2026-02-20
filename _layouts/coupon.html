@@ -2,8 +2,8 @@
 layout: default
 ---
 
-{% assign logo_path = '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
 {% assign brand_page = site.brands | where: 'brand_slug', page.brand_slug | first %}
+{% assign logo_path = brand_page.logo_path | default: '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
 {% if brand_page and brand_page.title %}
   {% assign brand_name = brand_page.title | replace: ' discount codes', '' | strip %}
 {% else %}

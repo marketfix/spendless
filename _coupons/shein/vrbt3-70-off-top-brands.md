@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Top brands"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **VRBT3** at checkout to get 70% off on top brands.
+
+This code is included from the latest /r/SpendLess list for SHEIN. Availability can change quickly.

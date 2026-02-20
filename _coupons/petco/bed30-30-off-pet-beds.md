@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Pet beds"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **BED30** at checkout to get 30% off on pet beds.
+
+This code is included from the latest /r/SpendLess list for Petco. Availability can change quickly.

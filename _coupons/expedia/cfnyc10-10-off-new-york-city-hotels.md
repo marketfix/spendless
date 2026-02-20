@@ -8,4 +8,6 @@ is_expired: false
 description_short: "New York City hotels"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **CFNYC10** at checkout to get 10% off on new york city hotels.
+
+This code is included from the latest /r/SpendLess list for Expedia. Availability can change quickly.

@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Lighting fixtures"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **LIGHTING15** at checkout to get 15% off on lighting fixtures.
+
+This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

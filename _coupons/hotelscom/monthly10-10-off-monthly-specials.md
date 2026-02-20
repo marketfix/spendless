@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Monthly specials"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **MONTHLY10** at checkout to get 10% off on monthly specials.
+
+This code is included from the latest /r/SpendLess list for Hotels.com. Availability can change quickly.

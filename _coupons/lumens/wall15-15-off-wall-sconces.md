@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Wall sconces"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **WALL15** at checkout to get 15% off on wall sconces.
+
+This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

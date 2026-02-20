@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign logo_path = '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
+{% assign logo_path = page.logo_path | default: '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
 {% assign brand_name = page.title | replace: ' discount codes', '' | strip %}
 <article class="space-y-6">
   <header class="liquid-glass rounded-3xl p-4 sm:p-6">

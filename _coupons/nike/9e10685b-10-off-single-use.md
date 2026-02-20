@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Single use"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **9E10685B** at checkout to get 10% off on single use.
+
+This code is included from the latest /r/SpendLess list for Nike. Availability can change quickly.

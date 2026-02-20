@@ -2,9 +2,10 @@
 layout: brand
 title: "AutoNationParts discount codes"
 brand_slug: "autonationparts"
-description_short: "Latest AutoNationParts discount codes, promo codes, and simple ways to save."
+logo_path: "/media/brand_logos/autonationparts.jpg"
+description_short: "Latest AutoNationParts discount codes and promo codes from /r/SpendLess."
 ---
 
-AutoNationParts regularly promotes limited-time deals and coupon codes. This page keeps the newest options in one place so you can quickly check what still works.
+This is the official AutoNationParts brand page for SpendLess.
 
-We list the current offers first, then expired ones as a reference for what has been available recently.
+We publish every currently available AutoNationParts discount code shared in /r/SpendLess, then keep expired ones listed for reference.

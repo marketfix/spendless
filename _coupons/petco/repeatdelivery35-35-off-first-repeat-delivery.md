@@ -8,4 +8,6 @@ is_expired: false
 description_short: "First repeat delivery"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **RepeatDelivery35** at checkout to get 35% off on first repeat delivery.
+
+This code is included from the latest /r/SpendLess list for Petco. Availability can change quickly.

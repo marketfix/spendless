@@ -10,4 +10,4 @@ description_short: "Seniors 55+"
 
 Use code **SENIOR10** at checkout to get 10% off on seniors 55+.
 
-These offers come directly from the latest list we maintain for AutoNationParts. Availability can change, so try the code soon if it fits your order.
+This code is included from the latest /r/SpendLess list for AutoNationParts. Availability can change quickly.

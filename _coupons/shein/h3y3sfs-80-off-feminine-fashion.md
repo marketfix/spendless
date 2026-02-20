@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Feminine fashion"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **H3Y3SFS** at checkout to get 80% off on feminine fashion.
+
+This code is included from the latest /r/SpendLess list for SHEIN. Availability can change quickly.

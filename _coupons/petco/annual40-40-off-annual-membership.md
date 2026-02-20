@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Annual membership"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **ANNUAL40** at checkout to get 40% off on annual membership.
+
+This code is included from the latest /r/SpendLess list for Petco. Availability can change quickly.

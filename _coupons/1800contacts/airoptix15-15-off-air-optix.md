@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Air Optix"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **AIROPTIX15** at checkout to get 15% off on air optix.
+
+This code is included from the latest /r/SpendLess list for 1-800 Contacts. Availability can change quickly.

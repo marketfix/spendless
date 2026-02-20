@@ -8,4 +8,6 @@ is_expired: false
 description_short: "New users"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **FMJJ6** at checkout to get 90% off + free shipping on new users.
+
+This code is included from the latest /r/SpendLess list for SHEIN. Availability can change quickly.

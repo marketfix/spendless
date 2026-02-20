@@ -8,4 +8,6 @@ is_expired: false
 description_short: "Black Friday deals"
 ---
 
-This promotion can be applied during checkout, but may be limited to specific items, dates, or account types. We test and update all discounts regularly, but promotions can still change or end without notice.
+Use code **BLACKFRIDAY50** at checkout to get 50% off on black friday deals.
+
+This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.
