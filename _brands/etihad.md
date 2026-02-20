@@ -2,7 +2,7 @@
 layout: brand
 title: "Etihad Airways promo codes"
 brand_slug: "etihad"
-logo_path: "/media/brand_logos/etihad.svg"
+logo_path: "/media/brand_logos/etihad.jpg"
 description: "Etihad Airways promo codes curated from /r/SpendLess with verified offers, unlock steps, and daily updates."
 description_short: "Latest Etihad Airways discount codes and promo codes from /r/SpendLess."
 ---

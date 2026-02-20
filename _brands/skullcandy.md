@@ -2,7 +2,7 @@
 layout: brand
 title: "Skullcandy promo codes"
 brand_slug: "skullcandy"
-logo_path: "/media/brand_logos/skullcandy.svg"
+logo_path: "/media/brand_logos/skullcandy.jpg"
 description: "Skullcandy promo codes curated from /r/SpendLess with verified offers, unlock steps, and daily updates."
 description_short: "Latest Skullcandy discount codes and promo codes from /r/SpendLess."
 ---

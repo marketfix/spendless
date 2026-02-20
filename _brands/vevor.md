@@ -2,7 +2,7 @@
 layout: brand
 title: "Vevor promo codes"
 brand_slug: "vevor"
-logo_path: "/media/brand_logos/vevor.svg"
+logo_path: "/media/brand_logos/vevor.jpg"
 description: "Vevor promo codes curated from /r/SpendLess with verified offers, unlock steps, and daily updates."
 description_short: "Latest Vevor discount codes and promo codes from /r/SpendLess."
 ---

@@ -2,7 +2,7 @@
 layout: brand
 title: "Saily eSIM promo codes"
 brand_slug: "saily"
-logo_path: "/media/brand_logos/saily.svg"
+logo_path: "/media/brand_logos/saily.jpg"
 description: "Saily eSIM promo codes curated from /r/SpendLess with verified offers, unlock steps, and daily updates."
 description_short: "Latest Saily eSIM discount codes and promo codes from /r/SpendLess."
 ---

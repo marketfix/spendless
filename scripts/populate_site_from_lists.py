@@ -34,42 +34,8 @@ def default_brand_name(slug: str) -> str:
     return slug.replace("-", " ").title()
 
 
-def initials_for_brand(brand_name: str) -> str:
-    chunks = re.findall(r"[A-Za-z0-9]+", brand_name)
-    if not chunks:
-        return "SL"
-    if len(chunks) == 1:
-        return chunks[0][:2].upper()
-    return (chunks[0][0] + chunks[1][0]).upper()
-
-
-def ensure_logo(brand_slug: str, brand_name: str) -> str:
-    jpg = LOGOS_DIR / f"{brand_slug}.jpg"
-    if jpg.exists():
-        return f"/media/brand_logos/{brand_slug}.jpg"
-
-    svg = LOGOS_DIR / f"{brand_slug}.svg"
-    if not svg.exists():
-        initial = initials_for_brand(brand_name)
-        svg.write_text(
-            textwrap.dedent(
-                f"""
-                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="{brand_name} logo placeholder">
-                  <defs>
-                    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#e2e8f0" />
-                      <stop offset="100%" stop-color="#cbd5e1" />
-                    </linearGradient>
-                  </defs>
-                  <rect width="120" height="120" fill="url(#bg)" rx="16" />
-                  <text x="60" y="68" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#334155">{initial}</text>
-                </svg>
-                """
-            ).strip()
-            + "\n"
-        )
-
-    return f"/media/brand_logos/{brand_slug}.svg"
+def ensure_logo(brand_slug: str) -> str:
+    return f"/media/brand_logos/{brand_slug}.jpg"
 
 
 def build_brand_page(brand_slug: str, brand_name: str, logo_path: str) -> str:
@@ -152,7 +118,7 @@ def main() -> None:
     for csv_path in LISTS_DIR.glob("*.csv"):
         brand_slug = csv_path.stem.lower()
         brand_name = BRAND_NAMES.get(brand_slug, default_brand_name(brand_slug))
-        logo_path = ensure_logo(brand_slug, brand_name)
+        logo_path = ensure_logo(brand_slug)
 
         brand_output = build_brand_page(brand_slug, brand_name, logo_path)
         brand_file = BRANDS_DIR / f"{brand_slug}.md"

@@ -2,7 +2,7 @@
 layout: brand
 title: "eBay promo codes"
 brand_slug: "ebay"
-logo_path: "/media/brand_logos/ebay.svg"
+logo_path: "/media/brand_logos/ebay.jpg"
 description: "eBay promo codes curated from /r/SpendLess with verified offers, unlock steps, and daily updates."
 description_short: "Latest eBay discount codes and promo codes from /r/SpendLess."
 ---

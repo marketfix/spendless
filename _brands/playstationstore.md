@@ -2,7 +2,7 @@
 layout: brand
 title: "PlayStation Store promo codes"
 brand_slug: "playstationstore"
-logo_path: "/media/brand_logos/playstationstore.svg"
+logo_path: "/media/brand_logos/playstationstore.jpg"
 description: "PlayStation Store promo codes curated from /r/SpendLess with verified offers, unlock steps, and daily updates."
 description_short: "Latest PlayStation Store discount codes and promo codes from /r/SpendLess."
 ---

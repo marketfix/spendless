@@ -2,7 +2,7 @@
 layout: brand
 title: "Chewy promo codes"
 brand_slug: "chewy"
-logo_path: "/media/brand_logos/chewy.svg"
+logo_path: "/media/brand_logos/chewy.jpg"
 description: "Chewy promo codes curated from /r/SpendLess with verified offers, unlock steps, and daily updates."
 description_short: "Latest Chewy discount codes and promo codes from /r/SpendLess."
 ---
