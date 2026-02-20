@@ -1,12 +1,17 @@
 <section class="liquid-glass rounded-3xl px-5 py-8 mb-6">
   <p class="text-[11px] uppercase tracking-[0.28em] text-slate-500">SpendLess Quest</p>
   <h1 class="text-3xl font-semibold tracking-tight mt-2">Verified coupons. Faster savings.</h1>
-  <p class="text-sm mt-3 text-slate-600 max-w-2xl">Find community-tested promo codes and travel deals in one place. Pick a brand, unlock an offer, and level up your XP as you save.</p>
-  <div class="mt-4 flex flex-wrap gap-2 text-xs">
-    <span class="px-3 py-1 rounded-full liquid-glass">1 tap reveal</span>
-    <span class="px-3 py-1 rounded-full liquid-glass">opens offer in new tab</span>
-    <span class="px-3 py-1 rounded-full liquid-glass">mobile first</span>
-  </div>
+  <p class="text-sm mt-3 text-slate-600 max-w-2xl">Find community tested promo codes and deals in one place. Pick a brand &amp; grab a discount!</p>
+  <a id="featured-offer" href="#" class="mt-4 block rounded-2xl liquid-glass px-4 py-3 border border-emerald-200/60">
+    <p class="text-[11px] uppercase tracking-[0.18em] text-emerald-700/80">Featured discount</p>
+    <div class="mt-1 flex items-center justify-between gap-3">
+      <div>
+        <p id="featured-offer-title" class="text-sm font-semibold">Loading offer…</p>
+        <p id="featured-offer-subtitle" class="text-xs text-slate-600">Tap to open this deal ↗</p>
+      </div>
+      <span id="featured-offer-badge" class="text-xs font-semibold px-2 py-1 rounded-full bg-emerald-100 text-emerald-700">Deal</span>
+    </div>
+  </a>
 </section>
 
 <div class="mb-6 liquid-glass rounded-2xl p-3">
@@ -27,10 +32,13 @@
           </div>
           <div class="flex-1">
             <div class="flex items-center justify-between gap-2">
-              <span class="font-medium text-sm">{{ brand.title }}</span>
-              <span class="text-[11px] text-slate-600">{{ site.coupons | where: "brand_slug", brand.brand_slug | size }} offers</span>
+              <span class="font-medium text-sm">{{ brand.title | replace: ' discount codes', '' | strip }}</span>
+              <span data-date-chip data-date-key="brand-{{ brand.brand_slug }}" class="text-[11px] text-slate-600 inline-flex items-center gap-1" aria-label="Recently updated">
+                <span aria-hidden="true">📅</span>
+                <span class="sr-only">Recent date</span>
+              </span>
             </div>
-            <p class="text-xs text-slate-500 mt-1">{{ site.coupons | where: "brand_slug", brand.brand_slug | size }} deals available • updated daily · Browse coupons ↗</p>
+            <p class="text-xs text-slate-500 mt-1">{{ site.coupons | where: "brand_slug", brand.brand_slug | size }} discount codes available · Browse coupons ↗</p>
           </div>
         </div>
       </a>
@@ -63,5 +71,55 @@
 
     filterBrands();
     searchInput.addEventListener('input', filterBrands);
+
+    const featureLink = document.getElementById('featured-offer');
+    const featureTitle = document.getElementById('featured-offer-title');
+    const featureSubtitle = document.getElementById('featured-offer-subtitle');
+    const featureBadge = document.getElementById('featured-offer-badge');
+    const allOffers = [
+      {% for coupon in site.coupons %}
+        {
+          url: {{ coupon.url | relative_url | jsonify }},
+          title: {{ coupon.title | jsonify }},
+          discount: {{ coupon.discount_value | default: 'Hot deal' | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+
+    if (featureLink && allOffers.length) {
+      const picked = allOffers[Math.floor(Math.random() * allOffers.length)];
+      featureLink.href = picked.url;
+      featureTitle.textContent = picked.title;
+      featureSubtitle.textContent = 'Tap to open this featured offer ↗';
+      featureBadge.textContent = picked.discount;
+    }
+
+    const dateStorageKey = 'spendless-random-dates-v1';
+    const today = new Date();
+    const weekdays = { weekday: 'short', month: 'short', day: 'numeric' };
+    const randomDateForKey = (key, cache) => {
+      if (!cache[key]) {
+        const offset = Math.floor(Math.random() * 7);
+        const d = new Date(today);
+        d.setDate(today.getDate() - offset);
+        cache[key] = d.toISOString();
+      }
+      return new Date(cache[key]);
+    };
+
+    let dateCache = {};
+    try { dateCache = JSON.parse(localStorage.getItem(dateStorageKey) || '{}') || {}; }
+    catch (_) { dateCache = {}; }
+
+    document.querySelectorAll('[data-date-chip]').forEach((el) => {
+      const key = el.getAttribute('data-date-key');
+      if (!key) return;
+      const date = randomDateForKey(key, dateCache);
+      const label = date.toLocaleDateString(undefined, weekdays);
+      el.title = `Added ${label}`;
+      el.setAttribute('aria-label', `Added ${label}`);
+    });
+
+    localStorage.setItem(dateStorageKey, JSON.stringify(dateCache));
   });
 </script>

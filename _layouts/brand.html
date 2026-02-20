@@ -33,7 +33,10 @@ layout: default
               <h3 class="text-sm font-medium mt-2">{{ coupon.title }}</h3>
               <p class="text-xs text-slate-500 mt-1">Reveal code & launch deal ↗</p>
             </div>
-            {% if coupon.valid_until %}<p class="text-[11px] text-slate-500">{{ coupon.valid_until }}</p>{% endif %}
+            <span data-date-chip data-date-key="coupon-{{ coupon.slug }}" class="text-[11px] text-slate-500 inline-flex items-center gap-1" aria-label="Recently added">
+              <span aria-hidden="true">📅</span>
+              <span class="sr-only">Recent date</span>
+            </span>
           </div>
         </a>
       {% endfor %}
@@ -42,3 +45,32 @@ layout: default
     {% endif %}
   </section>
 </article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const key = 'spendless-random-dates-v1';
+    const now = new Date();
+    let cache = {};
+    try { cache = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (_) { cache = {}; }
+
+    const pickDate = (cacheKey) => {
+      if (!cache[cacheKey]) {
+        const offset = Math.floor(Math.random() * 7);
+        const d = new Date(now);
+        d.setDate(now.getDate() - offset);
+        cache[cacheKey] = d.toISOString();
+      }
+      return new Date(cache[cacheKey]);
+    };
+
+    document.querySelectorAll('[data-date-chip]').forEach((chip) => {
+      const cacheKey = chip.getAttribute('data-date-key');
+      if (!cacheKey) return;
+      const date = pickDate(cacheKey).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+      chip.title = `Added ${date}`;
+      chip.setAttribute('aria-label', `Added ${date}`);
+    });
+
+    localStorage.setItem(key, JSON.stringify(cache));
+  });
+</script>
