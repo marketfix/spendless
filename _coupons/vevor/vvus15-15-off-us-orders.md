@@ -1,0 +1,13 @@
+---
+layout: coupon
+title: "15% off US orders"
+brand_slug: "vevor"
+discount_value: "15% off"
+code: "VVUS15"
+is_expired: false
+description_short: "US orders"
+---
+
+Use code **VVUS15** at checkout to get 15% off on us orders.
+
+This code is included from the latest /r/SpendLess list for Vevor. Availability can change quickly.
