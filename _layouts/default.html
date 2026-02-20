@@ -76,18 +76,56 @@
       [data-surface-card]:hover {
         transform: translateY(-2px) scale(1.01);
       }
+
+      .xp-shell {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .xp-shell::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.35) 50%, transparent 75%);
+        transform: translateX(-120%);
+        animation: xpShine 2.4s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      #xp-progress {
+        transition: width .45s ease;
+      }
+
+      @keyframes xpShine {
+        0%, 85%, 100% { transform: translateX(-120%); }
+        45% { transform: translateX(120%); }
+      }
+
+      @media (max-width: 640px) {
+        [data-mobile-enter] {
+          animation: mobileEnter .35s ease both;
+        }
+
+        @keyframes mobileEnter {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      }
     </style>
   </head>
   <body class="min-h-screen transition-colors duration-300 flex flex-col pb-safe">
     <header class="sticky top-2 z-20 px-3">
       <div class="max-w-4xl mx-auto mt-2 rounded-2xl liquid-glass-strong">
-        <div class="px-4 py-3 flex items-center justify-between gap-3">
-          <a href="{{ '/' | relative_url }}" class="text-sm font-semibold tracking-tight flex items-center gap-2">
-            <img src="{{ '/media/piggy.png' | relative_url }}" alt="SpendLess'o logo" class="h-8 w-8 rounded-lg">
-            <span>{{ site.title }}</span>
+        <div class="px-4 py-3 flex items-center justify-between gap-2 sm:gap-3">
+          <a href="{{ '/' | relative_url }}" class="text-sm font-semibold tracking-tight flex items-center gap-2 min-w-0">
+            <img src="{{ '/media/piggy.png' | relative_url }}" alt="SpendLess logo" class="h-8 w-8 rounded-lg">
+            <span class="leading-none">
+              <span class="block text-[1.85rem] sm:text-3xl font-bold">SpendLess</span>
+              <span class="block -mt-1 text-[10px] tracking-[0.14em] uppercase opacity-55">Offers</span>
+            </span>
           </a>
-          <nav class="text-xs flex items-center gap-2">
-            <div class="rounded-xl px-2 py-1 liquid-glass min-w-[140px]">
+          <nav class="text-xs flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <button id="xp-panel" type="button" class="xp-shell rounded-xl px-2 py-1 liquid-glass w-[145px] sm:w-[180px] text-left" aria-label="XP progress. Collect more offers to unlock exclusive deals">
               <div class="flex items-center justify-between gap-2 text-[11px] font-semibold">
                 <span id="scoreboard">XP 0</span>
                 <span id="levelboard" class="text-slate-500">Lv. 1</span>
@@ -95,22 +133,22 @@
               <div class="mt-1 h-1.5 rounded-full bg-slate-300/50 overflow-hidden">
                 <div id="xp-progress" class="h-full bg-blue-500/80" style="width:0%"></div>
               </div>
-            </div>
-            <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="rounded-full border px-3 py-1.5 font-semibold liquid-glass">
-              <span id="theme-toggle-label">Dark</span>
+            </button>
+            <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="rounded-full border w-10 h-10 flex items-center justify-center text-lg font-semibold liquid-glass">
+              <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
             </button>
           </nav>
         </div>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-6 flex-1 w-full">
+    <main data-mobile-enter class="max-w-4xl mx-auto px-4 py-6 flex-1 w-full">
       {{ content }}
     </main>
 
     <footer class="px-3 pb-4">
       <div class="max-w-4xl mx-auto rounded-2xl liquid-glass px-4 py-5 text-xs text-slate-600 dark:text-slate-300">
-        &copy; {{ site.time | date: "%Y" }} SpendLesso.com · feed inspired by
+        &copy; {{ site.time | date: "%Y" }} SpendLess · feed inspired by
         <a href="https://reddit.com/r/SpendLess" class="underline" target="_blank" rel="noopener">/r/SpendLess</a>
       </div>
     </footer>
@@ -119,7 +157,7 @@
       (function () {
         const body = document.body;
         const toggleButton = document.getElementById('theme-toggle');
-        const toggleLabel = document.getElementById('theme-toggle-label');
+        const toggleIcon = document.getElementById('theme-toggle-icon');
         const storageKey = 'spendless-theme';
         const scoreEl = document.getElementById('scoreboard');
         const levelEl = document.getElementById('levelboard');
@@ -137,7 +175,7 @@
           const isDark = theme === 'dark';
           body.classList.toggle('dark', isDark);
           localStorage.setItem(storageKey, theme);
-          if (toggleLabel) toggleLabel.textContent = isDark ? 'Light' : 'Dark';
+          if (toggleIcon) toggleIcon.textContent = isDark ? '☀️' : '🌙';
         }
 
         function renderScore() {
@@ -156,6 +194,31 @@
         };
 
         renderScore();
+
+        const xpPanel = document.getElementById('xp-panel');
+        const xpMessage = 'Collect more offers to unlock exclusive deals';
+        if (xpPanel) {
+          xpPanel.title = xpMessage;
+          const announce = () => {
+            xpPanel.setAttribute('aria-label', `XP progress. ${xpMessage}`);
+          };
+          xpPanel.addEventListener('mouseenter', announce);
+          xpPanel.addEventListener('click', announce);
+          xpPanel.addEventListener('touchstart', announce, { passive: true });
+        }
+
+        if ('startViewTransition' in document && window.matchMedia('(max-width: 640px)').matches) {
+          document.querySelectorAll('a[href]').forEach((link) => {
+            link.addEventListener('click', (event) => {
+              const href = link.getAttribute('href');
+              if (!href || href.startsWith('#') || link.target === '_blank' || event.metaKey || event.ctrlKey) return;
+              event.preventDefault();
+              document.startViewTransition(() => {
+                window.location.href = href;
+              });
+            });
+          });
+        }
 
         const storageKeyReported = 'spendless-reported-coupons';
         const reportedLabel = 'Reported, thanks';
