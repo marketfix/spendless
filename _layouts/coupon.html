@@ -14,13 +14,26 @@ layout: default
   {% assign brand_name = page.brand_slug | replace: '-', ' ' | capitalize %}
 {% endif %}
 <article class="space-y-5 max-w-2xl">
+  <style>
+    .code-obscured {
+      animation: fluidBlur 2.4s ease-in-out infinite;
+    }
+
+    @keyframes fluidBlur {
+      0% { filter: blur(4px); transform: translateX(0); }
+      25% { filter: blur(6px); transform: translateX(1.5px) skewX(1deg); }
+      50% { filter: blur(4px); transform: translateX(-1.5px) skewX(-1deg); }
+      75% { filter: blur(6px); transform: translateX(1px) skewX(0.5deg); }
+      100% { filter: blur(4px); transform: translateX(0); }
+    }
+  </style>
   <header class="liquid-glass rounded-3xl p-4">
     <div class="flex items-center gap-3">
       <div class="w-14 h-14 shrink-0 aspect-square rounded-xl border border-slate-200 overflow-hidden bg-white/80">
-        <img src="{{ logo_path | relative_url }}" alt="{{ brand_name }} logo" class="w-full h-full object-contain p-1" loading="lazy">
+        <img src="{{ logo_path | relative_url }}" alt="{{ brand_name }} logo" class="w-full h-full object-cover" loading="lazy">
       </div>
       <div>
-        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">{{ brand_name }} · code unlock</p>
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">{{ brand_name }} · discounts</p>
         <h1 class="text-xl font-semibold tracking-tight">{{ page.title }}</h1>
       </div>
     </div>
@@ -31,15 +44,14 @@ layout: default
       <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400">Promo code</p>
       <div class="mt-2 flex flex-col sm:flex-row gap-3">
         <div class="flex-1 rounded-xl border border-slate-700 px-3 py-2">
-          <span class="font-mono text-lg blur-sm select-none" data-code-display>{{ page.code }}</span>
+          <span class="font-mono text-lg blur-sm select-none code-obscured" data-code-display>{{ page.code }}</span>
         </div>
-        <button type="button" data-copy-code-button data-copy-code="{{ page.code }}" data-brand-slug="{{ page.brand_slug }}" data-url-external="{{ page.url_external }}" class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-semibold">Unlock code + open deal</button>
+        <button type="button" data-copy-code-button data-copy-code="{{ page.code }}" data-brand-slug="{{ page.brand_slug }}" data-url-external="{{ page.url_external }}" class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-semibold">View Code</button>
       </div>
       <p id="copy-message" class="text-xs text-emerald-300 opacity-0 transition-opacity mt-2">Code revealed. Partner page opened in new tab.</p>
     </section>
   {% endif %}
 
-  <p class="text-sm text-slate-600">Unlocking opens the affiliate page in a separate tab first, then reveals and copies your code.</p>
 
   <p class="text-[11px] text-rose-500" role="button" tabindex="0" data-report-invalid data-coupon-id="{{ page.url | relative_url }}">Report invalid code</p>
 
@@ -72,7 +84,7 @@ layout: default
 
         button.addEventListener('click', () => {
           openOffer();
-          display.classList.remove('blur-sm', 'select-none');
+          display.classList.remove('blur-sm', 'select-none', 'code-obscured');
           navigator.clipboard?.writeText(code).catch(() => {});
           let unlocked = [];
           try { unlocked = JSON.parse(localStorage.getItem(xpStorageKey) || "[]"); } catch (_) { unlocked = []; }

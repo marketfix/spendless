@@ -105,17 +105,24 @@
         inset: 0;
         background: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.35) 50%, transparent 75%);
         transform: translateX(-120%);
-        animation: xpShine 2.4s ease-in-out 1;
+        animation: xpShine 2.2s ease-in-out infinite;
         pointer-events: none;
       }
 
       #xp-progress {
         transition: width .45s ease;
+        box-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
+        animation: xpPulse 1.8s ease-in-out infinite;
       }
 
       @keyframes xpShine {
-        0%, 85%, 100% { transform: translateX(-120%); }
+        0%, 100% { transform: translateX(-120%); }
         45% { transform: translateX(120%); }
+      }
+
+      @keyframes xpPulse {
+        0%, 100% { filter: brightness(1); }
+        50% { filter: brightness(1.35); }
       }
 
       @media (max-width: 640px) {
@@ -188,8 +195,7 @@
         const progressEl = document.getElementById('xp-progress');
 
         const storedTheme = localStorage.getItem(storageKey);
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
+        applyTheme(storedTheme || 'light');
 
         toggleButton?.addEventListener('click', function () {
           applyTheme(body.classList.contains('dark') ? 'light' : 'dark');
