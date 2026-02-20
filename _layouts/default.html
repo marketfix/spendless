@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="{{ page.description | default: site.description }}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/media/apple-touch-icon.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/media/favicon-32x32.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/media/favicon-16x16.png' | relative_url }}">
     <link rel="shortcut icon" href="{{ '/media/favicon.ico' | relative_url }}">
-    <meta name="theme-color" content="#0f172a">
+    <meta name="theme-color" content="#dbeafe">
 
     <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
     <meta property="og:description" content="{{ page.description | default: site.description }}">
@@ -23,299 +23,155 @@
     <meta name="twitter:description" content="{{ page.description | default: site.description }}">
     <meta name="twitter:image" content="{{ '/media/twitter-card-1200x675.png' | absolute_url }}">
 
-    <!-- Tailwind via CDN for minimal & clean styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       :root {
-        --page-bg: #f8fafc;
-        --page-text: #0f172a;
-        --surface: #ffffff;
-        --muted: #475569;
-        --border: #e2e8f0;
-        --accent: #0ea5e9;
+        --bg: #e2e8f0;
+        --text: #0f172a;
+        --glass: rgba(255, 255, 255, 0.54);
+        --glass-strong: rgba(255, 255, 255, 0.72);
+        --line: rgba(148, 163, 184, 0.35);
+        --accent: #2563eb;
       }
 
       body {
-        background-color: var(--page-bg);
-        color: var(--page-text);
-      }
-
-      header,
-      footer {
-        background-color: var(--surface);
-        border-color: var(--border);
-      }
-
-      footer {
-        color: var(--muted);
+        background:
+          radial-gradient(circle at 5% 0%, #bfdbfe 0%, transparent 45%),
+          radial-gradient(circle at 95% 10%, #c4b5fd 0%, transparent 40%),
+          linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+        color: var(--text);
       }
 
       body.dark {
-        --page-bg: #020617;
-        --page-text: #f8fafc;
-        --surface: #050b1c;
-        --muted: #cbd5f5;
-        --border: #1e293b;
+        --bg: #020617;
+        --text: #f8fafc;
+        --glass: rgba(15, 23, 42, 0.55);
+        --glass-strong: rgba(15, 23, 42, 0.72);
+        --line: rgba(71, 85, 105, 0.55);
         --accent: #38bdf8;
+        background:
+          radial-gradient(circle at 5% 0%, rgba(30, 41, 59, 0.8) 0%, transparent 45%),
+          radial-gradient(circle at 95% 10%, rgba(49, 46, 129, 0.45) 0%, transparent 40%),
+          linear-gradient(180deg, #020617 0%, #0f172a 100%);
       }
 
-      #theme-toggle {
-        border-color: var(--border);
-        color: var(--page-text);
+      .liquid-glass {
+        background: var(--glass);
+        border: 1px solid var(--line);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 12px 40px rgba(15, 23, 42, 0.12);
+        backdrop-filter: blur(18px) saturate(150%);
       }
 
-      #theme-toggle-track {
-        background-color: var(--border);
-      }
-
-      body.dark #theme-toggle-track {
-        background-color: #475569;
-      }
-
-      #theme-toggle-indicator {
-        transform: translateX(0);
-      }
-
-      body.dark #theme-toggle-indicator {
-        transform: translateX(1.25rem);
-      }
-
-      body.dark #theme-toggle {
-        border-color: var(--accent);
+      .liquid-glass-strong {
+        background: var(--glass-strong);
+        border: 1px solid var(--line);
+        backdrop-filter: blur(24px) saturate(170%);
       }
 
       [data-surface-card] {
-        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
       }
 
-      body.dark [data-surface-card] {
-        background-color: #0b1220;
-        border-color: #1f2a3e;
-        color: #f8fafc;
-      }
-
-      body.dark [data-surface-card] .bg-white {
-        background-color: #0f172a;
-      }
-
-      body.dark [data-surface-card] .border-slate-200 {
-        border-color: #1e293b;
-      }
-
-      body.dark [data-surface-card] .text-slate-900,
-      body.dark [data-surface-card] .text-slate-800,
-      body.dark [data-surface-card] .text-slate-700 {
-        color: #f8fafc;
-      }
-
-      body.dark [data-surface-card] .text-slate-600,
-      body.dark [data-surface-card] .text-slate-500 {
-        color: #cbd5f5;
-      }
-
-      body.dark [data-surface-card] .text-slate-400 {
-        color: #94a3b8;
-      }
-
-      body.dark [data-surface-card] .bg-emerald-50 {
-        background-color: rgba(16, 185, 129, 0.16);
-      }
-
-      body.dark [data-surface-card] .text-emerald-800 {
-        color: #86efac;
+      [data-surface-card]:hover {
+        transform: translateY(-2px) scale(1.01);
       }
     </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDFQXS74CQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-VDFQXS74CQ');
-    </script>
   </head>
-  <body class="min-h-screen transition-colors duration-300 flex flex-col">
-    <header class="border-b">
-      <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="{{ '/' | relative_url }}" class="text-lg font-semibold tracking-tight flex items-center gap-2">
-          <img src="{{ '/media/piggy.png' | relative_url }}" alt="SpendLess'o logo" class="h-8 w-8">
-          <span>{{ site.title }}</span>
-        </a>
-        <nav class="text-sm flex items-center">
-          <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors">
-            <span id="theme-toggle-label">Dark mode</span>
-            <span id="theme-toggle-track" class="relative inline-flex h-5 w-10 items-center rounded-full transition-colors">
-              <span id="theme-toggle-indicator" class="inline-block h-4 w-4 rounded-full bg-white shadow transition-transform"></span>
-            </span>
-          </button>
-        </nav>
+  <body class="min-h-screen transition-colors duration-300 flex flex-col pb-safe">
+    <header class="sticky top-2 z-20 px-3">
+      <div class="max-w-4xl mx-auto mt-2 rounded-2xl liquid-glass-strong">
+        <div class="px-4 py-3 flex items-center justify-between gap-3">
+          <a href="{{ '/' | relative_url }}" class="text-sm font-semibold tracking-tight flex items-center gap-2">
+            <img src="{{ '/media/piggy.png' | relative_url }}" alt="SpendLess'o logo" class="h-8 w-8 rounded-lg">
+            <span>{{ site.title }}</span>
+          </a>
+          <nav class="text-xs flex items-center gap-2">
+            <span id="scoreboard" class="rounded-full px-3 py-1 liquid-glass text-[11px] font-semibold">XP 0</span>
+            <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="rounded-full border px-3 py-1.5 font-semibold liquid-glass">
+              <span id="theme-toggle-label">Dark</span>
+            </button>
+          </nav>
+        </div>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-8 flex-1 w-full">
+    <main class="max-w-4xl mx-auto px-4 py-6 flex-1 w-full">
       {{ content }}
     </main>
 
-    <footer class="border-t mt-8">
-      <div class="max-w-4xl mx-auto px-4 py-6 text-xs">
-        &copy; {{ site.time | date: "%Y" }} SpendLesso.com | All discounts fetched from
-        <a href="https://reddit.com/r/SpendLess" class="text-slate-900 underline decoration-dotted hover:text-slate-700" target="_blank" rel="noopener">/r/SpendLess</a>
-        and updated regularly.
+    <footer class="px-3 pb-4">
+      <div class="max-w-4xl mx-auto rounded-2xl liquid-glass px-4 py-5 text-xs text-slate-600 dark:text-slate-300">
+        &copy; {{ site.time | date: "%Y" }} SpendLesso.com · feed inspired by
+        <a href="https://reddit.com/r/SpendLess" class="underline" target="_blank" rel="noopener">/r/SpendLess</a>
       </div>
     </footer>
+
     <script>
       (function () {
         const body = document.body;
         const toggleButton = document.getElementById('theme-toggle');
         const toggleLabel = document.getElementById('theme-toggle-label');
         const storageKey = 'spendless-theme';
-
-        if (!toggleButton || !toggleLabel) return;
+        const scoreEl = document.getElementById('scoreboard');
 
         const storedTheme = localStorage.getItem(storageKey);
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+        applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
 
-        applyTheme(initialTheme);
-
-        toggleButton.addEventListener('click', function () {
-          const nextTheme = body.classList.contains('dark') ? 'light' : 'dark';
-          applyTheme(nextTheme);
+        toggleButton?.addEventListener('click', function () {
+          applyTheme(body.classList.contains('dark') ? 'light' : 'dark');
         });
 
         function applyTheme(theme) {
           const isDark = theme === 'dark';
           body.classList.toggle('dark', isDark);
           localStorage.setItem(storageKey, theme);
-          toggleLabel.textContent = isDark ? "Lights off" : "Lights on";
-          toggleButton.setAttribute('aria-pressed', isDark);
+          if (toggleLabel) toggleLabel.textContent = isDark ? 'Light' : 'Dark';
         }
-      })();
-    </script>
-    <script>
-      (function () {
-        const storageKey = 'spendless-reported-coupons';
-        const reportedLabel = 'Reported, thank you!';
+
+        function renderScore() {
+          const score = parseInt(localStorage.getItem('sl_score') || '0', 10);
+          if (scoreEl) scoreEl.textContent = `XP ${score}`;
+        }
+
+        window.updateScore = function (amount) {
+          const next = parseInt(localStorage.getItem('sl_score') || '0', 10) + (amount || 1);
+          localStorage.setItem('sl_score', next);
+          renderScore();
+        };
+
+        renderScore();
+
+        const storageKeyReported = 'spendless-reported-coupons';
+        const reportedLabel = 'Reported, thanks';
         const defaultLabel = 'Report invalid code';
 
         const loadReported = () => {
           try {
-            const stored = JSON.parse(localStorage.getItem(storageKey) || '[]');
-            if (Array.isArray(stored)) {
-              return new Set(stored);
-            }
-          } catch (error) {
-            console.warn('Unable to read reported coupons from storage', error);
-          }
-          return new Set();
+            const stored = JSON.parse(localStorage.getItem(storageKeyReported) || '[]');
+            return Array.isArray(stored) ? new Set(stored) : new Set();
+          } catch (_) { return new Set(); }
         };
 
-        const persistReported = (set) => {
-          try {
-            localStorage.setItem(storageKey, JSON.stringify(Array.from(set)));
-          } catch (error) {
-            console.warn('Unable to save reported coupons', error);
-          }
-        };
+        const persistReported = (set) => localStorage.setItem(storageKeyReported, JSON.stringify(Array.from(set)));
 
-        const updateLabel = (element, isReported) => {
-          element.textContent = isReported ? reportedLabel : defaultLabel;
-          element.setAttribute('aria-pressed', isReported);
-          element.classList.toggle('opacity-70', isReported);
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-          const reportButtons = document.querySelectorAll('[data-report-invalid]');
-          if (!reportButtons.length) return;
-
+        document.querySelectorAll('[data-report-invalid]').forEach((button) => {
+          const couponId = button.getAttribute('data-coupon-id');
+          if (!couponId) return;
           const reported = loadReported();
-
-          reportButtons.forEach((button) => {
-            const couponId = button.getAttribute('data-coupon-id');
-            if (!couponId) return;
-
-            const applyState = () => {
-              const isReported = reported.has(couponId);
-              updateLabel(button, isReported);
-            };
-
-            applyState();
-
-            const markReported = () => {
-              if (reported.has(couponId)) return;
-              reported.add(couponId);
-              persistReported(reported);
-              updateLabel(button, true);
-            };
-
-            button.addEventListener('click', (event) => {
-              event.preventDefault();
-              event.stopPropagation();
-              markReported();
-            });
-
-            button.addEventListener('keydown', (event) => {
-              if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                event.stopPropagation();
-                markReported();
-              }
-            });
+          const paint = () => {
+            const yes = reported.has(couponId);
+            button.textContent = yes ? reportedLabel : defaultLabel;
+          };
+          paint();
+          button.addEventListener('click', (event) => {
+            event.preventDefault();
+            reported.add(couponId);
+            persistReported(reported);
+            paint();
           });
         });
       })();
     </script>
-  <
-    <style>
-/* glassmorphism tweaks */
-header, footer {
-  background-color: rgba(255,255,255,0.3);
-  backdrop-filter: blur(16px);
-  border-color: rgba(255,255,255,0.4);
-}
-body.dark header, body.dark footer {
-  background-color: rgba(2,6,23,0.5);
-  border-color: rgba(30,41,59,0.6);
-}
-[data-surface-card] {
-  background-color: rgba(255,255,255,0.35);
-  backdrop-filter: blur(12px);
-  border-color: rgba(255,255,255,0.5);
-}
-body.dark [data-surface-card] {
-  background-color: rgba(2,6,23,0.45);
-  border-color: rgba(30,41,59,0.6);
-}
-#scoreboard {
-  margin-left: 1rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-</style>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const headerNav = document.querySelector('header nav');
-  if (headerNav) {
-    const scoreEl = document.createElement('span');
-    scoreEl.id = 'scoreboard';
-    scoreEl.textContent = 'Points: 0';
-    headerNav.appendChild(scoreEl);
-  }
-  function renderScore() {
-    const score = parseInt(localStorage.getItem('sl_score') || '0', 10);
-    const el = document.getElementById('scoreboard');
-    if (el) el.textContent = `Points: ${score}`;
-  }
-  window.updateScore = function(amount) {
-    amount = amount || 1;
-    const current = parseInt(localStorage.getItem('sl_score') || '0', 10);
-    const next = current + amount;
-    localStorage.setItem('sl_score', next);
-    renderScore();
-  };
-  renderScore();
-});
-</script>
-/body>
+  </body>
 </html>

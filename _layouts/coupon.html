@@ -9,245 +9,69 @@ layout: default
 {% else %}
   {% assign brand_name = page.brand_slug | replace: '-', ' ' | capitalize %}
 {% endif %}
-<article class="space-y-6 max-w-2xl">
-  <style>
-    .space-y-3 {
-      background-color: transparent;
-    }
-
-    .invisible-ink {
-      position: relative;
-      display: inline-block;
-      color: transparent;
-      text-shadow: 0 0 14px rgba(255, 255, 255, 0.85);
-      filter: blur(8px);
-      transition: filter 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    .invisible-ink::after {
-      content: attr(data-code);
-      position: absolute;
-      inset: 0;
-      color: #c7d2fe;
-      background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.6), transparent 35%),
-        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.35), transparent 30%),
-        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.45), transparent 40%),
-        linear-gradient(120deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
-      background-size: 160% 160%;
-      mix-blend-mode: screen;
-      animation: shimmer 2.4s ease-in-out infinite;
-      border-radius: 8px;
-      padding: 0 6px;
-    }
-
-    .invisible-ink.revealed {
-      color: #e2e8f0;
-      filter: blur(0);
-      text-shadow: none;
-    }
-
-    .invisible-ink.revealed::after {
-      opacity: 0;
-      animation: none;
-    }
-
-    @keyframes shimmer {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    .copy-cta {
-      position: relative;
-      box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.25);
-    }
-
-    .copy-cta::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: -18px;
-      transform: translateY(-50%);
-      border-width: 10px;
-      border-style: solid;
-      border-color: transparent;
-      border-right-color: rgba(148, 163, 184, 0.4);
-      filter: drop-shadow(0 0 6px rgba(15, 23, 42, 0.35));
-      pointer-events: none;
-    }
-
-    @media (max-width: 640px) {
-      .copy-cta::before {
-        display: none;
-      }
-    }
-  </style>
-  <header class="space-y-3">
+<article class="space-y-5 max-w-2xl">
+  <header class="liquid-glass rounded-3xl p-4">
     <div class="flex items-center gap-3">
-      <div class="w-16 h-16 flex items-center justify-center rounded-xl border border-slate-200 overflow-hidden">
-        <img src="{{ logo_path | relative_url }}"
-             alt="{{ brand_name }} logo"
-             class="w-full h-full object-cover"
-             style="transform: scale(1.2);"
-             loading="lazy">
+      <div class="w-14 h-14 rounded-xl border border-slate-200 overflow-hidden bg-white/80">
+        <img src="{{ logo_path | relative_url }}" alt="{{ brand_name }} logo" class="w-full h-full object-cover" loading="lazy">
       </div>
       <div>
-        <p class="text-xs uppercase tracking-wide text-slate-500">
-          <a href="{{ '/brands/' | append: page.brand_slug | append: '/' | relative_url }}" class="hover:text-slate-900">
-            {{ brand_name }}
-          </a>
-          · Coupon
-        </p>
-        <h1 class="text-2xl font-semibold tracking-tight">{{ page.title }}</h1>
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">{{ brand_name }} · code unlock</p>
+        <h1 class="text-xl font-semibold tracking-tight">{{ page.title }}</h1>
       </div>
-    </div>
-
-    <div class="flex flex-wrap items-center gap-3">
-      {% if page.is_expired %}
-        <span class="text-xs font-medium px-2 py-1 rounded-full bg-red-50 text-red-700">
-          Expired
-        </span>
-      {% elsif page.valid_until %}
-        <span class="text-xs text-slate-500">
-          Valid until {{ page.valid_until }}
-        </span>
-      {% endif %}
     </div>
   </header>
 
   {% if page.code %}
-    <section class="bg-slate-900 text-slate-50 rounded-xl px-4 py-4">
-      <div class="space-y-2">
-        <p class="text-[11px] uppercase tracking-wide text-slate-400">Code</p>
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-4">
-          <div class="flex-1 min-w-0">
-            <div
-              class="inline-flex w-full items-center gap-3 rounded-lg border border-slate-700 px-3 py-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-500"
-              data-code-display
-              role="button"
-              tabindex="0"
-            >
-              <span class="font-mono text-lg invisible-ink" data-code="{{ page.code }}">{{ page.code }}</span>
-            </div>
-          </div>
-          <button
-            type="button"
-            data-copy-code-button
-            data-copy-code="{{ page.code }}"
-            data-brand-slug="{{ page.brand_slug }}"
-            class="copy-cta inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 px-5 py-2 bg-slate-800/70 text-sm font-medium text-slate-50 hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-slate-500 flex-shrink-0 whitespace-nowrap self-stretch"
-          >
-            Reveal & copy code
-          </button>
+    <section class="rounded-2xl bg-slate-900 text-slate-50 p-4">
+      <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400">Promo code</p>
+      <div class="mt-2 flex flex-col sm:flex-row gap-3">
+        <div class="flex-1 rounded-xl border border-slate-700 px-3 py-2">
+          <span class="font-mono text-lg blur-sm select-none" data-code-display>{{ page.code }}</span>
         </div>
-        <p id="copy-message" class="text-xs text-emerald-300 opacity-0 transition-opacity duration-300">
-          Copied! Opening offer in a new tab.
-        </p>
+        <button type="button" data-copy-code-button data-copy-code="{{ page.code }}" data-brand-slug="{{ page.brand_slug }}" data-url-external="{{ page.url_external }}" class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-semibold">Unlock code + open deal</button>
       </div>
+      <p id="copy-message" class="text-xs text-emerald-300 opacity-0 transition-opacity mt-2">Code revealed. Partner page opened in new tab.</p>
     </section>
   {% endif %}
 
-  <section class="text-sm text-slate-600">
-    <p>
-      This promotional coupon code can be applied during checkout, but may be limited to specific items, dates, or membership types.
-      All discounts are regularly tested and updated, but can still change or end without notice.
-    </p>
-  </section>
+  <p class="text-sm text-slate-600">Unlocking opens the affiliate page in a separate tab first, then reveals and copies your code.</p>
 
-  <p
-    class="text-[11px] text-rose-400 hover:text-rose-500 transition inline-flex items-center gap-1"
-    role="button"
-    tabindex="0"
-    data-report-invalid
-    data-coupon-id="{{ page.url | relative_url }}">
-    Report invalid code
-  </p>
-
-  {% if page.url_external %}
-    <a href="{{ page.url_external }}"
-       class="inline-flex items-center text-sm font-medium text-slate-900 border border-slate-300 rounded-full px-4 py-2 hover:bg-slate-100">
-      Go to {{ page.brand_slug | capitalize }} site
-      <span class="ml-2">↗</span>
-    </a>
-  {% endif %}
+  <p class="text-[11px] text-rose-500" role="button" tabindex="0" data-report-invalid data-coupon-id="{{ page.url | relative_url }}">Report invalid code</p>
 
   {% if page.code %}
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const button = document.querySelector('[data-copy-code-button]');
-        if (!button) return;
+        const display = document.querySelector('[data-code-display]');
+        const status = document.getElementById('copy-message');
+        if (!button || !display) return;
 
         const code = button.dataset.copyCode;
         const brand = button.dataset.brandSlug;
-        const status = document.getElementById('copy-message');
-        const codeDisplay = document.querySelector('[data-code-display]');
-        const ink = codeDisplay ? codeDisplay.querySelector('.invisible-ink') : null;
+        const explicitExternal = button.dataset.urlExternal;
         const offerHosts = {
-          '1800contacts': 'https://spendlesscontacts.wiki/',
-          'aliexpress': 'https://myaliexpress.wiki/',
-          'autonationparts': 'https://autonationparts.wiki/',
-          'booking': 'https://spendlessbooking.wiki/',
-          'expedia': 'https://expediasavers.wiki/',
-          'hotelscom': 'https://hotelsdiscounts.wiki/',
-          'lulus': 'https://luluscheaper.wiki/',
-          'lumens': 'https://mylumens.wiki/',
-          'nike': 'https://spendlessnike.wiki/',
-          'petco': 'https://petcocoupon.wiki/',
-          'shein': 'https://sheincoupons.wiki/',
-          'temu': 'https://temucoupon.pro/',
-          'walmart': 'https://walmartcodes.wiki/'
+          '1800contacts': 'https://spendlesscontacts.wiki/', 'aliexpress': 'https://myaliexpress.wiki/',
+          'autonationparts': 'https://autonationparts.wiki/', 'booking': 'https://spendlessbooking.wiki/',
+          'expedia': 'https://expediasavers.wiki/', 'hotelscom': 'https://hotelsdiscounts.wiki/', 'lulus': 'https://luluscheaper.wiki/',
+          'lumens': 'https://mylumens.wiki/', 'nike': 'https://spendlessnike.wiki/', 'petco': 'https://petcocoupon.wiki/',
+          'shein': 'https://sheincoupons.wiki/', 'temu': 'https://temucoupon.pro/', 'walmart': 'https://walmartcodes.wiki/'
         };
 
         const openOffer = () => {
-          const base = offerHosts[brand];
-          if (!base) return;
-          const offerUrl = `${base}${code}`;
-          window.open(offerUrl, '_blank');
+          const fallback = offerHosts[brand] ? `${offerHosts[brand]}${code}` : '';
+          const url = explicitExternal || fallback;
+          if (url) window.open(url, '_blank', 'noopener');
         };
 
-        const showCopied = () => {
-          if (!status) return;
-          status.style.opacity = '1';
-          setTimeout(() => {
-            status.style.opacity = '0';
-          }, 3000);
-        };
-
-        const revealInk = () => {
-          if (codeDisplay) {
-            codeDisplay.classList.add('revealed');
-          }
-          if (ink) {
-            ink.classList.add('revealed');
-          }
-        };
-
-        const handleInteraction = () => {
-          revealInk();
-          navigator.clipboard?.writeText(code).catch(() => {});
+        button.addEventListener('click', () => {
           openOffer();
-          showCopied();
-        };
-
-        const registerInteractive = (element) => {
-          if (!element) return;
-          element.addEventListener('click', handleInteraction);
-          element.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault();
-              handleInteraction();
-            }
-          });
-        };
-
-        registerInteractive(button);
-        registerInteractive(codeDisplay);
+          display.classList.remove('blur-sm', 'select-none');
+          navigator.clipboard?.writeText(code).catch(() => {});
+          if (window.updateScore) window.updateScore(5);
+          status.style.opacity = '1';
+          setTimeout(() => status.style.opacity = '0', 2500);
+        });
       });
     </script>
   {% endif %}

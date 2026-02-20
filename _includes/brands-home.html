@@ -1,55 +1,36 @@
-<section class="bg-slate-900 text-white rounded-3xl px-6 py-10 mb-8">
-  <p class="text-sm uppercase tracking-[0.3em] text-slate-300">Updated Regularly</p>
-  <h1 class="text-3xl md:text-4xl font-semibold tracking-tight mt-3">Browse trusted brand deals</h1>
-  <p class="text-base text-slate-200 mt-4 max-w-2xl">
-    We curate a tidy and up to date community shared promotion list of brands we love.
-    Use the search below to jump straight to your favorite store or discover something new.
-  </p>
+<section class="liquid-glass rounded-3xl px-5 py-8 mb-6">
+  <p class="text-[11px] uppercase tracking-[0.28em] text-slate-500">SpendLess Quest</p>
+  <h1 class="text-3xl font-semibold tracking-tight mt-2">Coupon hunting, but fun.</h1>
+  <p class="text-sm mt-3 text-slate-600 max-w-2xl">Tap a brand, unlock codes, collect XP, and chase today's best savings in a fluid iOS-style browsing experience.</p>
+  <div class="mt-4 flex flex-wrap gap-2 text-xs">
+    <span class="px-3 py-1 rounded-full liquid-glass">1 tap reveal</span>
+    <span class="px-3 py-1 rounded-full liquid-glass">opens offer in new tab</span>
+    <span class="px-3 py-1 rounded-full liquid-glass">mobile first</span>
+  </div>
 </section>
 
-<div class="mb-6">
+<div class="mb-6 liquid-glass rounded-2xl p-3">
   <label for="brand-search" class="sr-only">Search brands</label>
-  <div class="relative">
-    <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-slate-400">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M12.9 14.32a6.5 6.5 0 111.414-1.414l3.387 3.387a1 1 0 01-1.414 1.414l-3.387-3.387zM13 8.5a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" clip-rule="evenodd" />
-      </svg>
-    </div>
-    <input id="brand-search"
-           type="search"
-           placeholder="Search by brand name"
-           class="w-full border border-slate-300 rounded-2xl py-3 pl-10 pr-4 text-sm focus:border-slate-500 focus:ring-2 focus:ring-slate-200"
-           autocomplete="off">
-  </div>
-  <p id="brand-search-helper" class="text-xs text-slate-500 mt-2">
-    Showing <span id="brand-visible-count">0</span> brands
-  </p>
+  <input id="brand-search" type="search" placeholder="Search brands" class="w-full rounded-xl border border-slate-300/60 bg-white/70 py-3 px-4 text-sm" autocomplete="off">
+  <p id="brand-search-helper" class="text-xs text-slate-500 mt-2">Showing <span id="brand-visible-count">0</span> brands</p>
 </div>
 
-<ul id="brand-grid" class="grid gap-3 md:grid-cols-2">
+<ul id="brand-grid" class="grid gap-3 sm:grid-cols-2">
   {% assign sorted_brands = site.brands | sort: "title" %}
   {% for brand in sorted_brands %}
     {% assign logo_path = '/media/brand_logos/' | append: brand.brand_slug | append: '.jpg' %}
     <li data-brand-card data-brand-name="{{ brand.title | downcase }}">
-      <a href="{{ brand.url | relative_url }}"
-         data-surface-card
-         class="block bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition">
+      <a href="{{ brand.url | relative_url }}" data-surface-card class="block liquid-glass rounded-2xl px-3 py-3">
         <div class="flex items-start gap-3">
-          <div class="w-14 h-14 flex items-center justify-center rounded-xl border border-slate-200 bg-white overflow-hidden">
-            <img src="{{ logo_path | relative_url }}"
-                 alt="{{ brand.title }} logo"
-                 class="w-full h-full object-cover"
-                 style="transform: scale(1.2);"
-                 loading="lazy">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl border border-slate-200 bg-white/80 overflow-hidden">
+            <img src="{{ logo_path | relative_url }}" alt="{{ brand.title }} logo" class="w-full h-full object-cover" loading="lazy">
           </div>
-          <div class="flex-1 space-y-1">
-            <div class="flex items-start justify-between gap-2">
-              <span class="font-medium text-sm text-slate-900">{{ brand.title }}</span>
-              <span class="text-[11px] text-slate-500 whitespace-nowrap">
-                {{ site.coupons | where: "brand_slug", brand.brand_slug | size }} offers
-              </span>
+          <div class="flex-1">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-medium text-sm">{{ brand.title }}</span>
+              <span class="text-[11px] text-slate-600">{{ site.coupons | where: "brand_slug", brand.brand_slug | size }} offers</span>
             </div>
-            <p class="text-xs text-slate-500">View all latest {{ brand.title }} discount codes and promotions</p>
+            <p class="text-xs text-slate-500 mt-1">Open brand vault ↗</p>
           </div>
         </div>
       </a>
@@ -57,9 +38,7 @@
   {% endfor %}
 </ul>
 
-<div id="brand-empty-state" class="hidden text-center py-12">
-  <p class="text-sm text-slate-500">No brands matched your search. Try a different name.</p>
-</div>
+<div id="brand-empty-state" class="hidden text-center py-12"><p class="text-sm text-slate-500">No brands found.</p></div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -72,14 +51,11 @@
     function filterBrands() {
       const query = searchInput.value.trim().toLowerCase();
       let matches = 0;
-
-      cards.forEach(function (card) {
-        const name = card.dataset.brandName;
-        const isMatch = name.includes(query);
-        card.classList.toggle('hidden', !isMatch);
-        matches += isMatch ? 1 : 0;
+      cards.forEach((card) => {
+        const ok = card.dataset.brandName.includes(query);
+        card.classList.toggle('hidden', !ok);
+        matches += ok ? 1 : 0;
       });
-
       visibleCount.textContent = matches;
       emptyState.classList.toggle('hidden', matches !== 0);
       grid.classList.toggle('hidden', matches === 0);
