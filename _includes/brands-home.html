@@ -1,15 +1,15 @@
 <section class="liquid-glass rounded-3xl px-5 py-8 mb-6">
   <p class="text-[11px] uppercase tracking-[0.28em] text-slate-500">SpendLess Quest</p>
-  <h1 class="text-3xl font-semibold tracking-tight mt-2">Verified coupons. Faster savings.</h1>
+  <h1 class="text-2xl sm:text-[1.75rem] font-semibold tracking-tight mt-2">Verified coupons. Faster savings.</h1>
   <p class="text-sm mt-3 text-slate-600 max-w-2xl">Find community tested promo codes and deals in one place. Pick a brand &amp; grab a discount!</p>
-  <a id="featured-offer" href="#" class="mt-4 block rounded-2xl liquid-glass px-4 py-3 border border-emerald-200/60">
+  <a id="featured-offer" href="#" class="mt-4 block rounded-2xl liquid-glass px-4 py-3 border border-emerald-200/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:border-emerald-300/90">
     <p class="text-[11px] uppercase tracking-[0.18em] text-emerald-700/80">Featured discount</p>
     <div class="mt-1 flex items-center justify-between gap-3">
       <div>
-        <p id="featured-offer-title" class="text-sm font-semibold">Loading offer…</p>
-        <p id="featured-offer-subtitle" class="text-xs text-slate-600">Tap to open this deal ↗</p>
+        <p id="featured-offer-title" class="text-xs sm:text-sm font-semibold leading-tight">Loading offer…</p>
+        <p id="featured-offer-subtitle" class="text-[11px] text-slate-600">View full offer ↗</p>
       </div>
-      <span id="featured-offer-badge" class="text-xs font-semibold px-2 py-1 rounded-full bg-emerald-100 text-emerald-700">Deal</span>
+      <span id="featured-offer-badge" class="text-[11px] font-semibold px-2 py-1 rounded-full bg-emerald-100 text-emerald-700">Deal</span>
     </div>
   </a>
 </section>
@@ -33,8 +33,8 @@
           <div class="flex-1">
             <div class="flex items-center justify-between gap-2">
               <span class="font-medium text-sm">{{ brand.title | replace: ' discount codes', '' | strip }}</span>
-              <span data-date-chip data-date-key="brand-{{ brand.brand_slug }}" class="text-[11px] text-slate-600 inline-flex items-center gap-1" aria-label="Recently updated">
-                <span aria-hidden="true">📅</span>
+              <span data-date-chip data-date-key="brand-{{ brand.brand_slug }}" class="text-[11px] text-slate-600 inline-flex items-center gap-1 cursor-help" tabindex="0" aria-label="Recently updated">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path></svg>
                 <span class="sr-only">Recent date</span>
               </span>
             </div>
@@ -90,7 +90,7 @@
       const picked = allOffers[Math.floor(Math.random() * allOffers.length)];
       featureLink.href = picked.url;
       featureTitle.textContent = picked.title;
-      featureSubtitle.textContent = 'Tap to open this featured offer ↗';
+      featureSubtitle.textContent = 'View full offer ↗';
       featureBadge.textContent = picked.discount;
     }
 
