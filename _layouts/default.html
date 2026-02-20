@@ -126,8 +126,10 @@
 
       .code-fluid-blur {
         display: inline-block;
-        filter: blur(3.2px);
-        animation: fluidBlur 2.6s ease-in-out infinite;
+        filter: blur(5.6px) contrast(1.1);
+        text-shadow: 0 0 10px rgba(148, 163, 184, 0.45);
+        animation: fluidBlur 2.2s ease-in-out infinite, fluidSweep 1.8s linear infinite;
+        will-change: filter, transform;
       }
 
       .code-fluid-blur.is-revealed {
@@ -151,10 +153,17 @@
       }
 
       @keyframes fluidBlur {
-        0% { transform: translate3d(0, 0, 0) skewX(0deg); filter: blur(3px); }
-        30% { transform: translate3d(1.5px, -0.6px, 0) skewX(-2deg); filter: blur(4px); }
-        65% { transform: translate3d(-1.2px, 0.8px, 0) skewX(2deg); filter: blur(2.8px); }
-        100% { transform: translate3d(0, 0, 0) skewX(0deg); filter: blur(3px); }
+        0% { transform: translate3d(0, 0, 0) skewX(0deg); filter: blur(5px); }
+        25% { transform: translate3d(1.8px, -0.8px, 0) skewX(-2deg); filter: blur(6.4px); }
+        55% { transform: translate3d(-1.4px, 0.9px, 0) skewX(2deg); filter: blur(5.3px); }
+        80% { transform: translate3d(0.8px, -0.2px, 0) skewX(-1deg); filter: blur(6.1px); }
+        100% { transform: translate3d(0, 0, 0) skewX(0deg); filter: blur(5px); }
+      }
+
+      @keyframes fluidSweep {
+        0%, 100% { opacity: 0.92; letter-spacing: 0.02em; }
+        45% { opacity: 0.78; letter-spacing: 0.05em; }
+        65% { opacity: 0.85; letter-spacing: 0.01em; }
       }
 
       @media (max-width: 640px) {

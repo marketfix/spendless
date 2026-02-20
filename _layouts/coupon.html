@@ -13,7 +13,7 @@ layout: default
 {% else %}
   {% assign brand_name = page.brand_slug | replace: '-', ' ' | capitalize %}
 {% endif %}
-<article class="space-y-5 max-w-2xl">
+<article class="space-y-5 max-w-2xl mx-auto w-full">
   <header class="liquid-glass rounded-3xl p-4">
     <div class="flex items-center gap-3">
       <div class="w-14 h-14 shrink-0 aspect-square rounded-xl border border-slate-200 overflow-hidden bg-white/80">
@@ -31,7 +31,7 @@ layout: default
       <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400">Promo code</p>
       <div class="mt-2 flex flex-col sm:flex-row gap-3">
         <div class="flex-1 rounded-xl border border-slate-700 px-3 py-2">
-          <span class="font-mono text-lg code-fluid-blur select-none" data-code-display aria-label="Hidden promo code">••••••••</span>
+          <span class="font-mono text-lg code-fluid-blur select-none" data-code-display aria-label="Hidden promo code">{{ page.code }}</span>
         </div>
         <button type="button" data-copy-code-button data-copy-code="{{ page.code }}" data-brand-slug="{{ page.brand_slug }}" data-url-external="{{ page.url_external }}" class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-semibold">View Code</button>
       </div>
@@ -62,7 +62,7 @@ layout: default
           'shein': 'https://sheincoupons.wiki/', 'temu': 'https://temucoupon.pro/', 'walmart': 'https://walmartcodes.wiki/'
         };
 
-        display.textContent = '•'.repeat(Math.max(code.length, 8));
+        display.textContent = code;
 
         const openOffer = () => {
           const fallback = offerHosts[brand] ? `${offerHosts[brand]}${code}` : '';
