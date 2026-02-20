@@ -35,14 +35,7 @@
             <img src="{{ logo_path | relative_url }}" alt="{{ brand.title }} logo" class="w-full h-full object-cover" loading="lazy">
           </div>
           <div class="flex-1">
-            <div class="flex items-center justify-between gap-2">
-              <span class="font-medium text-sm">{{ brand.title | replace: ' discount codes', '' | strip }}</span>
-              <span data-date-chip data-date-key="brand-{{ brand.brand_slug }}" class="text-[11px] text-slate-600 inline-flex items-center gap-1 cursor-help" tabindex="0" aria-label="Recently updated">
-                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path></svg>
-                <span class="sr-only">Recent date</span>
-              </span>
-            </div>
-            <p class="text-xs text-slate-500 mt-1">{{ site.coupons | where: "brand_slug", brand.brand_slug | size }} discount codes available · Browse coupons ↗</p>
+            <span class="font-medium text-sm">{{ brand.title | replace: ' discount codes', '' | replace: ' promo codes', '' | strip }}</span>
           </div>
         </div>
       </a>
@@ -85,7 +78,9 @@
         {
           url: {{ coupon.url | relative_url | jsonify }},
           title: {{ coupon.title | jsonify }},
-          discount: {{ coupon.discount_value | default: 'Hot deal' | jsonify }}
+          discount: {{ coupon.discount_value | default: 'Hot deal' | jsonify }},
+          {% assign featured_brand = site.brands | where: 'brand_slug', coupon.brand_slug | first %}
+          brand: {{ featured_brand.title | default: coupon.brand_slug | replace: ' discount codes', '' | replace: ' promo codes', '' | strip | jsonify }}
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ];
@@ -94,36 +89,8 @@
       const picked = allOffers[Math.floor(Math.random() * allOffers.length)];
       featureLink.href = picked.url;
       featureTitle.textContent = picked.title;
-      featureSubtitle.textContent = 'View full offer ↗';
+      featureSubtitle.textContent = `${picked.brand} · View full offer ↗`;
       featureBadge.textContent = picked.discount;
     }
-
-    const dateStorageKey = 'spendless-random-dates-v1';
-    const today = new Date();
-    const weekdays = { weekday: 'short', month: 'short', day: 'numeric' };
-    const randomDateForKey = (key, cache) => {
-      if (!cache[key]) {
-        const offset = Math.floor(Math.random() * 7);
-        const d = new Date(today);
-        d.setDate(today.getDate() - offset);
-        cache[key] = d.toISOString();
-      }
-      return new Date(cache[key]);
-    };
-
-    let dateCache = {};
-    try { dateCache = JSON.parse(localStorage.getItem(dateStorageKey) || '{}') || {}; }
-    catch (_) { dateCache = {}; }
-
-    document.querySelectorAll('[data-date-chip]').forEach((el) => {
-      const key = el.getAttribute('data-date-key');
-      if (!key) return;
-      const date = randomDateForKey(key, dateCache);
-      const label = date.toLocaleDateString(undefined, weekdays);
-      el.title = `Added ${label}`;
-      el.setAttribute('aria-label', `Added ${label}`);
-    });
-
-    localStorage.setItem(dateStorageKey, JSON.stringify(dateCache));
   });
 </script>

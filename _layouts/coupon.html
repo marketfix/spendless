@@ -9,15 +9,15 @@ layout: default
   {% assign logo_path = '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
 {% endif %}
 {% if brand_page and brand_page.title %}
-  {% assign brand_name = brand_page.title | replace: ' discount codes', '' | strip %}
+  {% assign brand_name = brand_page.title | replace: ' discount codes', '' | replace: ' promo codes', '' | strip %}
 {% else %}
   {% assign brand_name = page.brand_slug | replace: '-', ' ' | capitalize %}
 {% endif %}
 <article class="space-y-5 max-w-2xl">
   <header class="liquid-glass rounded-3xl p-4">
     <div class="flex items-center gap-3">
-      <div class="w-14 h-14 rounded-xl border border-slate-200 overflow-hidden bg-white/80">
-        <img src="{{ logo_path | relative_url }}" alt="{{ brand_name }} logo" class="w-full h-full object-cover" loading="lazy">
+      <div class="w-14 h-14 shrink-0 aspect-square rounded-xl border border-slate-200 overflow-hidden bg-white/80">
+        <img src="{{ logo_path | relative_url }}" alt="{{ brand_name }} logo" class="w-full h-full object-contain p-1" loading="lazy">
       </div>
       <div>
         <p class="text-xs uppercase tracking-[0.2em] text-slate-500">{{ brand_name }} · code unlock</p>
@@ -49,6 +49,8 @@ layout: default
         const button = document.querySelector('[data-copy-code-button]');
         const display = document.querySelector('[data-code-display]');
         const status = document.getElementById('copy-message');
+        const couponId = {{ page.url | relative_url | jsonify }};
+        const xpStorageKey = 'spendless-xp-unlocked-coupons';
         if (!button || !display) return;
 
         const code = button.dataset.copyCode;
@@ -72,7 +74,13 @@ layout: default
           openOffer();
           display.classList.remove('blur-sm', 'select-none');
           navigator.clipboard?.writeText(code).catch(() => {});
-          if (window.updateScore) window.updateScore(5);
+          let unlocked = [];
+          try { unlocked = JSON.parse(localStorage.getItem(xpStorageKey) || "[]"); } catch (_) { unlocked = []; }
+          if (!unlocked.includes(couponId)) {
+            unlocked.push(couponId);
+            localStorage.setItem(xpStorageKey, JSON.stringify(unlocked));
+            if (window.updateScore) window.updateScore(5);
+          }
           status.style.opacity = '1';
           setTimeout(() => status.style.opacity = '0', 2500);
         });
