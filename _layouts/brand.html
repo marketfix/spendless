@@ -12,7 +12,7 @@ layout: default
   <header class="liquid-glass rounded-3xl p-4 sm:p-6">
     <div class="flex items-center gap-3">
       <div class="w-16 h-16 shrink-0 aspect-square rounded-2xl border border-slate-200 overflow-hidden bg-white/80">
-        <img src="{{ logo_path | relative_url }}" alt="{{ brand_name }} logo" class="w-full h-full object-contain p-1" loading="lazy">
+        <img src="{{ logo_path | relative_url }}" alt="{{ brand_name }} logo" class="w-full h-full object-cover" loading="lazy">
       </div>
       <div>
         <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Brand vault</p>
@@ -26,55 +26,38 @@ layout: default
     {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug %}
     {% assign active = brand_coupons | where: "is_expired", false %}
 
-    {% if active.size > 0 %}
+    {% assign valid_offer_count = 0 %}
+    {% for coupon in active %}
+      {% assign discount_text = coupon.discount_value | default: '' %}
+      {% if discount_text contains '%' or discount_text contains '$' %}
+        {% assign valid_offer_count = valid_offer_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if valid_offer_count > 0 %}
       {% for coupon in active %}
+        {% assign discount_text = coupon.discount_value | default: '' %}
+        {% if discount_text contains '%' or discount_text contains '$' %}
+          {% assign cleaned_title = coupon.title %}
+          {% assign leading_discount = coupon.discount_value | append: ' ' %}
+          {% assign cleaned_title = cleaned_title | remove_first: leading_discount %}
+          {% assign leading_discount_dash = coupon.discount_value | append: ' - ' %}
+          {% assign cleaned_title = cleaned_title | remove_first: leading_discount_dash %}
         <a href="{{ coupon.url | relative_url }}" data-surface-card class="block liquid-glass rounded-2xl px-4 py-3">
-          <div class="flex items-start justify-between gap-3">
+          <div>
             <div>
               {% if coupon.discount_value %}
                 <span class="inline-flex text-xs font-semibold px-2 py-1 rounded-full bg-emerald-100 text-emerald-800">{{ coupon.discount_value }}</span>
               {% endif %}
-              <h3 class="text-sm font-medium mt-2">{{ coupon.title }}</h3>
-              <p class="text-xs text-slate-500 mt-1">Reveal code & launch deal ↗</p>
+              <h3 class="text-sm font-medium mt-2">{{ cleaned_title }}</h3>
+              <p class="text-xs text-slate-500 mt-1">View Code ↗</p>
             </div>
-            <span data-date-chip data-date-key="coupon-{{ coupon.slug }}" class="text-[11px] text-slate-500 inline-flex items-center gap-1 cursor-help" tabindex="0" aria-label="Recently added">
-              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4"></path><path d="M3 10a2 2 0 0 1 2-2h4a2 2 0 1 0 4 0h6a2 2 0 0 1 2 2"></path><path d="M12 8v8"></path></svg>
-              <span class="sr-only">Recent date</span>
-            </span>
           </div>
         </a>
+        {% endif %}
       {% endfor %}
     {% else %}
       <p class="text-sm text-slate-500">No active discounts yet.</p>
     {% endif %}
   </section>
 </article>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const key = 'spendless-random-dates-v1';
-    const now = new Date();
-    let cache = {};
-    try { cache = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (_) { cache = {}; }
-
-    const pickDate = (cacheKey) => {
-      if (!cache[cacheKey]) {
-        const offset = Math.floor(Math.random() * 7);
-        const d = new Date(now);
-        d.setDate(now.getDate() - offset);
-        cache[cacheKey] = d.toISOString();
-      }
-      return new Date(cache[cacheKey]);
-    };
-
-    document.querySelectorAll('[data-date-chip]').forEach((chip) => {
-      const cacheKey = chip.getAttribute('data-date-key');
-      if (!cacheKey) return;
-      const date = pickDate(cacheKey).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
-      chip.title = `Added ${date}`;
-      chip.setAttribute('aria-label', `Added ${date}`);
-    });
-
-    localStorage.setItem(key, JSON.stringify(cache));
-  });
-</script>

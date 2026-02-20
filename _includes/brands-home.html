@@ -21,6 +21,7 @@
 </div>
 
 <ul id="brand-grid" class="grid gap-3 sm:grid-cols-2">
+  {% assign eligible_coupons = site.coupons | where: "is_expired", false %}
   {% assign sorted_brands = site.brands | sort: "title" %}
   {% for brand in sorted_brands %}
     {% if brand.logo_path %}
@@ -28,14 +29,27 @@
     {% else %}
       {% assign logo_path = '/media/brand_logos/' | append: brand.brand_slug | append: '.jpg' %}
     {% endif %}
+    {% assign brand_offer_count = 0 %}
+    {% for coupon in eligible_coupons %}
+      {% if coupon.brand_slug == brand.brand_slug %}
+        {% assign discount_text = coupon.discount_value | default: '' %}
+        {% if discount_text contains '%' or discount_text contains '$' %}
+          {% assign brand_offer_count = brand_offer_count | plus: 1 %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
     <li data-brand-card data-brand-name="{{ brand.title | downcase }}">
-      <a href="{{ brand.url | relative_url }}" data-surface-card class="block liquid-glass rounded-2xl px-3 py-3">
+      <a href="{{ brand.url | relative_url }}" data-surface-card class="relative block liquid-glass rounded-2xl px-3 py-3">
+        <span class="absolute right-3 top-3 text-emerald-600/90" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h7.17a2 2 0 0 1 1.41.59l6.83 6.83a2 2 0 0 1 0 2.83l-7.59 7.59a2 2 0 0 1-2.82 0L3.59 13.41a2 2 0 0 1-.59-1.41V5z"></path><path d="M7.5 7.5h.01"></path></svg>
+        </span>
         <div class="flex items-start gap-3">
-          <div class="w-12 h-12 flex items-center justify-center rounded-xl border border-slate-200 bg-white/80 overflow-hidden">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl border border-slate-200 overflow-hidden">
             <img src="{{ logo_path | relative_url }}" alt="{{ brand.title }} logo" class="w-full h-full object-cover" loading="lazy">
           </div>
           <div class="flex-1">
             <span class="font-medium text-sm">{{ brand.title | replace: ' discount codes', '' | replace: ' promo codes', '' | strip }}</span>
+            <p class="text-xs text-slate-500 mt-1">{{ brand_offer_count }} discount codes · View all <span aria-hidden="true">→</span></p>
           </div>
         </div>
       </a>
@@ -75,13 +89,16 @@
     const featureBadge = document.getElementById('featured-offer-badge');
     const allOffers = [
       {% for coupon in site.coupons %}
+        {% assign discount_text = coupon.discount_value | default: '' %}
+        {% if coupon.is_expired == false and (discount_text contains '%' or discount_text contains '$') %}
         {
           url: {{ coupon.url | relative_url | jsonify }},
           title: {{ coupon.title | jsonify }},
           discount: {{ coupon.discount_value | default: 'Hot deal' | jsonify }},
           {% assign featured_brand = site.brands | where: 'brand_slug', coupon.brand_slug | first %}
           brand: {{ featured_brand.title | default: coupon.brand_slug | replace: ' discount codes', '' | replace: ' promo codes', '' | strip | jsonify }}
-        }{% unless forloop.last %},{% endunless %}
+        },
+        {% endif %}
       {% endfor %}
     ];
 

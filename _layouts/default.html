@@ -105,17 +105,56 @@
         inset: 0;
         background: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.35) 50%, transparent 75%);
         transform: translateX(-120%);
-        animation: xpShine 2.4s ease-in-out 1;
+        animation: xpShine 2.6s ease-in-out infinite;
         pointer-events: none;
       }
 
       #xp-progress {
         transition: width .45s ease;
+        position: relative;
+        animation: xpPulse 1.8s ease-in-out infinite;
+      }
+
+      #xp-progress::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
+        transform: translateX(-100%);
+        animation: xpSweep 2.2s linear infinite;
+      }
+
+      .code-fluid-blur {
+        display: inline-block;
+        filter: blur(3.2px);
+        animation: fluidBlur 2.6s ease-in-out infinite;
+      }
+
+      .code-fluid-blur.is-revealed {
+        filter: none;
+        animation: none;
       }
 
       @keyframes xpShine {
         0%, 85%, 100% { transform: translateX(-120%); }
         45% { transform: translateX(120%); }
+      }
+
+      @keyframes xpPulse {
+        0%, 100% { box-shadow: 0 0 0 rgba(59, 130, 246, 0.35); }
+        50% { box-shadow: 0 0 14px rgba(59, 130, 246, 0.75); }
+      }
+
+      @keyframes xpSweep {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+
+      @keyframes fluidBlur {
+        0% { transform: translate3d(0, 0, 0) skewX(0deg); filter: blur(3px); }
+        30% { transform: translate3d(1.5px, -0.6px, 0) skewX(-2deg); filter: blur(4px); }
+        65% { transform: translate3d(-1.2px, 0.8px, 0) skewX(2deg); filter: blur(2.8px); }
+        100% { transform: translate3d(0, 0, 0) skewX(0deg); filter: blur(3px); }
       }
 
       @media (max-width: 640px) {
@@ -188,8 +227,7 @@
         const progressEl = document.getElementById('xp-progress');
 
         const storedTheme = localStorage.getItem(storageKey);
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
+        applyTheme(storedTheme || 'light');
 
         toggleButton?.addEventListener('click', function () {
           applyTheme(body.classList.contains('dark') ? 'light' : 'dark');
