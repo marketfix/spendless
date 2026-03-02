@@ -19,7 +19,7 @@ layout: default
         <h1 class="text-2xl font-semibold">{{ brand_name }}</h1>
       </div>
     </div>
-    <p class="text-sm text-slate-600 mt-3">Open any offer to launch the partner site. Your code reveals instantly and is ready to copy—plus you earn XP for each unlock.</p>
+    <p class="text-sm text-slate-600 mt-3">Browse the biggest collection of user shared discount codes and pick the ones that works for you!</p>
   </header>
 
   <section class="space-y-3">
@@ -43,7 +43,10 @@ layout: default
           {% assign cleaned_title = cleaned_title | remove_first: leading_discount %}
           {% assign leading_discount_dash = coupon.discount_value | append: ' - ' %}
           {% assign cleaned_title = cleaned_title | remove_first: leading_discount_dash %}
-        <a href="{{ coupon.url | relative_url }}" data-surface-card class="block liquid-glass rounded-2xl px-4 py-3">
+        <a href="{{ coupon.url | relative_url }}" data-surface-card class="relative block liquid-glass rounded-2xl px-4 py-3">
+          <span class="absolute right-3 top-3 text-emerald-600/90" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h7.17a2 2 0 0 1 1.41.59l6.83 6.83a2 2 0 0 1 0 2.83l-7.59 7.59a2 2 0 0 1-2.82 0L3.59 13.41a2 2 0 0 1-.59-1.41V5z"></path><path d="M7.5 7.5h.01"></path></svg>
+          </span>
           <div>
             <div>
               {% if coupon.discount_value %}
