@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Aliexpress.com</title>
+
+  <!-- Fallback if JavaScript is disabled -->
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://www.trip.com/sale/deals/">
+  </noscript>
+
+  <script>
+    (function () {
+      const MAP = {
+        AU: "https://afflat3a2.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=28600&c=918277&a=377858&k=E7B538136117A2E2D4374801C827604D&l=31663",
+        US: "https://afflat3a2.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=28600&c=918277&a=377858&k=E7B538136117A2E2D4374801C827604D&l=31663",
+        DEFAULT: "https://www.aliexpress.com"
+      };
+
+      fetch("https://ipapi.co/json/", { cache: "no-store" })
+        .then(r => r.json())
+        .then(d => {
+          const cc = (d.country || "").toUpperCase();
+          location.replace(MAP[cc] || MAP.DEFAULT);
+        })
+        .catch(() => {
+          location.replace(MAP.DEFAULT);
+        });
+    })();
+  </script>
+</head>
+<body></body>
+</html>
