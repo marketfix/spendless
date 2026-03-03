@@ -1,0 +1,13 @@
+---
+layout: coupon
+title: "Up to 10% off Up to 10% off Shein orders."
+brand_slug: "shein"
+discount_value: "Up to 10% off"
+code: "MGUGWM1112"
+is_expired: false
+description_short: "Up to 10% off Shein orders."
+---
+
+Use code **MGUGWM1112** at checkout to get up to 10% off on up to 10% off shein orders..
+
+This code is included from the latest /r/SpendLess list for SHEIN. Availability can change quickly.

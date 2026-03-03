@@ -1,0 +1,13 @@
+---
+layout: coupon
+title: "10% off 10% off Las Vegas hotels."
+brand_slug: "expedia"
+discount_value: "10% off"
+code: "GLCV6BMJ849EG05F"
+is_expired: false
+description_short: "10% off Las Vegas hotels."
+---
+
+Use code **GLCV6BMJ849EG05F** at checkout to get 10% off on 10% off las vegas hotels..
+
+This code is included from the latest /r/SpendLess list for Expedia. Availability can change quickly.
