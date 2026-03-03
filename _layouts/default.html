@@ -105,14 +105,20 @@
         inset: 0;
         background: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.35) 50%, transparent 75%);
         transform: translateX(-120%);
-        animation: xpShine 2.6s ease-in-out infinite;
         pointer-events: none;
+      }
+
+      .xp-shell.xp-animate::after {
+        animation: xpShine 2.6s ease-in-out 1;
       }
 
       #xp-progress {
         transition: width .45s ease;
         position: relative;
-        animation: xpPulse 1.8s ease-in-out infinite;
+      }
+
+      .xp-shell.xp-animate #xp-progress {
+        animation: xpPulse 1.8s ease-in-out 1;
       }
 
       #xp-progress::after {
@@ -121,7 +127,10 @@
         inset: 0;
         background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
         transform: translateX(-100%);
-        animation: xpSweep 2.2s linear infinite;
+      }
+
+      .xp-shell.xp-animate #xp-progress::after {
+        animation: xpSweep 2.2s linear 1;
       }
 
       .code-fluid-blur {
@@ -290,6 +299,19 @@
           xpPanel.addEventListener('touchend', () => setTimeout(hide, 1200), { passive: true });
         }
 
+
+        if (xpPanel) {
+          const triggerXpAnimation = () => {
+            xpPanel.classList.remove('xp-animate');
+            void xpPanel.offsetWidth;
+            xpPanel.classList.add('xp-animate');
+            window.setTimeout(() => xpPanel.classList.remove('xp-animate'), 2700);
+          };
+
+          triggerXpAnimation();
+          window.setInterval(triggerXpAnimation, 10000);
+        }
+
         if ('startViewTransition' in document && window.matchMedia('(max-width: 640px)').matches) {
           document.querySelectorAll('a[href]').forEach((link) => {
             link.addEventListener('click', (event) => {
@@ -304,7 +326,7 @@
         }
 
         const storageKeyReported = 'spendless-reported-coupons';
-        const reportedLabel = 'Reported, thanks';
+        const reportedLabel = 'Reported, thanks!';
         const defaultLabel = 'Report invalid code';
 
         const loadReported = () => {
@@ -320,16 +342,40 @@
           const couponId = button.getAttribute('data-coupon-id');
           if (!couponId) return;
           const reported = loadReported();
+          let loadingTimer = null;
+          let loadingInterval = null;
+
           const paint = () => {
             const yes = reported.has(couponId);
             button.textContent = yes ? reportedLabel : defaultLabel;
           };
+
+          const stopLoading = () => {
+            if (loadingTimer) window.clearTimeout(loadingTimer);
+            if (loadingInterval) window.clearInterval(loadingInterval);
+            loadingTimer = null;
+            loadingInterval = null;
+          };
+
           paint();
           button.addEventListener('click', (event) => {
             event.preventDefault();
-            reported.add(couponId);
-            persistReported(reported);
-            paint();
+            if (reported.has(couponId) || loadingTimer) return;
+
+            let dots = 0;
+            button.textContent = 'Reporting';
+            loadingInterval = window.setInterval(() => {
+              dots = (dots + 1) % 4;
+              button.textContent = `Reporting${'.'.repeat(dots)}`;
+            }, 350);
+
+            const delay = 2000 + Math.floor(Math.random() * 1000);
+            loadingTimer = window.setTimeout(() => {
+              reported.add(couponId);
+              persistReported(reported);
+              stopLoading();
+              paint();
+            }, delay);
           });
         });
       })();
