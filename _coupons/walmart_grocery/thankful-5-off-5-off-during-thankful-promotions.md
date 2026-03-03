@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$5 off $5 off during thankful promotions."
-brand_slug: "walmart_grocery"
+brand_slug: "walmart"
 discount_value: "$5 off"
 code: "THANKFUL"
 is_expired: false

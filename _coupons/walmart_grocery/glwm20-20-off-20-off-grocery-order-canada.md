@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$20 off $20 off grocery order (Canada)."
-brand_slug: "walmart_grocery"
+brand_slug: "walmart"
 discount_value: "$20 off"
 code: "GLWM20"
 is_expired: false

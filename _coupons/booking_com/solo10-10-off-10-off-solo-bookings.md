@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "10% off 10% off solo bookings."
-brand_slug: "booking_com"
+brand_slug: "booking"
 discount_value: "10% off"
 code: "SOLO10"
 is_expired: false

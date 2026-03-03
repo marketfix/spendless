@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "8% off 8% off hotel bookings during February."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "CFHOTELSFEB8"
 is_expired: false

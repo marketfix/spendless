@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "15% off 15% off mobile bookings."
-brand_slug: "booking_com"
+brand_slug: "booking"
 discount_value: "15% off"
 code: "APPDEAL15"
 is_expired: false

@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "20% off 20% off selected hotels."
-brand_slug: "booking_com"
+brand_slug: "booking"
 discount_value: "20% off"
 code: "SAVE20"
 is_expired: false

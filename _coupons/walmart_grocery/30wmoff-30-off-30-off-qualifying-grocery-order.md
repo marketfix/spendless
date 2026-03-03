@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$30 off $30 off qualifying grocery order."
-brand_slug: "walmart_grocery"
+brand_slug: "walmart"
 discount_value: "$30 off"
 code: "30WMOFF"
 is_expired: false

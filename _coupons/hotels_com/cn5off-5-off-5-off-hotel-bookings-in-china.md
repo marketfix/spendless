@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "5% off 5% off hotel bookings in China."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "5% off"
 code: "CN5OFF"
 is_expired: false

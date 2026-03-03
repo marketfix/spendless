@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "25% off 25% off Australia and New Zealand stays."
-brand_slug: "booking_com"
+brand_slug: "booking"
 discount_value: "25% off"
 code: "AUSTRALIA25"
 is_expired: false

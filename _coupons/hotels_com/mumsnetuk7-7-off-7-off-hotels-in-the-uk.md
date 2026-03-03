@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "7% off 7% off hotels in the UK."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "7% off"
 code: "MUMSNETUK7"
 is_expired: false

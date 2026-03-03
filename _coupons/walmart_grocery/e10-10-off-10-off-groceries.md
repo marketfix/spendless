@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$10 off $10 off groceries."
-brand_slug: "walmart_grocery"
+brand_slug: "walmart"
 discount_value: "$10 off"
 code: "E10"
 is_expired: false

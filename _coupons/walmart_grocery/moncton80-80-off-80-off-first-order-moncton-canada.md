@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$80 off $80 off first order (Moncton, Canada)."
-brand_slug: "walmart_grocery"
+brand_slug: "walmart"
 discount_value: "$80 off"
 code: "MONCTON80"
 is_expired: false

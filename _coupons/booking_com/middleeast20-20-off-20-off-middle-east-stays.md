@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "20% off 20% off Middle East stays."
-brand_slug: "booking_com"
+brand_slug: "booking"
 discount_value: "20% off"
 code: "MIDDLEEAST20"
 is_expired: false

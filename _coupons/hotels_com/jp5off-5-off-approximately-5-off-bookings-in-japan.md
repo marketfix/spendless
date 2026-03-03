@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "5% off Approximately 5% off bookings in Japan."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "5% off"
 code: "JP5OFF"
 is_expired: false

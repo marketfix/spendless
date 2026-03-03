@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "Special discount Discount on European hotel bookings."
-brand_slug: "booking_com"
+brand_slug: "booking"
 discount_value: "Special discount"
 code: "EUROPEHOTEL"
 is_expired: false

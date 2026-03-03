@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "8% off 8% off with Bank of China in HK."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "BOC8HK"
 is_expired: false

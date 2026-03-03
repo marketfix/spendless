@@ -22,6 +22,24 @@ BRAND_NAMES = {
     "petco": "Petco",
     "shein": "SHEIN",
     "walmart": "Walmart",
+    "kiwi_com": "Kiwi.com",
+    "nordvpn": "NordVPN",
+    "protonvpn": "ProtonVPN",
+    "trip_com": "Trip.com",
+    "qatar_airways": "Qatar Airways",
+    "etihad_airways": "Etihad Airways",
+    "ebay": "eBay",
+    "skullcandy": "Skullcandy",
+    "spelab": "SPELAB",
+    "surfshark": "Surfshark",
+    "vevor": "VEVOR",
+    "vrbo": "Vrbo",
+}
+
+MERGED_BRAND_SLUGS = {
+    "booking_com": "booking",
+    "hotels_com": "hotelscom",
+    "walmart_grocery": "walmart",
 }
 
 
@@ -31,7 +49,7 @@ def slugify(text: str) -> str:
 
 
 def default_brand_name(slug: str) -> str:
-    return slug.replace("-", " ").title()
+    return slug.replace("-", " ").replace("_", " ").title()
 
 
 def ensure_logo(brand_slug: str) -> str:
@@ -115,9 +133,12 @@ def main() -> None:
                 existing.unlink()
             existing_coupon_dir.rmdir()
 
+    cleared_coupon_dirs = set()
+
     for csv_path in LISTS_DIR.glob("*.csv"):
-        brand_slug = csv_path.stem.lower()
-        brand_name = BRAND_NAMES.get(brand_slug, default_brand_name(brand_slug))
+        raw_brand_slug = csv_path.stem.lower()
+        brand_slug = MERGED_BRAND_SLUGS.get(raw_brand_slug, raw_brand_slug)
+        brand_name = BRAND_NAMES.get(raw_brand_slug, BRAND_NAMES.get(brand_slug, default_brand_name(brand_slug)))
         logo_path = ensure_logo(brand_slug)
 
         brand_output = build_brand_page(brand_slug, brand_name, logo_path)
@@ -127,8 +148,10 @@ def main() -> None:
         coupon_dir = COUPONS_DIR / brand_slug
         coupon_dir.mkdir(parents=True, exist_ok=True)
 
-        for existing in coupon_dir.glob("*.md"):
-            existing.unlink()
+        if brand_slug not in cleared_coupon_dirs:
+            for existing in coupon_dir.glob("*.md"):
+                existing.unlink()
+            cleared_coupon_dirs.add(brand_slug)
 
         with csv_path.open(newline="") as handle:
             reader = csv.DictReader(handle)

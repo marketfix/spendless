@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "Free delivery Free express delivery code."
-brand_slug: "walmart_grocery"
+brand_slug: "walmart"
 discount_value: "Free delivery"
 code: "EXPRESSDELIVERY"
 is_expired: false

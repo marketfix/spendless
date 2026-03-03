@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$10 off $10 off each of your first three grocery orders."
-brand_slug: "walmart_grocery"
+brand_slug: "walmart"
 discount_value: "$10 off"
 code: "TRIPLE10"
 is_expired: false

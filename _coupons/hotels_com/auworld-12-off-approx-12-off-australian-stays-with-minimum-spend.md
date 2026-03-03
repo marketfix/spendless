@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "12% off Approx. 12% off Australian stays with minimum spend."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "12% off"
 code: "AUWORLD"
 is_expired: false

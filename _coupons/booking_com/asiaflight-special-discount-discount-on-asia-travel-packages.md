@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "Special discount Discount on Asia travel packages."
-brand_slug: "booking_com"
+brand_slug: "booking"
 discount_value: "Special discount"
 code: "ASIAFLIGHT"
 is_expired: false

@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "25% off 25% off last-minute stays."
-brand_slug: "booking_com"
+brand_slug: "booking"
 discount_value: "25% off"
 code: "LASTMINUTE25"
 is_expired: false

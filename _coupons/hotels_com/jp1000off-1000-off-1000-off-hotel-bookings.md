@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "¥1000 off ¥1000 off hotel bookings."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "¥1000 off"
 code: "JP1000OFF"
 is_expired: false

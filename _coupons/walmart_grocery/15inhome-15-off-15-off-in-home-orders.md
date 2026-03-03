@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$15 off $15 off in-home orders."
-brand_slug: "walmart_grocery"
+brand_slug: "walmart"
 discount_value: "$15 off"
 code: "15INHOME"
 is_expired: false

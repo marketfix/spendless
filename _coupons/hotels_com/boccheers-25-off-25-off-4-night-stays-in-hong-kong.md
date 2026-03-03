@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "25% off 25% off 4-night stays in Hong Kong."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "25% off"
 code: "BOCCHEERS"
 is_expired: false

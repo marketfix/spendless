@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "8% off 8% off hotels with Taishin Bank (TW)."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "TSBH"
 is_expired: false

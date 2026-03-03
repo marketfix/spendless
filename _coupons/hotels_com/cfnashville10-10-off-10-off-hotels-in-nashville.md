@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "10% off 10% off hotels in Nashville."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "10% off"
 code: "CFNASHVILLE10"
 is_expired: false

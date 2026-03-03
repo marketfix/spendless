@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$20–$100 off Tiered rebate of $20–$100 off bookings."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "$20–$100 off"
 code: "REBATES22"
 is_expired: false

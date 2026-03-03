@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "5% off 5% instant discount on mobile bookings."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "5% off"
 code: "MOB5"
 is_expired: false

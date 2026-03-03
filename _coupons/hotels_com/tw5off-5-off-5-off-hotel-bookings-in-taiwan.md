@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "5% off 5% off hotel bookings in Taiwan."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "5% off"
 code: "TW5OFF"
 is_expired: false

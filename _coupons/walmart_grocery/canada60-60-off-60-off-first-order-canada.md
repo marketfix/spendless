@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$60 off $60 off first order (Canada)."
-brand_slug: "walmart_grocery"
+brand_slug: "walmart"
 discount_value: "$60 off"
 code: "CANADA60"
 is_expired: false

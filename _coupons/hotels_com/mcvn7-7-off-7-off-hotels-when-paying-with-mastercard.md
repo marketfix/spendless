@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "7% off 7% off hotels when paying with Mastercard."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "7% off"
 code: "MCVN7"
 is_expired: false

@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "8% off 8% off with HSBC in Hong Kong."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "8HSBCHK"
 is_expired: false

@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "Up to 20% off Up to 20% off with Genius signup."
-brand_slug: "booking_com"
+brand_slug: "booking"
 discount_value: "Up to 20% off"
 code: "1946308OTK5"
 is_expired: false

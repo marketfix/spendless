@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "$5 off $5 off bookings of $50+ (Canada)."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "$5 off"
 code: "5OFF50CA"
 is_expired: false

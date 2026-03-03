@@ -55,17 +55,37 @@ layout: default
         const brand = button.dataset.brandSlug;
         const explicitExternal = button.dataset.urlExternal;
         const offerHosts = {
-          '1800contacts': 'https://spendlesscontacts.wiki/', 'aliexpress': 'https://myaliexpress.wiki/',
-          'autonationparts': 'https://autonationparts.wiki/', 'booking': 'https://spendlessbooking.wiki/',
-          'expedia': 'https://expediasavers.wiki/', 'hotelscom': 'https://hotelsdiscounts.wiki/', 'lulus': 'https://luluscheaper.wiki/',
-          'lumens': 'https://mylumens.wiki/', 'nike': 'https://spendlessnike.wiki/', 'petco': 'https://petcocoupon.wiki/',
-          'shein': 'https://sheincoupons.wiki/', 'temu': 'https://temucoupon.pro/', 'walmart': 'https://walmartcodes.wiki/'
+          '1800contacts': 'https://spendlesscontacts.wiki/',
+          'aliexpress': 'https://myaliexpress.wiki/',
+          'autonationparts': 'https://autonation.wiki/',
+          'booking': 'https://spendlessbooking.wiki/',
+          'ebay': 'https://ebay.com/deals',
+          'etihad_airways': 'https://etihad.com',
+          'expedia': 'https://expediasavers.wiki/',
+          'hotelscom': 'https://hotelsdiscounts.wiki/',
+          'kiwi_com': 'https://kiwitrip.biz',
+          'lulus': 'https://luluscheaper.wiki/',
+          'lumens': 'https://mylumens.wiki/',
+          'nike': 'https://nike.com',
+          'nordvpn': 'https://nordvpn.com',
+          'petco': 'https://petcocoupon.wiki/',
+          'protonvpn': 'https://myprotonvpn.shop',
+          'qatar_airways': 'https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=28255&c=918277&a=377858&k=A8F66F5B88F299EB654F60541F9D0CEC&l=31883',
+          'shein': 'https://sheincoupons.wiki/',
+          'skullcandy': 'https://skullcandy.help',
+          'spelab': 'https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=31091&c=918277&a=377858&k=C4A489B9F8CF18635619E754530AAE8C&l=36180',
+          'surfshark': 'https://surfshark.lol',
+          'temu': 'https://temucoupon.pro/',
+          'trip_com': 'https://tripdeals.biz',
+          'vevor': 'https://spendlesso.com/vevor',
+          'vrbo': 'https://spendlesso.com/vrbo',
+          'walmart': 'https://walmartcodes.wiki/'
         };
 
         display.textContent = code;
 
         const openOffer = () => {
-          const fallback = offerHosts[brand] ? `${offerHosts[brand]}${code}` : '';
+          const fallback = offerHosts[brand] || '';
           const url = explicitExternal || fallback;
           if (url) window.open(url, '_blank', 'noopener');
         };

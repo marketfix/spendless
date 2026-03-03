@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "8% off 8% off with DBS card (Singapore)."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "SG8"
 is_expired: false

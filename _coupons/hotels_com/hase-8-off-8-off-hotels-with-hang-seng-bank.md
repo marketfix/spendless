@@ -1,7 +1,7 @@
 ---
 layout: coupon
 title: "8% off 8% off hotels with Hang Seng Bank."
-brand_slug: "hotels_com"
+brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "HASE"
 is_expired: false
