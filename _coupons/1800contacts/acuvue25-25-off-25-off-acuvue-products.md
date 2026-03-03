@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "25% off 25% off Acuvue products."
+title: "25% off Acuvue products."
 brand_slug: "1800contacts"
 discount_value: "25% off"
 code: "ACUVUE25"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 50% off Up to 50% off first orders (Middle East)."
+title: "Up to 50% off first orders (Middle East)."
 brand_slug: "shein"
 discount_value: "Up to 50% off"
 code: "ALCP"

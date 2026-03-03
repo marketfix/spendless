@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off selected products or full order."
+title: "10% off selected products or full order."
 brand_slug: "spelab"
 discount_value: "10% off"
 code: "Y10"

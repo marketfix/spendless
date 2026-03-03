@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$10 off $10 off when paying with PayPal."
+title: "$10 off when paying with PayPal."
 brand_slug: "walmart"
 discount_value: "$10 off"
 code: "PAYPAL10"

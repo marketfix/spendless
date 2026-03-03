@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "NT$499 off NT$499 off bookings over NT$4,999."
+title: "NT$499 off bookings over NT$4,999."
 brand_slug: "hotelscom"
 discount_value: "NT$499 off"
 code: "TW499OFF"

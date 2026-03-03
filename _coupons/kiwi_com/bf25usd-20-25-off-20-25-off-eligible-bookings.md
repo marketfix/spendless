@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$20–25 off $20–25 off eligible bookings."
+title: "$20–25 off eligible bookings."
 brand_slug: "kiwi_com"
 discount_value: "$20–25 off"
 code: "BF25USD"

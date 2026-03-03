@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off flights in Southeast Asia and China using Visa."
+title: "15% off flights in Southeast Asia and China using Visa."
 brand_slug: "qatar_airways"
 discount_value: "15% off"
 code: "SEACN25"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "60% off 60% off new user app items."
+title: "60% off new user app items."
 brand_slug: "shein"
 discount_value: "60% off"
 code: "EMF6HQK"

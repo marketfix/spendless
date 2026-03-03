@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off your entire order, works on most full-price items."
+title: "15% off your entire order, works on most full-price items."
 brand_slug: "spelab"
 discount_value: "15% off"
 code: "W15"

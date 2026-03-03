@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$10 off $10 off orders when paying with Mastercard."
+title: "$10 off orders when paying with Mastercard."
 brand_slug: "ebay"
 discount_value: "$10 off"
 code: "MASTERCARD"

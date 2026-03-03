@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off participating hotels worldwide."
+title: "8% off participating hotels worldwide."
 brand_slug: "expedia"
 discount_value: "8% off"
 code: "SA8"

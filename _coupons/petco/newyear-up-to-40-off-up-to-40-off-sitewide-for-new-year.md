@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 40% off Up to 40% off sitewide for New Year."
+title: "Up to 40% off sitewide for New Year."
 brand_slug: "petco"
 discount_value: "Up to 40% off"
 code: "NEWYEAR"

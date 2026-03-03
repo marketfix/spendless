@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Extra free months Extra free months or heavy discounts on subscriptions."
+title: "Extra free months or heavy discounts on subscriptions."
 brand_slug: "protonvpn"
 discount_value: "Extra free months"
 code: "VPNPLUSFREE2024"

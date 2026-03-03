@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off your first order."
+title: "10% off your first order."
 brand_slug: "petco"
 discount_value: "10% off"
 code: "WELCOME10"

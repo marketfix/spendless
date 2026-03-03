@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "C$10 off C$10 off bookings of C$100+."
+title: "C$10 off bookings of C$100+."
 brand_slug: "hotelscom"
 discount_value: "C$10 off"
 code: "10OFFCAD"

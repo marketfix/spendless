@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off pickup orders $50+."
+title: "10% off pickup orders $50+."
 brand_slug: "petco"
 discount_value: "10% off"
 code: "PETCO10PICKUP"

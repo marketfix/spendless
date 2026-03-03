@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "35% off 35% off your first repeat delivery/autoship order."
+title: "35% off your first repeat delivery/autoship order."
 brand_slug: "petco"
 discount_value: "35% off"
 code: "RepeatDelivery35"

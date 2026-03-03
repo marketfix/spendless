@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off Biofinity lenses."
+title: "30% off Biofinity lenses."
 brand_slug: "1800contacts"
 discount_value: "30% off"
 code: "BIOFINITY30"

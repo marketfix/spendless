@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off select items during Cyber Week."
+title: "20% off select items during Cyber Week."
 brand_slug: "ebay"
 discount_value: "20% off"
 code: "CYBERWEEK20"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "77% off 77% off NordVPN subscription."
+title: "77% off NordVPN subscription."
 brand_slug: "nordvpn"
 discount_value: "77% off"
 code: "TYT"

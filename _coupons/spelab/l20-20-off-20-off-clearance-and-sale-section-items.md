@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off clearance and sale section items."
+title: "20% off clearance and sale section items."
 brand_slug: "spelab"
 discount_value: "20% off"
 code: "L20"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "90% off 90% off Uproar ANC earbuds."
+title: "90% off Uproar ANC earbuds."
 brand_slug: "skullcandy"
 discount_value: "90% off"
 code: "FWUA"

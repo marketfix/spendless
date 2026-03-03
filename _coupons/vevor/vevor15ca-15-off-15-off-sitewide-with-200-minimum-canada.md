@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off sitewide with $200 minimum (Canada)."
+title: "15% off sitewide with $200 minimum (Canada)."
 brand_slug: "vevor"
 discount_value: "15% off"
 code: "VEVOR15CA"

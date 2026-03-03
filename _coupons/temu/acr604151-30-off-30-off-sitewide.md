@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off sitewide."
+title: "30% off sitewide."
 brand_slug: "temu"
 discount_value: "30% off"
 code: "ACR604151"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "65% off 65% off beachwear (Europe)."
+title: "65% off beachwear (Europe)."
 brand_slug: "shein"
 discount_value: "65% off"
 code: "euraugsfpk26011610f"

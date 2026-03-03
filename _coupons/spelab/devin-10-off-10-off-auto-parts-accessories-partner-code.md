@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off auto parts & accessories (partner code)."
+title: "10% off auto parts & accessories (partner code)."
 brand_slug: "spelab"
 discount_value: "10% off"
 code: "Devin"

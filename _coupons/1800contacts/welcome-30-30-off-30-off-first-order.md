@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off first order."
+title: "30% off first order."
 brand_slug: "1800contacts"
 discount_value: "30% off"
 code: "WELCOME-30"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off Genius member stays."
+title: "10% off Genius member stays."
 brand_slug: "booking"
 discount_value: "10% off"
 code: "GENIUS10"

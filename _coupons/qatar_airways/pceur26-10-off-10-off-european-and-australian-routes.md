@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off European and Australian routes."
+title: "10% off European and Australian routes."
 brand_slug: "qatar_airways"
 discount_value: "10% off"
 code: "PCEUR26"

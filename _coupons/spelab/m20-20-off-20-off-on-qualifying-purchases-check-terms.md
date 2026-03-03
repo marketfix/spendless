@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off on qualifying purchases (check terms)."
+title: "20% off on qualifying purchases (check terms)."
 brand_slug: "spelab"
 discount_value: "20% off"
 code: "M20"

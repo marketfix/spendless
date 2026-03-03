@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off flights with partner code."
+title: "10% off flights with partner code."
 brand_slug: "etihad_airways"
 discount_value: "10% off"
 code: "EYSIEMENS25"

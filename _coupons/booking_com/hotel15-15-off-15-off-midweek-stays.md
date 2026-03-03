@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off midweek stays."
+title: "15% off midweek stays."
 brand_slug: "booking"
 discount_value: "15% off"
 code: "HOTEL15"

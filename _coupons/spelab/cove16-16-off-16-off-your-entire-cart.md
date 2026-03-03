@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "16% off 16% off your entire cart."
+title: "16% off your entire cart."
 brand_slug: "spelab"
 discount_value: "16% off"
 code: "COVE16"

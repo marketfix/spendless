@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off glasses contacts."
+title: "30% off glasses contacts."
 brand_slug: "1800contacts"
 discount_value: "30% off"
 code: "30-OFF-GLASSES"

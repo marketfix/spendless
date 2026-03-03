@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off car rentals for new customers."
+title: "8% off car rentals for new customers."
 brand_slug: "trip_com"
 discount_value: "8% off"
 code: "TRIPCAR8"

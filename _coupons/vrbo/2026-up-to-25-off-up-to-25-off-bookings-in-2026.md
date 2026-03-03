@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 25% off Up to 25% off bookings in 2026."
+title: "Up to 25% off bookings in 2026."
 brand_slug: "vrbo"
 discount_value: "Up to 25% off"
 code: "2026"

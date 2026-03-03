@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$80 off $80 off first order (Halifax, Canada)."
+title: "$80 off first order (Halifax, Canada)."
 brand_slug: "walmart"
 discount_value: "$80 off"
 code: "HALIFAX80"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "85% off 85% off Surfshark subscription."
+title: "85% off Surfshark subscription."
 brand_slug: "surfshark"
 discount_value: "85% off"
 code: "coin"

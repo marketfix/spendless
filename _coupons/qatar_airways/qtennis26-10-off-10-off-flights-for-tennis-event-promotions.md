@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off flights for tennis event promotions."
+title: "10% off flights for tennis event promotions."
 brand_slug: "qatar_airways"
 discount_value: "10% off"
 code: "QTENNIS26"

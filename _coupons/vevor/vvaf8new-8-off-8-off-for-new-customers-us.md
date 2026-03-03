@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off for new customers (US)."
+title: "8% off for new customers (US)."
 brand_slug: "vevor"
 discount_value: "8% off"
 code: "VVAF8NEW"

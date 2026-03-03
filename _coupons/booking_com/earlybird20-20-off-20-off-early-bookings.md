@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off early bookings."
+title: "20% off early bookings."
 brand_slug: "booking"
 discount_value: "20% off"
 code: "EARLYBIRD20"

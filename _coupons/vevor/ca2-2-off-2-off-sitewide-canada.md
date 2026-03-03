@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "2% off 2% off sitewide (Canada)."
+title: "2% off sitewide (Canada)."
 brand_slug: "vevor"
 discount_value: "2% off"
 code: "CA2"

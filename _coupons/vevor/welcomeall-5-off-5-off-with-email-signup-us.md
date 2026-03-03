@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$5 off $5 off with email signup (US)."
+title: "$5 off with email signup (US)."
 brand_slug: "vevor"
 discount_value: "$5 off"
 code: "WELCOMEALL"

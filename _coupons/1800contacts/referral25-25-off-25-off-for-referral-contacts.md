@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "25% off 25% off for referral contacts."
+title: "25% off for referral contacts."
 brand_slug: "1800contacts"
 discount_value: "25% off"
 code: "REFERRAL25"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 20% off Up to 20% off summer sale flights (valid until Mar 28 2026)."
+title: "Up to 20% off summer sale flights (valid until Mar 28 2026)."
 brand_slug: "etihad_airways"
 discount_value: "Up to 20% off"
 code: "SUMMERSPLASH"

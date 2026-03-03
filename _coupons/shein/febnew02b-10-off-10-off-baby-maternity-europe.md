@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off baby & maternity (Europe)."
+title: "10% off baby & maternity (Europe)."
 brand_slug: "shein"
 discount_value: "10% off"
 code: "febnew02b"

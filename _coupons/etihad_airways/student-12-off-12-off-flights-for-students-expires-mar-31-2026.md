@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "12% off 12% off flights for students (expires Mar 31 2026)."
+title: "12% off flights for students (expires Mar 31 2026)."
 brand_slug: "etihad_airways"
 discount_value: "12% off"
 code: "STUDENT"

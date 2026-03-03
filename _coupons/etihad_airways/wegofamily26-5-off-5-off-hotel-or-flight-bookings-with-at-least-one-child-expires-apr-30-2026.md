@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "5% off 5% off hotel or flight bookings with at least one child (expires Apr 30 2026)."
+title: "5% off hotel or flight bookings with at least one child (expires Apr 30 2026)."
 brand_slug: "etihad_airways"
 discount_value: "5% off"
 code: "WEGOFAMILY26"

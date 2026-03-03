@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "7% off 7% off hotels in Vietnam with MasterCard."
+title: "7% off hotels in Vietnam with MasterCard."
 brand_slug: "expedia"
 discount_value: "7% off"
 code: "MASTERVN7"

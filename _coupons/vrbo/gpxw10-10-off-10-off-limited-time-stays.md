@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off limited-time stays."
+title: "10% off limited-time stays."
 brand_slug: "vrbo"
 discount_value: "10% off"
 code: "GPXW10"

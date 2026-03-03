@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$50 off $50 off first in-home delivery subscription."
+title: "$50 off first in-home delivery subscription."
 brand_slug: "walmart"
 discount_value: "$50 off"
 code: "INHOMEDEVICE"

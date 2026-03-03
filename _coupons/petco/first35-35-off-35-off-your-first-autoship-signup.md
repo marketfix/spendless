@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "35% off 35% off your first autoship signup."
+title: "35% off your first autoship signup."
 brand_slug: "petco"
 discount_value: "35% off"
 code: "FIRST35"

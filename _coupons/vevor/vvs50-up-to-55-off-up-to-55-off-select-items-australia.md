@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 55% off Up to 55% off select items (Australia)."
+title: "Up to 55% off select items (Australia)."
 brand_slug: "vevor"
 discount_value: "Up to 55% off"
 code: "VVS50"

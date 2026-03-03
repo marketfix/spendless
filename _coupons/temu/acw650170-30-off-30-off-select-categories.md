@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off select categories."
+title: "30% off select categories."
 brand_slug: "temu"
 discount_value: "30% off"
 code: "ACW650170"

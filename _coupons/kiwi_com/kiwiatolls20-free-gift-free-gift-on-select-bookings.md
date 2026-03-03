@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Free gift Free gift on select bookings."
+title: "Free gift on select bookings."
 brand_slug: "kiwi_com"
 discount_value: "Free gift"
 code: "KIWIATOLLS20"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off home textiles (Europe)."
+title: "10% off home textiles (Europe)."
 brand_slug: "shein"
 discount_value: "10% off"
 code: "febnb16"

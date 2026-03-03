@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 25% off Up to 25% off handbags."
+title: "Up to 25% off handbags."
 brand_slug: "ebay"
 discount_value: "Up to 25% off"
 code: "SAVEONBAGS"

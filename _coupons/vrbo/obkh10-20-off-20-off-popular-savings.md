@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off popular savings."
+title: "20% off popular savings."
 brand_slug: "vrbo"
 discount_value: "20% off"
 code: "OBKH10"

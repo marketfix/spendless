@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off Las Vegas hotels."
+title: "10% off Las Vegas hotels."
 brand_slug: "expedia"
 discount_value: "10% off"
 code: "CFVEGAS10"

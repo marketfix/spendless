@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$5 off $5 off eligible items."
+title: "$5 off eligible items."
 brand_slug: "ebay"
 discount_value: "$5 off"
 code: "GREENASHESS"

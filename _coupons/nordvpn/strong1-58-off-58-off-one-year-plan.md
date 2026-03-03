@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "58% off 58% off one-year plan."
+title: "58% off one-year plan."
 brand_slug: "nordvpn"
 discount_value: "58% off"
 code: "STRONG1"

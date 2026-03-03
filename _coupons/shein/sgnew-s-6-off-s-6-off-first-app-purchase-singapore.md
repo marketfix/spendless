@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "S$6 off S$6 off first app purchase (Singapore)."
+title: "S$6 off first app purchase (Singapore)."
 brand_slug: "shein"
 discount_value: "S$6 off"
 code: "SGNEW"

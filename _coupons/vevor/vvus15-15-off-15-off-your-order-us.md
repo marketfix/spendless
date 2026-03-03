@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$15 off $15 off your order (US)."
+title: "$15 off your order (US)."
 brand_slug: "vevor"
 discount_value: "$15 off"
 code: "VVUS15"

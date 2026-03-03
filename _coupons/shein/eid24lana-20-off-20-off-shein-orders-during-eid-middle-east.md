@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off Shein orders during Eid (Middle East)."
+title: "20% off Shein orders during Eid (Middle East)."
 brand_slug: "shein"
 discount_value: "20% off"
 code: "EID24Lana"

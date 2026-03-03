@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 10% off Up to 10% off flights to/from Australia and New Zealand."
+title: "Up to 10% off flights to/from Australia and New Zealand."
 brand_slug: "qatar_airways"
 discount_value: "Up to 10% off"
 code: "EURAU26"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off select items (Europe)."
+title: "15% off select items (Europe)."
 brand_slug: "shein"
 discount_value: "15% off"
 code: "CStorecarolinaleoa802"

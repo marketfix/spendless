@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off sitewide."
+title: "15% off sitewide."
 brand_slug: "petco"
 discount_value: "15% off"
 code: "PETCO15"

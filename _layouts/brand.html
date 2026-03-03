@@ -52,7 +52,9 @@ layout: default
               {% if coupon.discount_value %}
                 <span class="inline-flex text-xs font-semibold px-2 py-1 rounded-full bg-emerald-100 text-emerald-800">{{ coupon.discount_value }}</span>
               {% endif %}
-              <h3 class="text-sm font-medium mt-2">{{ cleaned_title }}</h3>
+              {% assign first_char = cleaned_title | slice: 0, 1 | upcase %}
+              {% assign remainder = cleaned_title | slice: 1, cleaned_title.size %}
+              <h3 class="text-sm font-medium mt-2">{{ first_char }}{{ remainder }}</h3>
               <p class="text-xs text-slate-500 mt-1">View Code ↗</p>
             </div>
           </div>

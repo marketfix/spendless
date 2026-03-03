@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "NT$50 off NT$50 off orders over NT$699 (Taiwan)."
+title: "NT$50 off orders over NT$699 (Taiwan)."
 brand_slug: "shein"
 discount_value: "NT$50 off"
 code: "NT$50"

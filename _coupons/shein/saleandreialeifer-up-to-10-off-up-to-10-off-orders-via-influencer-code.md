@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 10% off Up to 10% off orders via influencer code."
+title: "Up to 10% off orders via influencer code."
 brand_slug: "shein"
 discount_value: "Up to 10% off"
 code: "SALEAndreialeifer"

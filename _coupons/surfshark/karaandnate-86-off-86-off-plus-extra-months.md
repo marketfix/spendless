@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "86% off 86% off plus extra months."
+title: "86% off plus extra months."
 brand_slug: "surfshark"
 discount_value: "86% off"
 code: "karaandnate"

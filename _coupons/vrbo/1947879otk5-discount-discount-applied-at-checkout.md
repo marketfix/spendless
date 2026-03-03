@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Discount Discount applied at checkout."
+title: "Discount applied at checkout."
 brand_slug: "vrbo"
 discount_value: "Discount"
 code: "1947879OTK5"

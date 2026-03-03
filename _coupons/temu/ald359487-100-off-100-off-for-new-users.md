@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$100 off $100 off for new users."
+title: "$100 off for new users."
 brand_slug: "temu"
 discount_value: "$100 off"
 code: "ALD359487"

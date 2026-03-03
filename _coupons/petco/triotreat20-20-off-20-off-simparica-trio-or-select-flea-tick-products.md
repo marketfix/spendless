@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$20 off $20 off Simparica Trio or select flea/tick products."
+title: "$20 off Simparica Trio or select flea/tick products."
 brand_slug: "petco"
 discount_value: "$20 off"
 code: "TRIOTREAT20"

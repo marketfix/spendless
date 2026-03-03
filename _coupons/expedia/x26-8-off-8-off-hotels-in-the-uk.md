@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off hotels in the UK."
+title: "8% off hotels in the UK."
 brand_slug: "expedia"
 discount_value: "8% off"
 code: "X26"

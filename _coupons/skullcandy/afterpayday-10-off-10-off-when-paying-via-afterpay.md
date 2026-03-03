@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off when paying via Afterpay."
+title: "10% off when paying via Afterpay."
 brand_slug: "skullcandy"
 discount_value: "10% off"
 code: "AFTERPAYDAY"

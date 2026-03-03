@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "5% off 5% off your very first order."
+title: "5% off your very first order."
 brand_slug: "spelab"
 discount_value: "5% off"
 code: "PE5"

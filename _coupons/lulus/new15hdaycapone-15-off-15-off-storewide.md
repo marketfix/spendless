@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off storewide."
+title: "15% off storewide."
 brand_slug: "lulus"
 discount_value: "15% off"
 code: "NEW15HDAYCAPONE"

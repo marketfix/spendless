@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "£5 off £5 off bookings of £50+ (UK)."
+title: "£5 off bookings of £50+ (UK)."
 brand_slug: "hotelscom"
 discount_value: "£5 off"
 code: "5OFF50UK"

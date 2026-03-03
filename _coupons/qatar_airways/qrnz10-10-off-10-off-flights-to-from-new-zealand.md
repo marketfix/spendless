@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off flights to/from New Zealand."
+title: "10% off flights to/from New Zealand."
 brand_slug: "qatar_airways"
 discount_value: "10% off"
 code: "QRNZ10"

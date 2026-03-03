@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "5% off 5% off Europe train bookings for new users."
+title: "5% off Europe train bookings for new users."
 brand_slug: "trip_com"
 discount_value: "5% off"
 code: "EUGREEN"

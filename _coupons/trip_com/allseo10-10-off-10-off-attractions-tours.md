@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off attractions & tours."
+title: "10% off attractions & tours."
 brand_slug: "trip_com"
 discount_value: "10% off"
 code: "ALLSEO10"

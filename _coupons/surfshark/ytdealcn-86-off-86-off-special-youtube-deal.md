@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "86% off 86% off special YouTube deal."
+title: "86% off special YouTube deal."
 brand_slug: "surfshark"
 discount_value: "86% off"
 code: "YTDEALCN"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off watches and accessories."
+title: "20% off watches and accessories."
 brand_slug: "ebay"
 discount_value: "20% off"
 code: "NEW2026"

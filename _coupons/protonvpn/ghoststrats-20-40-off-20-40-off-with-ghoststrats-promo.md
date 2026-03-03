@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20–40% off 20–40% off with GhostStrats promo."
+title: "20–40% off with GhostStrats promo."
 brand_slug: "protonvpn"
 discount_value: "20–40% off"
 code: "GhostStrats"

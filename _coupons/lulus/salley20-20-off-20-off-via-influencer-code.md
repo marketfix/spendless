@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off via influencer code."
+title: "20% off via influencer code."
 brand_slug: "lulus"
 discount_value: "20% off"
 code: "SALLEY20"

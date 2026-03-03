@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off select hotels."
+title: "8% off select hotels."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "SA8"

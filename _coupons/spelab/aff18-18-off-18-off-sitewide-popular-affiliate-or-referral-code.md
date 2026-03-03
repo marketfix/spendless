@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "18% off 18% off sitewide; popular affiliate or referral code."
+title: "18% off sitewide; popular affiliate or referral code."
 brand_slug: "spelab"
 discount_value: "18% off"
 code: "AFF18"

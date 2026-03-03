@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off hotels in New Zealand with Mastercard."
+title: "8% off hotels in New Zealand with Mastercard."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "MCNZ8"

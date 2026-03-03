@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "25% off 25% off general bookings in the US."
+title: "25% off general bookings in the US."
 brand_slug: "expedia"
 discount_value: "25% off"
 code: "BOFA5"

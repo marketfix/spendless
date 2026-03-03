@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off AquaSoft lenses."
+title: "20% off AquaSoft lenses."
 brand_slug: "1800contacts"
 discount_value: "20% off"
 code: "AQUASOFT20"

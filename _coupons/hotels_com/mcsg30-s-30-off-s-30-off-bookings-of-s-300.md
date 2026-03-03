@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "S$30 off S$30 off bookings of S$300+."
+title: "S$30 off bookings of S$300+."
 brand_slug: "hotelscom"
 discount_value: "S$30 off"
 code: "MCSG30"

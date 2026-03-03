@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 5% off Up to 5% off when booking via mobile."
+title: "Up to 5% off when booking via mobile."
 brand_slug: "qatar_airways"
 discount_value: "Up to 5% off"
 code: "GOMOBILE"

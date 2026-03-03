@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "50% off 50% off select dresses."
+title: "50% off select dresses."
 brand_slug: "lulus"
 discount_value: "50% off"
 code: "DRESSY50"

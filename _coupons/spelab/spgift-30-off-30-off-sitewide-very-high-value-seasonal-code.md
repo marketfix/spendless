@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off sitewide; very high-value seasonal code."
+title: "30% off sitewide; very high-value seasonal code."
 brand_slug: "spelab"
 discount_value: "30% off"
 code: "SPGIFT"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off orders (Middle East)."
+title: "10% off orders (Middle East)."
 brand_slug: "shein"
 discount_value: "10% off"
 code: "QD6DV"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off hotels with DBS Bank (HK)."
+title: "8% off hotels with DBS Bank (HK)."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "AFDBSHK"

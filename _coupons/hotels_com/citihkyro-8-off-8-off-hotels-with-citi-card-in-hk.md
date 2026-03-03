@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off hotels with Citi card in HK."
+title: "8% off hotels with Citi card in HK."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "CITIHKYRO"

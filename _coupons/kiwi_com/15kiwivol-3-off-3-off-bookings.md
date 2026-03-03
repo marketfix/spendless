@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "3% off 3% off bookings."
+title: "3% off bookings."
 brand_slug: "kiwi_com"
 discount_value: "3% off"
 code: "15KIWIVOL"

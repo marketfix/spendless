@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off eligible flights."
+title: "20% off eligible flights."
 brand_slug: "etihad_airways"
 discount_value: "20% off"
 code: "TAKEOFF20"

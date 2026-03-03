@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "€25 off €25 off flights."
+title: "€25 off flights."
 brand_slug: "kiwi_com"
 discount_value: "€25 off"
 code: "BF25EUR"

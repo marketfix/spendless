@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20–40% off 20–40% off for students through Student Beans."
+title: "20–40% off for students through Student Beans."
 brand_slug: "protonvpn"
 discount_value: "20–40% off"
 code: "STUDENTBEAN1124"

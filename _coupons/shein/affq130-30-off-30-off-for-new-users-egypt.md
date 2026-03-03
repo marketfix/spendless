@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off for new users (Egypt)."
+title: "30% off for new users (Egypt)."
 brand_slug: "shein"
 discount_value: "30% off"
 code: "AFFQ130"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 7% off Up to 7% off flights with extra baggage for Privilege Club members."
+title: "Up to 7% off flights with extra baggage for Privilege Club members."
 brand_slug: "qatar_airways"
 discount_value: "Up to 7% off"
 code: "FLYQR"

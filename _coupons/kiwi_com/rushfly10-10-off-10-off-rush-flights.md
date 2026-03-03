@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off rush flights."
+title: "10% off rush flights."
 brand_slug: "kiwi_com"
 discount_value: "10% off"
 code: "RUSHFLY10"

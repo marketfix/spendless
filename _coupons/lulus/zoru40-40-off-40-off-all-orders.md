@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "40% off 40% off all orders."
+title: "40% off all orders."
 brand_slug: "lulus"
 discount_value: "40% off"
 code: "ZORU40"

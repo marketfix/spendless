@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Influencer discount Influencer discount code for Shein."
+title: "Influencer discount code for Shein."
 brand_slug: "shein"
 discount_value: "Influencer discount"
 code: "PD6ZF"

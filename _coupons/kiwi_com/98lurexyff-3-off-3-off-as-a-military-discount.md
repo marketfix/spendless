@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "3% off 3% off as a military discount."
+title: "3% off as a military discount."
 brand_slug: "kiwi_com"
 discount_value: "3% off"
 code: "98LUREXYFF"

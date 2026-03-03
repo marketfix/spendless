@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Large discount Large discount code for Pakistan."
+title: "Large discount code for Pakistan."
 brand_slug: "shein"
 discount_value: "Large discount"
 code: "5JBXH"

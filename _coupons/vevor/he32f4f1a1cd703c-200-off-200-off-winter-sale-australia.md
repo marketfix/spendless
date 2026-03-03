@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$200 off $200 off winter sale (Australia)."
+title: "$200 off winter sale (Australia)."
 brand_slug: "vevor"
 discount_value: "$200 off"
 code: "HE32F4F1A1CD703C"

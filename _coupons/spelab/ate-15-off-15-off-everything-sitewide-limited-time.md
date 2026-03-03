@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off everything sitewide (limited time)."
+title: "15% off everything sitewide (limited time)."
 brand_slug: "spelab"
 discount_value: "15% off"
 code: "ATE"

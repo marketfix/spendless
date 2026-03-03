@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off via email signup."
+title: "15% off via email signup."
 brand_slug: "skullcandy"
 discount_value: "15% off"
 code: "SKDY15EMAIL"

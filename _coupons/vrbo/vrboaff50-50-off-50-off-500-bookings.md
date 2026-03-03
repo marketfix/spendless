@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$50 off $50 off $500+ bookings."
+title: "$50 off $500+ bookings."
 brand_slug: "vrbo"
 discount_value: "$50 off"
 code: "VRBOAFF50"

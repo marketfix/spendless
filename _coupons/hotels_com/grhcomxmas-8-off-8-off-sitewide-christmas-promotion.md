@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off sitewide Christmas promotion."
+title: "8% off sitewide Christmas promotion."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "GRHCOMXMAS"

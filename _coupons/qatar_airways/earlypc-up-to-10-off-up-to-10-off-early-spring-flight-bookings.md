@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 10% off Up to 10% off early spring flight bookings."
+title: "Up to 10% off early spring flight bookings."
 brand_slug: "qatar_airways"
 discount_value: "Up to 10% off"
 code: "EARLYPC"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$150 off $150 off certain vacation rentals."
+title: "$150 off certain vacation rentals."
 brand_slug: "vrbo"
 discount_value: "$150 off"
 code: "FTEAEW"

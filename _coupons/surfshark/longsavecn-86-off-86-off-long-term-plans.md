@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "86% off 86% off long-term plans."
+title: "86% off long-term plans."
 brand_slug: "surfshark"
 discount_value: "86% off"
 code: "LONGSAVECN"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off for new customers."
+title: "10% off for new customers."
 brand_slug: "skullcandy"
 discount_value: "10% off"
 code: "WELCOME10-1"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "50% off 50% off for new customers."
+title: "50% off for new customers."
 brand_slug: "temu"
 discount_value: "50% off"
 code: "ACU600079"

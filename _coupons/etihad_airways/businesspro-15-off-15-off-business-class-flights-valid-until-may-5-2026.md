@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off business class flights (valid until May 5 2026)."
+title: "15% off business class flights (valid until May 5 2026)."
 brand_slug: "etihad_airways"
 discount_value: "15% off"
 code: "BUSINESSPRO"

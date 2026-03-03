@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 12% off Up to 12% off flights booked in January."
+title: "Up to 12% off flights booked in January."
 brand_slug: "qatar_airways"
 discount_value: "Up to 12% off"
 code: "PCJAN26"

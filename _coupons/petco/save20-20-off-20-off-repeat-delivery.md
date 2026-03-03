@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off repeat delivery."
+title: "20% off repeat delivery."
 brand_slug: "petco"
 discount_value: "20% off"
 code: "SAVE20"

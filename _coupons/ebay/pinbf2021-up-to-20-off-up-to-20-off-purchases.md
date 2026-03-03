@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 20% off Up to 20% off purchases."
+title: "Up to 20% off purchases."
 brand_slug: "ebay"
 discount_value: "Up to 20% off"
 code: "PINBF2021"

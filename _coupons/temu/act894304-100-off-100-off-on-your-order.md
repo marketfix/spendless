@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$100 off $100 off on your order."
+title: "$100 off on your order."
 brand_slug: "temu"
 discount_value: "$100 off"
 code: "ACT894304"

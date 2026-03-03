@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "35% off 35% off storewide."
+title: "35% off storewide."
 brand_slug: "1800contacts"
 discount_value: "35% off"
 code: "MILITARY35"

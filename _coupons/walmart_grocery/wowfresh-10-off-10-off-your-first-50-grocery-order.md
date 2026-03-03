@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$10 off $10 off your first $50+ grocery order."
+title: "$10 off your first $50+ grocery order."
 brand_slug: "walmart"
 discount_value: "$10 off"
 code: "WOWFRESH"

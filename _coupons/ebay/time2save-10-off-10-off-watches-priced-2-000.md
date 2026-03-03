@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off watches priced $2,000+."
+title: "10% off watches priced $2,000+."
 brand_slug: "ebay"
 discount_value: "10% off"
 code: "TIME2SAVE"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$13.98 off $13.98 off orders (Australia)."
+title: "$13.98 off orders (Australia)."
 brand_slug: "shein"
 discount_value: "$13.98 off"
 code: "w22aus1"

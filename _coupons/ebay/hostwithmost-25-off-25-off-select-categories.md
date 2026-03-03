@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "25% off 25% off select categories."
+title: "25% off select categories."
 brand_slug: "ebay"
 discount_value: "25% off"
 code: "HOSTWITHMOST"

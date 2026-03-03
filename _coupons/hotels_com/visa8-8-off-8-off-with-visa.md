@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off with Visa."
+title: "8% off with Visa."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "VISA8"

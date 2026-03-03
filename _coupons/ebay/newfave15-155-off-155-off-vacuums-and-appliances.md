@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$155 off $155 off vacuums and appliances."
+title: "$155 off vacuums and appliances."
 brand_slug: "ebay"
 discount_value: "$155 off"
 code: "NEWFAVE15"

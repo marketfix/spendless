@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 40% off Up to 40% off storewide."
+title: "Up to 40% off storewide."
 brand_slug: "temu"
 discount_value: "Up to 40% off"
 code: "ALJ451674"

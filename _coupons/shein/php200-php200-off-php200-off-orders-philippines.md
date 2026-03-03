@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "PHP200 off PHP200 off orders (Philippines)."
+title: "PHP200 off orders (Philippines)."
 brand_slug: "shein"
 discount_value: "PHP200 off"
 code: "PHP200"

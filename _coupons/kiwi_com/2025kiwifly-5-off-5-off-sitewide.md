@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "5% off 5% off sitewide."
+title: "5% off sitewide."
 brand_slug: "kiwi_com"
 discount_value: "5% off"
 code: "2025KIWIFLY"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off beauty products."
+title: "30% off beauty products."
 brand_slug: "shein"
 discount_value: "30% off"
 code: "PKP3"

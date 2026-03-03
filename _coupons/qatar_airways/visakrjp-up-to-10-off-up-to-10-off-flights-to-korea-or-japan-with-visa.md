@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 10% off Up to 10% off flights to Korea or Japan with Visa."
+title: "Up to 10% off flights to Korea or Japan with Visa."
 brand_slug: "qatar_airways"
 discount_value: "Up to 10% off"
 code: "VISAKRJP"

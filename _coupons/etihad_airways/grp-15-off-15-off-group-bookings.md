@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off group bookings."
+title: "15% off group bookings."
 brand_slug: "etihad_airways"
 discount_value: "15% off"
 code: "GRP"

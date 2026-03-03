@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "5% off 5% off sitewide (Australia)."
+title: "5% off sitewide (Australia)."
 brand_slug: "vevor"
 discount_value: "5% off"
 code: "VEVORML5"

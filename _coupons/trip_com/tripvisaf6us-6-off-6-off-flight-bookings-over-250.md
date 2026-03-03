@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$6 off $6 off flight bookings over $250."
+title: "$6 off flight bookings over $250."
 brand_slug: "trip_com"
 discount_value: "$6 off"
 code: "TRIPVISAF6US"

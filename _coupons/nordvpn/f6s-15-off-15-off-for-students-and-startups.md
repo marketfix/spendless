@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off for students and startups."
+title: "15% off for students and startups."
 brand_slug: "nordvpn"
 discount_value: "15% off"
 code: "F6S"

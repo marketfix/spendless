@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "60% off 60% off ProtonVPN Plus subscriptions."
+title: "60% off ProtonVPN Plus subscriptions."
 brand_slug: "protonvpn"
 discount_value: "60% off"
 code: "VPNPLUS052024PROMO"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 10% off Up to 10% off orders."
+title: "Up to 10% off orders."
 brand_slug: "ebay"
 discount_value: "Up to 10% off"
 code: "PROTECTIT"

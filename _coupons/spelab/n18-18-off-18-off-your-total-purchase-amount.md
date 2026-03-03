@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "18% off 18% off your total purchase amount."
+title: "18% off your total purchase amount."
 brand_slug: "spelab"
 discount_value: "18% off"
 code: "N18"

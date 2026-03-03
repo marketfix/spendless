@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off auto parts and deals."
+title: "10% off auto parts and deals."
 brand_slug: "ebay"
 discount_value: "10% off"
 code: "AUTODEALTEN"

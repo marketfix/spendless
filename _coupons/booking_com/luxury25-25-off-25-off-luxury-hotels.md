@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "25% off 25% off luxury hotels."
+title: "25% off luxury hotels."
 brand_slug: "booking"
 discount_value: "25% off"
 code: "LUXURY25"

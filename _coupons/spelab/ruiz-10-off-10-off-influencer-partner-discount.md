@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off; influencer/partner discount."
+title: "10% off; influencer/partner discount."
 brand_slug: "spelab"
 discount_value: "10% off"
 code: "Ruiz"

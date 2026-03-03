@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off first booking with American Express."
+title: "8% off first booking with American Express."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "AMEX8"

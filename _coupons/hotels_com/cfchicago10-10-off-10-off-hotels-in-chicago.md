@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off hotels in Chicago."
+title: "10% off hotels in Chicago."
 brand_slug: "hotelscom"
 discount_value: "10% off"
 code: "CFCHICAGO10"

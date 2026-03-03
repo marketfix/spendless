@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$20 off $20 off each of your first three grocery orders."
+title: "$20 off each of your first three grocery orders."
 brand_slug: "walmart"
 discount_value: "$20 off"
 code: "TRIPLE20"

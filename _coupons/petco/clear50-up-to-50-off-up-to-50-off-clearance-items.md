@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 50% off Up to 50% off clearance items."
+title: "Up to 50% off clearance items."
 brand_slug: "petco"
 discount_value: "Up to 50% off"
 code: "CLEAR50"

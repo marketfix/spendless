@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off seasonal promotion."
+title: "20% off seasonal promotion."
 brand_slug: "vrbo"
 discount_value: "20% off"
 code: "NGPF20"

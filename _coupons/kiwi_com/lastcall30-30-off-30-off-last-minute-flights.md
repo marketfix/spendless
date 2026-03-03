@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off last-minute flights."
+title: "30% off last-minute flights."
 brand_slug: "kiwi_com"
 discount_value: "30% off"
 code: "LASTCALL30"

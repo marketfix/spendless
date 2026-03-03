@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "7% off 7% off hotels in the UK."
+title: "7% off hotels in the UK."
 brand_slug: "hotelscom"
 discount_value: "7% off"
 code: "MUMSNETUK7"

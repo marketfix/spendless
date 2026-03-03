@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "6% off 6% off select items (US)."
+title: "6% off select items (US)."
 brand_slug: "vevor"
 discount_value: "6% off"
 code: "VEVORHOT2"

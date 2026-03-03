@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off select economy & business fares."
+title: "20% off select economy & business fares."
 brand_slug: "etihad_airways"
 discount_value: "20% off"
 code: "Y20"

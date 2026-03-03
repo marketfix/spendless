@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off first app booking."
+title: "15% off first app booking."
 brand_slug: "booking"
 discount_value: "15% off"
 code: "APP15"

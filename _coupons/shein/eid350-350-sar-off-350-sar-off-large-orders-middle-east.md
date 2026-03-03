@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "350 SAR off 350 SAR off large orders (Middle East)."
+title: "350 SAR off large orders (Middle East)."
 brand_slug: "shein"
 discount_value: "350 SAR off"
 code: "EID350"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off hotels in South Korea with Mastercard."
+title: "8% off hotels in South Korea with Mastercard."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "MCKR8"

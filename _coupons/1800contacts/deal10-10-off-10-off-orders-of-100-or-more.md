@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$10 off $10 off orders of $100 or more."
+title: "$10 off orders of $100 or more."
 brand_slug: "1800contacts"
 discount_value: "$10 off"
 code: "DEAL10"

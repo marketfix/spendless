@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "25% off 25% off mobile bookings."
+title: "25% off mobile bookings."
 brand_slug: "booking"
 discount_value: "25% off"
 code: "MOBILE25"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off orders (Australia)."
+title: "30% off orders (Australia)."
 brand_slug: "shein"
 discount_value: "30% off"
 code: "SHEAU30"

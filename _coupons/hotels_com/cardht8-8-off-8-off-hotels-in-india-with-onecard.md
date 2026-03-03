@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off hotels in India with OneCard."
+title: "8% off hotels in India with OneCard."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "CARDHT8"

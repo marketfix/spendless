@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off contacts for students."
+title: "10% off contacts for students."
 brand_slug: "1800contacts"
 discount_value: "10% off"
 code: "STUDENT10"

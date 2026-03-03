@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$10 off $10 off every $200 spent (US)."
+title: "$10 off every $200 spent (US)."
 brand_slug: "vevor"
 discount_value: "$10 off"
 code: "VVUS10"

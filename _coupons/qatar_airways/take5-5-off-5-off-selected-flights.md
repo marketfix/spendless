@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "5% off 5% off selected flights."
+title: "5% off selected flights."
 brand_slug: "qatar_airways"
 discount_value: "5% off"
 code: "TAKE5"

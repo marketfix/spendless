@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off eligible purchases."
+title: "15% off eligible purchases."
 brand_slug: "ebay"
 discount_value: "15% off"
 code: "CRBTN15"

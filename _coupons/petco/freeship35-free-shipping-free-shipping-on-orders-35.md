@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Free shipping Free shipping on orders $35+."
+title: "Free shipping on orders $35+."
 brand_slug: "petco"
 discount_value: "Free shipping"
 code: "FREESHIP35"

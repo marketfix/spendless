@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$25 off $25 off orders."
+title: "$25 off orders."
 brand_slug: "petco"
 discount_value: "$25 off"
 code: "SAVE25"

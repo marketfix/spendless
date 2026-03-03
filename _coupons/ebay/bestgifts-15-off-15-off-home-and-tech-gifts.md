@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off home and tech gifts."
+title: "15% off home and tech gifts."
 brand_slug: "ebay"
 discount_value: "15% off"
 code: "BESTGIFTS"

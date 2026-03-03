@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Free delivery Free delivery on orders $80+."
+title: "Free delivery on orders $80+."
 brand_slug: "ebay"
 discount_value: "Free delivery"
 code: "PLUSDELIVERY"

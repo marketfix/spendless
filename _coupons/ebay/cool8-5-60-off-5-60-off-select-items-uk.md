@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "£5.60 off £5.60 off select items (UK)."
+title: "£5.60 off select items (UK)."
 brand_slug: "ebay"
 discount_value: "£5.60 off"
 code: "COOL8"

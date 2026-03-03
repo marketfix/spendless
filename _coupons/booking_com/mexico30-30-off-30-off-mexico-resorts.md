@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off Mexico resorts."
+title: "30% off Mexico resorts."
 brand_slug: "booking"
 discount_value: "30% off"
 code: "MEXICO30"

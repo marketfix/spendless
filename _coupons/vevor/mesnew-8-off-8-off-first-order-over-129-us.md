@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$8 off $8 off first order over $129 (US)."
+title: "$8 off first order over $129 (US)."
 brand_slug: "vevor"
 discount_value: "$8 off"
 code: "MESNEW"

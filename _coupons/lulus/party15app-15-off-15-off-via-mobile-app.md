@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off via mobile app."
+title: "15% off via mobile app."
 brand_slug: "lulus"
 discount_value: "15% off"
 code: "PARTY15APP"

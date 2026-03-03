@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$120 off $120 off coupon bundle."
+title: "$120 off coupon bundle."
 brand_slug: "temu"
 discount_value: "$120 off"
 code: "ACR617333"

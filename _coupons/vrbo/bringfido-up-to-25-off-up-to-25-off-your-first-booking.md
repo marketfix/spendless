@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 25% off Up to 25% off your first booking."
+title: "Up to 25% off your first booking."
 brand_slug: "vrbo"
 discount_value: "Up to 25% off"
 code: "BRINGFIDO"

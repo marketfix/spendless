@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to $12 off Up to $12 off kids clothing."
+title: "Up to $12 off kids clothing."
 brand_slug: "shein"
 discount_value: "Up to $12 off"
 code: "ug250618uszx11"

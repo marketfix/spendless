@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off buy-one-get-one deals."
+title: "20% off buy-one-get-one deals."
 brand_slug: "petco"
 discount_value: "20% off"
 code: "BOGO20"

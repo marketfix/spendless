@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off Clariti lenses."
+title: "15% off Clariti lenses."
 brand_slug: "1800contacts"
 discount_value: "15% off"
 code: "CLARITI15"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "12% off 12% off flights across Australia."
+title: "12% off flights across Australia."
 brand_slug: "qatar_airways"
 discount_value: "12% off"
 code: "FRENZY"

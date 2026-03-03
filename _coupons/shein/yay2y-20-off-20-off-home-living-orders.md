@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$20 off $20 off home & living orders."
+title: "$20 off home & living orders."
 brand_slug: "shein"
 discount_value: "$20 off"
 code: "yay2y"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off first order for new customers."
+title: "20% off first order for new customers."
 brand_slug: "lulus"
 discount_value: "20% off"
 code: "NEW2LULUS"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off as a thank-you discount."
+title: "10% off as a thank-you discount."
 brand_slug: "protonvpn"
 discount_value: "10% off"
 code: "THANKYOU10"

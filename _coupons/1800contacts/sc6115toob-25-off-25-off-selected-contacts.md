@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "25% off 25% off selected contacts."
+title: "25% off selected contacts."
 brand_slug: "1800contacts"
 discount_value: "25% off"
 code: "SC6115TOOB"

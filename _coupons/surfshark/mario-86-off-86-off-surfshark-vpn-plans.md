@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "86% off 86% off Surfshark VPN plans."
+title: "86% off Surfshark VPN plans."
 brand_slug: "surfshark"
 discount_value: "86% off"
 code: "mario"

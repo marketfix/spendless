@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off Southeast Asia flights."
+title: "10% off Southeast Asia flights."
 brand_slug: "qatar_airways"
 discount_value: "10% off"
 code: "PCSEA26"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$5 off $5 off bookings of $50+ (US)."
+title: "$5 off bookings of $50+ (US)."
 brand_slug: "hotelscom"
 discount_value: "$5 off"
 code: "5OFF50US"

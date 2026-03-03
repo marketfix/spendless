@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off hotels worldwide/US during January."
+title: "8% off hotels worldwide/US during January."
 brand_slug: "expedia"
 discount_value: "8% off"
 code: "CFJANEXP8"

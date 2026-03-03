@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15–30% off 15–30% off Plus/Unlimited plans."
+title: "15–30% off Plus/Unlimited plans."
 brand_slug: "protonvpn"
 discount_value: "15–30% off"
 code: "PROTONVPN"

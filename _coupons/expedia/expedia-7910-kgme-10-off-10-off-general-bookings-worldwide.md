@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off general bookings worldwide."
+title: "10% off general bookings worldwide."
 brand_slug: "expedia"
 discount_value: "10% off"
 code: "EXPEDIA-7910-KGME"

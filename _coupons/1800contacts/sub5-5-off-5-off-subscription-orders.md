@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "5% off 5% off subscription orders."
+title: "5% off subscription orders."
 brand_slug: "1800contacts"
 discount_value: "5% off"
 code: "SUB5"

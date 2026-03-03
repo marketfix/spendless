@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off sitewide, frequently used promo."
+title: "10% off sitewide, frequently used promo."
 brand_slug: "spelab"
 discount_value: "10% off"
 code: "FD10"

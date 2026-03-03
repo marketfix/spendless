@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$7 off $7 off orders over $50 (US)."
+title: "$7 off orders over $50 (US)."
 brand_slug: "aliexpress"
 discount_value: "$7 off"
 code: "USAFF7"

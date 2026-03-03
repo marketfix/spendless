@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "86% off 86% off subscription."
+title: "86% off subscription."
 brand_slug: "surfshark"
 discount_value: "86% off"
 code: "destiny"

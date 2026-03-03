@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off flights for Formula 1 fans."
+title: "10% off flights for Formula 1 fans."
 brand_slug: "qatar_airways"
 discount_value: "10% off"
 code: "F1FANS"

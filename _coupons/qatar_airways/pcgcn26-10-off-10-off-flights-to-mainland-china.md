@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off flights to mainland China."
+title: "10% off flights to mainland China."
 brand_slug: "qatar_airways"
 discount_value: "10% off"
 code: "PCGCN26"

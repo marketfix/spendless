@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off 20% off flights departing the UK."
+title: "20% off flights departing the UK."
 brand_slug: "kiwi_com"
 discount_value: "20% off"
 code: "UKFLY20"

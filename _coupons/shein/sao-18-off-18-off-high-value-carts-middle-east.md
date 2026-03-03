@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "18% off 18% off high-value carts (Middle East)."
+title: "18% off high-value carts (Middle East)."
 brand_slug: "shein"
 discount_value: "18% off"
 code: "SAO"

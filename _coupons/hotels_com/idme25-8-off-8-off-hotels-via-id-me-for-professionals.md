@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off hotels via ID.me for professionals."
+title: "8% off hotels via ID.me for professionals."
 brand_slug: "hotelscom"
 discount_value: "8% off"
 code: "IDME25"

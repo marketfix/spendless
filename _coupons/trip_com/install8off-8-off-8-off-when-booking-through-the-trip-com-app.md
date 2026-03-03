@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off when booking through the Trip.com app."
+title: "8% off when booking through the Trip.com app."
 brand_slug: "trip_com"
 discount_value: "8% off"
 code: "INSTALL8OFF"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "8% off 8% off hotels in Taiwan with MasterCard."
+title: "8% off hotels in Taiwan with MasterCard."
 brand_slug: "expedia"
 discount_value: "8% off"
 code: "MASTERTW8"

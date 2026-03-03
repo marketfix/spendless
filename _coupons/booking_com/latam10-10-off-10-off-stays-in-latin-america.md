@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off 10% off stays in Latin America."
+title: "10% off stays in Latin America."
 brand_slug: "booking"
 discount_value: "10% off"
 code: "LATAM10"

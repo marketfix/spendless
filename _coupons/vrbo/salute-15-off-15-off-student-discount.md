@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off student discount."
+title: "15% off student discount."
 brand_slug: "vrbo"
 discount_value: "15% off"
 code: "SALUTE"

@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 50% off Up to 50% off global deal."
+title: "Up to 50% off global deal."
 brand_slug: "temu"
 discount_value: "Up to 50% off"
 code: "ACT661415"

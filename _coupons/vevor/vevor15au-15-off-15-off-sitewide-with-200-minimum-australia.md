@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "15% off 15% off sitewide with $200 minimum (Australia)."
+title: "15% off sitewide with $200 minimum (Australia)."
 brand_slug: "vevor"
 discount_value: "15% off"
 code: "VEVOR15AU"

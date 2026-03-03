@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "$5 off $5 off your order to say thank you."
+title: "$5 off your order to say thank you."
 brand_slug: "walmart"
 discount_value: "$5 off"
 code: "THANKYOU5"

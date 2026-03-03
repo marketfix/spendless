@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "9% off 9% off hotels in the UK."
+title: "9% off hotels in the UK."
 brand_slug: "expedia"
 discount_value: "9% off"
 code: "3DF"

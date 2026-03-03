@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "Up to 35% off Up to 35% off select vacations."
+title: "Up to 35% off select vacations."
 brand_slug: "vrbo"
 discount_value: "Up to 35% off"
 code: "DOLLY80"

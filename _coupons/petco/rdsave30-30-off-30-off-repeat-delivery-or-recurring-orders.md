@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off 30% off repeat delivery or recurring orders."
+title: "30% off repeat delivery or recurring orders."
 brand_slug: "petco"
 discount_value: "30% off"
 code: "RDSAVE30"
