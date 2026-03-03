@@ -1,50 +1,23 @@
 code,discount_amount,description
-ASBSAVE-FRON25,20% off,Sitewide
-PUP10,$10 off,First PupBox subscription
-RD50TIKI250607,50% off,Select items
-RepeatDelivery35,35% off,First repeat delivery
-PICKUP10,10% off,In-store pickup $50+
-PICKUP20,20% off,In-store pickup $80+
-SAVE20,20% off,Sitewide for new shoppers
-NEW15,$15 off,$49+ for new shoppers
-BOGO50,50% off,Buy one get one select treats
-VITAL10,10% off,Vital Care members
-GROOM20,20% off,Dog grooming
-TRAIN30,$30 off,Group training classes
-FREESHIP,Free shipping,$35+ orders
-APP15,15% off,App orders
-EMAIL10,$10 off,Email signup
-PALS5,5% off,Pals Rewards
-CYBER40,40% off,Cyber Monday sale
-BF30,30% off,Black Friday deals
-MILITARY15,15% off,Military discount
-SENIOR10,10% off,Senior bookings
-STUDENT20,20% off,Student discount
-FIRST40,40% off,First repeat delivery
-AUTO5,5% off,Autoship orders
-CLEARANCE25,25% off,Clearance items
-TOYS20,20% off,Pet toys
-FOOD15,15% off,Pet food
-BED30,30% off,Pet beds
-LITTER10,10% off,Cat litter
-FISH25,25% off,Aquarium supplies
-BIRD15,15% off,Bird products
-REPTILE20,20% off,Reptile items
-SMALLPET10,10% off,Small pet supplies
-VET50,$50 off,Vet services
-INSURANCE20,20% off,Pet insurance
-DONATE5,5% off,Charity donation
-PARTNER15,15% off,Partner brands
-EXCLUSIVE25,25% off,Exclusive deals
-FLASH30,30% off,Flash sale
-WEEKEND20,20% off,Weekend specials
-MONTHLY10,10% off,Monthly subscription
-ANNUAL40,40% off,Annual membership
-GIFT15,$15 off,Gift cards
-RETURN10,10% off,Returns and exchanges
-LOYALTY5,5% off,Loyalty program
-WELCOME20,20% off,Welcome offer
-SIGNUP15,$15 off,Newsletter signup
-SOCIAL10,10% off,Social media promo
-BIRTHDAY25,25% off,Birthday discount
-HOLIDAY30,30% off,Holiday items
+RepeatDelivery35,35% off,35% off your first repeat delivery/autoship order.
+RDSAVE30,30% off,30% off repeat delivery or recurring orders.
+e30,30% off,30% off first recurring or repeat delivery.
+FIRST35,35% off,35% off your first autoship signup.
+SAVE15,$15 off,$15 off orders $50+.
+G15,$15 off,$15 off general orders.
+O15,20% off,20% off sitewide.
+PETCO20,20% off,20% off sitewide.
+DAY20,20% off,20% off sitewide promotions.
+NEWYEAR,Up to 40% off,Up to 40% off sitewide for New Year.
+CLEAR50,Up to 50% off,Up to 50% off clearance items.
+o10,10% off,10% off orders $50+ or pickup.
+PETCO10PICKUP,10% off,10% off pickup orders $50+.
+WELCOME10,10% off,10% off your first order.
+GIFT15,$15 off,$15 off general orders.
+LOVE15,$15 off,$15 off orders $75+.
+SAVE20,20% off,20% off repeat delivery.
+BOGO20,20% off,20% off buy-one-get-one deals.
+SAVE25,$25 off,$25 off orders.
+FREESHIP35,Free shipping,Free shipping on orders $35+.
+PETCO15,15% off,15% off sitewide.
+TRIOTREAT20,$20 off,$20 off Simparica Trio or select flea/tick products.

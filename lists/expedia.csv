@@ -1,32 +1,24 @@
 code,discount_amount,description
-CFNYC10,10% off,New York VIP Hotels
-BOFA5,5% off,Select Hotels
-GL82NMMM8BK7G0N4,7% off,Storewide
-BENTAYLOR,5% off,Select Hotels
-JOEKENNETH,5% off,Storewide
-CFEXPNOV8,8% off,Hotel reservations
-CFVEGAS10,10% off,Vegas hotels
-CFNYC10,10% off,New York City hotels
-CFCANCUN10,10% off,Cancun hotels
-WINTER2025,5% off,Hotels
-OFFANDAWAY,25% off,Select hotels app
-ONEKEY30,30% off,One Key members
-APP10,10% off,App bookings
-MEMBER8,8% off,Member exclusive
-TRAVEL10,10% off,Flights and hotels
-HOTEL15,15% off,Hotel stays
-FLIGHT20,20% off,Select flights
-PACKAGE25,25% off,Vacation packages
-CAR5,5% off,Car rentals
-VIP10,10% off,VIP hotels
-EXCLUSIVE8,8% off,Exclusive deals
-NOV2025,10% off,November bookings
-BLACKFRIDAY30,30% off,Black Friday sale
-CYBER10,10% off,Cyber Monday
-STUDENT15,15% off,Student discounts
-SENIOR10,10% off,Senior bookings
-MILITARY20,20% off,Military
-FAMILY25,25% off,Family packages
-LASTMINUTE15,15% off,Last minute deals
-BUNDLE20,20% off,Bundles
-REWARD5,5% off,Rewards members
+XP8,8% off,8% off hotels worldwide (expires Feb 2026).
+EXPEDIA-7910-KGME,10% off,10% off general bookings worldwide.
+EXPEDIA-8400-PMAS,10% off,10% off general bookings worldwide.
+3DF,9% off,9% off hotels in the UK.
+X26,8% off,8% off hotels in the UK.
+CA7,7% off,7% off hotels in Canada.
+VISAYRO,8% off,8% off hotels in Australia.
+SA8,8% off,8% off participating hotels worldwide.
+MASTERAU8,8% off,8% off hotels in Australia when paying with MasterCard.
+MASTERHK8,8% off,8% off hotels in Hong Kong/Macao with MasterCard.
+MASTERNZ8,8% off,8% off hotels in New Zealand with MasterCard.
+MASTERSG8,8% off,8% off hotels in Singapore with MasterCard.
+MASTERTW8,8% off,8% off hotels in Taiwan with MasterCard.
+MASTERTH7,7% off,7% off hotels in Thailand with MasterCard.
+MASTERVN7,7% off,7% off hotels in Vietnam with MasterCard.
+EXPEDIA-7055-CFIF,10% off,10% off general bookings worldwide.
+CFJANEXP8,8% off,8% off hotels worldwide/US during January.
+CFVEGAS10,10% off,10% off Las Vegas hotels.
+EXPCANC10,10% off,10% off hotels in Cancun.
+BOFA5,25% off,25% off general bookings in the US.
+GLCV6BMJ849EG05F,10% off,10% off Las Vegas hotels.
+RMNTRAVEL8,8% off,8% off US hotels.
+MASTERIN7,7% off,7% off hotels in India when paying with MasterCard.

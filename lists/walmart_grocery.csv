@@ -1,0 +1,27 @@
+code,discount_amount,description
+TRIPLE10,$10 off,$10 off each of your first three grocery orders.
+TRIPLE20,$20 off,$20 off each of your first three grocery orders.
+WOWFRESH,$10 off,$10 off your first $50+ grocery order.
+HOLIDAY10,$10 off,$10 off orders during the holiday season.
+INHOMEDEVICE,$50 off,$50 off first in-home delivery subscription.
+20INHOME,$20 off,$20 off in-home subscription orders.
+15INHOME,$15 off,$15 off in-home orders.
+10INHOME,$10 off,$10 off in-home orders.
+EXPRESSDELIVERY,Free delivery,Free express delivery code.
+TRIPLE15,$15 off,$15 off each of your first three grocery orders.
+TODAY10,$10 off,$10 off a $50+ grocery order for new customers.
+PAYPAL10,$10 off,$10 off when paying with PayPal.
+WELCOME20,$20 off,$20 off first $50+ order.
+SAVE10,$10 off,$10 off a qualifying grocery order.
+THANKYOU5,$5 off,$5 off your order to say thank you.
+THANKFUL,$5 off,$5 off during thankful promotions.
+30WMOFF,$30 off,$30 off qualifying grocery order.
+E10,$10 off,$10 off groceries.
+E20,$20 off,$20 off groceries.
+CANADA60,$60 off,$60 off first order (Canada).
+OTTAWA80,$80 off,"$80 off first order (Ottawa, Canada)."
+SURREY80,$80 off,"$80 off first order (Surrey, Canada)."
+MONCTON80,$80 off,"$80 off first order (Moncton, Canada)."
+HALIFAX80,$80 off,"$80 off first order (Halifax, Canada)."
+FALLSAVE40,$40 off,$40 off first $100 order (Canada).
+GLWM20,$20 off,$20 off grocery order (Canada).
