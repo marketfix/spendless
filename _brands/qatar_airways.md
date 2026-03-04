@@ -2,7 +2,7 @@
 layout: brand
 title: "Qatar Airways discount codes"
 brand_slug: "qatar_airways"
-logo_path: "/media/brand_logos/qatar_airways.jpg"
+logo_path: "/media/brand_logos/qatar.jpg"
 description_short: "Latest Qatar Airways discount codes and promo codes from /r/SpendLess."
 ---
 

@@ -3,7 +3,7 @@ layout: brand
 published: false
 title: "Hotels.com discount codes"
 brand_slug: "hotelscom"
-logo_path: "/media/brand_logos/hotels_com.jpg"
+logo_path: "/media/brand_logos/hotelscom.jpg"
 description_short: "Latest Hotels.com discount codes and promo codes from /r/SpendLess."
 ---
 

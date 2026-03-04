@@ -3,7 +3,7 @@ layout: brand
 published: false
 title: "Walmart discount codes"
 brand_slug: "walmart"
-logo_path: "/media/brand_logos/walmart_grocery.jpg"
+logo_path: "/media/brand_logos/walmart.jpg"
 description_short: "Latest Walmart discount codes and promo codes from /r/SpendLess."
 ---
 

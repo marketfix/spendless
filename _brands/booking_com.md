@@ -3,7 +3,7 @@ layout: brand
 published: false
 title: "Booking.com discount codes"
 brand_slug: "booking"
-logo_path: "/media/brand_logos/booking_com.jpg"
+logo_path: "/media/brand_logos/booking.jpg"
 description_short: "Latest Booking.com discount codes and promo codes from /r/SpendLess."
 ---
 

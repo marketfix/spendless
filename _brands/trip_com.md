@@ -2,7 +2,7 @@
 layout: brand
 title: "Trip.com discount codes"
 brand_slug: "trip_com"
-logo_path: "/media/brand_logos/trip_com.jpg"
+logo_path: "/media/brand_logos/tripcom.jpg"
 description_short: "Latest Trip.com discount codes and promo codes from /r/SpendLess."
 ---
 
