@@ -35,7 +35,7 @@ layout: default
         </div>
         <button type="button" data-copy-code-button data-copy-code="{{ page.code }}" data-brand-slug="{{ page.brand_slug }}" data-url-external="{{ page.url_external }}" class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-semibold">View Code</button>
       </div>
-      <p id="copy-message" class="text-xs text-emerald-300 opacity-0 transition-opacity mt-2">Code activated &amp; Copied to clipbord</p>
+      <p id="copy-message" class="text-xs text-emerald-300 opacity-0 transition-opacity mt-2">Code copied &amp; Active!</p>
     </section>
   {% endif %}
 
@@ -47,8 +47,6 @@ layout: default
         const button = document.querySelector('[data-copy-code-button]');
         const display = document.querySelector('[data-code-display]');
         const status = document.getElementById('copy-message');
-        const couponId = {{ page.url | relative_url | jsonify }};
-        const xpStorageKey = 'spendless-xp-unlocked-coupons';
         if (!button || !display) return;
 
         const code = button.dataset.copyCode;
@@ -95,15 +93,8 @@ layout: default
           display.classList.remove('code-fluid-blur', 'select-none');
           display.classList.add('is-revealed');
           navigator.clipboard?.writeText(code).catch(() => {});
-          let unlocked = [];
-          try { unlocked = JSON.parse(localStorage.getItem(xpStorageKey) || "[]"); } catch (_) { unlocked = []; }
-          if (!unlocked.includes(couponId)) {
-            unlocked.push(couponId);
-            localStorage.setItem(xpStorageKey, JSON.stringify(unlocked));
-            if (window.updateScore) window.updateScore(5);
-          }
           status.style.opacity = '1';
-          setTimeout(() => status.style.opacity = '0', 2500);
+          setTimeout(() => status.style.opacity = '0', 10000);
         });
       });
     </script>

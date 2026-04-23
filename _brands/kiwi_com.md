@@ -2,7 +2,7 @@
 layout: brand
 title: "Kiwi.com discount codes"
 brand_slug: "kiwi_com"
-logo_path: "/media/brand_logos/kiwi.jpg"
+logo_path: "/media/brand_logos/kiwic.jpg"
 description_short: "Latest Kiwi.com discount codes and promo codes from /r/SpendLess."
 ---
 
