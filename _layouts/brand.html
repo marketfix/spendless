@@ -80,7 +80,7 @@ layout: default
     const countries = {
       global: ['🌎 Global', 5], us: ['🇺🇸 United States', 5], uk: ['🇬🇧 United Kingdom', 4], ca: ['🇨🇦 Canada', 4],
       au: ['🇦🇺 Australia', 4], de: ['🇩🇪 Germany', 4], ie: ['🇮🇪 Ireland', 4], it: ['🇮🇹 Italy', 4],
-      pl: ['🇵🇱 Poland', 4], eu: ['🇪🇺 Europe', 4], ae: ['🇦🇪 UAE', 2], ma: ['🇲🇦 Morocco', 2], me: ['🌍 Middle East', 2], other: ['🌐 Other countries', 1]
+      pl: ['🇵🇱 Poland', 4], eu: ['🇪🇺 Europe', 4], ae: ['🇦🇪 UAE', 2], ma: ['🇲🇦 Morocco', 2], me: ['🌍 Middle East', 2]
     };
 
     function parseCsv(text) {
@@ -153,7 +153,7 @@ layout: default
       if (value.includes('middle east')) return 'me';
       if (value.includes('us ') || value.includes('usa') || value.includes('united states') || value.includes('$')) return 'us';
       if (value.includes('global') || value.includes('sitewide') || value.includes('full cart') || value.includes('no minimum')) return 'global';
-      return 'other';
+      return '';
     }
 
     function amount(value) {
@@ -177,19 +177,22 @@ layout: default
       card.setAttribute('data-coupon-card', '');
       card.className = 'relative block liquid-glass rounded-2xl px-4 py-3';
       card.dataset.country = key;
-      card.dataset.rank = String(countries[key][1]);
+      card.dataset.rank = String(countries[key]?.[1] || 1);
       card.dataset.amount = String(amount(row.discount_amount));
       card.dataset.type = type(row.discount_amount);
       card.dataset.priority = String((Number(card.dataset.rank) * 1000) + Number(card.dataset.amount));
+
+      const countryBadge = countries[key]
+        ? `<div class="mt-2 flex flex-wrap gap-1.5"><span class="text-[11px] rounded-full border border-slate-200 bg-white/60 px-2 py-0.5 text-slate-600">${countries[key][0]}</span></div>`
+        : '';
+
       card.innerHTML = `
         <span class="absolute right-3 top-3 text-emerald-600/90" aria-hidden="true">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h7.17a2 2 0 0 1 1.41.59l6.83 6.83a2 2 0 0 1 0 2.83l-7.59 7.59a2 2 0 0 1-2.82 0L3.59 13.41a2 2 0 0 1-.59-1.41V5z"></path><path d="M7.5 7.5h.01"></path></svg>
         </span>
         <div class="pr-8">
           <h3 class="text-sm font-medium"></h3>
-          <div class="mt-2 flex flex-wrap gap-1.5">
-            <span class="text-[11px] rounded-full border border-slate-200 bg-white/60 px-2 py-0.5 text-slate-600">${countries[key][0]}</span>
-          </div>
+          ${countryBadge}
           <p class="text-xs text-slate-500 mt-2">View Code ↗</p>
         </div>`;
       card.querySelector('h3').textContent = description;
