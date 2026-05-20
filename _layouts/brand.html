@@ -98,15 +98,25 @@ layout: default
       au: ['🇦🇺 Australia', 4], de: ['🇩🇪 Germany', 4], ie: ['🇮🇪 Ireland', 4], it: ['🇮🇹 Italy', 4],
       pl: ['🇵🇱 Poland', 4], eu: ['🇪🇺 Europe', 4], ae: ['🇦🇪 UAE', 2], ma: ['🇲🇦 Morocco', 2], me: ['🌍 Middle East', 2], other: ['🌐 Other countries', 1]
     };
+    const exactScopes = [
+      ['25off-25-off-your-order', 'lens checkout orders'], ['megans30-30-off-eligible-orders', 'lens refill orders'], ['1800kaycee-27-off-eligible-orders', 'lens product orders'], ['framery30-free-gift-with-eligible-orders', 'lens order eyewear gift'],
+      ['save10-10-off-your-order', 'Lumens lighting and home goods'], ['save50-50-off-select-items-with-a-500-minimum', 'Lumens items with $500 minimum'],
+      ['promo15off-up-to-15-off-your-order', 'eBay marketplace orders'], ['ny15off-15-off-select-items', 'eBay New Year deal items'], ['cool8-5-60-off-select-items', 'eBay UK marketplace items'], ['happy25-up-to-25-off-select-items', 'eBay featured deal items'], ['greenashess-5-off-eligible-items', 'eBay marketplace items'], ['protectit-up-to-10-off-orders', 'eBay buyer protection items'], ['pinbf2021-up-to-20-off-purchases', 'eBay Black Friday purchases'], ['memdwn3spbkkgc7m-up-to-15-off-purchases', 'eBay member deal purchases'],
+      ['vvus15-15-off-your-order', 'VEVOR US equipment orders'], ['vvus7-7-off-your-order', 'VEVOR US tool orders'], ['vvss10-10-off-eligible-orders', 'VEVOR regional store orders'], ['vevorhot2-6-off-select-items', 'VEVOR hot deal equipment'], ['vvs50-up-to-55-off-select-items', 'VEVOR sale equipment'], ['vvmh5-5-off-eligible-order', 'VEVOR marketplace equipment order'],
+      ['jen15-15-off-your-order', 'Saily global eSIM plans'], ['samirw8757-8-off-your-order', 'Saily eSIM data plans'], ['wateca6691-5-off-your-order-total', 'Saily eSIM checkout total'], ['carter9459-10-off-eligible-plans', 'Saily mobile data plans'],
+      ['217-10-off-flat-discount-on-your-order', 'SPELAB auto parts orders'], ['n20-20-off-eligible-purchases', 'SPELAB truck parts purchases'], ['y15-15-off-qualifying-orders', 'SPELAB performance parts orders'], ['m20-20-off-qualifying-purchases', 'SPELAB auto accessory purchases'], ['cm25-25-off-select-items-and-categories', 'SPELAB auto parts categories'], ['n15-15-off-selected-products-and-categories', 'SPELAB selected parts categories'], ['f16-16-off-selected-items-or-categories', 'SPELAB accessory categories'],
+      ['save15-15-off-select-items', 'Walmart featured retail items'], ['save25-25-off-purchase', 'Walmart retail purchase'], ['save50-50-off-next-order', 'Walmart next online order'], ['t25-25-off-eligible-products', 'Walmart cart products'], ['treat25-25-off-qualifying-cart-items', 'Walmart cart items'], ['thankyou5-5-off-your-order-to-say-thank-you', 'Walmart grocery thank-you order'], ['30wmoff-30-off-qualifying-grocery-order', 'Walmart qualifying grocery order'], ['e10-10-off-groceries', 'Walmart grocery basket'],
+      ['15extra-15-off-select-items', 'Nike sale footwear and apparel'], ['cyber10-10-off-select-items', 'Nike Cyber sale items'], ['unida6ak64urdt-10-off-select-items', 'Nike community member items'], ['gobig24-25-off-select-items', 'Nike promotion styles'], ['cyber30-30-off-select-items', 'Nike Cyber sale styles'], ['levelup-20-off-select-products', 'Nike training products'], ['bts20-20-off-select-styles', 'Nike back-to-school styles'], ['treatyourself-25-off-select-styles', 'Nike selected styles'],
+      ['cindy20-20-off-select-items', 'Lulus influencer edit items'], ['s20-20-off-select-styles', 'Lulus selected fashion styles'], ['lus-20-off-selected-items', 'Lulus curated fashion items'], ['8sg-8-off-select-purchases', 'Lulus fashion purchases'], ['z20-20-off-general-code', 'Lulus fashion orders'], ['app-20-off-general-app-code', 'Lulus app fashion orders'], ['daypartyapp-20-off-the-app', 'Lulus day party app styles'], ['shoes20-20-off-shoes', 'Lulus shoes'],
+      ['ohlskdy30-30-off-select-items', 'Skullcandy selected headphones'], ['5offaeg-5-off-selected-gear', 'Skullcandy audio gear'], ['aeg5-5-off-picked-products', 'Skullcandy picked audio products'], ['abcandy-25-off-all-orders', 'Skullcandy audio orders'],
+      ['4fxrn-30-off-eligible-orders', 'SHEIN fashion orders'], ['alyssar15-15-off-eligible-orders', 'SHEIN fashion orders'], ['ca2026-20-off-eligible-orders', 'SHEIN Canada fashion orders'], ['6c88dqvn-40-off-eligible-orders', 'SHEIN cart orders'], ['klanov-60-off-eligible-orders-with-free-shipping-potential', 'SHEIN fashion orders with shipping'], ['cstorecarolinaleoa802-15-off-select-items', 'SHEIN creator store items'], ['q3carlam-10-off-select-items', 'SHEIN creator fashion items'], ['st12marianacsofia091-10-off-select-items', 'SHEIN creator fashion picks'], ['pd6zf-influencer-discount-code-for', 'SHEIN influencer fashion orders'], ['usgsg30-up-to-30-off-orders', 'SHEIN US fashion orders'], ['xwzh3-50-off-orders', 'SHEIN fashion orders'], ['25qsella-20-off-orders', 'SHEIN fashion orders'], ['ly3bf-10-off-orders', 'SHEIN fashion checkout orders'], ['qd6dv-10-off-orders', 'SHEIN fashion checkout orders'], ['php150-php150-off-orders', 'SHEIN Philippines fashion orders'], ['php200-php200-off-orders', 'SHEIN Philippines fashion orders'], ['sheau30-30-off-orders', 'SHEIN Australia fashion orders'], ['24q3abenalove-20-off-orders', 'SHEIN creator fashion orders'], ['w22aus1-13-98-off-orders', 'SHEIN Australia fashion orders'], ['26hazrandmom686-10-off-checkout-orders', 'SHEIN checkout orders'],
+      ['welcome-15-off-first', 'Booking.com first hotel booking'], ['e15-15-off-bookings', 'Booking.com travel booking'], ['break15-15-off-select-bookings', 'Booking.com seasonal travel booking'], ['oferta-activada-variable-discount-special-offer', 'Booking.com activated hotel offer'], ['gateway-variable-discount-user-shared', 'Booking.com travel booking'], ['gtravoct8-25-off-qualifying-bookings-above-the-minimum-spend', 'Booking.com bookings above minimum spend'], ['mj2holiday60-gbp60-off-qualifying-bookings-that-meet-the-minimum-spend', 'Booking.com holiday bookings over minimum spend']
+    ];
 
     function normalize(value) {
       return (value || '').toString().replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
     }
-
-    function lowerText(card) {
-      return `${card.dataset.search || ''} ${card.dataset.title || ''}`.toLowerCase();
-    }
-
+    function lowerText(card) { return `${card.dataset.search || ''} ${card.dataset.title || ''}`.toLowerCase(); }
     function countryKey(value) {
       if (value.includes('uk') || value.includes('£')) return 'uk';
       if (value.includes('canada') || value.includes('cad')) return 'ca';
@@ -123,55 +133,42 @@ layout: default
       if (value.includes('global') || value.includes('sitewide') || value.includes('full cart') || value.includes('no minimum')) return 'global';
       return 'other';
     }
-
     function amount(value) {
       const matches = (value || '').match(/[0-9]+/g) || ['0'];
       return Math.max.apply(null, matches.map(Number));
     }
-
     function type(value) {
       if ((value || '').includes('%')) return 'percentage';
       if (/[€£$]|AED|CAD|zł/.test(value || '')) return 'fixed';
       return 'bundle';
     }
-
-    function cleanScope(rawScope, brand, value) {
+    function overrideScope(card) {
+      const href = card.getAttribute('href') || '';
+      const match = exactScopes.find(function (item) { return href.indexOf(item[0]) !== -1; });
+      return match ? match[1] : '';
+    }
+    function cleanScope(rawScope, brand) {
       let scope = normalize(rawScope)
         .replace(/\b(eligible|select|selected|qualifying|promo|coupon|code|discount|offer|offers|savings)\b/gi, '')
         .replace(/[.]/g, '')
         .replace(/\s+/g, ' ')
         .trim();
       const lower = scope.toLowerCase();
-
-      if (/^your order$|^orders?$|^purchases?$|^items?$/.test(lower)) scope = `${brand} online orders`;
+      if (/^your order$|^orders?$|^purchases?$|^items?$|^general$/.test(lower)) scope = `${brand} online orders`;
       else if (/^first order$/.test(lower)) scope = `first ${brand} order`;
-      else if (/^app-only orders?$|^app orders?$/.test(lower)) scope = `${brand} app orders`;
+      else if (/^app-only orders?$|^app orders?$|^the app$|^general app/.test(lower)) scope = `${brand} app orders`;
       else if (/^email signup$|^newsletter signup$/.test(lower)) scope = `${brand} email signup orders`;
-      else if (/^birthday month$/.test(lower)) scope = `${brand} birthday month orders`;
-      else if (/^loyalty members?$/.test(lower)) scope = `${brand} loyalty member orders`;
-      else if (/^student$|^student discount$/.test(lower)) scope = `${brand} student orders`;
-      else if (/^military$|^military discount$/.test(lower)) scope = `${brand} military orders`;
-      else if (/^senior$|^senior discount$/.test(lower)) scope = `${brand} senior orders`;
-      else if (/^trade professionals?$/.test(lower)) scope = `${brand} trade professional orders`;
-      else if (/^flash sale$/.test(lower)) scope = `${brand} flash sale items`;
-      else if (/^monthly deals?$/.test(lower)) scope = `${brand} monthly sale items`;
-      else if (/^weekend specials?$/.test(lower)) scope = `${brand} weekend sale items`;
-      else if (/^bestsellers?$/.test(lower)) scope = `${brand} bestselling items`;
-      else if (/^new arrivals?$/.test(lower)) scope = `${brand} new arrivals`;
-      else if (!lower.includes(brand.toLowerCase()) && !/\border(s)?\b|\bitems?\b|\bpurchases?\b|\bsubscription(s)?\b|\bbooking(s)?\b|\bflights?\b|\bhotels?\b|\bcars?\b|\bproducts?\b/.test(lower)) scope = `${brand} ${scope}`;
-
+      else if (!lower.includes(brand.toLowerCase()) && !/\border(s)?\b|\bitems?\b|\bpurchases?\b|\bsubscription(s)?\b|\bbooking(s)?\b|\bflights?\b|\bhotels?\b|\bcars?\b|\bproducts?\b|\bstyles?\b|\bgear\b|\bplans?\b|\blenses?\b/.test(lower)) scope = `${brand} ${scope}`;
       const words = [];
       normalize(scope).split(/\s+/).forEach(function (word) {
         if (!words.length || words[words.length - 1].toLowerCase() !== word.toLowerCase()) words.push(word);
       });
-      scope = words.slice(0, 12).join(' ');
-      return scope.replace(/^./, function (char) { return char.toUpperCase(); });
+      return words.slice(0, 12).join(' ').replace(/^./, function (char) { return char.toUpperCase(); });
     }
-
     function description(card) {
       const brand = normalize(card.dataset.brand || '');
       const discount = normalize(card.dataset.discount || '');
-      const scope = cleanScope(card.dataset.title || '', brand, lowerText(card));
+      const scope = overrideScope(card) || cleanScope(card.dataset.title || '', brand);
       return `${discount} ${scope}`.replace(/\s+/g, ' ').trim();
     }
 
@@ -196,7 +193,6 @@ layout: default
       option.textContent = countries[key][0];
       countryFilter.appendChild(option);
     });
-
     function applyFilters() {
       const selectedCountry = countryFilter.value;
       const selectedType = typeFilter.value;
@@ -217,7 +213,6 @@ layout: default
       emptyState.classList.toggle('hidden', shown !== 0);
       list.classList.toggle('hidden', shown === 0);
     }
-
     countryFilter.addEventListener('change', applyFilters);
     sortFilter.addEventListener('change', applyFilters);
     typeFilter.addEventListener('change', applyFilters);
