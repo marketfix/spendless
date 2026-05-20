@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign combined_text = page.title | append: ' ' | append: page.description_short | append: ' ' | append: page.discount_value | append: ' ' | append: page.code %}
+{% assign combined_text = page.title | append: ' ' | append: page.description_short | append: ' ' | append: page.discount_value %}
 {% assign brand_page = site.brands | where: 'brand_slug', page.brand_slug | first %}
 {% if brand_page and brand_page.logo_path %}
   {% assign logo_path = brand_page.logo_path %}
@@ -22,7 +22,7 @@ layout: default
       </div>
       <div>
         <p class="text-xs uppercase tracking-[0.2em] text-slate-500">{{ brand_name }} · discounts</p>
-        <h1 data-coupon-page-title data-raw-title="{{ page.description_short | default: page.title | escape }}" data-discount="{{ page.discount_value | escape }}" data-code="{{ page.code | escape }}" data-search-text="{{ combined_text | escape }}" class="text-xl font-semibold tracking-tight">{{ page.title }}</h1>
+        <h1 data-coupon-page-title data-raw-title="{{ page.description_short | default: page.title | escape }}" data-discount="{{ page.discount_value | escape }}" data-search-text="{{ combined_text | escape }}" class="text-xl font-semibold tracking-tight">{{ page.title }}</h1>
         <p data-coupon-page-meta class="text-xs text-slate-500 mt-1"></p>
       </div>
     </div>
@@ -47,93 +47,53 @@ layout: default
     document.addEventListener('DOMContentLoaded', () => {
       const title = document.querySelector('[data-coupon-page-title]');
       const meta = document.querySelector('[data-coupon-page-meta]');
-
-      const countryRules = [
-        { value: 'global', label: '🌎 Global', short: 'Global', rank: 5, patterns: [/global|worldwide|sitewide|all users|full order|full cart|no minimum/] },
-        { value: 'us', label: '🇺🇸 United States', short: 'US', rank: 5, patterns: [/\bus\b|\busa\b|united states|usnew|wethrift30|admitad30|sapnew10|\$\d/] },
-        { value: 'uk', label: '🇬🇧 United Kingdom', short: 'UK', rank: 4, patterns: [/\buk\b|united kingdom|britain|british|£/] },
-        { value: 'ca', label: '🇨🇦 Canada', short: 'Canada', rank: 4, patterns: [/canada|canadian|\bcad\b/] },
-        { value: 'au', label: '🇦🇺 Australia', short: 'Australia', rank: 4, patterns: [/australia|australian|\bau\b|admitadau30/] },
-        { value: 'de', label: '🇩🇪 Germany', short: 'Germany', rank: 4, patterns: [/germany|german|\bde\b|admitadde30/] },
-        { value: 'ie', label: '🇮🇪 Ireland', short: 'Ireland', rank: 4, patterns: [/ireland|irish/] },
-        { value: 'it', label: '🇮🇹 Italy', short: 'Italy', rank: 4, patterns: [/italy|italian|itnew30/] },
-        { value: 'pl', label: '🇵🇱 Poland', short: 'Poland', rank: 4, patterns: [/poland|polish|zł|zl/] },
-        { value: 'eu', label: '🇪🇺 Europe', short: 'Europe', rank: 4, patterns: [/europe|european|\beu\b|€/] },
-        { value: 'ae', label: '🇦🇪 UAE', short: 'UAE', rank: 2, patterns: [/\buae\b|emirates|aed/] },
-        { value: 'ma', label: '🇲🇦 Morocco', short: 'Morocco', rank: 2, patterns: [/morocco|moroccan/] },
-        { value: 'me', label: '🌍 Middle East', short: 'Middle East', rank: 2, patterns: [/middle east/] }
-      ];
+      if (!title) return;
 
       const normalise = (value) => (value || '').toString().replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+      const searchText = normalise(`${title.dataset.searchText || ''} ${title.dataset.discount || ''}`).toLowerCase();
+      const discount = title.dataset.discount || '';
+      let country = '🌐 Other countries';
+      let countryShort = 'Other';
+      if (/uk|united kingdom|britain|£/.test(searchText)) { country = '🇬🇧 United Kingdom'; countryShort = 'UK'; }
+      else if (/canada|canadian|cad/.test(searchText)) { country = '🇨🇦 Canada'; countryShort = 'Canada'; }
+      else if (/australia|australian/.test(searchText)) { country = '🇦🇺 Australia'; countryShort = 'Australia'; }
+      else if (/german|germany/.test(searchText)) { country = '🇩🇪 Germany'; countryShort = 'Germany'; }
+      else if (/irish|ireland/.test(searchText)) { country = '🇮🇪 Ireland'; countryShort = 'Ireland'; }
+      else if (/italian|italy/.test(searchText)) { country = '🇮🇹 Italy'; countryShort = 'Italy'; }
+      else if (/polish|poland|zł|zl/.test(searchText)) { country = '🇵🇱 Poland'; countryShort = 'Poland'; }
+      else if (/europe|european|€/.test(searchText)) { country = '🇪🇺 Europe'; countryShort = 'Europe'; }
+      else if (/uae|aed|emirates/.test(searchText)) { country = '🇦🇪 UAE'; countryShort = 'UAE'; }
+      else if (/morocco|moroccan/.test(searchText)) { country = '🇲🇦 Morocco'; countryShort = 'Morocco'; }
+      else if (/middle east/.test(searchText)) { country = '🌍 Middle East'; countryShort = 'Middle East'; }
+      else if (/us |united states|\$/.test(searchText)) { country = '🇺🇸 United States'; countryShort = 'US'; }
+      else if (/global|worldwide|sitewide|full cart|full order|no minimum/.test(searchText)) { country = '🌎 Global'; countryShort = 'Global'; }
 
-      function inferCountry(text) {
-        const haystack = normalise(text).toLowerCase();
-        const specificRules = countryRules.filter((rule) => rule.value !== 'global' && rule.value !== 'us');
-        for (const rule of specificRules) {
-          if (rule.patterns.some((pattern) => pattern.test(haystack))) return rule;
-        }
-        const usRule = countryRules.find((rule) => rule.value === 'us');
-        if (usRule.patterns.some((pattern) => pattern.test(haystack))) return usRule;
-        const globalRule = countryRules[0];
-        if (globalRule.patterns.some((pattern) => pattern.test(haystack))) return globalRule;
-        return { value: 'other', label: '🌐 Other countries', short: 'Other', rank: 1 };
-      }
-
-      function discountType(discount) {
-        const text = normalise(discount).toLowerCase();
-        if (text.includes('%')) return 'Percentage';
-        if (/[$€£]|\bcad\b|\baed\b|zł|zl/.test(text)) return 'Fixed amount';
-        return 'Bundle/freebie';
-      }
-
-      function cleanDescription(rawTitle, discount, code, country, searchText) {
-        const text = `${normalise(rawTitle)} ${normalise(searchText)}`.toLowerCase();
-        const overMatch = text.match(/(?:over|minimum|spend)\s*([$€£]?\s?\d+|[0-9]+\s?(?:aed|cad|zł|zl))/i);
-        let base = '';
-
-        if (/contact|lens|acuvue|biofinity|aquasoft/.test(text)) base = 'contact lens orders';
-        else if (/kids/.test(text)) base = 'kids category orders';
-        else if (/free gift|free gifts|gift bundle|0€|£0|\$0/.test(text)) base = 'free gift app offers';
-        else if (/coupon bundle|voucher|vouchers|coupon pack|pack of coupons/.test(text)) base = 'coupon bundle orders';
-        else if (/free shipping|free delivery/.test(text)) base = 'orders with free shipping';
-        else if (overMatch) base = `orders over ${overMatch[1].replace(/\s+/g, '')}`;
-        else if (/first order|new user|new customer|first time/.test(text)) base = 'new customer orders';
-        else if (/app|mobile/.test(text)) base = 'mobile app orders';
-        else if (/sitewide|storewide|full order|full cart|all users|no minimum|any order/.test(text)) base = 'sitewide online orders';
-        else if (/fashion/.test(text)) base = 'fashion category orders';
-        else if (/electronics/.test(text)) base = 'electronics category orders';
-        else base = 'online checkout orders';
-
-        if (country.short && !['Global', 'Other'].includes(country.short) && !base.toLowerCase().startsWith(country.short.toLowerCase())) {
-          base = `${country.short} ${base}`;
-        } else if (country.short === 'Global' && !/^global\b/i.test(base)) {
-          base = `Global ${base}`;
-        }
-
-        let words = base
-          .replace(/\b(eligible|select|selected|qualifying)\b/gi, '')
+      function cleanDescription() {
+        let label = normalise(title.dataset.rawTitle || '')
+          .replace(discount, '')
+          .replace(/\b(eligible|select|selected|qualifying|promo|coupon|code)\b/gi, '')
           .replace(/[.]/g, '')
           .replace(/\s+/g, ' ')
-          .trim()
-          .split(/\s+/)
-          .filter(Boolean);
-
-        if (code && words.length <= 7) words = words.concat(['with', 'code', code]);
-        if (words.length < 4 && code) words = words.concat(['with', 'code', code]);
-        if (words.length > 10) words = words.slice(0, 10);
-
-        return words.join(' ').replace(/\s+/g, ' ').trim().replace(/^./, (char) => char.toUpperCase());
+          .trim();
+        if (!label || label.split(/\s+/).length < 4) {
+          if (/free shipping|free delivery/.test(searchText)) label = 'orders with free shipping';
+          else if (/first|new user|new customer/.test(searchText)) label = 'new customer orders';
+          else if (/sitewide|global|full cart|full order/.test(searchText)) label = 'sitewide online orders';
+          else if (/fashion/.test(searchText)) label = 'fashion category orders';
+          else if (/electronics/.test(searchText)) label = 'electronics category orders';
+          else label = 'online checkout orders';
+        }
+        if (countryShort !== 'Other' && countryShort !== 'Global' && !label.toLowerCase().startsWith(countryShort.toLowerCase())) label = `${countryShort} ${label}`;
+        if (countryShort === 'Global' && !/^global\b/i.test(label)) label = `Global ${label}`;
+        const words = label.split(/\s+/).filter(Boolean).slice(0, 10);
+        while (words.length < 4) words.push('orders');
+        return words.join(' ').replace(/^./, (char) => char.toUpperCase());
       }
 
-      if (title) {
-        const discount = title.dataset.discount || '';
-        const code = title.dataset.code || '';
-        const rawTitle = title.dataset.rawTitle || '';
-        const searchText = `${title.dataset.searchText || ''} ${discount} ${code}`;
-        const country = inferCountry(searchText);
-        const clean = cleanDescription(rawTitle, discount, code, country, searchText);
-        title.textContent = `${discount} ${clean}`.trim();
-        if (meta) meta.textContent = `${country.label} · ${discountType(discount)}`;
+      title.textContent = `${discount} ${cleanDescription()}`.trim();
+      if (meta) {
+        const type = discount.includes('%') ? 'Percentage' : (/[$€£]|AED|CAD|zł/.test(discount) ? 'Fixed amount' : 'Bundle/freebie');
+        meta.textContent = `${country} · ${type}`;
       }
     });
   </script>
