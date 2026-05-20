@@ -1,0 +1,193 @@
+---
+layout: default
+title: "Discount code"
+permalink: /coupon/
+description_short: "View and reveal a SpendLess discount code."
+---
+
+<article class="space-y-5 max-w-2xl w-full" data-coupon-page>
+  <header class="liquid-glass rounded-3xl p-4">
+    <div class="flex items-center gap-3">
+      <div class="w-14 h-14 shrink-0 aspect-square rounded-xl border border-slate-200 overflow-hidden bg-white/80">
+        <img data-brand-logo src="{{ '/media/piggy.png' | relative_url }}" alt="Brand logo" class="w-full h-full object-cover" loading="lazy">
+      </div>
+      <div>
+        <p data-brand-kicker class="text-xs uppercase tracking-[0.2em] text-slate-500">SpendLess · discounts</p>
+        <h1 data-coupon-page-title class="text-xl font-semibold tracking-tight">Loading discount...</h1>
+        <p data-coupon-page-meta class="text-xs text-slate-500 mt-1"></p>
+      </div>
+    </div>
+  </header>
+
+  <section class="rounded-2xl bg-slate-900 text-slate-50 p-4">
+    <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400">Promo code</p>
+    <div class="mt-2 flex flex-col sm:flex-row gap-3">
+      <div class="flex-1 rounded-xl border border-slate-700 px-3 py-2">
+        <span class="font-mono text-lg code-fluid-blur select-none" data-code-display aria-label="Hidden promo code">••••••••</span>
+      </div>
+      <button type="button" data-copy-code-button class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-semibold">View Code</button>
+    </div>
+    <p id="copy-message" class="text-xs text-emerald-300 opacity-0 transition-opacity mt-2">Code copied &amp; activated!</p>
+  </section>
+
+  <p class="text-[11px] text-rose-500" role="button" tabindex="0" data-report-invalid data-coupon-id="/coupon/">Report invalid code</p>
+  <p data-error-state class="hidden text-sm text-slate-500">Discount not found.</p>
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+    const brand = params.get('brand') || '';
+    const index = Number(params.get('i') || 0);
+    const csvUrl = `{{ '/lists/' | relative_url }}${brand}.csv`;
+    const logoUrl = `{{ '/media/brand_logos/' | relative_url }}${brand}.jpg`;
+    const brandName = brand.replace(/_/g, ' ').replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+    const offerHosts = {
+      '1800contacts': 'https://spendlesscontacts.wiki/',
+      'aliexpress': 'https://myaliexpress.wiki/',
+      'autonationparts': 'https://autonation.wiki/',
+      'booking': 'https://spendlessbooking.wiki/',
+      'booking_com': 'https://spendlessbooking.wiki/',
+      'ebay': 'https://ebay.com/deals',
+      'etihad_airways': 'https://etihad.com',
+      'expedia': 'https://expediasavers.wiki/',
+      'hotelscom': 'https://hotelsdiscounts.wiki/',
+      'kiwi_com': 'https://kiwitrip.biz',
+      'lulus': 'https://luluscheaper.wiki/',
+      'lumens': 'https://mylumens.wiki/',
+      'nike': 'https://nike.com',
+      'nordvpn': 'https://nordvpn.com',
+      'petco': 'https://petcocoupon.wiki/',
+      'protonvpn': 'https://myprotonvpn.shop',
+      'qatar_airways': 'https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=28255&c=918277&a=377858&k=A8F66F5B88F299EB654F60541F9D0CEC&l=31883',
+      'shein': 'https://sheincoupons.wiki/',
+      'skullcandy': 'https://skullcandy.help',
+      'spelab': 'https://afflat3a1.com/trk/lnk/181B1737-17E4-4C8A-978E-28CD0C11C727/?o=31091&c=918277&a=377858&k=C4A489B9F8CF18635619E754530AAE8C&l=36180',
+      'surfshark': 'https://surfshark.lol',
+      'temu': 'https://temucoupon.pro/',
+      'trip_com': 'https://tripdeals.biz',
+      'vevor': 'https://spendlesso.com/vevor',
+      'vrbo': 'https://spendlesso.com/vrbo',
+      'walmart': 'https://walmartcodes.wiki/',
+      'walmart_grocery': 'https://walmartcodes.wiki/'
+    };
+
+    const title = document.querySelector('[data-coupon-page-title]');
+    const meta = document.querySelector('[data-coupon-page-meta]');
+    const kicker = document.querySelector('[data-brand-kicker]');
+    const logo = document.querySelector('[data-brand-logo]');
+    const display = document.querySelector('[data-code-display]');
+    const button = document.querySelector('[data-copy-code-button]');
+    const status = document.getElementById('copy-message');
+    const error = document.querySelector('[data-error-state]');
+    const report = document.querySelector('[data-report-invalid]');
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [], field = '', quoted = false;
+      for (let i = 0; i < text.length; i += 1) {
+        const char = text[i];
+        const next = text[i + 1];
+        if (char === '"' && quoted && next === '"') { field += '"'; i += 1; continue; }
+        if (char === '"') { quoted = !quoted; continue; }
+        if (char === ',' && !quoted) { row.push(field); field = ''; continue; }
+        if ((char === '\n' || char === '\r') && !quoted) {
+          if (char === '\r' && next === '\n') i += 1;
+          row.push(field); field = '';
+          if (row.some(Boolean)) rows.push(row);
+          row = [];
+          continue;
+        }
+        field += char;
+      }
+      row.push(field);
+      if (row.some(Boolean)) rows.push(row);
+      const header = rows.shift()?.map((cell) => cell.trim()) || [];
+      return rows.map((cells, rowIndex) => {
+        const item = { index: rowIndex };
+        header.forEach((key, column) => { item[key] = (cells[column] || '').trim(); });
+        return item;
+      }).filter((item) => item.code && item.discount_amount);
+    }
+
+    function normalize(value) {
+      return (value || '').toString().replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+    }
+
+    function cleanDescription(row) {
+      const discount = normalize(row.discount_amount);
+      let description = normalize(row.description)
+        .replace(/\b(eligible|select|selected|qualifying|promo|coupon|code|offer|offers|savings)\b/gi, '')
+        .replace(/[.]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+      const lower = description.toLowerCase();
+      if (/^your order$|^orders?$|^purchases?$|^items?$|^general$/.test(lower)) description = `${brandName} online orders`;
+      else if (/^first order$/.test(lower)) description = `first ${brandName} order`;
+      else if (/^app-only orders?$|^app orders?$|^the app$|^general app/.test(lower)) description = `${brandName} app orders`;
+      else if (/^email signup$|^newsletter signup$/.test(lower)) description = `${brandName} email signup orders`;
+      else if (!description.toLowerCase().includes(brandName.toLowerCase()) && !/\border(s)?\b|\bitems?\b|\bpurchases?\b|\bsubscription(s)?\b|\bbooking(s)?\b|\bflights?\b|\bhotels?\b|\bcars?\b|\bproducts?\b|\bstyles?\b|\bgear\b|\bplans?\b|\blenses?\b|\bminimum\b|\bover\b/.test(description.toLowerCase())) {
+        description = `${brandName} ${description}`;
+      }
+      const words = [];
+      normalize(description).split(/\s+/).forEach((word) => {
+        if (!words.length || words[words.length - 1].toLowerCase() !== word.toLowerCase()) words.push(word);
+      });
+      description = words.slice(0, 12).join(' ').replace(/^./, (char) => char.toUpperCase());
+      return `${discount} ${description}`.replace(/\s+/g, ' ').trim();
+    }
+
+    function countryLabel(value) {
+      value = value.toLowerCase();
+      if (value.includes('uk') || value.includes('£')) return '🇬🇧 United Kingdom';
+      if (value.includes('canada') || value.includes('cad')) return '🇨🇦 Canada';
+      if (value.includes('australia')) return '🇦🇺 Australia';
+      if (value.includes('german') || value.includes('germany')) return '🇩🇪 Germany';
+      if (value.includes('italian') || value.includes('italy')) return '🇮🇹 Italy';
+      if (value.includes('europe') || value.includes('€')) return '🇪🇺 Europe';
+      if (value.includes('uae') || value.includes('aed')) return '🇦🇪 UAE';
+      if (value.includes('us ') || value.includes('usa') || value.includes('united states') || value.includes('$')) return '🇺🇸 United States';
+      if (value.includes('global') || value.includes('sitewide')) return '🌎 Global';
+      return '🌐 Other countries';
+    }
+
+    function discountType(value) {
+      if ((value || '').includes('%')) return 'Percentage';
+      if (/[€£$]|AED|CAD|zł|GBP|PHP|SAR|VND|NT\$|S\$/.test(value || '')) return 'Fixed amount';
+      return 'Bundle/freebie';
+    }
+
+    fetch(csvUrl)
+      .then((response) => response.ok ? response.text() : Promise.reject(new Error('Missing brand CSV')))
+      .then((csv) => {
+        const row = parseCsv(csv)[index];
+        if (!row) throw new Error('Missing coupon row');
+        const description = cleanDescription(row);
+        document.title = `${description} | SpendLess`;
+        logo.src = logoUrl;
+        logo.alt = `${brandName} logo`;
+        kicker.textContent = `${brandName} · discounts`;
+        title.textContent = description;
+        meta.textContent = `${countryLabel(`${row.discount_amount} ${row.description}`)} · ${discountType(row.discount_amount)}`;
+        display.textContent = row.code;
+        button.dataset.copyCode = row.code;
+        button.dataset.brandSlug = brand;
+        report.dataset.couponId = `/coupon/?brand=${brand}&i=${index}`;
+
+        button.addEventListener('click', () => {
+          const url = offerHosts[brand] || '';
+          if (url) window.open(url, '_blank', 'noopener');
+          display.classList.remove('code-fluid-blur', 'select-none');
+          display.classList.add('is-revealed');
+          navigator.clipboard?.writeText(row.code).catch(() => {});
+          status.style.opacity = '1';
+          setTimeout(() => status.style.opacity = '0', 10000);
+        });
+      })
+      .catch(() => {
+        title.textContent = 'Discount not found';
+        error.classList.remove('hidden');
+        button.disabled = true;
+      });
+  });
+</script>
