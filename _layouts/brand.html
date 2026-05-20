@@ -2,11 +2,7 @@
 layout: default
 ---
 
-{% if page.logo_path %}
-  {% assign logo_path = page.logo_path %}
-{% else %}
-  {% assign logo_path = '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
-{% endif %}
+{% assign logo_path = page.logo_path | default: '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
 {% assign brand_name = page.title | replace: ' discount codes', '' | replace: ' promo codes', '' | strip %}
 <article class="space-y-6">
   <header class="liquid-glass rounded-3xl p-4 sm:p-6">
@@ -31,22 +27,19 @@ layout: default
       <span id="coupon-visible-count" class="rounded-full bg-white/70 border border-slate-200 px-2.5 py-1 text-[11px] font-semibold text-slate-600">0 deals</span>
     </div>
     <div class="mt-4 grid gap-3 sm:grid-cols-3">
-      <label class="text-xs font-medium text-slate-600">
-        Country
+      <label class="text-xs font-medium text-slate-600">Country
         <select id="coupon-country-filter" class="mt-1 w-full rounded-xl border border-slate-300/60 bg-white/70 px-3 py-2.5 text-sm text-slate-800">
           <option value="all">🌎 All countries</option>
         </select>
       </label>
-      <label class="text-xs font-medium text-slate-600">
-        Discount sort
+      <label class="text-xs font-medium text-slate-600">Discount sort
         <select id="coupon-sort-filter" class="mt-1 w-full rounded-xl border border-slate-300/60 bg-white/70 px-3 py-2.5 text-sm text-slate-800">
-          <option value="priority-desc">Highest priority first</option>
+          <option value="featured">Featured discounts</option>
           <option value="amount-desc">Discount high to low</option>
           <option value="amount-asc">Discount low to high</option>
         </select>
       </label>
-      <label class="text-xs font-medium text-slate-600">
-        Discount type
+      <label class="text-xs font-medium text-slate-600">Discount type
         <select id="coupon-type-filter" class="mt-1 w-full rounded-xl border border-slate-300/60 bg-white/70 px-3 py-2.5 text-sm text-slate-800">
           <option value="all">All discount types</option>
           <option value="percentage">Percentage discounts</option>
@@ -57,52 +50,33 @@ layout: default
     </div>
   </section>
 
+  {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug | where: "is_expired", false %}
   <section class="space-y-3" aria-label="{{ brand_name }} discounts">
-    {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug %}
-    {% assign active = brand_coupons | where: "is_expired", false %}
-
-    {% assign valid_offer_count = 0 %}
-    {% for coupon in active %}
+    <div id="coupon-list" class="space-y-3">
+    {% for coupon in brand_coupons %}
       {% assign discount_text = coupon.discount_value | default: '' %}
       {% if discount_text contains '%' or discount_text contains '$' or discount_text contains '€' or discount_text contains '£' or discount_text contains 'AED' or discount_text contains 'CAD' or discount_text contains 'zł' %}
-        {% assign valid_offer_count = valid_offer_count | plus: 1 %}
-      {% endif %}
-    {% endfor %}
-
-    {% if valid_offer_count > 0 %}
-      <div id="coupon-list" class="space-y-3">
-      {% for coupon in active %}
-        {% assign discount_text = coupon.discount_value | default: '' %}
-        {% if discount_text contains '%' or discount_text contains '$' or discount_text contains '€' or discount_text contains '£' or discount_text contains 'AED' or discount_text contains 'CAD' or discount_text contains 'zł' %}
-          {% assign cleaned_title = coupon.title %}
-          {% if coupon.discount_value %}
-            {% assign cleaned_title = cleaned_title | remove: coupon.discount_value %}
-            {% assign cleaned_title = cleaned_title | remove: ' - ' | replace: '  ', ' ' | strip %}
-          {% endif %}
-          {% assign searchable_text = coupon.title | append: ' ' | append: coupon.description_short | append: ' ' | append: coupon.discount_value | append: ' ' | append: coupon.code %}
-        <a href="{{ coupon.url | relative_url }}" data-surface-card data-coupon-card data-raw-title="{{ cleaned_title | escape }}" data-discount="{{ coupon.discount_value | escape }}" data-code="{{ coupon.code | escape }}" data-search-text="{{ searchable_text | escape }}" class="relative block liquid-glass rounded-2xl px-4 py-3">
+        {% assign cleaned_title = coupon.description_short | default: coupon.title %}
+        {% if coupon.discount_value %}
+          {% assign cleaned_title = cleaned_title | remove: coupon.discount_value | replace: '  ', ' ' | strip %}
+        {% endif %}
+        {% assign searchable_text = cleaned_title | append: ' ' | append: coupon.discount_value %}
+        <a href="{{ coupon.url | relative_url }}" data-surface-card data-coupon-card data-discount="{{ coupon.discount_value | escape }}" data-title="{{ cleaned_title | escape }}" data-search="{{ searchable_text | escape }}" class="relative block liquid-glass rounded-2xl px-4 py-3">
           <span class="absolute right-3 top-3 text-emerald-600/90" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h7.17a2 2 0 0 1 1.41.59l6.83 6.83a2 2 0 0 1 0 2.83l-7.59 7.59a2 2 0 0 1-2.82 0L3.59 13.41a2 2 0 0 1-.59-1.41V5z"></path><path d="M7.5 7.5h.01"></path></svg>
           </span>
           <div class="pr-8">
-            {% if coupon.discount_value %}
-              <span class="inline-flex text-xs font-semibold px-2 py-1 rounded-full bg-emerald-100 text-emerald-800">{{ coupon.discount_value }}</span>
-            {% endif %}
-            <h3 data-coupon-description class="text-sm font-medium mt-2">{{ cleaned_title }}</h3>
+            <h3 data-coupon-description class="text-sm font-medium">{{ cleaned_title }}</h3>
             <div class="mt-2 flex flex-wrap gap-1.5">
               <span data-coupon-country-badge class="hidden text-[11px] rounded-full border border-slate-200 bg-white/60 px-2 py-0.5 text-slate-600"></span>
-              <span data-coupon-type-badge class="hidden text-[11px] rounded-full border border-slate-200 bg-white/60 px-2 py-0.5 text-slate-600"></span>
             </div>
             <p class="text-xs text-slate-500 mt-2">View Code ↗</p>
           </div>
         </a>
-        {% endif %}
-      {% endfor %}
-      </div>
-      <p id="coupon-empty-state" class="hidden text-center text-sm text-slate-500 py-8">No discounts match those filters.</p>
-    {% else %}
-      <p class="text-sm text-slate-500">No active discounts yet.</p>
-    {% endif %}
+      {% endif %}
+    {% endfor %}
+    </div>
+    <p id="coupon-empty-state" class="hidden text-center text-sm text-slate-500 py-8">No discounts match those filters.</p>
   </section>
 </article>
 
@@ -115,202 +89,95 @@ layout: default
     const sortFilter = document.getElementById('coupon-sort-filter');
     const typeFilter = document.getElementById('coupon-type-filter');
     const visibleCount = document.getElementById('coupon-visible-count');
-
-    if (!cards.length || !list) {
-      if (visibleCount) visibleCount.textContent = '0 deals';
-      return;
+    const countries = {
+      global: ['🌎 Global', 5], us: ['🇺🇸 United States', 5], uk: ['🇬🇧 United Kingdom', 4], ca: ['🇨🇦 Canada', 4],
+      au: ['🇦🇺 Australia', 4], de: ['🇩🇪 Germany', 4], ie: ['🇮🇪 Ireland', 4], it: ['🇮🇹 Italy', 4],
+      pl: ['🇵🇱 Poland', 4], eu: ['🇪🇺 Europe', 4], ae: ['🇦🇪 UAE', 2], ma: ['🇲🇦 Morocco', 2], me: ['🌍 Middle East', 2], other: ['🌐 Other countries', 1]
+    };
+    function text(card) { return ((card.dataset.search || '') + ' ' + (card.dataset.title || '')).toLowerCase(); }
+    function countryKey(value) {
+      if (value.includes('uk') || value.includes('£')) return 'uk';
+      if (value.includes('canada') || value.includes('cad')) return 'ca';
+      if (value.includes('australia')) return 'au';
+      if (value.includes('german')) return 'de';
+      if (value.includes('irish') || value.includes('ireland')) return 'ie';
+      if (value.includes('italian') || value.includes('italy')) return 'it';
+      if (value.includes('polish') || value.includes('poland') || value.includes('zł')) return 'pl';
+      if (value.includes('europe') || value.includes('€')) return 'eu';
+      if (value.includes('uae') || value.includes('aed')) return 'ae';
+      if (value.includes('morocco')) return 'ma';
+      if (value.includes('middle east')) return 'me';
+      if (value.includes('us ') || value.includes('$')) return 'us';
+      if (value.includes('global') || value.includes('sitewide') || value.includes('full cart') || value.includes('no minimum')) return 'global';
+      return 'other';
     }
-
-    const countryRules = [
-      { value: 'global', label: '🌎 Global', short: 'Global', rank: 5, patterns: [/global|worldwide|sitewide|all users|full order|full cart|no minimum/] },
-      { value: 'us', label: '🇺🇸 United States', short: 'US', rank: 5, patterns: [/\bus\b|\busa\b|united states|usnew|wethrift30|admitad30|sapnew10|\$\d/] },
-      { value: 'uk', label: '🇬🇧 United Kingdom', short: 'UK', rank: 4, patterns: [/\buk\b|united kingdom|britain|british|£/] },
-      { value: 'ca', label: '🇨🇦 Canada', short: 'Canada', rank: 4, patterns: [/canada|canadian|\bcad\b/] },
-      { value: 'au', label: '🇦🇺 Australia', short: 'Australia', rank: 4, patterns: [/australia|australian|\bau\b|admitadau30/] },
-      { value: 'de', label: '🇩🇪 Germany', short: 'Germany', rank: 4, patterns: [/germany|german|\bde\b|admitadde30/] },
-      { value: 'ie', label: '🇮🇪 Ireland', short: 'Ireland', rank: 4, patterns: [/ireland|irish/] },
-      { value: 'it', label: '🇮🇹 Italy', short: 'Italy', rank: 4, patterns: [/italy|italian|itnew30/] },
-      { value: 'pl', label: '🇵🇱 Poland', short: 'Poland', rank: 4, patterns: [/poland|polish|zł|zl/] },
-      { value: 'eu', label: '🇪🇺 Europe', short: 'Europe', rank: 4, patterns: [/europe|european|\beu\b|€/] },
-      { value: 'ae', label: '🇦🇪 UAE', short: 'UAE', rank: 2, patterns: [/\buae\b|emirates|aed/] },
-      { value: 'ma', label: '🇲🇦 Morocco', short: 'Morocco', rank: 2, patterns: [/morocco|moroccan/] },
-      { value: 'me', label: '🌍 Middle East', short: 'Middle East', rank: 2, patterns: [/middle east/] }
-    ];
-
-    function normalise(value) {
-      return (value || '').toString().replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+    function amount(value) {
+      const matches = (value || '').match(/[0-9]+/g) || ['0'];
+      return Math.max.apply(null, matches.map(Number));
     }
-
-    function inferCountry(text) {
-      const haystack = normalise(text).toLowerCase();
-      const specificRules = countryRules.filter((rule) => rule.value !== 'global' && rule.value !== 'us');
-      for (const rule of specificRules) {
-        if (rule.patterns.some((pattern) => pattern.test(haystack))) return rule;
+    function type(value) {
+      if ((value || '').includes('%')) return 'percentage';
+      if (/[€£$]|AED|CAD|zł/.test(value || '')) return 'fixed';
+      return 'bundle';
+    }
+    function clean(card) {
+      const value = text(card);
+      let label = (card.dataset.title || '').replace(/\b(eligible|select|selected|qualifying|promo|coupon|code)\b/gi, '').replace(/\s+/g, ' ').trim();
+      if (!label || label.split(/\s+/).length < 4) {
+        if (value.includes('free shipping') || value.includes('free delivery')) label = 'orders with free shipping';
+        else if (value.includes('first') || value.includes('new user') || value.includes('new customer')) label = 'new customer orders';
+        else if (value.includes('sitewide') || value.includes('global')) label = 'sitewide online orders';
+        else if (value.includes('fashion')) label = 'fashion category orders';
+        else if (value.includes('electronics')) label = 'electronics category orders';
+        else label = 'online checkout orders';
       }
-      const usRule = countryRules.find((rule) => rule.value === 'us');
-      if (usRule.patterns.some((pattern) => pattern.test(haystack))) return usRule;
-      const globalRule = countryRules[0];
-      if (globalRule.patterns.some((pattern) => pattern.test(haystack))) return globalRule;
-      return { value: 'other', label: '🌐 Other countries', short: 'Other', rank: 1 };
+      const words = label.replace(/[.]/g, '').split(/\s+/).filter(Boolean).slice(0, 10);
+      while (words.length < 4) words.push('orders');
+      return words.join(' ').replace(/^./, function (c) { return c.toUpperCase(); });
     }
-
-    function discountType(discount) {
-      const text = normalise(discount).toLowerCase();
-      if (text.includes('%')) return { value: 'percentage', label: 'Percentage' };
-      if (/[$€£]|\bcad\b|\baed\b|zł|zl/.test(text)) return { value: 'fixed', label: 'Fixed amount' };
-      return { value: 'bundle', label: 'Bundle/freebie' };
-    }
-
-    function discountAmount(discount) {
-      const text = normalise(discount);
-      const matches = Array.from(text.matchAll(/(\d+(?:\.\d+)?)/g)).map((match) => Number(match[1]));
-      if (!matches.length) return 0;
-      return Math.max.apply(null, matches);
-    }
-
-    function cleanDescription(rawTitle, discount, code, country, searchText) {
-      const text = `${normalise(rawTitle)} ${normalise(searchText)}`.toLowerCase();
-      let base = '';
-
-      const overMatch = text.match(/(?:over|minimum|spend)\s*([$€£]?\s?\d+|[0-9]+\s?(?:aed|cad|zł|zl))/i);
-
-      if (/contact|lens|acuvue|biofinity|aquasoft/.test(text)) {
-        base = 'contact lens orders';
-      } else if (/kids/.test(text)) {
-        base = 'kids category orders';
-      } else if (/free gift|free gifts|gift bundle|0€|£0|\$0/.test(text)) {
-        base = 'free gift app offers';
-      } else if (/coupon bundle|voucher|vouchers|coupon pack|pack of coupons/.test(text)) {
-        base = 'coupon bundle orders';
-      } else if (/free shipping|free delivery/.test(text)) {
-        base = 'orders with free shipping';
-      } else if (overMatch) {
-        base = `orders over ${overMatch[1].replace(/\s+/g, '')}`;
-      } else if (/first order|new user|new customer|first time/.test(text)) {
-        base = 'new customer orders';
-      } else if (/app|mobile/.test(text)) {
-        base = 'mobile app orders';
-      } else if (/sitewide|storewide|full order|full cart|all users|no minimum|any order/.test(text)) {
-        base = 'sitewide online orders';
-      } else if (/fashion/.test(text)) {
-        base = 'fashion category orders';
-      } else if (/electronics/.test(text)) {
-        base = 'electronics category orders';
-      } else {
-        base = normalise(rawTitle)
-          .replace(new RegExp(normalise(discount).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'), '')
-          .replace(/\b(eligible|select|selected|qualifying|latest|current|discount|coupon|promo|offer|offers|savings|limited-time)\b/gi, '')
-          .replace(/[.]/g, '')
-          .replace(/\s+/g, ' ')
-          .trim()
-          .toLowerCase();
-        if (!base || /^(orders?|purchases?|items?|your order|app order)$/.test(base)) base = 'online checkout orders';
-      }
-
-      if (country.short && !['Global', 'Other'].includes(country.short) && !base.toLowerCase().startsWith(country.short.toLowerCase())) {
-        base = `${country.short} ${base}`;
-      } else if (country.short === 'Global' && !/^global\b/i.test(base)) {
-        base = `Global ${base}`;
-      }
-
-      const cleanedWords = base
-        .replace(/\b(eligible|select|selected|qualifying)\b/gi, '')
-        .replace(/[.]/g, '')
-        .replace(/\s+/g, ' ')
-        .trim()
-        .split(/\s+/)
-        .filter(Boolean);
-
-      let words = cleanedWords.length ? cleanedWords : ['online', 'checkout', 'orders'];
-      if (code && words.length <= 7) words = words.concat(['with', 'code', code]);
-      if (words.length < 4 && code) words = words.concat(['with', 'code', code]);
-      if (words.length > 10) words = words.slice(0, 10);
-
-      return words.join(' ').replace(/\s+/g, ' ').trim().replace(/^./, (char) => char.toUpperCase());
-    }
-
-    function priorityScore(card) {
-      const countryRank = Number(card.dataset.countryRank || 1);
-      const amount = Number(card.dataset.amount || 0);
-      const searchText = (card.dataset.searchText || '').toLowerCase();
-      const scopeBoost = /sitewide|storewide|global|worldwide|full order|full cart|all users|no minimum/.test(searchText) ? 600 : 0;
-      const userBoost = /new user|new customer|first order|first time/.test(searchText) ? 250 : 0;
-      return (countryRank * 1000) + scopeBoost + userBoost + amount;
-    }
-
-    cards.forEach((card) => {
+    cards.forEach(function (card) {
+      const key = countryKey(text(card));
       const discount = card.dataset.discount || '';
-      const code = card.dataset.code || '';
-      const rawTitle = card.dataset.rawTitle || '';
-      const searchText = `${card.dataset.searchText || ''} ${discount} ${code}`;
-      const country = inferCountry(searchText);
-      const type = discountType(discount);
-      const amount = discountAmount(discount);
-      const description = cleanDescription(rawTitle, discount, code, country, searchText);
-
-      card.dataset.country = country.value;
-      card.dataset.countryLabel = country.label;
-      card.dataset.countryRank = String(country.rank);
-      card.dataset.discountType = type.value;
-      card.dataset.amount = String(amount);
-      card.dataset.priority = String(priorityScore(card));
-      card.dataset.cleanDescription = description;
-
-      const descriptionEl = card.querySelector('[data-coupon-description]');
-      const countryBadge = card.querySelector('[data-coupon-country-badge]');
-      const typeBadge = card.querySelector('[data-coupon-type-badge]');
-
-      if (descriptionEl) descriptionEl.textContent = description;
-      if (countryBadge) {
-        countryBadge.textContent = country.label;
-        countryBadge.classList.remove('hidden');
-      }
-      if (typeBadge) {
-        typeBadge.textContent = type.label;
-        typeBadge.classList.remove('hidden');
-      }
+      card.dataset.country = key;
+      card.dataset.rank = countries[key][1];
+      card.dataset.amount = amount(discount);
+      card.dataset.type = type(discount);
+      card.dataset.priority = Number(card.dataset.rank) * 1000 + amount(discount);
+      const desc = card.querySelector('[data-coupon-description]');
+      const badge = card.querySelector('[data-coupon-country-badge]');
+      if (desc) desc.textContent = clean(card);
+      if (badge) { badge.textContent = countries[key][0]; badge.classList.remove('hidden'); }
     });
-
-    const countries = Array.from(new Map(cards.map((card) => [card.dataset.country, {
-      value: card.dataset.country,
-      label: card.dataset.countryLabel,
-      rank: Number(card.dataset.countryRank || 1)
-    }])).values()).sort((a, b) => b.rank - a.rank || a.label.localeCompare(b.label));
-
-    countries.forEach((country) => {
+    Object.keys(countries).sort(function (a, b) { return countries[b][1] - countries[a][1]; }).forEach(function (key) {
+      if (!cards.some(function (card) { return card.dataset.country === key; })) return;
       const option = document.createElement('option');
-      option.value = country.value;
-      option.textContent = country.label;
+      option.value = key;
+      option.textContent = countries[key][0];
       countryFilter.appendChild(option);
     });
-
     function applyFilters() {
       const selectedCountry = countryFilter.value;
       const selectedType = typeFilter.value;
       const selectedSort = sortFilter.value;
-
-      const sortedCards = cards.slice().sort((a, b) => {
+      const sorted = cards.slice().sort(function (a, b) {
         if (selectedSort === 'amount-asc') return Number(a.dataset.amount) - Number(b.dataset.amount);
         if (selectedSort === 'amount-desc') return Number(b.dataset.amount) - Number(a.dataset.amount);
         return Number(b.dataset.priority) - Number(a.dataset.priority);
       });
-
       let shown = 0;
-      sortedCards.forEach((card) => {
-        const countryOk = selectedCountry === 'all' || card.dataset.country === selectedCountry;
-        const typeOk = selectedType === 'all' || card.dataset.discountType === selectedType;
-        const visible = countryOk && typeOk;
+      sorted.forEach(function (card) {
+        const visible = (selectedCountry === 'all' || card.dataset.country === selectedCountry) && (selectedType === 'all' || card.dataset.type === selectedType);
         card.classList.toggle('hidden', !visible);
         if (visible) shown += 1;
         list.appendChild(card);
       });
-
-      if (visibleCount) visibleCount.textContent = `${shown} ${shown === 1 ? 'deal' : 'deals'}`;
-      if (emptyState) emptyState.classList.toggle('hidden', shown !== 0);
+      visibleCount.textContent = shown + (shown === 1 ? ' deal' : ' deals');
+      emptyState.classList.toggle('hidden', shown !== 0);
       list.classList.toggle('hidden', shown === 0);
     }
-
-    [countryFilter, sortFilter, typeFilter].forEach((control) => control.addEventListener('change', applyFilters));
+    countryFilter.addEventListener('change', applyFilters);
+    sortFilter.addEventListener('change', applyFilters);
+    typeFilter.addEventListener('change', applyFilters);
     applyFilters();
   });
 </script>
