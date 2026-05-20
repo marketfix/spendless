@@ -1,34 +1,34 @@
 code,discount_amount,description
-RepeatDelivery35,35% off,Your first repeat delivery and autoship order.
-RDSAVE30,30% off,Repeat delivery or recurring orders.
-e30,30% off,First recurring or repeat delivery.
-FIRST35,35% off,Your first autoship signup.
-SAVE15,$15 off,Orders $50+.
-G15,$15 off,General orders.
-O15,20% off,Sitewide.
-PETCO20,20% off,Sitewide.
-DAY20,20% off,Sitewide promotions.
-NEWYEAR,Up to 40% off,Sitewide for New Year.
-CLEAR50,Up to 50% off,Clearance items.
-o10,10% off,Orders $50+ or pickup.
-PETCO10PICKUP,10% off,Pickup orders $50+.
-WELCOME10,10% off,Your first order.
-GIFT15,$15 off,General orders.
-LOVE15,$15 off,Orders $75+.
-SAVE20,20% off,Repeat delivery.
-BOGO20,20% off,Buy-one-get-one deals.
-SAVE25,$25 off,Orders.
-FREESHIP35,Free shipping,Orders $35+.
-PETCO15,15% off,Sitewide.
-TRIOTREAT20,$20 off,Simparica Trio or select flea and tick products.
-NEWPETCO15,$15 off,Orders of $49 or more.
-NEWPETCO20,$20 off,New customer orders of $49 or more.
-T20,$20 off,Pet supplies and essentials.
-E20,20% off,Eligible sitewide orders.
-SITEWIDE20,20% off,Sitewide orders.
-RDSAVE35,35% off,Your first Repeat Delivery order.
-RD40SELECTDC252612,40% off,Select Repeat Delivery categories.
-BOPUS10,10% off,Buy-online-pickup-in-store orders.
-DOGTREATS50,50% off,Dog treats and chews.
-ITCHY50,50% off,Apoquel Allergic Itch Relief for dogs.
-SPRING,$40 off,Group training classes and packages.
+RepeatDelivery35,35% off,Petco first repeat delivery autoship order
+RDSAVE30,30% off,Petco repeat delivery orders
+e30,30% off,Petco first recurring delivery order
+FIRST35,35% off,Petco first autoship signup
+SAVE15,$15 off,Petco orders over $50
+G15,$15 off,Petco pet supply orders
+O15,20% off,Petco sitewide pet supply orders
+PETCO20,20% off,Petco sitewide pet supply orders
+DAY20,20% off,Petco daily sitewide promotion orders
+NEWYEAR,Up to 40% off,Petco New Year pet supply deals
+CLEAR50,Up to 50% off,Petco clearance pet items
+o10,10% off,Petco pickup or orders over $50
+PETCO10PICKUP,10% off,Petco pickup orders over $50
+WELCOME10,10% off,Petco first customer order
+GIFT15,$15 off,Petco pet supply gift orders
+LOVE15,$15 off,Petco orders over $75
+SAVE20,20% off,Petco repeat delivery orders
+BOGO20,20% off,Petco buy-one-get-one deals
+SAVE25,$25 off,Petco pet supply orders
+FREESHIP35,Free shipping,Petco orders over $35
+PETCO15,15% off,Petco sitewide pet supply orders
+TRIOTREAT20,$20 off,Petco flea and tick products
+NEWPETCO15,$15 off,Petco orders over $49
+NEWPETCO20,$20 off,Petco new customer orders over $49
+T20,$20 off,Petco pet supplies and essentials
+E20,20% off,Petco sitewide pet supply orders
+SITEWIDE20,20% off,Petco sitewide pet supply orders
+RDSAVE35,35% off,Petco first Repeat Delivery order
+RD40SELECTDC252612,40% off,Petco Repeat Delivery categories
+BOPUS10,10% off,Petco buy-online-pickup-in-store orders
+DOGTREATS50,50% off,Petco dog treats and chews
+ITCHY50,50% off,Petco dog allergy relief products
+SPRING,$40 off,Petco group training classes and packages
