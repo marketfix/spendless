@@ -1,15 +1,15 @@
 code,discount_amount,description
-HOLIDAY10,$10 off,Orders during the holiday season.
-EXPRESSDELIVERY,Free delivery,Free express delivery code.
-TRIPLE15,$15 off,Each of your first three grocery orders.
-TODAY10,$10 off,$50+ grocery order for new customers.
-PAYPAL10,$10 off,When paying with PayPal.
-THANKYOU5,$5 off,Your order to say thank you.
-THANKFUL,$5 off,During thankful promotions.
-30WMOFF,$30 off,Qualifying grocery order.
-E10,$10 off,Groceries.
-OTTAWA80,$80 off,First order.
-SURREY80,$80 off,First order.
-MONCTON80,$80 off,First order.
-HALIFAX80,$80 off,First order.
-FALLSAVE40,$40 off,First $100 order.
+HOLIDAY10,$10 off,Walmart grocery holiday season orders
+EXPRESSDELIVERY,Free delivery,Walmart grocery express delivery orders
+TRIPLE15,$15 off,Walmart first three grocery orders
+TODAY10,$10 off,Walmart grocery orders over $50 for new customers
+PAYPAL10,$10 off,Walmart grocery orders paid with PayPal
+THANKYOU5,$5 off,Walmart grocery thank-you orders
+THANKFUL,$5 off,Walmart grocery thankful promotion orders
+30WMOFF,$30 off,Walmart qualifying grocery order
+E10,$10 off,Walmart grocery basket orders
+OTTAWA80,$80 off,Walmart Ottawa first grocery order
+SURREY80,$80 off,Walmart Surrey first grocery order
+MONCTON80,$80 off,Walmart Moncton first grocery order
+HALIFAX80,$80 off,Walmart Halifax first grocery order
+FALLSAVE40,$40 off,Walmart first grocery order over $100
