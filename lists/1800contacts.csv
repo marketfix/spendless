@@ -1,35 +1,35 @@
 code,discount_amount,description
-DEAL10,$10 off,Orders of $100 or more.
-WELCOME-30,30% off,First order.
-FIRST30,30% off,First order.
-FIRST25,25% off,First order.
-1800CKATELYNB,35% off,Contacts.
-MILITARY35,35% off,Sitewide.
-CLAIRED30,30% off,Contacts.
-DEAL30,30% off,Sitewide.
-30-OFF-GLASSES,30% off,Glasses contacts.
-STUDENT10,10% off,Contacts for students.
-AFSAVIN20,20% off,Contacts.
-EMAIL20,20% off,First order.
-SC6115TOOB,25% off,Selected contacts.
-SC7116FOTB,20% off,Contacts.
-475,30% off,Glasses contacts.
-AQUASOFT20,20% off,AquaSoft lenses.
-ACUVUE25,25% off,Acuvue products.
-BIOFINITY30,30% off,Biofinity lenses.
-CLARITI15,15% off,Clariti lenses.
-VETERAN30,30% off,Contacts for veterans.
-REFERRAL25,25% off,Referral contacts.
-SEASONAL30,30% off,Seasonal promotions.
-SUB5,5% off,Subscription orders.
-FRAMERY30,Free gift,With eligible orders.
-SURVEY10,10% off,Orders over $100.
-BROOKE25,25% off,Contact lenses.
-MEGANS30,30% off,Eligible orders.
-SPLISH30,$30 off,Eligible items.
-COMEBACK15D,15% off,Returning customers.
-BRITTANY25,25% off,Sitewide when eligible.
-SUNNY40,40% off,Select orders.
-AUT10,10% off + free shipping,Orders over $50.
-25OFF,25% off,Your order.
-1800KAYCEE,27% off,Eligible orders.
+DEAL10,$10 off,lens orders over $100
+WELCOME-30,30% off,first 1-800 Contacts order
+FIRST30,30% off,first 1-800 Contacts checkout
+FIRST25,25% off,first online lens purchase
+1800CKATELYNB,35% off,lens refill orders
+MILITARY35,35% off,military customer lens orders
+CLAIRED30,30% off,lens product checkout
+DEAL30,30% off,sitewide lens orders
+30-OFF-GLASSES,30% off,glasses and lens orders
+STUDENT10,10% off,student lens orders
+AFSAVIN20,20% off,lens refill purchases
+EMAIL20,20% off,first email signup order
+SC6115TOOB,25% off,lens product orders
+SC7116FOTB,20% off,lens product orders
+475,30% off,glasses and lens checkout
+AQUASOFT20,20% off,AquaSoft lens boxes
+ACUVUE25,25% off,Acuvue lens products
+BIOFINITY30,30% off,Biofinity lens boxes
+CLARITI15,15% off,Clariti lens boxes
+VETERAN30,30% off,veteran customer lens orders
+REFERRAL25,25% off,referred customer lens orders
+SEASONAL30,30% off,seasonal lens promotions
+SUB5,5% off,recurring lens subscriptions
+FRAMERY30,Free gift,lens orders with eyewear gift
+SURVEY10,10% off,lens orders over $100
+BROOKE25,25% off,lens checkout orders
+MEGANS30,30% off,lens refill orders
+SPLISH30,$30 off,lens product purchases
+COMEBACK15D,15% off,returning customer lens orders
+BRITTANY25,25% off,sitewide lens checkout
+SUNNY40,40% off,lens purchase orders
+AUT10,10% off + free shipping,orders over $50 with shipping
+25OFF,25% off,lens checkout orders
+1800KAYCEE,27% off,lens product orders
