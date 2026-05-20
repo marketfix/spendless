@@ -2,7 +2,11 @@
 layout: default
 ---
 
-{% assign logo_path = page.logo_path | default: '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
+{% if page.logo_path %}
+  {% assign logo_path = page.logo_path %}
+{% else %}
+  {% assign logo_path = '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
+{% endif %}
 {% assign brand_name = page.title | replace: ' discount codes', '' | replace: ' promo codes', '' | strip %}
 <article class="space-y-6">
   <header class="liquid-glass rounded-3xl p-4 sm:p-6">
@@ -66,7 +70,7 @@ layout: default
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h7.17a2 2 0 0 1 1.41.59l6.83 6.83a2 2 0 0 1 0 2.83l-7.59 7.59a2 2 0 0 1-2.82 0L3.59 13.41a2 2 0 0 1-.59-1.41V5z"></path><path d="M7.5 7.5h.01"></path></svg>
           </span>
           <div class="pr-8">
-            <h3 data-coupon-description class="text-sm font-medium">{{ cleaned_title }}</h3>
+            <h3 data-coupon-description class="text-sm font-medium">{{ coupon.discount_value }} {{ cleaned_title }}</h3>
             <div class="mt-2 flex flex-wrap gap-1.5">
               <span data-coupon-country-badge class="hidden text-[11px] rounded-full border border-slate-200 bg-white/60 px-2 py-0.5 text-slate-600"></span>
             </div>
@@ -94,7 +98,9 @@ layout: default
       au: ['🇦🇺 Australia', 4], de: ['🇩🇪 Germany', 4], ie: ['🇮🇪 Ireland', 4], it: ['🇮🇹 Italy', 4],
       pl: ['🇵🇱 Poland', 4], eu: ['🇪🇺 Europe', 4], ae: ['🇦🇪 UAE', 2], ma: ['🇲🇦 Morocco', 2], me: ['🌍 Middle East', 2], other: ['🌐 Other countries', 1]
     };
+
     function text(card) { return ((card.dataset.search || '') + ' ' + (card.dataset.title || '')).toLowerCase(); }
+
     function countryKey(value) {
       if (value.includes('uk') || value.includes('£')) return 'uk';
       if (value.includes('canada') || value.includes('cad')) return 'ca';
@@ -111,30 +117,50 @@ layout: default
       if (value.includes('global') || value.includes('sitewide') || value.includes('full cart') || value.includes('no minimum')) return 'global';
       return 'other';
     }
+
     function amount(value) {
       const matches = (value || '').match(/[0-9]+/g) || ['0'];
       return Math.max.apply(null, matches.map(Number));
     }
+
     function type(value) {
       if ((value || '').includes('%')) return 'percentage';
       if (/[€£$]|AED|CAD|zł/.test(value || '')) return 'fixed';
       return 'bundle';
     }
+
+    function uniqueWords(words) {
+      return words.filter(function (word, index) {
+        return index === 0 || word.toLowerCase() !== words[index - 1].toLowerCase();
+      });
+    }
+
     function clean(card) {
       const value = text(card);
-      let label = (card.dataset.title || '').replace(/\b(eligible|select|selected|qualifying|promo|coupon|code)\b/gi, '').replace(/\s+/g, ' ').trim();
-      if (!label || label.split(/\s+/).length < 4) {
+      const discount = card.dataset.discount || '';
+      let label = (card.dataset.title || '')
+        .replace(discount, '')
+        .replace(/\b(eligible|select|selected|qualifying|promo|coupon|code|discount|offer|offers|savings)\b/gi, '')
+        .replace(/[.]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      if (!label || label.split(/\s+/).length < 3) {
         if (value.includes('free shipping') || value.includes('free delivery')) label = 'orders with free shipping';
         else if (value.includes('first') || value.includes('new user') || value.includes('new customer')) label = 'new customer orders';
-        else if (value.includes('sitewide') || value.includes('global')) label = 'sitewide online orders';
+        else if (value.includes('sitewide') || value.includes('global') || value.includes('full cart') || value.includes('full order')) label = 'sitewide online orders';
         else if (value.includes('fashion')) label = 'fashion category orders';
         else if (value.includes('electronics')) label = 'electronics category orders';
+        else if (value.includes('app')) label = 'mobile app orders';
         else label = 'online checkout orders';
       }
-      const words = label.replace(/[.]/g, '').split(/\s+/).filter(Boolean).slice(0, 10);
-      while (words.length < 4) words.push('orders');
-      return words.join(' ').replace(/^./, function (c) { return c.toUpperCase(); });
+
+      let words = uniqueWords(label.split(/\s+/).filter(Boolean)).slice(0, 8);
+      if (!words.length) words = ['online', 'checkout', 'orders'];
+      label = words.join(' ').replace(/^./, function (c) { return c.toUpperCase(); });
+      return (discount + ' ' + label).replace(/\s+/g, ' ').trim();
     }
+
     cards.forEach(function (card) {
       const key = countryKey(text(card));
       const discount = card.dataset.discount || '';
@@ -148,6 +174,7 @@ layout: default
       if (desc) desc.textContent = clean(card);
       if (badge) { badge.textContent = countries[key][0]; badge.classList.remove('hidden'); }
     });
+
     Object.keys(countries).sort(function (a, b) { return countries[b][1] - countries[a][1]; }).forEach(function (key) {
       if (!cards.some(function (card) { return card.dataset.country === key; })) return;
       const option = document.createElement('option');
@@ -155,6 +182,7 @@ layout: default
       option.textContent = countries[key][0];
       countryFilter.appendChild(option);
     });
+
     function applyFilters() {
       const selectedCountry = countryFilter.value;
       const selectedType = typeFilter.value;
@@ -175,6 +203,7 @@ layout: default
       emptyState.classList.toggle('hidden', shown !== 0);
       list.classList.toggle('hidden', shown === 0);
     }
+
     countryFilter.addEventListener('change', applyFilters);
     sortFilter.addEventListener('change', applyFilters);
     typeFilter.addEventListener('change', applyFilters);
