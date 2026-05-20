@@ -21,7 +21,6 @@
 </div>
 
 <ul id="brand-grid" class="grid gap-3 sm:grid-cols-2">
-  {% assign eligible_coupons = site.coupons | where: "is_expired", false %}
   {% assign sorted_brands = site.brands | sort: "title" %}
   {% for brand in sorted_brands %}
     {% if brand.logo_path %}
@@ -29,16 +28,7 @@
     {% else %}
       {% assign logo_path = '/media/brand_logos/' | append: brand.brand_slug | append: '.jpg' %}
     {% endif %}
-    {% assign brand_offer_count = 0 %}
-    {% for coupon in eligible_coupons %}
-      {% if coupon.brand_slug == brand.brand_slug %}
-        {% assign discount_text = coupon.discount_value | default: '' %}
-        {% if discount_text contains '%' or discount_text contains '$' %}
-          {% assign brand_offer_count = brand_offer_count | plus: 1 %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-    <li data-brand-card data-brand-name="{{ brand.title | downcase }}">
+    <li data-brand-card data-brand-name="{{ brand.title | downcase }}" data-brand-slug="{{ brand.brand_slug }}" data-brand-title="{{ brand.title | replace: ' discount codes', '' | replace: ' promo codes', '' | strip | escape }}">
       <a href="{{ brand.url | relative_url }}" data-surface-card class="relative block liquid-glass rounded-2xl px-3 py-3">
         <span class="absolute right-3 top-3 text-emerald-600/90" aria-hidden="true">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h7.17a2 2 0 0 1 1.41.59l6.83 6.83a2 2 0 0 1 0 2.83l-7.59 7.59a2 2 0 0 1-2.82 0L3.59 13.41a2 2 0 0 1-.59-1.41V5z"></path><path d="M7.5 7.5h.01"></path></svg>
@@ -49,7 +39,7 @@
           </div>
           <div class="flex-1">
             <span class="font-medium text-sm">{{ brand.title | replace: ' discount codes', '' | replace: ' promo codes', '' | strip }}</span>
-            <p class="text-xs text-slate-500 mt-1">{{ brand_offer_count }} discount codes · View all <span aria-hidden="true">→</span></p>
+            <p class="text-xs text-slate-500 mt-1"><span data-brand-offer-count>Loading</span> discount codes · View all <span aria-hidden="true">→</span></p>
           </div>
         </div>
       </a>
@@ -66,6 +56,48 @@
     const grid = document.getElementById('brand-grid');
     const emptyState = document.getElementById('brand-empty-state');
     const visibleCount = document.getElementById('brand-visible-count');
+    const featureLink = document.getElementById('featured-offer');
+    const featureTitle = document.getElementById('featured-offer-title');
+    const featureSubtitle = document.getElementById('featured-offer-subtitle');
+    const featureBadge = document.getElementById('featured-offer-badge');
+    const listBaseUrl = {{ '/lists/' | relative_url | jsonify }};
+    const couponBaseUrl = {{ '/coupon/' | relative_url | jsonify }};
+    const allOffers = [];
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [], field = '', quoted = false;
+      for (let i = 0; i < text.length; i += 1) {
+        const char = text[i];
+        const next = text[i + 1];
+        if (char === '"' && quoted && next === '"') { field += '"'; i += 1; continue; }
+        if (char === '"') { quoted = !quoted; continue; }
+        if (char === ',' && !quoted) { row.push(field); field = ''; continue; }
+        if ((char === '\n' || char === '\r') && !quoted) {
+          if (char === '\r' && next === '\n') i += 1;
+          row.push(field); field = '';
+          if (row.some(Boolean)) rows.push(row);
+          row = [];
+          continue;
+        }
+        field += char;
+      }
+      row.push(field);
+      if (row.some(Boolean)) rows.push(row);
+      const header = rows.shift()?.map((cell) => cell.trim()) || [];
+      return rows.map((cells, index) => {
+        const item = { index };
+        header.forEach((key, column) => { item[key] = (cells[column] || '').trim(); });
+        return item;
+      }).filter((item) => item.code && item.discount_amount && /[%$€£]|AED|CAD|GBP|PHP|SAR|VND|NT\$|S\$|free|off/i.test(item.discount_amount));
+    }
+
+    function cleanDescription(row, brandTitle) {
+      let description = (row.description || '').replace(/\b(eligible|select|selected|qualifying|promo|coupon|code|offer|offers|savings)\b/gi, '').replace(/[.]/g, '').replace(/\s+/g, ' ').trim();
+      if (!description || /^(your order|orders?|purchases?|items?|general)$/i.test(description)) description = `${brandTitle} online orders`;
+      if (/^first order$/i.test(description)) description = `first ${brandTitle} order`;
+      return `${row.discount_amount} ${description}`.replace(/\s+/g, ' ').trim();
+    }
 
     function filterBrands() {
       const query = searchInput.value.trim().toLowerCase();
@@ -80,34 +112,30 @@
       grid.classList.toggle('hidden', matches === 0);
     }
 
+    function pickFeaturedOffer() {
+      if (!featureLink || !allOffers.length) return;
+      const picked = allOffers[Math.floor(Math.random() * allOffers.length)];
+      featureLink.href = `${couponBaseUrl}?brand=${encodeURIComponent(picked.brandSlug)}&i=${picked.index}`;
+      featureTitle.textContent = cleanDescription(picked, picked.brandTitle);
+      featureSubtitle.textContent = `${picked.brandTitle} · View full offer ↗`;
+      featureBadge.textContent = picked.discount_amount;
+    }
+
+    Promise.all(cards.map((card) => {
+      const slug = card.dataset.brandSlug;
+      const title = card.dataset.brandTitle;
+      const countEl = card.querySelector('[data-brand-offer-count]');
+      return fetch(`${listBaseUrl}${slug}.csv`)
+        .then((response) => response.ok ? response.text() : '')
+        .then((csv) => {
+          const offers = csv ? parseCsv(csv) : [];
+          if (countEl) countEl.textContent = offers.length;
+          offers.forEach((offer) => allOffers.push({ ...offer, brandSlug: slug, brandTitle: title }));
+        })
+        .catch(() => { if (countEl) countEl.textContent = '0'; });
+    })).then(pickFeaturedOffer);
+
     filterBrands();
     searchInput.addEventListener('input', filterBrands);
-
-    const featureLink = document.getElementById('featured-offer');
-    const featureTitle = document.getElementById('featured-offer-title');
-    const featureSubtitle = document.getElementById('featured-offer-subtitle');
-    const featureBadge = document.getElementById('featured-offer-badge');
-    const allOffers = [
-      {% for coupon in site.coupons %}
-        {% assign discount_text = coupon.discount_value | default: '' %}
-        {% if coupon.is_expired == false and (discount_text contains '%' or discount_text contains '$') %}
-        {
-          url: {{ coupon.url | relative_url | jsonify }},
-          title: {{ coupon.title | jsonify }},
-          discount: {{ coupon.discount_value | default: 'Hot deal' | jsonify }},
-          {% assign featured_brand = site.brands | where: 'brand_slug', coupon.brand_slug | first %}
-          brand: {{ featured_brand.title | default: coupon.brand_slug | replace: ' discount codes', '' | replace: ' promo codes', '' | strip | jsonify }}
-        },
-        {% endif %}
-      {% endfor %}
-    ];
-
-    if (featureLink && allOffers.length) {
-      const picked = allOffers[Math.floor(Math.random() * allOffers.length)];
-      featureLink.href = picked.url;
-      featureTitle.textContent = picked.title;
-      featureSubtitle.textContent = `${picked.brand} · View full offer ↗`;
-      featureBadge.textContent = picked.discount;
-    }
   });
 </script>
