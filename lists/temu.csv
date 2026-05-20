@@ -1,48 +1,63 @@
 code,discount_amount,description
-ROCO200,30% off,Sitewide savings across eligible items.
-ROCO100,30% off + €200 coupon bundle,New user welcome bundle in the app.
-frt55847,0€ gifts,Selected gifts in the app promotion.
-acs522308,Selected-item savings,Limited-time savings on selected items.
-alf001008,€0 item windows,Existing user loyalty windows and app only free item style promos.
-TEM30,30% off + free delivery,First order in supported Middle East country stores.
-TEM13,30% off + free delivery,First order in supported Middle East country stores.
-W30,30% off,First UK order over £39.
-I30,30% off,New user order over $39.
-EKUPONI180,30% off + coupon bundle,Localized app bundle.
-frt178236,0€ + £0 gifts,Claiming free gift style offers inside the app.
-26X,30% off + 200 CAD coupons,Canadian new user app search bar coupon pack.
-W10,10% off,First Canadian purchase over $39.
-S10,10% off,Kids category orders in Canada.
-TEM22,30% off,UAE new customer order over 100 AED.
-ald058939,30% off,UAE checkout discount.
-acy456809,AED 400 coupon bundle,New user app bundle in the UAE.
-acy189292,30% off + free delivery,First order in Morocco.
-m30,Up to 40% off,German order with a broad coupon savings.
-A30,30% off + free shipping + up to €200 vouchers,Irish checkout discount with bonus vouchers.
-893,30% off + €100 coupon bundle,First Irish order and bundle unlock.
-L30,30% off,Polish order over 160 zł.
-815,100€ coupon pack,Unlocking a 100€ pack of coupons.
-ALI185602,$100 coupon bundle,One-time app offer.
-ACX241714,30% off,Sitewide in the app.
-COUPONEVO200,30% off,Sitewide.
-ACW615101,30% off,Sitewide.
-ACT972929,30% off + free shipping,Sitewide purchase.
-ALH082428,$100 bundle + 30% off,Next eligible orders.
-acx320117,30% off,Sitewide for existing users.
-ACU967941,30% off,Full order for all users.
-ALC244158,30% off,New and existing users.
-act508875,40% off + $200 bundle,Coupon bundle.
-alj451674,Up to 40% off,Free shipping and returns.
-FRP174462,Free gifts + 20% off,Free gift bundle.
-FRO96899,15% off,Sitewide with no minimum.
-WETHRIFT30,30% off,Sitewide order.
-USNEW30,30% off,New user order.
-SAPNEW10,10% off,Orders over $39.
-ADMITAD30,30% off,Orders over $39.
-ACV671336,50% off,Sitewide order with $100 minimum.
-ALH040402,30% off,Sitewide app order.
-ALC132398,30% off,Sitewide app order.
-ACY306625,30% off,Select app items.
-FRE271944,Free gift,Sitewide app offer.
-ALJ305213,30% off,Sitewide app order.
-ACW274625,40% off,Sitewide app order.
+COUPONEVO200,30% off,Global sitewide checkout orders
+ACW615101,30% off,Global sitewide cart orders
+ACX241714,30% off,Global sitewide app purchases
+ACT972929,30% off + free shipping,Global purchases with free shipping
+ACU967941,30% off,Global full cart orders
+ALC244158,30% off,Global new and returning users
+acx320117,30% off,Global returning user orders
+WETHRIFT30,30% off,US sitewide online orders
+USNEW30,30% off,US new user orders
+957,30% off,US storewide orders over $10
+E30,30% off,US first orders over $39
+545,50% off,US first orders over $50
+985,50% off + $100 coupon bundle,US first cart coupon bundle
+774,30% off,US sitewide purchase orders
+564,30% off,US full cart orders
+S05,20% off,US any online orders
+S03,3% off,US online checkout orders
+429,Up to $200 off,US cart coupon savings
+768,$100 off,US fashion and home purchases
+360,$100 off,US clothing and home purchases
+ADMITAD30,30% off,US orders over $39
+SAPNEW10,10% off,US small carts over $39
+ACV671336,50% off,US sitewide orders over $100
+ALH040402,30% off,US sitewide app orders
+ALC132398,30% off,US returning app orders
+ALJ305213,30% off,US mobile app orders
+ACW274625,40% off,US high value app orders
+act508875,40% off + $200 bundle,US coupon bundle orders
+alj451674,Up to 40% off,US free shipping return orders
+FRP174462,Free gifts + 20% off,US free gift bundle orders
+FRO96899,15% off,US no minimum sitewide orders
+ALH082428,$100 bundle + 30% off,US next order coupon bundle
+ALI185602,$100 coupon bundle,US app coupon bundle
+FRE271944,Free gift,US app free gift orders
+ACY306625,30% off,US marked app item orders
+26X,30% off + 200 CAD coupons,Canadian new user coupon pack
+W10,10% off,Canadian first purchase over $39
+S10,10% off,Canadian kids category orders
+W30,30% off,UK first order over £39
+A30,30% off + free shipping + up to €200 vouchers,Irish checkout with bonus vouchers
+893,30% off + €100 coupon bundle,Irish first order coupon bundle
+m30,Up to 40% off,German order coupon savings
+ADMITADDE30,30% off,German orders over $39
+ITNEW30,30% off,Italian orders over $39
+L30,30% off,Polish order over 160 zł
+815,100€ coupon pack,European 100€ coupon pack
+ELECTRONICS10,10% off,European electronics orders over $39
+FASHION10,10% off,European fashion orders over $39
+ADMITADAU30,30% off,Australian orders over $39
+ROCO200,30% off,Global sitewide item orders
+ROCO100,30% off + €200 coupon bundle,European new user app bundle
+frt55847,0€ gifts,European app gift claims
+acs522308,Item savings,European marked item orders
+alf001008,€0 item windows,European loyalty app items
+frt178236,0€ + £0 gifts,European app free gift claims
+TEM30,30% off + free delivery,Middle East first order stores
+TEM13,30% off + free delivery,Middle East first delivery orders
+EKUPONI180,30% off + coupon bundle,Localized app coupon bundle
+TEM22,30% off,UAE new customer orders over 100 AED
+ald058939,30% off,UAE online checkout orders
+acy456809,AED 400 coupon bundle,UAE new user app bundle
+acy189292,30% off + free delivery,Morocco first order delivery
