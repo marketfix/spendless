@@ -1,34 +1,34 @@
 code,discount_amount,description
-VVUS8,8% off,Sitewide in the US.
-WELCOMEALL,$5 off,With email signup.
-5VUS5,5% off,Any purchase.
-VVUS10,$10 off,Every $200 spent.
-VVSALE5,5% off,Next order.
-VVUS15,$15 off,Your order.
-VVUS7,7% off,Your order.
-VVAF8NEW,8% off,New customers.
-VEVORHOT2,6% off,Select items.
-VEV5OFF,5% off,Sitewide.
-MESNEW,$8 off,First order over $129.
-VVMH5,$5 off,Eligible order.
-VEVOR15US,15% off,Sitewide with $200 minimum.
-VVGG5,5% off,Sitewide.
-VEVORML5,5% off,Sitewide.
-VVS50,Up to 55% off,Select items.
-HE32F4F1A1CD703C,$200 off,Winter sale.
-VEVOR15AU,15% off,Sitewide with $200 minimum.
-VEVOR15MX,15% off,Sitewide with $200 minimum.
-CA2,2% off,Sitewide.
-VVCA7,7% off,Sitewide.
-GESTE150,Free gift,Free 3-piece gift with $150+.
-GESTE250,Free gift,Free 5-piece gift with $250+.
-SWIPE150,Free gift,Free 3-piece gift with $150+.
-SWIPE250,Free gift,Free 5-piece gift with $250+.
-VEVOR15CA,15% off,Sitewide with $200 minimum.
-VVUSNEW,5% off,New arrivals and recently added items.
-VVSS10,10% off,Eligible orders.
-VTOPUS,8-10% off,Selected popular items.
-VEVORAFF,5-8% off,Across regional stores.
-VV2024OFF,5% off,Entire purchases across regional stores.
-VEVOR8OFF,8% off,Sitewide on eligible regional stores.
-VVAF8EU,8% off,EU orders.
+VVUS8,8% off,VEVOR US sitewide orders
+WELCOMEALL,$5 off,VEVOR email signup orders
+5VUS5,5% off,VEVOR online equipment purchases
+VVUS10,$10 off,VEVOR orders for every $200 spent
+VVSALE5,5% off,VEVOR next order purchases
+VVUS15,$15 off,VEVOR US equipment orders
+VVUS7,7% off,VEVOR US tool orders
+VVAF8NEW,8% off,VEVOR new customer orders
+VEVORHOT2,6% off,VEVOR hot deal equipment
+VEV5OFF,5% off,VEVOR sitewide equipment orders
+MESNEW,$8 off,VEVOR first order over $129
+VVMH5,$5 off,VEVOR marketplace equipment orders
+VEVOR15US,15% off,VEVOR US orders with $200 minimum
+VVGG5,5% off,VEVOR sitewide equipment orders
+VEVORML5,5% off,VEVOR sitewide equipment orders
+VVS50,Up to 55% off,VEVOR sale equipment
+HE32F4F1A1CD703C,$200 off,VEVOR winter sale equipment
+VEVOR15AU,15% off,VEVOR Australia orders with $200 minimum
+VEVOR15MX,15% off,VEVOR Mexico orders with $200 minimum
+CA2,2% off,VEVOR Canada sitewide orders
+VVCA7,7% off,VEVOR Canada sitewide orders
+GESTE150,Free gift,VEVOR orders over $150
+GESTE250,Free gift,VEVOR orders over $250
+SWIPE150,Free gift,VEVOR orders over $150
+SWIPE250,Free gift,VEVOR orders over $250
+VEVOR15CA,15% off,VEVOR Canada orders with $200 minimum
+VVUSNEW,5% off,VEVOR new arrival equipment
+VVSS10,10% off,VEVOR regional store orders
+VTOPUS,8-10% off,VEVOR popular equipment items
+VEVORAFF,5-8% off,VEVOR regional store equipment
+VV2024OFF,5% off,VEVOR regional store purchases
+VEVOR8OFF,8% off,VEVOR regional sitewide orders
+VVAF8EU,8% off,VEVOR EU equipment orders
