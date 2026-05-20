@@ -148,7 +148,7 @@ description_short: "View and reveal a SpendLess discount code."
       if (value.includes('uae') || value.includes('aed')) return '🇦🇪 UAE';
       if (value.includes('us ') || value.includes('usa') || value.includes('united states') || value.includes('$')) return '🇺🇸 United States';
       if (value.includes('global') || value.includes('sitewide')) return '🌎 Global';
-      return '🌐 Other countries';
+      return '';
     }
 
     function discountType(value) {
@@ -163,12 +163,13 @@ description_short: "View and reveal a SpendLess discount code."
         const row = parseCsv(csv)[index];
         if (!row) throw new Error('Missing coupon row');
         const description = cleanDescription(row);
+        const country = countryLabel(`${row.discount_amount} ${row.description}`);
         document.title = `${description} | SpendLess`;
         logo.src = logoUrl;
         logo.alt = `${brandName} logo`;
         kicker.textContent = `${brandName} · discounts`;
         title.textContent = description;
-        meta.textContent = `${countryLabel(`${row.discount_amount} ${row.description}`)} · ${discountType(row.discount_amount)}`;
+        meta.textContent = [country, discountType(row.discount_amount)].filter(Boolean).join(' · ');
         display.textContent = row.code;
         button.dataset.copyCode = row.code;
         button.dataset.brandSlug = brand;
