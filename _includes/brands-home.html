@@ -51,59 +51,69 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('brand-search');
-    const cards = Array.from(document.querySelectorAll('[data-brand-card]'));
-    const grid = document.getElementById('brand-grid');
-    const emptyState = document.getElementById('brand-empty-state');
-    const visibleCount = document.getElementById('brand-visible-count');
-    const featureLink = document.getElementById('featured-offer');
-    const featureTitle = document.getElementById('featured-offer-title');
-    const featureSubtitle = document.getElementById('featured-offer-subtitle');
-    const featureBadge = document.getElementById('featured-offer-badge');
-    const listBaseUrl = {{ '/lists/' | relative_url | jsonify }};
-    const couponBaseUrl = {{ '/coupon/' | relative_url | jsonify }};
-    const allOffers = [];
+    var searchInput = document.getElementById('brand-search');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('[data-brand-card]'));
+    var grid = document.getElementById('brand-grid');
+    var emptyState = document.getElementById('brand-empty-state');
+    var visibleCount = document.getElementById('brand-visible-count');
+    var featureLink = document.getElementById('featured-offer');
+    var featureTitle = document.getElementById('featured-offer-title');
+    var featureSubtitle = document.getElementById('featured-offer-subtitle');
+    var featureBadge = document.getElementById('featured-offer-badge');
+    var listBaseUrl = {{ '/lists/' | relative_url | jsonify }};
+    var couponBaseUrl = {{ '/coupon/' | relative_url | jsonify }};
+    var allOffers = [];
+    var featuredSet = false;
+    var pendingLoads = cards.length;
 
     function parseCsv(text) {
-      const rows = [];
-      let row = [], field = '', quoted = false;
-      for (let i = 0; i < text.length; i += 1) {
-        const char = text[i];
-        const next = text[i + 1];
+      var rows = [];
+      var row = [];
+      var field = '';
+      var quoted = false;
+      for (var i = 0; i < text.length; i += 1) {
+        var char = text[i];
+        var next = text[i + 1];
         if (char === '"' && quoted && next === '"') { field += '"'; i += 1; continue; }
         if (char === '"') { quoted = !quoted; continue; }
         if (char === ',' && !quoted) { row.push(field); field = ''; continue; }
         if ((char === '\n' || char === '\r') && !quoted) {
           if (char === '\r' && next === '\n') i += 1;
           row.push(field); field = '';
-          if (row.some(Boolean)) rows.push(row);
+          if (row.some(function (cell) { return cell; })) rows.push(row);
           row = [];
           continue;
         }
         field += char;
       }
       row.push(field);
-      if (row.some(Boolean)) rows.push(row);
-      const header = rows.shift()?.map((cell) => cell.trim()) || [];
-      return rows.map((cells, index) => {
-        const item = { index };
-        header.forEach((key, column) => { item[key] = (cells[column] || '').trim(); });
+      if (row.some(function (cell) { return cell; })) rows.push(row);
+      var header = rows.length ? rows.shift().map(function (cell) { return cell.trim(); }) : [];
+      return rows.map(function (cells, index) {
+        var item = { index: index };
+        header.forEach(function (key, column) { item[key] = (cells[column] || '').trim(); });
         return item;
-      }).filter((item) => item.code && item.discount_amount && /[%$€£]|AED|CAD|GBP|PHP|SAR|VND|NT\$|S\$|free|off/i.test(item.discount_amount));
+      }).filter(function (item) {
+        return item.code && item.discount_amount && /[%$€£]|AED|CAD|GBP|PHP|SAR|VND|NT\$|S\$|free|off|discount|savings|price/i.test(item.discount_amount);
+      });
     }
 
     function cleanDescription(row, brandTitle) {
-      let description = (row.description || '').replace(/\b(eligible|select|selected|qualifying|promo|coupon|code|offer|offers|savings)\b/gi, '').replace(/[.]/g, '').replace(/\s+/g, ' ').trim();
-      if (!description || /^(your order|orders?|purchases?|items?|general)$/i.test(description)) description = `${brandTitle} online orders`;
-      if (/^first order$/i.test(description)) description = `first ${brandTitle} order`;
-      return `${row.discount_amount} ${description}`.replace(/\s+/g, ' ').trim();
+      var description = (row.description || '')
+        .replace(/\b(eligible|select|selected|qualifying|promo|coupon|code|offer|offers|savings)\b/gi, '')
+        .replace(/[.]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+      if (!description || /^(your order|orders?|purchases?|items?|general)$/i.test(description)) description = brandTitle + ' online orders';
+      if (/^first order$/i.test(description)) description = 'first ' + brandTitle + ' order';
+      return (row.discount_amount + ' ' + description).replace(/\s+/g, ' ').trim();
     }
 
     function filterBrands() {
-      const query = searchInput.value.trim().toLowerCase();
-      let matches = 0;
-      cards.forEach((card) => {
-        const ok = card.dataset.brandName.includes(query);
+      var query = searchInput.value.trim().toLowerCase();
+      var matches = 0;
+      cards.forEach(function (card) {
+        var ok = card.dataset.brandName.indexOf(query) !== -1;
         card.classList.toggle('hidden', !ok);
         matches += ok ? 1 : 0;
       });
@@ -112,28 +122,52 @@
       grid.classList.toggle('hidden', matches === 0);
     }
 
-    function pickFeaturedOffer() {
-      if (!featureLink || !allOffers.length) return;
-      const picked = allOffers[Math.floor(Math.random() * allOffers.length)];
-      featureLink.href = `${couponBaseUrl}?brand=${encodeURIComponent(picked.brandSlug)}&i=${picked.index}`;
+    function applyFeaturedOffer(force) {
+      if (!featureLink || !allOffers.length || (featuredSet && !force)) return;
+      var picked = allOffers[Math.floor(Math.random() * allOffers.length)];
+      featureLink.href = couponBaseUrl + '?brand=' + encodeURIComponent(picked.brandSlug) + '&i=' + encodeURIComponent(picked.index);
       featureTitle.textContent = cleanDescription(picked, picked.brandTitle);
-      featureSubtitle.textContent = `${picked.brandTitle} · View full offer ↗`;
+      featureSubtitle.textContent = picked.brandTitle + ' · View full offer ↗';
       featureBadge.textContent = picked.discount_amount;
+      featuredSet = true;
     }
 
-    Promise.all(cards.map((card) => {
-      const slug = card.dataset.brandSlug;
-      const title = card.dataset.brandTitle;
-      const countEl = card.querySelector('[data-brand-offer-count]');
-      return fetch(`${listBaseUrl}${slug}.csv`)
-        .then((response) => response.ok ? response.text() : '')
-        .then((csv) => {
-          const offers = csv ? parseCsv(csv) : [];
+    function finishOneLoad() {
+      pendingLoads -= 1;
+      if (pendingLoads <= 0 && !featuredSet) {
+        featureTitle.textContent = 'Browse current discount codes';
+        featureSubtitle.textContent = 'Pick a brand to view offers ↗';
+        featureBadge.textContent = 'Deals';
+        featureLink.href = '#brand-grid';
+      }
+    }
+
+    cards.forEach(function (card) {
+      var slug = card.dataset.brandSlug;
+      var title = card.dataset.brandTitle;
+      var countEl = card.querySelector('[data-brand-offer-count]');
+      fetch(listBaseUrl + slug + '.csv', { cache: 'no-store' })
+        .then(function (response) { return response.ok ? response.text() : ''; })
+        .then(function (csv) {
+          var offers = csv ? parseCsv(csv) : [];
           if (countEl) countEl.textContent = offers.length;
-          offers.forEach((offer) => allOffers.push({ ...offer, brandSlug: slug, brandTitle: title }));
+          offers.forEach(function (offer) {
+            allOffers.push({
+              index: offer.index,
+              code: offer.code,
+              discount_amount: offer.discount_amount,
+              description: offer.description,
+              brandSlug: slug,
+              brandTitle: title
+            });
+          });
+          applyFeaturedOffer(false);
         })
-        .catch(() => { if (countEl) countEl.textContent = '0'; });
-    })).then(pickFeaturedOffer);
+        .catch(function () {
+          if (countEl) countEl.textContent = '0';
+        })
+        .finally(finishOneLoad);
+    });
 
     filterBrands();
     searchInput.addEventListener('input', filterBrands);
