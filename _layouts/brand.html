@@ -65,7 +65,7 @@ layout: default
           {% assign cleaned_title = cleaned_title | remove: coupon.discount_value | replace: '  ', ' ' | strip %}
         {% endif %}
         {% assign searchable_text = cleaned_title | append: ' ' | append: coupon.discount_value %}
-        <a href="{{ coupon.url | relative_url }}" data-surface-card data-coupon-card data-discount="{{ coupon.discount_value | escape }}" data-title="{{ cleaned_title | escape }}" data-search="{{ searchable_text | escape }}" class="relative block liquid-glass rounded-2xl px-4 py-3">
+        <a href="{{ coupon.url | relative_url }}" data-surface-card data-coupon-card data-brand="{{ brand_name | escape }}" data-discount="{{ coupon.discount_value | escape }}" data-title="{{ cleaned_title | escape }}" data-search="{{ searchable_text | escape }}" class="relative block liquid-glass rounded-2xl px-4 py-3">
           <span class="absolute right-3 top-3 text-emerald-600/90" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h7.17a2 2 0 0 1 1.41.59l6.83 6.83a2 2 0 0 1 0 2.83l-7.59 7.59a2 2 0 0 1-2.82 0L3.59 13.41a2 2 0 0 1-.59-1.41V5z"></path><path d="M7.5 7.5h.01"></path></svg>
           </span>
@@ -99,7 +99,13 @@ layout: default
       pl: ['🇵🇱 Poland', 4], eu: ['🇪🇺 Europe', 4], ae: ['🇦🇪 UAE', 2], ma: ['🇲🇦 Morocco', 2], me: ['🌍 Middle East', 2], other: ['🌐 Other countries', 1]
     };
 
-    function text(card) { return ((card.dataset.search || '') + ' ' + (card.dataset.title || '')).toLowerCase(); }
+    function normalize(value) {
+      return (value || '').toString().replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+    }
+
+    function lowerText(card) {
+      return `${card.dataset.search || ''} ${card.dataset.title || ''}`.toLowerCase();
+    }
 
     function countryKey(value) {
       if (value.includes('uk') || value.includes('£')) return 'uk';
@@ -129,40 +135,48 @@ layout: default
       return 'bundle';
     }
 
-    function uniqueWords(words) {
-      return words.filter(function (word, index) {
-        return index === 0 || word.toLowerCase() !== words[index - 1].toLowerCase();
-      });
-    }
-
-    function clean(card) {
-      const value = text(card);
-      const discount = card.dataset.discount || '';
-      let label = (card.dataset.title || '')
-        .replace(discount, '')
+    function cleanScope(rawScope, brand, value) {
+      let scope = normalize(rawScope)
         .replace(/\b(eligible|select|selected|qualifying|promo|coupon|code|discount|offer|offers|savings)\b/gi, '')
         .replace(/[.]/g, '')
         .replace(/\s+/g, ' ')
         .trim();
+      const lower = scope.toLowerCase();
 
-      if (!label || label.split(/\s+/).length < 3) {
-        if (value.includes('free shipping') || value.includes('free delivery')) label = 'orders with free shipping';
-        else if (value.includes('first') || value.includes('new user') || value.includes('new customer')) label = 'new customer orders';
-        else if (value.includes('sitewide') || value.includes('global') || value.includes('full cart') || value.includes('full order')) label = 'sitewide online orders';
-        else if (value.includes('fashion')) label = 'fashion category orders';
-        else if (value.includes('electronics')) label = 'electronics category orders';
-        else if (value.includes('app')) label = 'mobile app orders';
-        else label = 'online checkout orders';
-      }
+      if (/^your order$|^orders?$|^purchases?$|^items?$/.test(lower)) scope = `${brand} online orders`;
+      else if (/^first order$/.test(lower)) scope = `first ${brand} order`;
+      else if (/^app-only orders?$|^app orders?$/.test(lower)) scope = `${brand} app orders`;
+      else if (/^email signup$|^newsletter signup$/.test(lower)) scope = `${brand} email signup orders`;
+      else if (/^birthday month$/.test(lower)) scope = `${brand} birthday month orders`;
+      else if (/^loyalty members?$/.test(lower)) scope = `${brand} loyalty member orders`;
+      else if (/^student$|^student discount$/.test(lower)) scope = `${brand} student orders`;
+      else if (/^military$|^military discount$/.test(lower)) scope = `${brand} military orders`;
+      else if (/^senior$|^senior discount$/.test(lower)) scope = `${brand} senior orders`;
+      else if (/^trade professionals?$/.test(lower)) scope = `${brand} trade professional orders`;
+      else if (/^flash sale$/.test(lower)) scope = `${brand} flash sale items`;
+      else if (/^monthly deals?$/.test(lower)) scope = `${brand} monthly sale items`;
+      else if (/^weekend specials?$/.test(lower)) scope = `${brand} weekend sale items`;
+      else if (/^bestsellers?$/.test(lower)) scope = `${brand} bestselling items`;
+      else if (/^new arrivals?$/.test(lower)) scope = `${brand} new arrivals`;
+      else if (!lower.includes(brand.toLowerCase()) && !/\border(s)?\b|\bitems?\b|\bpurchases?\b|\bsubscription(s)?\b|\bbooking(s)?\b|\bflights?\b|\bhotels?\b|\bcars?\b|\bproducts?\b/.test(lower)) scope = `${brand} ${scope}`;
 
-      let words = uniqueWords(label.split(/\s+/).filter(Boolean)).slice(0, 8);
-      if (!words.length) words = ['online', 'checkout', 'orders'];
-      label = words.join(' ').replace(/^./, function (c) { return c.toUpperCase(); });
-      return (discount + ' ' + label).replace(/\s+/g, ' ').trim();
+      const words = [];
+      normalize(scope).split(/\s+/).forEach(function (word) {
+        if (!words.length || words[words.length - 1].toLowerCase() !== word.toLowerCase()) words.push(word);
+      });
+      scope = words.slice(0, 12).join(' ');
+      return scope.replace(/^./, function (char) { return char.toUpperCase(); });
+    }
+
+    function description(card) {
+      const brand = normalize(card.dataset.brand || '');
+      const discount = normalize(card.dataset.discount || '');
+      const scope = cleanScope(card.dataset.title || '', brand, lowerText(card));
+      return `${discount} ${scope}`.replace(/\s+/g, ' ').trim();
     }
 
     cards.forEach(function (card) {
-      const key = countryKey(text(card));
+      const key = countryKey(lowerText(card));
       const discount = card.dataset.discount || '';
       card.dataset.country = key;
       card.dataset.rank = countries[key][1];
@@ -171,7 +185,7 @@ layout: default
       card.dataset.priority = Number(card.dataset.rank) * 1000 + amount(discount);
       const desc = card.querySelector('[data-coupon-description]');
       const badge = card.querySelector('[data-coupon-country-badge]');
-      if (desc) desc.textContent = clean(card);
+      if (desc) desc.textContent = description(card);
       if (badge) { badge.textContent = countries[key][0]; badge.classList.remove('hidden'); }
     });
 
