@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Cashback offer on bookings."
 ---
 
-Use code **CASHBACK1** at checkout to get 1% cashback on cashback offer on bookings..
+Use code **CASHBACK1** at checkout for 1% cashback.
 
 This code is included from the latest /r/SpendLess list for Kiwi.com. Availability can change quickly.

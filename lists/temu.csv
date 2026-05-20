@@ -1,37 +1,48 @@
 code,discount_amount,description
-ROCO200,30% off,A sitewide Temu discount across eligible items. (Global / all countries).
-ROCO100,30% off + €200 coupon bundle,A new-user welcome bundle in the Temu app. (Global / app).
-frt55847,0€ gifts,Claiming selected gifts marked at 0€ in Temu’s app promotion. (Global / app).
-acs522308,Selected-item savings,Limited-time savings on selected Temu items. (Global / app).
-alf001008,€0 item windows,Existing-user loyalty windows and app-only free-item style promos. (Global / app).
-TEM30,30% off + free delivery,A first Temu order in supported Middle East country stores. (Global / Middle East).
-TEM13,30% off + free delivery,A first Temu order in supported Middle East country stores. (Global / Middle East).
-W30,30% off,A first UK Temu order over £39. (United Kingdom).
-I30,30% off,A new-user Temu order over $39. (United Kingdom).
-EKUPONI180,30% off + coupon bundle,A Temu app discount plus a localized coupon bundle. (United Kingdom / Europe).
-frt178236,0€ / £0 gifts,Claiming free-gift style offers inside the Temu app. (United Kingdom / Europe).
-26X,30% off + 200 CAD coupons,A Canadian new-user app/search-bar coupon pack. (Canada).
-W10,10% off,A first Canadian Temu purchase over $39. (Canada).
-S10,10% off,Kids-category Temu orders in Canada. (Canada).
-TEM22,30% off,A UAE new-customer Temu order over 100 AED. (UAE).
-ald058939,30% off,A UAE Temu checkout discount. (UAE).
-acy456809,AED 400 coupon bundle,A new-user Temu app coupon bundle in the UAE. (UAE).
-acy189292,30% off + free delivery,A first Temu order in Morocco. (Morocco).
-m30,Up to 40% off,A German Temu order with a broad coupon discount. (Germany).
-A30,30% off + free shipping + up to €200 vouchers,An Irish Temu checkout discount with bonus vouchers. (Ireland).
-893,30% off + €100 coupon bundle,A first Irish Temu order and coupon-bundle unlock. (Ireland).
-L30,30% off,A Polish Temu order over 160 zł. (Poland).
-815,100€ coupon pack,Unlocking a 100€ pack of Temu coupons. (South Africa).
-ALI185602,$100 coupon bundle,$100 coupon bundle or 30% off one-time app offer.
-ACX241714,30% off,30% off sitewide in the Temu app.
-COUPONEVO200,30% off,30% off storewide.
-ACW615101,30% off,30% off storewide.
-ACT972929,30% off + free shipping,30% off full storewide purchase plus free shipping.
-ALH082428,$100 bundle + 30% off,$100 coupon bundle plus 30% off next eligible orders.
-acx320117,30% off,30% off storewide for existing users.
-ACU967941,30% off,30% off full order for all users.
-ALC244158,30% off,30% off for new and existing users.
-act508875,40% off + $200 bundle,40% off plus $200 coupon bundle.
-alj451674,Up to 40% off,Up to 40% off plus free shipping and returns.
-FRP174462,Free gifts + 20% off,Free gift bundle plus 20% off.
-FRO96899,15% off,15% off sitewide with no minimum.
+ROCO200,30% off,Sitewide savings across eligible items.
+ROCO100,30% off + €200 coupon bundle,New user welcome bundle in the app.
+frt55847,0€ gifts,Selected gifts in the app promotion.
+acs522308,Selected-item savings,Limited-time savings on selected items.
+alf001008,€0 item windows,Existing user loyalty windows and app only free item style promos.
+TEM30,30% off + free delivery,First order in supported Middle East country stores.
+TEM13,30% off + free delivery,First order in supported Middle East country stores.
+W30,30% off,First UK order over £39.
+I30,30% off,New user order over $39.
+EKUPONI180,30% off + coupon bundle,Localized app bundle.
+frt178236,0€ + £0 gifts,Claiming free gift style offers inside the app.
+26X,30% off + 200 CAD coupons,Canadian new user app search bar coupon pack.
+W10,10% off,First Canadian purchase over $39.
+S10,10% off,Kids category orders in Canada.
+TEM22,30% off,UAE new customer order over 100 AED.
+ald058939,30% off,UAE checkout discount.
+acy456809,AED 400 coupon bundle,New user app bundle in the UAE.
+acy189292,30% off + free delivery,First order in Morocco.
+m30,Up to 40% off,German order with a broad coupon savings.
+A30,30% off + free shipping + up to €200 vouchers,Irish checkout discount with bonus vouchers.
+893,30% off + €100 coupon bundle,First Irish order and bundle unlock.
+L30,30% off,Polish order over 160 zł.
+815,100€ coupon pack,Unlocking a 100€ pack of coupons.
+ALI185602,$100 coupon bundle,One-time app offer.
+ACX241714,30% off,Sitewide in the app.
+COUPONEVO200,30% off,Sitewide.
+ACW615101,30% off,Sitewide.
+ACT972929,30% off + free shipping,Sitewide purchase.
+ALH082428,$100 bundle + 30% off,Next eligible orders.
+acx320117,30% off,Sitewide for existing users.
+ACU967941,30% off,Full order for all users.
+ALC244158,30% off,New and existing users.
+act508875,40% off + $200 bundle,Coupon bundle.
+alj451674,Up to 40% off,Free shipping and returns.
+FRP174462,Free gifts + 20% off,Free gift bundle.
+FRO96899,15% off,Sitewide with no minimum.
+WETHRIFT30,30% off,Sitewide order.
+USNEW30,30% off,New user order.
+SAPNEW10,10% off,Orders over $39.
+ADMITAD30,30% off,Orders over $39.
+ACV671336,50% off,Sitewide order with $100 minimum.
+ALH040402,30% off,Sitewide app order.
+ALC132398,30% off,Sitewide app order.
+ACY306625,30% off,Select app items.
+FRE271944,Free gift,Sitewide app offer.
+ALJ305213,30% off,Sitewide app order.
+ACW274625,40% off,Sitewide app order.

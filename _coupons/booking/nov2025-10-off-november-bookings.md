@@ -8,6 +8,6 @@ is_expired: false
 description_short: "November bookings."
 ---
 
-Use code **NOV2025** at checkout to get 10% off on november bookings..
+Use code **NOV2025** at checkout for 10% off.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

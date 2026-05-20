@@ -1,35 +1,35 @@
 code,discount_amount,description
-TRIPFLIGHT26,$15 off ($350+ flights) / $3 off ($100+ bookings),Provides $15 off flights over $350 or $3 off bookings over $100.
-TRIPCAR8,8% off,8% off car rentals for new customers.
-ALLSEO10,10% off,10% off attractions & tours.
-EUGREEN,5% off,5% off Europe train bookings for new users.
-RGXU2I,$10 off,Discount code for $10 off for new users.
-INSTALL8OFF,8% off,8% off when booking through the Trip.com app.
-TRIPVISAF6US,$6 off,$6 off flight bookings over $250.
-MCTRIP20,20% off,Mastercard promotion for flights/hotels.
-MCTRIP15,15% off,Mastercard promotion for flights/hotels.
-MCTRIP10,10% off,Mastercard promotion for flights/hotels.
-AMEX26H,Up to 8% off,Up to 8% off select Hong Kong hotel bookings with Amex.
-AMEX26F,HKD50-HKD200 off,HKD50-HKD200 off Hong Kong flight bookings with Amex.
-AMEX26CR,5% off,5% off select car rentals for Hong Kong Amex cardholders.
-TRAVELERHK26H,5% off,5% off Hong Kong hotel bookings.
-TRAVELERHK26F,2% off,2% off Hong Kong flight bookings.
-TRIPCREATORT,5% off,5% off tickets and experiences.
-HSBCSPSL,15% off,15% off weekend flights for HSBC Premier Mastercard holders in Malaysia.
-HSBCMC,12% off,12% off weekend flights for eligible Malaysian HSBC Mastercard holders.
-HSBCALL,10% off,10% off weekend flights for Malaysian HSBC and Amanah Visa cards.
-PBSTAYVI,Up to 20% off,Up to 20% off hotels for Public Bank Visa Infinite cardholders.
-PBFLYVI,Up to 20% off,Up to 20% off flights for Public Bank Visa Infinite cardholders.
-MBBSTAY9,9% off,9% off hotels for new Maybank Malaysia cardholders.
-MBBSTAY7,7% off,7% off hotels for existing Maybank Malaysia users.
-VISATH12,12% off,12% off accommodations for Bangkok Bank Visa cardholders.
-VISATH8,8% off,8% off flights for Bangkok Bank Visa cardholders.
-MCFLY3,3% off,3% off flights for Mastercard holders in Australia and New Zealand.
-SAFRAHOTEL6,6% off,6% off hotel bookings for Singapore SAFRA members.
-SAFRAFLIGHT2,2% off,2% off flights for Singapore SAFRA members.
-HUKD15OFF,15% off,15% off UK train tickets for new app users.
-PNFLY4TRIPF,4% off,4% off flights.
-PNFLY6TRIPH,6% off,6% off hotels.
-PLAYNFLYCR9,9% off,9% off car rentals.
-TRIPHOTEL5OFF,5% off,5% off prepaid hotel bookings.
-TRIPTRAIN2P,2% off,2% off train bookings for existing users.
+TRIPFLIGHT26,$15 off $350+ flights + $3 off $100+ bookings,Flight and booking offer.
+TRIPCAR8,8% off,Car rentals for new customers.
+ALLSEO10,10% off,Attractions and tours.
+EUGREEN,5% off,Europe train bookings for new users.
+RGXU2I,$10 off,New user code.
+INSTALL8OFF,8% off,When booking through the app.
+TRIPVISAF6US,$6 off,Flight bookings over $250.
+MCTRIP20,20% off,Mastercard promotion for flights and hotels.
+MCTRIP15,15% off,Mastercard promotion for flights and hotels.
+MCTRIP10,10% off,Mastercard promotion for flights and hotels.
+AMEX26H,Up to 8% off,Select Hong Kong hotel bookings with Amex.
+AMEX26F,HKD50-HKD200 off,Hong Kong flight bookings with Amex.
+AMEX26CR,5% off,Select car rentals for Hong Kong Amex cardholders.
+TRAVELERHK26H,5% off,Hong Kong hotel bookings.
+TRAVELERHK26F,2% off,Hong Kong flight bookings.
+TRIPCREATORT,5% off,Tickets and experiences.
+HSBCSPSL,15% off,Weekend flights for HSBC Premier Mastercard holders in Malaysia.
+HSBCMC,12% off,Weekend flights for eligible Malaysian HSBC Mastercard holders.
+HSBCALL,10% off,Weekend flights for Malaysian HSBC and Amanah Visa cards.
+PBSTAYVI,Up to 20% off,Hotels for Public Bank Visa Infinite cardholders.
+PBFLYVI,Up to 20% off,Flights for Public Bank Visa Infinite cardholders.
+MBBSTAY9,9% off,Hotels for new Maybank Malaysia cardholders.
+MBBSTAY7,7% off,Hotels for existing Maybank Malaysia users.
+VISATH12,12% off,Accommodations for Bangkok Bank Visa cardholders.
+VISATH8,8% off,Flights for Bangkok Bank Visa cardholders.
+MCFLY3,3% off,Flights for Mastercard holders in Australia and New Zealand.
+SAFRAHOTEL6,6% off,Hotel bookings for Singapore SAFRA members.
+SAFRAFLIGHT2,2% off,Flights for Singapore SAFRA members.
+HUKD15OFF,15% off,UK train tickets for new app users.
+PNFLY4TRIPF,4% off,Flights.
+PNFLY6TRIPH,6% off,Hotels.
+PLAYNFLYCR9,9% off,Car rentals.
+TRIPHOTEL5OFF,5% off,Prepaid hotel bookings.
+TRIPTRAIN2P,2% off,Train bookings for existing users.

@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Flash deals."
 ---
 
-Use code **FLASH65** at checkout to get up to 65% off on flash deals..
+Use code **FLASH65** at checkout for up to 65% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

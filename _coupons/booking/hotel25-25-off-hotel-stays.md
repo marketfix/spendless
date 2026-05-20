@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Hotel stays."
 ---
 
-Use code **HOTEL25** at checkout to get 25% off on hotel stays..
+Use code **HOTEL25** at checkout for 25% off.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

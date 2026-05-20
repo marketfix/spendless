@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Wall sconces."
 ---
 
-Use code **WALL15** at checkout to get 15% off on wall sconces..
+Use code **WALL15** at checkout for 15% off.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

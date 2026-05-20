@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Military discount."
 ---
 
-Use code **MILITARY20** at checkout to get 20% off on military discount..
+Use code **MILITARY20** at checkout for 20% off.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

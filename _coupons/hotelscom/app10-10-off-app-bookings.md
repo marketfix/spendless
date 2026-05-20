@@ -1,13 +1,13 @@
 ---
 layout: coupon
-title: "10% off App bookings"
+title: "10% off App bookings."
 brand_slug: "hotelscom"
 discount_value: "10% off"
 code: "APP10"
 is_expired: false
-description_short: "App bookings"
+description_short: "App bookings."
 ---
 
-Use code **APP10** at checkout to get 10% off on app bookings.
+Use code **APP10** at checkout for 10% off.
 
 This code is included from the latest /r/SpendLess list for Hotels.com. Availability can change quickly.

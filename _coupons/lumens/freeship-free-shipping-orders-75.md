@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Orders $75+."
 ---
 
-Use code **FREESHIP** at checkout to get free shipping on orders $75+..
+Use code **FREESHIP** at checkout for free shipping.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

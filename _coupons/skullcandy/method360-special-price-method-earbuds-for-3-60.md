@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Method earbuds for $3.60."
 ---
 
-Use code **METHOD360** at checkout to get special price on method earbuds for $3.60..
+Use code **METHOD360** at checkout for special price.
 
 This code is included from the latest /r/SpendLess list for Skullcandy. Availability can change quickly.

@@ -1,21 +1,21 @@
 code,discount_amount,description
-AFFM2,$2 off,$2 off orders over $15.
-AFFM4,$4 off,$4 off orders over $35.
-AFFM7,$7 off,$7 off orders over $50.
-AFFM9,$9 off,$9 off orders over $70.
-AFFM13,$13 off,$13 off orders over $100.
-AFFM20,$20 off,$20 off orders over $150.
-AFFM25,$25 off,$25 off orders over $175.
-AFFM40,$40 off,$40 off orders over $300.
-AFFM55,$55 off,$55 off orders over $400.
-USAFF2,$2 off,$2 off orders over $15 (US).
-USAFF4,$4 off,$4 off orders over $35 (US).
-USAFF7,$7 off,$7 off orders over $50 (US).
-USAFF9,$9 off,$9 off orders over $70 (US).
-USAFF16,$16 off,$16 off orders over $100 (US).
-USAFF25,$25 off,$25 off orders over $175 (US).
-USAFF35,$35 off,$35 off orders over $250 (US).
-USAFF40,$40 off,$40 off orders over $300 (US).
-USAFF55,$55 off,$55 off orders over $400 (US).
-NEWUS04OFF,$4 off,$4 off new-user orders over $10.
-NEWUS012OFF,$12 off,$12 off new-user orders over $80.
+AFFM2,$2 off,Orders over $15.
+AFFM4,$4 off,Orders over $35.
+AFFM7,$7 off,Orders over $50.
+AFFM9,$9 off,Orders over $70.
+AFFM13,$13 off,Orders over $100.
+AFFM20,$20 off,Orders over $150.
+AFFM25,$25 off,Orders over $175.
+AFFM40,$40 off,Orders over $300.
+AFFM55,$55 off,Orders over $400.
+USAFF2,$2 off,Orders over $15.
+USAFF4,$4 off,Orders over $35.
+USAFF7,$7 off,Orders over $50.
+USAFF9,$9 off,Orders over $70.
+USAFF16,$16 off,Orders over $100.
+USAFF25,$25 off,Orders over $175.
+USAFF35,$35 off,Orders over $250.
+USAFF40,$40 off,Orders over $300.
+USAFF55,$55 off,Orders over $400.
+NEWUS04OFF,$4 off,New user orders over $10.
+NEWUS012OFF,$12 off,New user orders over $80.

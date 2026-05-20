@@ -1,37 +1,37 @@
 code,discount_amount,description
-XP8,8% off,8% off hotels worldwide (expires Feb 2026).
-EXPEDIA-7910-KGME,10% off,10% off general bookings worldwide.
-EXPEDIA-8400-PMAS,10% off,10% off general bookings worldwide.
-3DF,9% off,9% off hotels in the UK.
-X26,8% off,8% off hotels in the UK.
-CA7,7% off,7% off hotels in Canada.
-VISAYRO,8% off,8% off hotels in Australia.
-SA8,8% off,8% off participating hotels worldwide.
-MASTERAU8,8% off,8% off hotels in Australia when paying with MasterCard.
-MASTERHK8,8% off,8% off hotels in Hong Kong/Macao with MasterCard.
-MASTERNZ8,8% off,8% off hotels in New Zealand with MasterCard.
-MASTERSG8,8% off,8% off hotels in Singapore with MasterCard.
-MASTERTW8,8% off,8% off hotels in Taiwan with MasterCard.
-MASTERTH7,7% off,7% off hotels in Thailand with MasterCard.
-MASTERVN7,7% off,7% off hotels in Vietnam with MasterCard.
-EXPEDIA-7055-CFIF,10% off,10% off general bookings worldwide.
-CFJANEXP8,8% off,8% off hotels worldwide/US during January.
-CFVEGAS10,10% off,10% off Las Vegas hotels.
-EXPCANC10,10% off,10% off hotels in Cancun.
-BOFA5,25% off,25% off general bookings in the US.
-GLCV6BMJ849EG05F,10% off,10% off Las Vegas hotels.
-RMNTRAVEL8,8% off,8% off US hotels.
-MASTERIN7,7% off,7% off hotels in India when paying with MasterCard.
-RMNAUGUST8,8% off,"8% off prepaid hotels, flights, and vacation packages."
-GBTHOTEL,10% off,10% off lodging and hotel bookings.
-GBTHOTEL15,15% off,15% off select hotels and independent properties.
-5ESATOLLSBEX,5% off,5% off prepaid hotel bookings.
-GL8HFTWP849EG0YQ,10% off,10% off general bookings.
-GBTACT,8% off,8% off flight and hotel package deals.
-GBTPKG,4% off,4% off vacation packages.
-PACKAGE25,25% off,25% off hotel and flight packages.
-APP10,10% off,10% off app-exclusive bookings.
-MOBILE20,Up to 20% off,Up to 20% off mobile app bookings.
-BUNDLE15,15% off,15% off flight and hotel bundles.
-EXPEDIA25,$25 off,$25 off bookings of $200 or more.
-AMEXHK08,8% off,8% off Hong Kong hotels with American Express.
+XP8,8% off,Hotels worldwide.
+EXPEDIA-7910-KGME,10% off,General bookings worldwide.
+EXPEDIA-8400-PMAS,10% off,General bookings worldwide.
+3DF,9% off,Hotels in the UK.
+X26,8% off,Hotels in the UK.
+CA7,7% off,Hotels in Canada.
+VISAYRO,8% off,Hotels in Australia.
+SA8,8% off,Participating hotels worldwide.
+MASTERAU8,8% off,Hotels in Australia when paying with MasterCard.
+MASTERHK8,8% off,Hotels in Hong Kong and Macao with MasterCard.
+MASTERNZ8,8% off,Hotels in New Zealand with MasterCard.
+MASTERSG8,8% off,Hotels in Singapore with MasterCard.
+MASTERTW8,8% off,Hotels in Taiwan with MasterCard.
+MASTERTH7,7% off,Hotels in Thailand with MasterCard.
+MASTERVN7,7% off,Hotels in Vietnam with MasterCard.
+EXPEDIA-7055-CFIF,10% off,General bookings worldwide.
+CFJANEXP8,8% off,Hotels worldwide and US during January.
+CFVEGAS10,10% off,Las Vegas hotels.
+EXPCANC10,10% off,Hotels in Cancun.
+BOFA5,25% off,General bookings in the US.
+GLCV6BMJ849EG05F,10% off,Las Vegas hotels.
+RMNTRAVEL8,8% off,US hotels.
+MASTERIN7,7% off,Hotels in India when paying with MasterCard.
+RMNAUGUST8,8% off,"Prepaid hotels, flights, and vacation packages."
+GBTHOTEL,10% off,Lodging and hotel bookings.
+GBTHOTEL15,15% off,Select hotels and independent properties.
+5ESATOLLSBEX,5% off,Prepaid hotel bookings.
+GL8HFTWP849EG0YQ,10% off,General bookings.
+GBTACT,8% off,Flight and hotel package deals.
+GBTPKG,4% off,Vacation packages.
+PACKAGE25,25% off,Hotel and flight packages.
+APP10,10% off,App-exclusive bookings.
+MOBILE20,Up to 20% off,Mobile app bookings.
+BUNDLE15,15% off,Flight and hotel bundles.
+EXPEDIA25,$25 off,Bookings of $200 or more.
+AMEXHK08,8% off,Hong Kong hotels with American Express.

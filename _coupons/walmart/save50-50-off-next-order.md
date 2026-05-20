@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Next order."
 ---
 
-Use code **SAVE50** at checkout to get $50 off on next order..
+Use code **SAVE50** at checkout for $50 off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

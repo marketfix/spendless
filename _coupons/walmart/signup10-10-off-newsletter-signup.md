@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Newsletter signup."
 ---
 
-Use code **SIGNUP10** at checkout to get $10 off on newsletter signup..
+Use code **SIGNUP10** at checkout for $10 off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

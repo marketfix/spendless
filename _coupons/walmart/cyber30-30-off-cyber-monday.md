@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Cyber Monday."
 ---
 
-Use code **CYBER30** at checkout to get 30% off on cyber monday..
+Use code **CYBER30** at checkout for 30% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

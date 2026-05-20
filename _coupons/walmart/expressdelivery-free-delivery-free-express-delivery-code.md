@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Free express delivery code."
 ---
 
-Use code **EXPRESSDELIVERY** at checkout to get free delivery on free express delivery code..
+Use code **EXPRESSDELIVERY** at checkout for free delivery.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

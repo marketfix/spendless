@@ -1,13 +1,13 @@
 ---
 layout: coupon
-title: "25% off $150+ orders"
+title: "25% off $150+ orders."
 brand_slug: "nike"
 discount_value: "25% off"
 code: "T23"
 is_expired: false
-description_short: "$150+ orders"
+description_short: "$150+ orders."
 ---
 
-Use code **T23** at checkout to get 25% off on $150+ orders.
+Use code **T23** at checkout for 25% off.
 
 This code is included from the latest /r/SpendLess list for Nike. Availability can change quickly.

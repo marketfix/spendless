@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Bestsellers."
 ---
 
-Use code **BESTSELLERS20** at checkout to get 20% off on bestsellers..
+Use code **BESTSELLERS20** at checkout for 20% off.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

@@ -1,13 +1,13 @@
 ---
 layout: coupon
-title: "20% off Sitewide"
+title: "20% off Sitewide."
 brand_slug: "nike"
 discount_value: "20% off"
 code: "BEPEJA20"
 is_expired: false
-description_short: "Sitewide"
+description_short: "Sitewide."
 ---
 
-Use code **BEPEJA20** at checkout to get 20% off on sitewide.
+Use code **BEPEJA20** at checkout for 20% off.
 
 This code is included from the latest /r/SpendLess list for Nike. Availability can change quickly.

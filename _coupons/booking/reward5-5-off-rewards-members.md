@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Rewards members."
 ---
 
-Use code **REWARD5** at checkout to get 5% off on rewards members..
+Use code **REWARD5** at checkout for 5% off.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

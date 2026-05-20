@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Discount on US road trip packages."
 ---
 
-Use code **USROADTRIP** at checkout to get special discount on discount on us road trip packages..
+Use code **USROADTRIP** at checkout for special discount.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Beauty products."
 ---
 
-Use code **BEAUTY10** at checkout to get 10% off on beauty products..
+Use code **BEAUTY10** at checkout for 10% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

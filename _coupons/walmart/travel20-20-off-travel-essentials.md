@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Travel essentials."
 ---
 
-Use code **TRAVEL20** at checkout to get 20% off on travel essentials..
+Use code **TRAVEL20** at checkout for 20% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

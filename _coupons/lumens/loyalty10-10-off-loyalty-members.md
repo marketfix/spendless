@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Loyalty members."
 ---
 
-Use code **LOYALTY10** at checkout to get 10% off on loyalty members..
+Use code **LOYALTY10** at checkout for 10% off.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

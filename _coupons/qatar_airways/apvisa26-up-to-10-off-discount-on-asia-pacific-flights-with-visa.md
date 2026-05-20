@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Discount on Asia Pacific flights with Visa."
 ---
 
-Use code **APVISA26** at checkout to get up to 10% off on discount on asia pacific flights with visa..
+Use code **APVISA26** at checkout for up to 10% off.
 
 This code is included from the latest /r/SpendLess list for Qatar Airways. Availability can change quickly.

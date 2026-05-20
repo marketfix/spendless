@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Gift cards."
 ---
 
-Use code **GIFTS25** at checkout to get 25% off on gift cards..
+Use code **GIFTS25** at checkout for 25% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

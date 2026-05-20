@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Holiday essentials."
 ---
 
-Use code **HOLIDAY40** at checkout to get 40% off on holiday essentials..
+Use code **HOLIDAY40** at checkout for 40% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

@@ -1,0 +1,13 @@
+---
+layout: coupon
+title: "$20 off Eligible grocery orders on.ca."
+brand_slug: "walmart"
+discount_value: "$20 off"
+code: "GLWM20"
+is_expired: false
+description_short: "Eligible grocery orders on.ca."
+---
+
+Use code **GLWM20** at checkout for $20 off.
+
+This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

@@ -1,43 +1,29 @@
 code,discount_amount,description
-GENIUS10,10% off,10% off Genius member stays.
-APP15,15% off,15% off first app booking.
-APPDEAL15,15% off,15% off mobile bookings.
-SAVE20,20% off,20% off selected hotels.
-WELCOME15,15% off,15% off your first booking.
-SAVE10,10% off,10% off selected bookings.
-WELCOME,Special discount,New user discount on bookings.
-1946308OTK5,Up to 20% off,Up to 20% off with Genius signup.
-1946310OTK5,10% off,10% off bookings with a free account.
-BEACH10,10% off,10% off beach accommodations.
-HOTEL15,15% off,15% off midweek stays.
-MOBILE25,25% off,25% off mobile bookings.
-LASTMINUTE25,25% off,25% off last-minute stays.
-EARLYBIRD20,20% off,20% off early bookings.
-LUXURY25,25% off,25% off luxury hotels.
-BUDGET15,15% off,15% off budget stays.
-SOLO10,10% off,10% off solo bookings.
-GROUP10,10% off,10% off group bookings.
+APP15,15% off,First app.
+APPDEAL15,15% off,Mobile bookings.
+SAVE20,20% off,Selected hotels.
+SAVE10,10% off,Selected bookings.
+WELCOME,Special discount,New user bookings.
+1946308OTK5,Up to 20% off,With Genius signup.
+1946310OTK5,10% off,Bookings with a free account.
+BEACH10,10% off,Beach accommodations.
+HOTEL15,15% off,Midweek stays.
+MOBILE25,25% off,Mobile bookings.
+LASTMINUTE25,25% off,Last-minute stays.
+EARLYBIRD20,20% off,Early bookings.
+LUXURY25,25% off,Luxury hotels.
+BUDGET15,15% off,Budget stays.
+SOLO10,10% off,Solo bookings.
+GROUP10,10% off,Group bookings.
 EUROPEHOTEL,Special discount,Discount on European hotel bookings.
 EUROPEFLY,Special discount,Discount on Europe travel packages.
-LATAM10,10% off,10% off stays in Latin America.
-MIDDLEEAST20,20% off,20% off Middle East stays.
-AFRICA15,15% off,15% off Africa travel.
-AUSTRALIA25,25% off,25% off Australia and New Zealand stays.
-CANADA10,10% off,10% off stays in Canada.
-MEXICO30,30% off,30% off Mexico resorts.
-CARIBBEAN20,20% off,20% off Caribbean stays.
+LATAM10,10% off,Stays in Latin America.
+MIDDLEEAST20,20% off,Middle East stays.
+AFRICA15,15% off,Africa travel.
+AUSTRALIA25,25% off,Australia and New Zealand stays.
+CANADA10,10% off,Stays in Canada.
+MEXICO30,30% off,Mexico resorts.
+CARIBBEAN20,20% off,Caribbean stays.
 USROADTRIP,Special discount,Discount on US road trip packages.
 ASIAFLIGHT,Special discount,Discount on Asia travel packages.
-TYSHKNIK10,10% off,10% off selected bookings.
-GENIUS,10% off,10% off selected Genius member properties.
-VISABKNG,8% off,8% off select hotel bookings with eligible Visa cards.
-KA10,10% off,10% off select bookings when paying with Mastercard.
-APP10,10-15% off,10-15% off selected stays in the Booking.com app.
-BOOKING15,Up to 15% off,Up to 15% off participating hotels.
-GETAWAY25,Up to 25% off,Up to 25% off Getaway Deals listings.
-EXP30,Up to 30% off,Up to 30% off attractions and experiences.
-MANDM,10% off,10% off select car rentals.
-LOVE30,Up to 30% off,Up to 30% off selected stays.
-TRAVEL27,Up to 30% off,Up to 30% off select accommodations.
-GTRAVOCT8,$25 off,$25 off qualifying bookings above the minimum spend.
-MJ2HOLIDAY60,GBP60 off,GBP60 off qualifying bookings that meet the minimum spend.
+TYSHKNIK10,10% off,Selected bookings.

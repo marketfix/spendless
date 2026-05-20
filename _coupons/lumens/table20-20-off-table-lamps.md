@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Table lamps."
 ---
 
-Use code **TABLE20** at checkout to get 20% off on table lamps..
+Use code **TABLE20** at checkout for 20% off.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

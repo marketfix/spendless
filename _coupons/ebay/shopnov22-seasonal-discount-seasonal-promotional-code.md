@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Seasonal promotional code."
 ---
 
-Use code **SHOPNOV22** at checkout to get seasonal discount on seasonal promotional code..
+Use code **SHOPNOV22** at checkout for seasonal discount.
 
 This code is included from the latest /r/SpendLess list for eBay. Availability can change quickly.

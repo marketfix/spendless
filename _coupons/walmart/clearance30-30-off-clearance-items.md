@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Clearance items."
 ---
 
-Use code **CLEARANCE30** at checkout to get 30% off on clearance items..
+Use code **CLEARANCE30** at checkout for 30% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

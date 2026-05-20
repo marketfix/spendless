@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Garden items."
 ---
 
-Use code **GARDEN10** at checkout to get 10% off on garden items..
+Use code **GARDEN10** at checkout for 10% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

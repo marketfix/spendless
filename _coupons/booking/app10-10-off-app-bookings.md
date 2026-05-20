@@ -8,6 +8,6 @@ is_expired: false
 description_short: "App bookings."
 ---
 
-Use code **APP10** at checkout to get 10% off on app bookings..
+Use code **APP10** at checkout for 10% off.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

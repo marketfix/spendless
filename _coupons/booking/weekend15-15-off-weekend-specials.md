@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Weekend specials."
 ---
 
-Use code **WEEKEND15** at checkout to get 15% off on weekend specials..
+Use code **WEEKEND15** at checkout for 15% off.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

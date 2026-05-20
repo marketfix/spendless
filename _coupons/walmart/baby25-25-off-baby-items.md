@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Baby items."
 ---
 
-Use code **BABY25** at checkout to get 25% off on baby items..
+Use code **BABY25** at checkout for 25% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

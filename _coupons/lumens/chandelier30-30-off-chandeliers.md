@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Chandeliers."
 ---
 
-Use code **CHANDELIER30** at checkout to get 30% off on chandeliers..
+Use code **CHANDELIER30** at checkout for 30% off.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

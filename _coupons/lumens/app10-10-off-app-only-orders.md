@@ -8,6 +8,6 @@ is_expired: false
 description_short: "App-only orders."
 ---
 
-Use code **APP10** at checkout to get 10% off on app-only orders..
+Use code **APP10** at checkout for 10% off.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

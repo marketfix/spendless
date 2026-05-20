@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Purchase."
 ---
 
-Use code **SAVE25** at checkout to get 25% off on purchase..
+Use code **SAVE25** at checkout for 25% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

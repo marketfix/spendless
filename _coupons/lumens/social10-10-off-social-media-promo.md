@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Social media promo."
 ---
 
-Use code **SOCIAL10** at checkout to get 10% off on social media promo..
+Use code **SOCIAL10** at checkout for 10% off.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

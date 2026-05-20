@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Discount on European hotel bookings."
 ---
 
-Use code **EUROPEHOTEL** at checkout to get special discount on discount on european hotel bookings..
+Use code **EUROPEHOTEL** at checkout for special discount.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

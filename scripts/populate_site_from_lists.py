@@ -71,15 +71,19 @@ def ensure_logo(brand_slug: str) -> str:
     return f"/media/brand_logos/{brand_slug}.jpg"
 
 
+def clean_sentence(text: str) -> str:
+    text = re.sub(r"\s+", " ", text).strip()
+    text = text.strip(" .")
+    if not text:
+        return "Eligible order."
+    return f"{text[0].upper()}{text[1:]}."
+
+
 def build_brand_page(brand_slug: str, brand_name: str, logo_path: str) -> str:
-    description_short = (
-        f"Latest {brand_name} discount codes and promo codes from /r/SpendLess."
-    )
+    description_short = f"Current {brand_name} discount codes from /r/SpendLess."
     body = textwrap.dedent(
         f"""
-        This is the official {brand_name} brand page for SpendLess.
-
-        We publish every currently available {brand_name} discount code shared in /r/SpendLess, then keep expired ones listed for reference.
+        Current {brand_name} codes shared in /r/SpendLess.
         """
     ).strip()
 
@@ -101,8 +105,8 @@ def build_brand_page(brand_slug: str, brand_name: str, logo_path: str) -> str:
 def build_coupon_page(
     brand_slug: str, brand_name: str, code: str, discount: str, description: str
 ) -> str:
-    title = f"{discount} {description}".strip()
-    description_short = description
+    description_short = clean_sentence(description)
+    title = f"{discount} {description_short}".strip()
 
     front_matter = textwrap.dedent(
         f"""
@@ -120,7 +124,7 @@ def build_coupon_page(
 
     body = textwrap.dedent(
         f"""
-        Use code **{code}** at checkout to get {discount.lower()} on {description.lower()}.
+        Use code **{code}** at checkout for {discount.lower()}.
 
         This code is included from the latest /r/SpendLess list for {brand_name}. Availability can change quickly.
         """
@@ -155,7 +159,7 @@ def main() -> None:
     cleared_coupon_dirs = set()
     seen_coupon_codes_by_brand = {}
 
-    for csv_path in LISTS_DIR.glob("*.csv"):
+    for csv_path in sorted(LISTS_DIR.glob("*.csv")):
         raw_brand_slug = csv_path.stem.lower()
         brand_slug = MERGED_BRAND_SLUGS.get(raw_brand_slug, raw_brand_slug)
         brand_name = BRAND_NAMES.get(raw_brand_slug, BRAND_NAMES.get(brand_slug, default_brand_name(brand_slug)))

@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Welcome offer."
 ---
 
-Use code **WELCOME15** at checkout to get 15% off on welcome offer..
+Use code **WELCOME15** at checkout for 15% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Summer sale."
 ---
 
-Use code **SUMMER20** at checkout to get 20% off on summer sale..
+Use code **SUMMER20** at checkout for 20% off.
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

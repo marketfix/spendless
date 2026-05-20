@@ -1,7 +1,7 @@
 code,discount_amount,description
 SPRINGBREAK25,25% off,Seasonal bookings.
 GENIUS10,10% off,Genius loyalty members.
-WELCOME15,15% off,First booking.
+WELCOME15,15% off,First.
 GENIUS20,20% off,Genius Level 3 members.
 GENIUS15,15% off,Genius Level 2 members.
 E15,$15 off,Bookings.
@@ -44,14 +44,14 @@ WEEKEND15,15% off,Weekend specials.
 BIRTHDAY25,25% off,Birthday discount.
 ACTIVITIES30,30% off,Activities around the world.
 RESORT40,40% off,Resort escapes.
-GENIUS,10% off,10% off selected Genius member properties.
-VISABKNG,8% off,8% off select hotel bookings with eligible Visa cards.
-KA10,10% off,10% off select bookings when paying with Mastercard.
-BOOKING15,Up to 15% off,Up to 15% off participating hotels.
-GETAWAY25,Up to 25% off,Up to 25% off Getaway Deals listings.
-EXP30,Up to 30% off,Up to 30% off attractions and experiences.
-MANDM,10% off,10% off select car rentals.
-LOVE30,Up to 30% off,Up to 30% off selected stays.
-TRAVEL27,Up to 30% off,Up to 30% off select accommodations.
-GTRAVOCT8,$25 off,$25 off qualifying bookings above the minimum spend.
-MJ2HOLIDAY60,GBP60 off,GBP60 off qualifying bookings that meet the minimum spend.
+GENIUS,10% off,Selected Genius member properties.
+VISABKNG,8% off,Select hotel bookings with eligible Visa cards.
+KA10,10% off,Select bookings when paying with Mastercard.
+BOOKING15,Up to 15% off,Participating hotels.
+GETAWAY25,Up to 25% off,Getaway Deals listings.
+EXP30,Up to 30% off,Attractions and experiences.
+MANDM,10% off,Select car rentals.
+LOVE30,Up to 30% off,Selected stays.
+TRAVEL27,Up to 30% off,Select accommodations.
+GTRAVOCT8,$25 off,Qualifying bookings above the minimum spend.
+MJ2HOLIDAY60,GBP60 off,Qualifying bookings that meet the minimum spend.

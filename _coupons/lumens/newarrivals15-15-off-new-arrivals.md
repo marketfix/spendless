@@ -8,6 +8,6 @@ is_expired: false
 description_short: "New arrivals."
 ---
 
-Use code **NEWARRIVALS15** at checkout to get 15% off on new arrivals..
+Use code **NEWARRIVALS15** at checkout for 15% off.
 
 This code is included from the latest /r/SpendLess list for Lumens. Availability can change quickly.

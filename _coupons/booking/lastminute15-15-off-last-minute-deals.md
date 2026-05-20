@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Last minute deals."
 ---
 
-Use code **LASTMINUTE15** at checkout to get 15% off on last minute deals..
+Use code **LASTMINUTE15** at checkout for 15% off.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

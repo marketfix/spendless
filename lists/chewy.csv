@@ -1,9 +1,9 @@
 code,discount_amount,description
-CHEER,$30 eGift card,$30 eGift card on $100+ orders.
-EQSUP,40% off,40% off first Autoship order for horse joint supplements.
-GET20,$20 off,$20 off sitewide.
-GIFT20OFF,$20 off,$20 off orders over $49 for returning customers.
-MISSYOU15,15% off,15% off or $15 off your Chewy order.
-NEWADOPTION20,$20 off,$20 off first order.
-RX20,20% off,20% off first pharmacy order.
-WELCOME,$20 off,$20 off orders over $49 or a $20 eGift card.
+CHEER,$30 eGift card,$100+ orders.
+EQSUP,40% off,First Autoship order for horse joint supplements.
+GET20,$20 off,Sitewide.
+GIFT20OFF,$20 off,Orders over $49 for returning customers.
+MISSYOU15,15% off,Returning customer order.
+NEWADOPTION20,$20 off,First order.
+RX20,20% off,First pharmacy order.
+WELCOME,$20 off,Orders over $49 or a $20 eGift card.

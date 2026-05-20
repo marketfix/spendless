@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Car rentals."
 ---
 
-Use code **CAR5** at checkout to get 5% off on car rentals..
+Use code **CAR5** at checkout for 5% off.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

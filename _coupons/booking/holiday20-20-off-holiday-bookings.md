@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Holiday bookings."
 ---
 
-Use code **HOLIDAY20** at checkout to get 20% off on holiday bookings..
+Use code **HOLIDAY20** at checkout for 20% off.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.

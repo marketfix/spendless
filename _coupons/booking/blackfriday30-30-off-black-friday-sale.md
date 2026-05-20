@@ -8,6 +8,6 @@ is_expired: false
 description_short: "Black Friday sale."
 ---
 
-Use code **BLACKFRIDAY30** at checkout to get 30% off on black friday sale..
+Use code **BLACKFRIDAY30** at checkout for 30% off.
 
 This code is included from the latest /r/SpendLess list for Booking.com. Availability can change quickly.
