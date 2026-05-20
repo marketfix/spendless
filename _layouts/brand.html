@@ -8,7 +8,7 @@ layout: default
   {% assign logo_path = '/media/brand_logos/' | append: page.brand_slug | append: '.jpg' %}
 {% endif %}
 {% assign brand_name = page.title | replace: ' discount codes', '' | replace: ' promo codes', '' | strip %}
-<article class="space-y-6">
+<article class="space-y-6" data-brand-page data-brand-slug="{{ page.brand_slug }}" data-brand-name="{{ brand_name | escape }}">
   <header class="liquid-glass rounded-3xl p-4 sm:p-6">
     <div class="flex items-center gap-3">
       <div class="w-16 h-16 shrink-0 aspect-square rounded-2xl border border-slate-200 overflow-hidden bg-white/80">
@@ -54,168 +54,196 @@ layout: default
     </div>
   </section>
 
-  {% assign brand_coupons = site.coupons | where: "brand_slug", page.brand_slug | where: "is_expired", false %}
   <section class="space-y-3" aria-label="{{ brand_name }} discounts">
-    <div id="coupon-list" class="space-y-3">
-    {% for coupon in brand_coupons %}
-      {% assign discount_text = coupon.discount_value | default: '' %}
-      {% if discount_text contains '%' or discount_text contains '$' or discount_text contains '€' or discount_text contains '£' or discount_text contains 'AED' or discount_text contains 'CAD' or discount_text contains 'zł' %}
-        {% assign cleaned_title = coupon.description_short | default: coupon.title %}
-        {% if coupon.discount_value %}
-          {% assign cleaned_title = cleaned_title | remove: coupon.discount_value | replace: '  ', ' ' | strip %}
-        {% endif %}
-        {% assign searchable_text = cleaned_title | append: ' ' | append: coupon.discount_value %}
-        <a href="{{ coupon.url | relative_url }}" data-surface-card data-coupon-card data-brand="{{ brand_name | escape }}" data-discount="{{ coupon.discount_value | escape }}" data-title="{{ cleaned_title | escape }}" data-search="{{ searchable_text | escape }}" class="relative block liquid-glass rounded-2xl px-4 py-3">
-          <span class="absolute right-3 top-3 text-emerald-600/90" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h7.17a2 2 0 0 1 1.41.59l6.83 6.83a2 2 0 0 1 0 2.83l-7.59 7.59a2 2 0 0 1-2.82 0L3.59 13.41a2 2 0 0 1-.59-1.41V5z"></path><path d="M7.5 7.5h.01"></path></svg>
-          </span>
-          <div class="pr-8">
-            <h3 data-coupon-description class="text-sm font-medium">{{ coupon.discount_value }} {{ cleaned_title }}</h3>
-            <div class="mt-2 flex flex-wrap gap-1.5">
-              <span data-coupon-country-badge class="hidden text-[11px] rounded-full border border-slate-200 bg-white/60 px-2 py-0.5 text-slate-600"></span>
-            </div>
-            <p class="text-xs text-slate-500 mt-2">View Code ↗</p>
-          </div>
-        </a>
-      {% endif %}
-    {% endfor %}
-    </div>
+    <div id="coupon-list" class="space-y-3"></div>
+    <p id="coupon-loading-state" class="text-center text-sm text-slate-500 py-8">Loading discounts...</p>
     <p id="coupon-empty-state" class="hidden text-center text-sm text-slate-500 py-8">No discounts match those filters.</p>
   </section>
 </article>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const cards = Array.from(document.querySelectorAll('[data-coupon-card]'));
+    const page = document.querySelector('[data-brand-page]');
     const list = document.getElementById('coupon-list');
     const emptyState = document.getElementById('coupon-empty-state');
+    const loadingState = document.getElementById('coupon-loading-state');
     const countryFilter = document.getElementById('coupon-country-filter');
     const sortFilter = document.getElementById('coupon-sort-filter');
     const typeFilter = document.getElementById('coupon-type-filter');
     const visibleCount = document.getElementById('coupon-visible-count');
+    const brandSlug = page?.dataset.brandSlug || '';
+    const brandName = page?.dataset.brandName || brandSlug;
+    const csvUrl = `{{ '/lists/' | relative_url }}${brandSlug}.csv`;
+    const couponBaseUrl = `{{ '/coupon/' | relative_url }}`;
+    let cards = [];
+
     const countries = {
       global: ['🌎 Global', 5], us: ['🇺🇸 United States', 5], uk: ['🇬🇧 United Kingdom', 4], ca: ['🇨🇦 Canada', 4],
       au: ['🇦🇺 Australia', 4], de: ['🇩🇪 Germany', 4], ie: ['🇮🇪 Ireland', 4], it: ['🇮🇹 Italy', 4],
       pl: ['🇵🇱 Poland', 4], eu: ['🇪🇺 Europe', 4], ae: ['🇦🇪 UAE', 2], ma: ['🇲🇦 Morocco', 2], me: ['🌍 Middle East', 2], other: ['🌐 Other countries', 1]
     };
-    const exactScopes = [
-      ['25off-25-off-your-order', 'lens checkout orders'], ['megans30-30-off-eligible-orders', 'lens refill orders'], ['1800kaycee-27-off-eligible-orders', 'lens product orders'], ['framery30-free-gift-with-eligible-orders', 'lens order eyewear gift'],
-      ['save10-10-off-your-order', 'Lumens lighting and home goods'], ['save50-50-off-select-items-with-a-500-minimum', 'Lumens items with $500 minimum'],
-      ['promo15off-up-to-15-off-your-order', 'eBay marketplace orders'], ['ny15off-15-off-select-items', 'eBay New Year deal items'], ['cool8-5-60-off-select-items', 'eBay UK marketplace items'], ['happy25-up-to-25-off-select-items', 'eBay featured deal items'], ['greenashess-5-off-eligible-items', 'eBay marketplace items'], ['protectit-up-to-10-off-orders', 'eBay buyer protection items'], ['pinbf2021-up-to-20-off-purchases', 'eBay Black Friday purchases'], ['memdwn3spbkkgc7m-up-to-15-off-purchases', 'eBay member deal purchases'],
-      ['vvus15-15-off-your-order', 'VEVOR US equipment orders'], ['vvus7-7-off-your-order', 'VEVOR US tool orders'], ['vvss10-10-off-eligible-orders', 'VEVOR regional store orders'], ['vevorhot2-6-off-select-items', 'VEVOR hot deal equipment'], ['vvs50-up-to-55-off-select-items', 'VEVOR sale equipment'], ['vvmh5-5-off-eligible-order', 'VEVOR marketplace equipment order'],
-      ['jen15-15-off-your-order', 'Saily global eSIM plans'], ['samirw8757-8-off-your-order', 'Saily eSIM data plans'], ['wateca6691-5-off-your-order-total', 'Saily eSIM checkout total'], ['carter9459-10-off-eligible-plans', 'Saily mobile data plans'],
-      ['217-10-off-flat-discount-on-your-order', 'SPELAB auto parts orders'], ['n20-20-off-eligible-purchases', 'SPELAB truck parts purchases'], ['y15-15-off-qualifying-orders', 'SPELAB performance parts orders'], ['m20-20-off-qualifying-purchases', 'SPELAB auto accessory purchases'], ['cm25-25-off-select-items-and-categories', 'SPELAB auto parts categories'], ['n15-15-off-selected-products-and-categories', 'SPELAB selected parts categories'], ['f16-16-off-selected-items-or-categories', 'SPELAB accessory categories'],
-      ['save15-15-off-select-items', 'Walmart featured retail items'], ['save25-25-off-purchase', 'Walmart retail purchase'], ['save50-50-off-next-order', 'Walmart next online order'], ['t25-25-off-eligible-products', 'Walmart cart products'], ['treat25-25-off-qualifying-cart-items', 'Walmart cart items'], ['thankyou5-5-off-your-order-to-say-thank-you', 'Walmart grocery thank-you order'], ['30wmoff-30-off-qualifying-grocery-order', 'Walmart qualifying grocery order'], ['e10-10-off-groceries', 'Walmart grocery basket'],
-      ['15extra-15-off-select-items', 'Nike sale footwear and apparel'], ['cyber10-10-off-select-items', 'Nike Cyber sale items'], ['unida6ak64urdt-10-off-select-items', 'Nike community member items'], ['gobig24-25-off-select-items', 'Nike promotion styles'], ['cyber30-30-off-select-items', 'Nike Cyber sale styles'], ['levelup-20-off-select-products', 'Nike training products'], ['bts20-20-off-select-styles', 'Nike back-to-school styles'], ['treatyourself-25-off-select-styles', 'Nike selected styles'],
-      ['cindy20-20-off-select-items', 'Lulus influencer edit items'], ['s20-20-off-select-styles', 'Lulus selected fashion styles'], ['lus-20-off-selected-items', 'Lulus curated fashion items'], ['8sg-8-off-select-purchases', 'Lulus fashion purchases'], ['z20-20-off-general-code', 'Lulus fashion orders'], ['app-20-off-general-app-code', 'Lulus app fashion orders'], ['daypartyapp-20-off-the-app', 'Lulus day party app styles'], ['shoes20-20-off-shoes', 'Lulus shoes'],
-      ['ohlskdy30-30-off-select-items', 'Skullcandy selected headphones'], ['5offaeg-5-off-selected-gear', 'Skullcandy audio gear'], ['aeg5-5-off-picked-products', 'Skullcandy picked audio products'], ['abcandy-25-off-all-orders', 'Skullcandy audio orders'],
-      ['4fxrn-30-off-eligible-orders', 'SHEIN fashion orders'], ['alyssar15-15-off-eligible-orders', 'SHEIN fashion orders'], ['ca2026-20-off-eligible-orders', 'SHEIN Canada fashion orders'], ['6c88dqvn-40-off-eligible-orders', 'SHEIN cart orders'], ['klanov-60-off-eligible-orders-with-free-shipping-potential', 'SHEIN fashion orders with shipping'], ['cstorecarolinaleoa802-15-off-select-items', 'SHEIN creator store items'], ['q3carlam-10-off-select-items', 'SHEIN creator fashion items'], ['st12marianacsofia091-10-off-select-items', 'SHEIN creator fashion picks'], ['pd6zf-influencer-discount-code-for', 'SHEIN influencer fashion orders'], ['usgsg30-up-to-30-off-orders', 'SHEIN US fashion orders'], ['xwzh3-50-off-orders', 'SHEIN fashion orders'], ['25qsella-20-off-orders', 'SHEIN fashion orders'], ['ly3bf-10-off-orders', 'SHEIN fashion checkout orders'], ['qd6dv-10-off-orders', 'SHEIN fashion checkout orders'], ['php150-php150-off-orders', 'SHEIN Philippines fashion orders'], ['php200-php200-off-orders', 'SHEIN Philippines fashion orders'], ['sheau30-30-off-orders', 'SHEIN Australia fashion orders'], ['24q3abenalove-20-off-orders', 'SHEIN creator fashion orders'], ['w22aus1-13-98-off-orders', 'SHEIN Australia fashion orders'], ['26hazrandmom686-10-off-checkout-orders', 'SHEIN checkout orders'],
-      ['welcome-15-off-first', 'Booking.com first hotel booking'], ['e15-15-off-bookings', 'Booking.com travel booking'], ['break15-15-off-select-bookings', 'Booking.com seasonal travel booking'], ['oferta-activada-variable-discount-special-offer', 'Booking.com activated hotel offer'], ['gateway-variable-discount-user-shared', 'Booking.com travel booking'], ['gtravoct8-25-off-qualifying-bookings-above-the-minimum-spend', 'Booking.com bookings above minimum spend'], ['mj2holiday60-gbp60-off-qualifying-bookings-that-meet-the-minimum-spend', 'Booking.com holiday bookings over minimum spend']
-    ];
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [], field = '', quoted = false;
+      for (let i = 0; i < text.length; i += 1) {
+        const char = text[i];
+        const next = text[i + 1];
+        if (char === '"' && quoted && next === '"') { field += '"'; i += 1; continue; }
+        if (char === '"') { quoted = !quoted; continue; }
+        if (char === ',' && !quoted) { row.push(field); field = ''; continue; }
+        if ((char === '\n' || char === '\r') && !quoted) {
+          if (char === '\r' && next === '\n') i += 1;
+          row.push(field); field = '';
+          if (row.some(Boolean)) rows.push(row);
+          row = [];
+          continue;
+        }
+        field += char;
+      }
+      row.push(field);
+      if (row.some(Boolean)) rows.push(row);
+      const header = rows.shift()?.map((cell) => cell.trim()) || [];
+      return rows.map((cells, index) => {
+        const item = { index };
+        header.forEach((key, column) => { item[key] = (cells[column] || '').trim(); });
+        return item;
+      }).filter((item) => item.code && item.discount_amount);
+    }
 
     function normalize(value) {
       return (value || '').toString().replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
     }
-    function lowerText(card) { return `${card.dataset.search || ''} ${card.dataset.title || ''}`.toLowerCase(); }
+
+    function cleanDescription(row) {
+      const discount = normalize(row.discount_amount);
+      let description = normalize(row.description)
+        .replace(/\b(eligible|select|selected|qualifying|promo|coupon|code|offer|offers|savings)\b/gi, '')
+        .replace(/[.]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+      const lower = description.toLowerCase();
+      if (/^your order$|^orders?$|^purchases?$|^items?$|^general$/.test(lower)) description = `${brandName} online orders`;
+      else if (/^first order$/.test(lower)) description = `first ${brandName} order`;
+      else if (/^app-only orders?$|^app orders?$|^the app$|^general app/.test(lower)) description = `${brandName} app orders`;
+      else if (/^email signup$|^newsletter signup$/.test(lower)) description = `${brandName} email signup orders`;
+      else if (!description.toLowerCase().includes(brandName.toLowerCase()) && !/\border(s)?\b|\bitems?\b|\bpurchases?\b|\bsubscription(s)?\b|\bbooking(s)?\b|\bflights?\b|\bhotels?\b|\bcars?\b|\bproducts?\b|\bstyles?\b|\bgear\b|\bplans?\b|\blenses?\b|\bminimum\b|\bover\b/.test(description.toLowerCase())) {
+        description = `${brandName} ${description}`;
+      }
+      const words = [];
+      normalize(description).split(/\s+/).forEach((word) => {
+        if (!words.length || words[words.length - 1].toLowerCase() !== word.toLowerCase()) words.push(word);
+      });
+      description = words.slice(0, 12).join(' ').replace(/^./, (char) => char.toUpperCase());
+      return `${discount} ${description}`.replace(/\s+/g, ' ').trim();
+    }
+
     function countryKey(value) {
+      value = value.toLowerCase();
       if (value.includes('uk') || value.includes('£')) return 'uk';
       if (value.includes('canada') || value.includes('cad')) return 'ca';
-      if (value.includes('australia')) return 'au';
-      if (value.includes('german')) return 'de';
+      if (value.includes('australia') || value.includes(' au ')) return 'au';
+      if (value.includes('german') || value.includes('germany')) return 'de';
       if (value.includes('irish') || value.includes('ireland')) return 'ie';
       if (value.includes('italian') || value.includes('italy')) return 'it';
       if (value.includes('polish') || value.includes('poland') || value.includes('zł')) return 'pl';
-      if (value.includes('europe') || value.includes('€')) return 'eu';
-      if (value.includes('uae') || value.includes('aed')) return 'ae';
+      if (value.includes('europe') || value.includes('european') || value.includes('€')) return 'eu';
+      if (value.includes('uae') || value.includes('aed') || value.includes('emirates')) return 'ae';
       if (value.includes('morocco')) return 'ma';
       if (value.includes('middle east')) return 'me';
-      if (value.includes('us ') || value.includes('$')) return 'us';
+      if (value.includes('us ') || value.includes('usa') || value.includes('united states') || value.includes('$')) return 'us';
       if (value.includes('global') || value.includes('sitewide') || value.includes('full cart') || value.includes('no minimum')) return 'global';
       return 'other';
     }
+
     function amount(value) {
       const matches = (value || '').match(/[0-9]+/g) || ['0'];
       return Math.max.apply(null, matches.map(Number));
     }
+
     function type(value) {
       if ((value || '').includes('%')) return 'percentage';
-      if (/[€£$]|AED|CAD|zł/.test(value || '')) return 'fixed';
+      if (/[€£$]|AED|CAD|zł|GBP|PHP|SAR|VND|NT\$|S\$/.test(value || '')) return 'fixed';
       return 'bundle';
     }
-    function overrideScope(card) {
-      const href = card.getAttribute('href') || '';
-      const match = exactScopes.find(function (item) { return href.indexOf(item[0]) !== -1; });
-      return match ? match[1] : '';
-    }
-    function cleanScope(rawScope, brand) {
-      let scope = normalize(rawScope)
-        .replace(/\b(eligible|select|selected|qualifying|promo|coupon|code|discount|offer|offers|savings)\b/gi, '')
-        .replace(/[.]/g, '')
-        .replace(/\s+/g, ' ')
-        .trim();
-      const lower = scope.toLowerCase();
-      if (/^your order$|^orders?$|^purchases?$|^items?$|^general$/.test(lower)) scope = `${brand} online orders`;
-      else if (/^first order$/.test(lower)) scope = `first ${brand} order`;
-      else if (/^app-only orders?$|^app orders?$|^the app$|^general app/.test(lower)) scope = `${brand} app orders`;
-      else if (/^email signup$|^newsletter signup$/.test(lower)) scope = `${brand} email signup orders`;
-      else if (!lower.includes(brand.toLowerCase()) && !/\border(s)?\b|\bitems?\b|\bpurchases?\b|\bsubscription(s)?\b|\bbooking(s)?\b|\bflights?\b|\bhotels?\b|\bcars?\b|\bproducts?\b|\bstyles?\b|\bgear\b|\bplans?\b|\blenses?\b/.test(lower)) scope = `${brand} ${scope}`;
-      const words = [];
-      normalize(scope).split(/\s+/).forEach(function (word) {
-        if (!words.length || words[words.length - 1].toLowerCase() !== word.toLowerCase()) words.push(word);
-      });
-      return words.slice(0, 12).join(' ').replace(/^./, function (char) { return char.toUpperCase(); });
-    }
-    function description(card) {
-      const brand = normalize(card.dataset.brand || '');
-      const discount = normalize(card.dataset.discount || '');
-      const scope = overrideScope(card) || cleanScope(card.dataset.title || '', brand);
-      return `${discount} ${scope}`.replace(/\s+/g, ' ').trim();
-    }
 
-    cards.forEach(function (card) {
-      const key = countryKey(lowerText(card));
-      const discount = card.dataset.discount || '';
+    function createCard(row) {
+      const text = `${row.discount_amount} ${row.description} ${row.code}`;
+      const key = countryKey(text);
+      const description = cleanDescription(row);
+      const card = document.createElement('a');
+      card.href = `${couponBaseUrl}?brand=${encodeURIComponent(brandSlug)}&i=${row.index}`;
+      card.setAttribute('data-surface-card', '');
+      card.setAttribute('data-coupon-card', '');
+      card.className = 'relative block liquid-glass rounded-2xl px-4 py-3';
       card.dataset.country = key;
-      card.dataset.rank = countries[key][1];
-      card.dataset.amount = amount(discount);
-      card.dataset.type = type(discount);
-      card.dataset.priority = Number(card.dataset.rank) * 1000 + amount(discount);
-      const desc = card.querySelector('[data-coupon-description]');
-      const badge = card.querySelector('[data-coupon-country-badge]');
-      if (desc) desc.textContent = description(card);
-      if (badge) { badge.textContent = countries[key][0]; badge.classList.remove('hidden'); }
-    });
+      card.dataset.rank = String(countries[key][1]);
+      card.dataset.amount = String(amount(row.discount_amount));
+      card.dataset.type = type(row.discount_amount);
+      card.dataset.priority = String((Number(card.dataset.rank) * 1000) + Number(card.dataset.amount));
+      card.innerHTML = `
+        <span class="absolute right-3 top-3 text-emerald-600/90" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h7.17a2 2 0 0 1 1.41.59l6.83 6.83a2 2 0 0 1 0 2.83l-7.59 7.59a2 2 0 0 1-2.82 0L3.59 13.41a2 2 0 0 1-.59-1.41V5z"></path><path d="M7.5 7.5h.01"></path></svg>
+        </span>
+        <div class="pr-8">
+          <h3 class="text-sm font-medium"></h3>
+          <div class="mt-2 flex flex-wrap gap-1.5">
+            <span class="text-[11px] rounded-full border border-slate-200 bg-white/60 px-2 py-0.5 text-slate-600">${countries[key][0]}</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-2">View Code ↗</p>
+        </div>`;
+      card.querySelector('h3').textContent = description;
+      return card;
+    }
 
-    Object.keys(countries).sort(function (a, b) { return countries[b][1] - countries[a][1]; }).forEach(function (key) {
-      if (!cards.some(function (card) { return card.dataset.country === key; })) return;
-      const option = document.createElement('option');
-      option.value = key;
-      option.textContent = countries[key][0];
-      countryFilter.appendChild(option);
-    });
+    function populateCountries() {
+      Array.from(countryFilter.querySelectorAll('option:not([value="all"])')).forEach((option) => option.remove());
+      Object.keys(countries).sort((a, b) => countries[b][1] - countries[a][1]).forEach((key) => {
+        if (!cards.some((card) => card.dataset.country === key)) return;
+        const option = document.createElement('option');
+        option.value = key;
+        option.textContent = countries[key][0];
+        countryFilter.appendChild(option);
+      });
+    }
+
     function applyFilters() {
       const selectedCountry = countryFilter.value;
       const selectedType = typeFilter.value;
       const selectedSort = sortFilter.value;
-      const sorted = cards.slice().sort(function (a, b) {
+      const sorted = cards.slice().sort((a, b) => {
         if (selectedSort === 'amount-asc') return Number(a.dataset.amount) - Number(b.dataset.amount);
         if (selectedSort === 'amount-desc') return Number(b.dataset.amount) - Number(a.dataset.amount);
         return Number(b.dataset.priority) - Number(a.dataset.priority);
       });
       let shown = 0;
-      sorted.forEach(function (card) {
+      sorted.forEach((card) => {
         const visible = (selectedCountry === 'all' || card.dataset.country === selectedCountry) && (selectedType === 'all' || card.dataset.type === selectedType);
         card.classList.toggle('hidden', !visible);
         if (visible) shown += 1;
         list.appendChild(card);
       });
-      visibleCount.textContent = shown + (shown === 1 ? ' deal' : ' deals');
+      visibleCount.textContent = `${shown} ${shown === 1 ? 'deal' : 'deals'}`;
       emptyState.classList.toggle('hidden', shown !== 0);
       list.classList.toggle('hidden', shown === 0);
     }
+
+    fetch(csvUrl)
+      .then((response) => response.ok ? response.text() : Promise.reject(new Error('Missing brand CSV')))
+      .then((csv) => {
+        cards = parseCsv(csv).map(createCard);
+        cards.forEach((card) => list.appendChild(card));
+        loadingState.classList.add('hidden');
+        populateCountries();
+        applyFilters();
+      })
+      .catch(() => {
+        loadingState.textContent = 'No discounts found for this brand.';
+        visibleCount.textContent = '0 deals';
+      });
+
     countryFilter.addEventListener('change', applyFilters);
     sortFilter.addEventListener('change', applyFilters);
     typeFilter.addEventListener('change', applyFilters);
-    applyFilters();
   });
 </script>
