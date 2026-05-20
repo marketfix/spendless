@@ -13,6 +13,3 @@ collections:
   brands:
     output: true
     permalink: /brands/:name/
-  coupons:
-    output: true
-    permalink: /brands/:path/
