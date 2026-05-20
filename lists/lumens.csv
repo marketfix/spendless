@@ -1,54 +1,54 @@
 code,discount_amount,description
-WELCOME15,15% off,First order.
-EXTRA20,20% off,Select sale items.
-APP10,10% off,App-only orders.
-EMAIL20,20% off,Email signup.
-BIRTHDAY25,25% off,Birthday month.
-LOYALTY10,10% off,Loyalty members.
-STUDENT15,15% off,Student discount.
-MILITARY20,20% off,Military discount.
-SENIOR10,10% off,Senior discount.
-TRADE25,25% off,Trade professionals.
-CLEARANCE30,30% off,Clearance items.
-FLASH25,25% off,Flash sale.
-BLACKFRIDAY40,40% off,Black Friday deals.
-CYBER30,30% off,Cyber Monday.
-LIGHTING15,15% off,Lighting fixtures.
-FANS20,20% off,Ceiling fans.
-FURNITURE10,10% off,Furniture.
-DECOR25,25% off,Home decor.
-OUTDOOR20,20% off,Outdoor lighting.
-MODERN15,15% off,Modern designs.
-CONTEMPORARY10,10% off,Contemporary styles.
-PENDANT25,25% off,Pendant lights.
-CHANDELIER30,30% off,Chandeliers.
-WALL15,15% off,Wall sconces.
-TABLE20,20% off,Table lamps.
-FLOOR10,10% off,Floor lamps.
-BATH25,25% off,Bathroom lighting.
-KITCHEN20,20% off,Kitchen lighting.
-NEWARRIVALS15,15% off,New arrivals.
-BESTSELLERS20,20% off,Bestsellers.
-SIGNUP15,15% off,Newsletter signup.
-SOCIAL10,10% off,Social media promo.
-GIFT20,$20 off,Gift cards.
-BUNDLE25,25% off,Bundles.
-FREESHIP,Free shipping,Orders $75+.
-DESIGNER30,30% off,Designer brands.
-EXCLUSIVE20,20% off,Exclusive online deals.
-WEEKEND15,15% off,Weekend specials.
-MONTHLY10,10% off,Monthly deals.
-SEASONAL25,25% off,Seasonal collections.
-SAVE10,10% off,Your order.
-WELCOME10,10% off,Orders of $400 or more.
-SAVE5,5% off,Lighting and home goods.
-EMAIL50,$50 off,Orders of $500 or more.
-EMAILSO,$50 off,Orders of $500 or more.
-SAVE50,$50 off,Select items with a $500 minimum.
-E10,$10 off,Orders of $100 or more.
-BLOMUS,15% off,Blomus brand items.
-KONCEPT,20% off,Koncept products.
-DESIGN,20% off,Design and featured items.
-WELCOMEBACK10,10% off,Returning customers.
-HUNTER,15% off,Hunter fans.
-FATBOY20,20% off,Select Fatboy items.
+WELCOME15,15% off,first Lumens lighting order
+EXTRA20,20% off,Lumens sale lighting items
+APP10,10% off,Lumens app checkout orders
+EMAIL20,20% off,Lumens email signup orders
+BIRTHDAY25,25% off,Lumens birthday month orders
+LOYALTY10,10% off,Lumens loyalty member purchases
+STUDENT15,15% off,Lumens student lighting orders
+MILITARY20,20% off,Lumens military customer orders
+SENIOR10,10% off,Lumens senior customer orders
+TRADE25,25% off,Lumens trade professional purchases
+CLEARANCE30,30% off,Lumens clearance lighting items
+FLASH25,25% off,Lumens flash sale lighting items
+BLACKFRIDAY40,40% off,Lumens Black Friday lighting deals
+CYBER30,30% off,Lumens Cyber Monday lighting deals
+LIGHTING15,15% off,Lumens lighting fixture orders
+FANS20,20% off,Lumens ceiling fan orders
+FURNITURE10,10% off,Lumens furniture purchases
+DECOR25,25% off,Lumens home decor items
+OUTDOOR20,20% off,Lumens outdoor lighting items
+MODERN15,15% off,Lumens modern design lighting
+CONTEMPORARY10,10% off,Lumens contemporary style lighting
+PENDANT25,25% off,Lumens pendant light orders
+CHANDELIER30,30% off,Lumens chandelier purchases
+WALL15,15% off,Lumens wall sconce orders
+TABLE20,20% off,Lumens table lamp orders
+FLOOR10,10% off,Lumens floor lamp orders
+BATH25,25% off,Lumens bathroom lighting orders
+KITCHEN20,20% off,Lumens kitchen lighting purchases
+NEWARRIVALS15,15% off,Lumens new arrival items
+BESTSELLERS20,20% off,Lumens bestselling lighting products
+SIGNUP15,15% off,Lumens newsletter signup orders
+SOCIAL10,10% off,Lumens social media promotion orders
+GIFT20,$20 off,Lumens gift card purchases
+BUNDLE25,25% off,Lumens bundled lighting sets
+FREESHIP,Free shipping,Lumens orders over $75
+DESIGNER30,30% off,Lumens designer brand lighting
+EXCLUSIVE20,20% off,Lumens online exclusive deals
+WEEKEND15,15% off,Lumens weekend sale items
+MONTHLY10,10% off,Lumens monthly deal products
+SEASONAL25,25% off,Lumens seasonal lighting collections
+SAVE10,10% off,Lumens lighting and home goods
+WELCOME10,10% off,Lumens orders over $400
+SAVE5,5% off,Lumens lighting and home goods
+EMAIL50,$50 off,Lumens orders over $500
+EMAILSO,$50 off,Lumens orders over $500
+SAVE50,$50 off,Lumens items with $500 minimum
+E10,$10 off,Lumens orders over $100
+BLOMUS,15% off,Lumens Blomus brand items
+KONCEPT,20% off,Lumens Koncept products
+DESIGN,20% off,Lumens design and featured items
+WELCOMEBACK10,10% off,Lumens returning customer orders
+HUNTER,15% off,Lumens Hunter ceiling fans
+FATBOY20,20% off,Lumens Fatboy brand items
