@@ -10,4 +10,4 @@ description_short: "Promotional discount on international routes."
 
 Use code **INTER25** at checkout to get up to 12% off on promotional discount on international routes..
 
-This code is included from the latest /r/SpendLess list for Qatar_Airways. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Qatar Airways. Availability can change quickly.

@@ -10,4 +10,4 @@ description_short: "Over 70% off NordVPN subscription."
 
 Use code **freetech** at checkout to get 70%+ off on over 70% off nordvpn subscription..
 
-This code is included from the latest /r/SpendLess list for Nordvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for NordVPN. Availability can change quickly.

@@ -10,4 +10,4 @@ description_short: "68% off plus one extra month."
 
 Use code **ShivFPS** at checkout to get 68% off + 1 month on 68% off plus one extra month..
 
-This code is included from the latest /r/SpendLess list for Nordvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for NordVPN. Availability can change quickly.

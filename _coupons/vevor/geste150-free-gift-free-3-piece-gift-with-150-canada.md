@@ -10,4 +10,4 @@ description_short: "Free 3-piece gift with $150+ (Canada)."
 
 Use code **GESTE150** at checkout to get free gift on free 3-piece gift with $150+ (canada)..
 
-This code is included from the latest /r/SpendLess list for Vevor. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for VEVOR. Availability can change quickly.

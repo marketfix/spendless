@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "60% off high-speed plan."
+title: "60% off 60% off high-speed plan."
 brand_slug: "protonvpn"
 discount_value: "60% off"
 code: "FASTVPN60"
@@ -10,4 +10,4 @@ description_short: "60% off high-speed plan."
 
 Use code **FASTVPN60** at checkout to get 60% off on 60% off high-speed plan..
 
-This code is included from the latest /r/SpendLess list for Protonvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for ProtonVPN. Availability can change quickly.

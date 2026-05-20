@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off flights departing the UK."
+title: "20% off 20% off flights departing the UK."
 brand_slug: "kiwi_com"
 discount_value: "20% off"
 code: "UKFLY20"
@@ -10,4 +10,4 @@ description_short: "20% off flights departing the UK."
 
 Use code **UKFLY20** at checkout to get 20% off on 20% off flights departing the uk..
 
-This code is included from the latest /r/SpendLess list for Kiwi_Com. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Kiwi.com. Availability can change quickly.

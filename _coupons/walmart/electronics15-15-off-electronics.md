@@ -1,13 +1,13 @@
 ---
 layout: coupon
-title: "15% off Electronics"
+title: "15% off Electronics."
 brand_slug: "walmart"
 discount_value: "15% off"
 code: "ELECTRONICS15"
 is_expired: false
-description_short: "Electronics"
+description_short: "Electronics."
 ---
 
-Use code **ELECTRONICS15** at checkout to get 15% off on electronics.
+Use code **ELECTRONICS15** at checkout to get 15% off on electronics..
 
 This code is included from the latest /r/SpendLess list for Walmart. Availability can change quickly.

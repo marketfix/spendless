@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "10% off your ProtonVPN subscription."
+title: "10% off 10% off your ProtonVPN subscription."
 brand_slug: "protonvpn"
 discount_value: "10% off"
 code: "PRO10"
@@ -10,4 +10,4 @@ description_short: "10% off your ProtonVPN subscription."
 
 Use code **PRO10** at checkout to get 10% off on 10% off your protonvpn subscription..
 
-This code is included from the latest /r/SpendLess list for Protonvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for ProtonVPN. Availability can change quickly.

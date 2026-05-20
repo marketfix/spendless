@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "50% off with NetShield/Adblock."
+title: "50% off 50% off with NetShield/Adblock."
 brand_slug: "protonvpn"
 discount_value: "50% off"
 code: "ADBLOCK50"
@@ -10,4 +10,4 @@ description_short: "50% off with NetShield/Adblock."
 
 Use code **ADBLOCK50** at checkout to get 50% off on 50% off with netshield/adblock..
 
-This code is included from the latest /r/SpendLess list for Protonvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for ProtonVPN. Availability can change quickly.

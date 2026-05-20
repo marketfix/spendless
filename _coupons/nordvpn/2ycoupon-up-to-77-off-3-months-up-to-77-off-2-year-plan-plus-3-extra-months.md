@@ -10,4 +10,4 @@ description_short: "Up to 77% off 2-year plan plus 3 extra months."
 
 Use code **2YCOUPON** at checkout to get up to 77% off + 3 months on up to 77% off 2-year plan plus 3 extra months..
 
-This code is included from the latest /r/SpendLess list for Nordvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for NordVPN. Availability can change quickly.

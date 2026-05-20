@@ -10,4 +10,4 @@ description_short: "20% discount applied to eligible purchases."
 
 Use code **N20** at checkout to get 20% off on 20% discount applied to eligible purchases..
 
-This code is included from the latest /r/SpendLess list for Spelab. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for SPELAB. Availability can change quickly.

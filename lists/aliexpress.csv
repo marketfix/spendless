@@ -17,3 +17,5 @@ USAFF25,$25 off,$25 off orders over $175 (US).
 USAFF35,$35 off,$35 off orders over $250 (US).
 USAFF40,$40 off,$40 off orders over $300 (US).
 USAFF55,$55 off,$55 off orders over $400 (US).
+NEWUS04OFF,$4 off,$4 off new-user orders over $10.
+NEWUS012OFF,$12 off,$12 off new-user orders over $80.

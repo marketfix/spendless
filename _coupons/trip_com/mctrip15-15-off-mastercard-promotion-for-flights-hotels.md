@@ -10,4 +10,4 @@ description_short: "Mastercard promotion for flights/hotels."
 
 Use code **MCTRIP15** at checkout to get 15% off on mastercard promotion for flights/hotels..
 
-This code is included from the latest /r/SpendLess list for Trip_Com. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Trip.com. Availability can change quickly.

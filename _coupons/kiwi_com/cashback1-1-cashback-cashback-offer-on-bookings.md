@@ -10,4 +10,4 @@ description_short: "Cashback offer on bookings."
 
 Use code **CASHBACK1** at checkout to get 1% cashback on cashback offer on bookings..
 
-This code is included from the latest /r/SpendLess list for Kiwi_Com. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Kiwi.com. Availability can change quickly.

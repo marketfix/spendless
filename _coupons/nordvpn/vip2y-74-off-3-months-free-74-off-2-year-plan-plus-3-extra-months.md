@@ -10,4 +10,4 @@ description_short: "74% off 2-year plan plus 3 extra months."
 
 Use code **VIP2Y** at checkout to get 74% off + 3 months free on 74% off 2-year plan plus 3 extra months..
 
-This code is included from the latest /r/SpendLess list for Nordvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for NordVPN. Availability can change quickly.

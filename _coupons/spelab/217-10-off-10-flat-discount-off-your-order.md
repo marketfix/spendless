@@ -10,4 +10,4 @@ description_short: "$10 flat discount off your order."
 
 Use code **217** at checkout to get $10 off on $10 flat discount off your order..
 
-This code is included from the latest /r/SpendLess list for Spelab. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for SPELAB. Availability can change quickly.

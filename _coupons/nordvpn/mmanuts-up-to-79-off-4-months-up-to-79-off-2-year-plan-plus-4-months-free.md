@@ -10,4 +10,4 @@ description_short: "Up to 79% off 2-year plan plus 4 months free."
 
 Use code **mmanuts** at checkout to get up to 79% off + 4 months on up to 79% off 2-year plan plus 4 months free..
 
-This code is included from the latest /r/SpendLess list for Nordvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for NordVPN. Availability can change quickly.

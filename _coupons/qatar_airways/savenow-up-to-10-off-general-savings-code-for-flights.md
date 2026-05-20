@@ -10,4 +10,4 @@ description_short: "General savings code for flights."
 
 Use code **SAVENOW** at checkout to get up to 10% off on general savings code for flights..
 
-This code is included from the latest /r/SpendLess list for Qatar_Airways. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Qatar Airways. Availability can change quickly.

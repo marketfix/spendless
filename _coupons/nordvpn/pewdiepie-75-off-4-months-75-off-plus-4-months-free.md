@@ -10,4 +10,4 @@ description_short: "75% off plus 4 months free."
 
 Use code **PEWDIEPIE** at checkout to get 75% off + 4 months on 75% off plus 4 months free..
 
-This code is included from the latest /r/SpendLess list for Nordvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for NordVPN. Availability can change quickly.

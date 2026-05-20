@@ -10,4 +10,4 @@ description_short: "Discount for January bookings."
 
 Use code **PCJAN25** at checkout to get up to 10% off on discount for january bookings..
 
-This code is included from the latest /r/SpendLess list for Qatar_Airways. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Qatar Airways. Availability can change quickly.

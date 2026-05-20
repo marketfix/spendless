@@ -10,4 +10,4 @@ description_short: "Extra 8% off sitewide in the US."
 
 Use code **VVUS8** at checkout to get 8% off on extra 8% off sitewide in the us..
 
-This code is included from the latest /r/SpendLess list for Vevor. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for VEVOR. Availability can change quickly.

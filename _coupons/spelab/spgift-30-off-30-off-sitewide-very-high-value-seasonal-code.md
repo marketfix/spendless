@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "30% off sitewide; very high-value seasonal code."
+title: "30% off 30% off sitewide; very high-value seasonal code."
 brand_slug: "spelab"
 discount_value: "30% off"
 code: "SPGIFT"
@@ -10,4 +10,4 @@ description_short: "30% off sitewide; very high-value seasonal code."
 
 Use code **SPGIFT** at checkout to get 30% off on 30% off sitewide; very high-value seasonal code..
 
-This code is included from the latest /r/SpendLess list for Spelab. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for SPELAB. Availability can change quickly.

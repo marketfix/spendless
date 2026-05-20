@@ -10,4 +10,4 @@ description_short: "Discount on the one-year plan."
 
 Use code **1YCOUPON** at checkout to get discount on 1-year plan on discount on the one-year plan..
 
-This code is included from the latest /r/SpendLess list for Nordvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for NordVPN. Availability can change quickly.

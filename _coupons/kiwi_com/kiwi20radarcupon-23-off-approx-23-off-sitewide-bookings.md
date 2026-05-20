@@ -10,4 +10,4 @@ description_short: "Approx. $23 off sitewide bookings."
 
 Use code **KIWI20RADARCUPON** at checkout to get $23 off on approx. $23 off sitewide bookings..
 
-This code is included from the latest /r/SpendLess list for Kiwi_Com. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Kiwi.com. Availability can change quickly.

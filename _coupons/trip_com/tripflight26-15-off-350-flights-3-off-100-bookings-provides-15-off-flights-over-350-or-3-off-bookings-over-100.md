@@ -10,4 +10,4 @@ description_short: "Provides $15 off flights over $350 or $3 off bookings over $
 
 Use code **TRIPFLIGHT26** at checkout to get $15 off ($350+ flights) / $3 off ($100+ bookings) on provides $15 off flights over $350 or $3 off bookings over $100..
 
-This code is included from the latest /r/SpendLess list for Trip_Com. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Trip.com. Availability can change quickly.

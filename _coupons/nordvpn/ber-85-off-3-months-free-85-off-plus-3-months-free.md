@@ -10,4 +10,4 @@ description_short: "85% off plus 3 months free."
 
 Use code **BER** at checkout to get 85% off + 3 months free on 85% off plus 3 months free..
 
-This code is included from the latest /r/SpendLess list for Nordvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for NordVPN. Availability can change quickly.

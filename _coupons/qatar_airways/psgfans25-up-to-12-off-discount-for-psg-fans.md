@@ -10,4 +10,4 @@ description_short: "Discount for PSG fans."
 
 Use code **PSGFANS25** at checkout to get up to 12% off on discount for psg fans..
 
-This code is included from the latest /r/SpendLess list for Qatar_Airways. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Qatar Airways. Availability can change quickly.

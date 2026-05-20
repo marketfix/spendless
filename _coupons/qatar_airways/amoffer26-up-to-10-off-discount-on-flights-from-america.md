@@ -10,4 +10,4 @@ description_short: "Discount on flights from America."
 
 Use code **AMOFFER26** at checkout to get up to 10% off on discount on flights from america..
 
-This code is included from the latest /r/SpendLess list for Qatar_Airways. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Qatar Airways. Availability can change quickly.

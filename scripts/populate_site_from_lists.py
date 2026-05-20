@@ -1,5 +1,6 @@
 import csv
 import re
+import shutil
 from pathlib import Path
 import textwrap
 
@@ -14,13 +15,18 @@ BRAND_NAMES = {
     "aliexpress": "AliExpress",
     "autonationparts": "AutoNationParts",
     "booking": "Booking.com",
+    "chewy": "Chewy",
     "expedia": "Expedia",
+    "explodingkittens": "Exploding Kittens",
     "hotelscom": "Hotels.com",
     "lulus": "Lulus",
     "lumens": "Lumens",
+    "meta": "Meta",
     "nike": "Nike",
     "petco": "Petco",
+    "playstation": "PlayStation",
     "shein": "SHEIN",
+    "saily": "Saily",
     "walmart": "Walmart",
     "kiwi_com": "Kiwi.com",
     "nordvpn": "NordVPN",
@@ -34,6 +40,13 @@ BRAND_NAMES = {
     "surfshark": "Surfshark",
     "vevor": "VEVOR",
     "vrbo": "Vrbo",
+}
+
+LOGO_PATHS = {
+    "etihad_airways": "/media/brand_logos/etihad.jpg",
+    "kiwi_com": "/media/brand_logos/kiwic.jpg",
+    "qatar_airways": "/media/brand_logos/qatar.jpg",
+    "trip_com": "/media/brand_logos/tripcom.jpg",
 }
 
 MERGED_BRAND_SLUGS = {
@@ -53,6 +66,8 @@ def default_brand_name(slug: str) -> str:
 
 
 def ensure_logo(brand_slug: str) -> str:
+    if brand_slug in LOGO_PATHS:
+        return LOGO_PATHS[brand_slug]
     return f"/media/brand_logos/{brand_slug}.jpg"
 
 
@@ -120,20 +135,25 @@ def main() -> None:
     LOGOS_DIR.mkdir(parents=True, exist_ok=True)
 
     list_slugs = sorted(path.stem.lower() for path in LISTS_DIR.glob("*.csv"))
+    canonical_slugs = {MERGED_BRAND_SLUGS.get(slug, slug) for slug in list_slugs}
 
     # Brand pages should be limited to known subreddit brand lists.
     for existing_brand in BRANDS_DIR.glob("*.md"):
-        if existing_brand.stem.lower() not in list_slugs:
+        if existing_brand.stem.lower() not in canonical_slugs:
             existing_brand.unlink()
 
     # Coupon dirs should only exist for active subreddit brand lists.
     for existing_coupon_dir in COUPONS_DIR.iterdir():
-        if existing_coupon_dir.is_dir() and existing_coupon_dir.name.lower() not in list_slugs:
+        if existing_coupon_dir.is_dir() and existing_coupon_dir.name.lower() not in canonical_slugs:
             for existing in existing_coupon_dir.glob("*.md"):
-                existing.unlink()
+                if existing.is_dir():
+                    shutil.rmtree(existing)
+                else:
+                    existing.unlink()
             existing_coupon_dir.rmdir()
 
     cleared_coupon_dirs = set()
+    seen_coupon_codes_by_brand = {}
 
     for csv_path in LISTS_DIR.glob("*.csv"):
         raw_brand_slug = csv_path.stem.lower()
@@ -147,10 +167,14 @@ def main() -> None:
 
         coupon_dir = COUPONS_DIR / brand_slug
         coupon_dir.mkdir(parents=True, exist_ok=True)
+        seen_coupon_codes = seen_coupon_codes_by_brand.setdefault(brand_slug, set())
 
         if brand_slug not in cleared_coupon_dirs:
             for existing in coupon_dir.glob("*.md"):
-                existing.unlink()
+                if existing.is_dir():
+                    shutil.rmtree(existing)
+                else:
+                    existing.unlink()
             cleared_coupon_dirs.add(brand_slug)
 
         with csv_path.open(newline="") as handle:
@@ -159,6 +183,10 @@ def main() -> None:
                 code = row.get("code", "").strip()
                 discount = row.get("discount_amount", "").strip()
                 description = row.get("description", "").strip()
+                code_key = code.upper()
+                if not code_key or code_key in seen_coupon_codes:
+                    continue
+                seen_coupon_codes.add(code_key)
 
                 file_slug = slugify(f"{code}-{discount}-{description}")
                 coupon_file = coupon_dir / f"{file_slug}.md"

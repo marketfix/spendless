@@ -10,4 +10,4 @@ description_short: "15% discount on qualifying orders."
 
 Use code **y15** at checkout to get 15% off on 15% discount on qualifying orders..
 
-This code is included from the latest /r/SpendLess list for Spelab. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for SPELAB. Availability can change quickly.

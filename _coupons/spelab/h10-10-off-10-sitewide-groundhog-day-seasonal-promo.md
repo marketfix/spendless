@@ -10,4 +10,4 @@ description_short: "10% sitewide, Groundhog Day/seasonal promo."
 
 Use code **H10** at checkout to get 10% off on 10% sitewide, groundhog day/seasonal promo..
 
-This code is included from the latest /r/SpendLess list for Spelab. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for SPELAB. Availability can change quickly.

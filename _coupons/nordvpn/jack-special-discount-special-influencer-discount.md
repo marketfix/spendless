@@ -10,4 +10,4 @@ description_short: "Special influencer discount."
 
 Use code **jack** at checkout to get special discount on special influencer discount..
 
-This code is included from the latest /r/SpendLess list for Nordvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for NordVPN. Availability can change quickly.

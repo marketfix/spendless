@@ -10,4 +10,4 @@ description_short: "Save $168 (approx. 70% off)."
 
 Use code **SAVE168** at checkout to get save $168 (70% off) on save $168 (approx. 70% off)..
 
-This code is included from the latest /r/SpendLess list for Protonvpn. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for ProtonVPN. Availability can change quickly.

@@ -10,4 +10,4 @@ description_short: "Discount on flights booked in December."
 
 Use code **DECPC25** at checkout to get up to 10% off on discount on flights booked in december..
 
-This code is included from the latest /r/SpendLess list for Qatar_Airways. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Qatar Airways. Availability can change quickly.

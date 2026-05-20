@@ -10,4 +10,4 @@ description_short: "Seasonal promotional savings."
 
 Use code **STUNNER** at checkout to get seasonal promo on seasonal promotional savings..
 
-This code is included from the latest /r/SpendLess list for Ebay. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for eBay. Availability can change quickly.

@@ -10,4 +10,4 @@ description_short: "Discount during summer sale."
 
 Use code **JULYFINDS** at checkout to get summer sale savings on discount during summer sale..
 
-This code is included from the latest /r/SpendLess list for Ebay. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for eBay. Availability can change quickly.

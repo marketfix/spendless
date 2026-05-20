@@ -1,6 +1,6 @@
 ---
 layout: coupon
-title: "20% off bookings."
+title: "20% off 20% off bookings."
 brand_slug: "kiwi_com"
 discount_value: "20% off"
 code: "KIWI20"
@@ -10,4 +10,4 @@ description_short: "20% off bookings."
 
 Use code **KIWI20** at checkout to get 20% off on 20% off bookings..
 
-This code is included from the latest /r/SpendLess list for Kiwi_Com. Availability can change quickly.
+This code is included from the latest /r/SpendLess list for Kiwi.com. Availability can change quickly.
